@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Transaccio {
+ref class Transaccio {
 public:
     virtual ~Transaccio() {}
     virtual void executar() = 0;
