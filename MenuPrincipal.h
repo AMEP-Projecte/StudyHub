@@ -1,6 +1,6 @@
 #pragma once
 
-namespace CppCLRWinFormsProject {
+namespace StudyHub {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -10,12 +10,12 @@ namespace CppCLRWinFormsProject {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for Form1
+	/// Summary for MenuPrincipal
 	/// </summary>
-	public ref class Form1 : public System::Windows::Forms::Form
+	public ref class MenuPrincipal : public System::Windows::Forms::Form
 	{
 	public:
-		Form1(void)
+		MenuPrincipal(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace CppCLRWinFormsProject {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Form1()
+		~MenuPrincipal()
 		{
 			if (components)
 			{
@@ -50,7 +50,7 @@ namespace CppCLRWinFormsProject {
 		{
 			this->components = gcnew System::ComponentModel::Container();
 			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"Form1";
+			this->Text = L"MenuPrincipal";
 			this->Padding = System::Windows::Forms::Padding(0);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 		}

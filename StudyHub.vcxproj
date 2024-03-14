@@ -134,7 +134,7 @@
     <ClInclude Include="CercadoraGrup.h" />
     <ClInclude Include="CercadoraPertany.h" />
     <ClInclude Include="CercadoraUsuari.h" />
-    <ClInclude Include="Form1.h">
+    <ClInclude Include="MenuPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarellaEstudiant.h" />
@@ -152,7 +152,7 @@
     <ClCompile Include="CercadoraPertany.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
-    <ClCompile Include="Form1.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
     <ClCompile Include="PassarellaGrup.cpp" />
     <ClCompile Include="PassarellaPertany.cpp" />
