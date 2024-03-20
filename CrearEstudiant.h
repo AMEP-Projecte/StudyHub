@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#include "PassarellaEstudiant.h"
 namespace StudyHub {
 
 	using namespace System;
@@ -35,18 +35,25 @@ namespace StudyHub {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ NomLabel;
+
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::TextBox^ nomBox;
+	private: System::Windows::Forms::TextBox^ correuBox;
+	private: System::Windows::Forms::TextBox^ nomusuariBox;
+
+
+
+	private: System::Windows::Forms::TextBox^ contrasenyaBox;
+	private: System::Windows::Forms::TextBox^ repeteixContrasenyaBox;
+	private: System::Windows::Forms::ComboBox^ idiomaPreferitBox;
+
+
+
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 
@@ -64,18 +71,18 @@ namespace StudyHub {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->NomLabel = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->nomBox = (gcnew System::Windows::Forms::TextBox());
+			this->correuBox = (gcnew System::Windows::Forms::TextBox());
+			this->nomusuariBox = (gcnew System::Windows::Forms::TextBox());
+			this->contrasenyaBox = (gcnew System::Windows::Forms::TextBox());
+			this->repeteixContrasenyaBox = (gcnew System::Windows::Forms::TextBox());
+			this->idiomaPreferitBox = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -91,19 +98,19 @@ namespace StudyHub {
 			this->label1->Text = L"Crear Perfil d\'Estudiant";
 			this->label1->Click += gcnew System::EventHandler(this, &CrearEstudiant::label1_Click);
 			// 
-			// label2
+			// NomLabel
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(23, 149);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(121, 20);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Nom i Cognoms";
+			this->NomLabel->AutoSize = true;
+			this->NomLabel->Location = System::Drawing::Point(22, 149);
+			this->NomLabel->Name = L"NomLabel";
+			this->NomLabel->Size = System::Drawing::Size(121, 20);
+			this->NomLabel->TabIndex = 1;
+			this->NomLabel->Text = L"Nom i Cognoms";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(23, 222);
+			this->label3->Location = System::Drawing::Point(22, 222);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(131, 20);
 			this->label3->TabIndex = 2;
@@ -121,7 +128,7 @@ namespace StudyHub {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(23, 295);
+			this->label5->Location = System::Drawing::Point(22, 295);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(99, 20);
 			this->label5->TabIndex = 4;
@@ -130,7 +137,7 @@ namespace StudyHub {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(23, 367);
+			this->label6->Location = System::Drawing::Point(22, 368);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(179, 20);
 			this->label6->TabIndex = 5;
@@ -146,65 +153,73 @@ namespace StudyHub {
 			this->label7->Text = L"Idioma Preferit";
 			this->label7->Click += gcnew System::EventHandler(this, &CrearEstudiant::label7_Click);
 			// 
-			// textBox1
+			// nomBox
 			// 
-			this->textBox1->Location = System::Drawing::Point(27, 182);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(444, 26);
-			this->textBox1->TabIndex = 7;
+			this->nomBox->Location = System::Drawing::Point(27, 182);
+			this->nomBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->nomBox->Name = L"nomBox";
+			this->nomBox->Size = System::Drawing::Size(444, 26);
+			this->nomBox->TabIndex = 7;
 			// 
-			// textBox2
+			// correuBox
 			// 
-			this->textBox2->Location = System::Drawing::Point(27, 250);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(444, 26);
-			this->textBox2->TabIndex = 8;
+			this->correuBox->Location = System::Drawing::Point(27, 250);
+			this->correuBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->correuBox->Name = L"correuBox";
+			this->correuBox->Size = System::Drawing::Size(444, 26);
+			this->correuBox->TabIndex = 8;
 			// 
-			// textBox3
+			// nomusuariBox
 			// 
-			this->textBox3->Location = System::Drawing::Point(509, 193);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(261, 26);
-			this->textBox3->TabIndex = 9;
+			this->nomusuariBox->Location = System::Drawing::Point(508, 192);
+			this->nomusuariBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->nomusuariBox->Name = L"nomusuariBox";
+			this->nomusuariBox->Size = System::Drawing::Size(260, 26);
+			this->nomusuariBox->TabIndex = 9;
 			// 
-			// textBox4
+			// contrasenyaBox
 			// 
-			this->textBox4->Location = System::Drawing::Point(27, 318);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(444, 26);
-			this->textBox4->TabIndex = 10;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::textBox4_TextChanged);
+			this->contrasenyaBox->Location = System::Drawing::Point(27, 318);
+			this->contrasenyaBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->contrasenyaBox->Name = L"contrasenyaBox";
+			this->contrasenyaBox->Size = System::Drawing::Size(444, 26);
+			this->contrasenyaBox->TabIndex = 10;
+			this->contrasenyaBox->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::textBox4_TextChanged);
 			// 
-			// textBox5
+			// repeteixContrasenyaBox
 			// 
-			this->textBox5->Location = System::Drawing::Point(27, 405);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(450, 26);
-			this->textBox5->TabIndex = 11;
+			this->repeteixContrasenyaBox->Location = System::Drawing::Point(27, 405);
+			this->repeteixContrasenyaBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->repeteixContrasenyaBox->Name = L"repeteixContrasenyaBox";
+			this->repeteixContrasenyaBox->Size = System::Drawing::Size(450, 26);
+			this->repeteixContrasenyaBox->TabIndex = 11;
 			// 
-			// comboBox1
+			// idiomaPreferitBox
 			// 
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(26) {
+			this->idiomaPreferitBox->FormattingEnabled = true;
+			this->idiomaPreferitBox->Items->AddRange(gcnew cli::array< System::Object^  >(26) {
 				L"English", L"Español", L"Català", L"Français",
 					L"Deutsch", L"Português", L"Italiano", L"中文 (Chinese)", L"日本語 (Japanese)", L"한국어 (Korean)", L"العربية (Arabic)", L"Русский (Russian)",
 					L"हिन्दी (Hindi)", L"বাংলা (Bengali)", L"اردو (Urdu)", L"Türkçe (Turkish)", L"Bahasa Indonesia (Indonesian)", L"ไทย (Thai)",
 					L"Tiếng Việt (Vietnamese)", L"Nederlands (Dutch)", L"Svenska (Swedish)", L"Norsk (Norwegian)", L"Dansk (Danish)", L"Suomi (Finnish)",
 					L"Ελληνικά (Greek)", L"Polski (Polish)"
 			});
-			this->comboBox1->Location = System::Drawing::Point(509, 286);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(261, 28);
-			this->comboBox1->TabIndex = 12;
+			this->idiomaPreferitBox->Location = System::Drawing::Point(508, 286);
+			this->idiomaPreferitBox->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->idiomaPreferitBox->Name = L"idiomaPreferitBox";
+			this->idiomaPreferitBox->Size = System::Drawing::Size(260, 28);
+			this->idiomaPreferitBox->TabIndex = 12;
 			// 
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(646, 499);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 33);
+			this->button1->Size = System::Drawing::Size(75, 32);
 			this->button1->TabIndex = 13;
 			this->button1->Text = L"OK";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &CrearEstudiant::button1_Click);
 			// 
 			// CrearEstudiant
 			// 
@@ -212,19 +227,20 @@ namespace StudyHub {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(782, 574);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->comboBox1);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->idiomaPreferitBox);
+			this->Controls->Add(this->repeteixContrasenyaBox);
+			this->Controls->Add(this->contrasenyaBox);
+			this->Controls->Add(this->nomusuariBox);
+			this->Controls->Add(this->correuBox);
+			this->Controls->Add(this->nomBox);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
+			this->Controls->Add(this->NomLabel);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"CrearEstudiant";
 			this->Text = L" ";
 			this->ResumeLayout(false);
@@ -237,6 +253,11 @@ namespace StudyHub {
 	private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	
+	PassarellaEstudiant pe(nomusuariBox->Text, contrasenyaBox->Text, correuBox->Text, nomBox->Text, "    ", idiomaPreferitBox->Text, "   ", 0);
+	pe.insereix();
 }
 };
 }
