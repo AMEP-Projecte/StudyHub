@@ -16,6 +16,6 @@ int main()
 {
   Application::EnableVisualStyles();
   Application::SetCompatibleTextRenderingDefault(false);
-  Application::Run(gcnew StudyHub::MenuEstudiant());
+  Application::Run(gcnew CppCLRWinFormsProject::Form1());
   return 0;
 }

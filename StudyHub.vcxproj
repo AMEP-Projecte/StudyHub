@@ -147,6 +147,9 @@
     <ClInclude Include="IniciSessio.h" />
     <ClInclude Include="MenuEstudiant.h" />
     <ClInclude Include="mostraInformacioGrup.h" />
+    <ClInclude Include="MenuPrincipal.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaEstudiant.h" />
     <ClInclude Include="PassarellaGrup.h" />
     <ClInclude Include="PassarellaPertany.h" />
@@ -164,6 +167,7 @@
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxTancarSessio.h" />
+    <ClInclude Include="Transaccio.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -183,6 +187,7 @@
     <ClCompile Include="IniciSessio.cpp" />
     <ClCompile Include="MenuEstudiant.cpp" />
     <ClCompile Include="mostraInformacioGrup.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
     <ClCompile Include="PassarellaGrup.cpp" />
     <ClCompile Include="PassarellaPertany.cpp" />
