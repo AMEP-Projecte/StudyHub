@@ -122,6 +122,9 @@
     <ClInclude Include="TxTancarSessio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Transaccio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
