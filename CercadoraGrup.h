@@ -1,5 +1,10 @@
 #pragma once
-ref class CercadoraGrup
-{
+#include "PassarellaGrup.h"
+
+using namespace System;
+
+class CercadoraGrup {
+	public:
+		static PassarellaGrup^ cercaPerNomGrup(String^ NomGrup);
 };
 

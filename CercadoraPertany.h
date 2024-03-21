@@ -1,5 +1,15 @@
 #pragma once
-ref class CercadoraPertany
+#include "PassarellaPertany.h"
+using namespace System;
+
+
+ class CercadoraPertany
 {
+
+public:
+	 DataTable^ cercaParticipants(String^ nomGrup);
+	
+
 };
+
 

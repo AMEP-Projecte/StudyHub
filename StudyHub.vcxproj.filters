@@ -26,31 +26,100 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Form1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarellaUsuari.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CercadoraUsuari.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarellaEstudiant.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CercadoraEstudiant.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarellaGrup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CercadoraGrup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CercadoraPertany.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraUsuari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultarEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="consultargrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CreaEstudiantPresentacio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearGrupEstudi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearNouGrupEstudi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarGrupEstudi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarPerfilEstudiantUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IniciSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mostraInformacioGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="PassarellaPertany.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CercadoraPertany.h">
+    <ClInclude Include="PassarellaUsuari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sistema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TancarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultarGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCreaEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCrearNouGrupEstudi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEliminarGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborraUsuari.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxIniciarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxTancarSessio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -64,31 +133,94 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Form1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarellaUsuari.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CercadoraUsuari.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarellaEstudiant.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CercadoraEstudiant.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarellaGrup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CercadoraGrup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CercadoraPertany.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CreaEstudiantPresentacio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearNouGrupEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarGrupEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarPerfilEstudiantUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IniciSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mostraInformacioGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="PassarellaPertany.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CercadoraPertany.cpp">
+    <ClCompile Include="PassarellaUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sistema.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TancarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCreaEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCrearNouGrupEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEliminarGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborraUsuari.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxIniciarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxTancarSessio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,5 +228,8 @@
     <Image Include="app.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
 </Project>
