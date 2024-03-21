@@ -134,7 +134,6 @@
     <ClInclude Include="CercadoraGrup.h" />
     <ClInclude Include="CercadoraPertany.h" />
     <ClInclude Include="CercadoraUsuari.h" />
-    <ClInclude Include="ConsultarEstudiant.h" />
     <ClInclude Include="consultargrup.h" />
     <ClInclude Include="CreaEstudiantPresentacio.h" />
     <ClInclude Include="CrearEstudiant.h" />
@@ -146,10 +145,10 @@
     <ClInclude Include="EliminarPerfilEstudiantUI.h" />
     <ClInclude Include="IniciSessio.h" />
     <ClInclude Include="MenuEstudiant.h" />
-    <ClInclude Include="mostraInformacioGrup.h" />
     <ClInclude Include="MenuPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="mostraInformacioGrup.h" />
     <ClInclude Include="PassarellaEstudiant.h" />
     <ClInclude Include="PassarellaGrup.h" />
     <ClInclude Include="PassarellaPertany.h" />
@@ -175,7 +174,6 @@
     <ClCompile Include="CercadoraGrup.cpp" />
     <ClCompile Include="CercadoraPertany.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
-    <ClCompile Include="ConsultarEstudiant.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CreaEstudiantPresentacio.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />
@@ -186,8 +184,8 @@
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />
     <ClCompile Include="IniciSessio.cpp" />
     <ClCompile Include="MenuEstudiant.cpp" />
-    <ClCompile Include="mostraInformacioGrup.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
+    <ClCompile Include="mostraInformacioGrup.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
     <ClCompile Include="PassarellaGrup.cpp" />
     <ClCompile Include="PassarellaPertany.cpp" />

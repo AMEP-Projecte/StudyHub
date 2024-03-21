@@ -27,9 +27,9 @@ PassarellaGrup^ CercadoraGrup::cercaPerNomGrup(String^ NomGrup) {
 		}
 	}
 	catch (MySqlException^ ex) {
-		MessageBox::Show(ex->Message);
+		//MessageBox::Show(ex->Message);
 	}
-	PassarellaGrup^ Grup = gcnew PassarellaGrup(nomGrup, tem�tica, creador);
+	PassarellaGrup^ Grup = gcnew PassarellaGrup(nomGrup, tematica, creador);
 	conn->Close();
 	return Grup;
 }

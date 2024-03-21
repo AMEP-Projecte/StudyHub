@@ -19,11 +19,11 @@ PassarellaGrup::PassarellaGrup(String^ NomGrup, String^ Tematica, String^ Creado
 	_creador = Creador;
 }
 
-/*PassarellaGrup::PassarellaGrup(const PassarellaGrup% P) {
+PassarellaGrup::PassarellaGrup(const PassarellaGrup% P) {
 	_nomGrup = P._nomGrup;
 	_tematica = P._tematica;
 	_creador = P._creador;
-}*/
+}
 
 String^ PassarellaGrup::obteNom() {
 	return _nomGrup;
@@ -37,15 +37,15 @@ String^ PassarellaGrup::obtecreador() {
 	return _creador;
 }
 
-void posaNom(String^ n) {
-    _nom = n;
+void PassarellaGrup::posaNom(String^ n) {
+    _nomGrup = n;
 }
 
-void posaTematica(String^ t) {
+void PassarellaGrup::posaTematica(String^ t) {
     _tematica = t;
 }
 
-void posaCreador(String^ c) {
+void PassarellaGrup::posaCreador(String^ c) {
     _creador = c;
 }
 
@@ -82,7 +82,7 @@ void PassarellaGrup::modifica() {
 
 	String^ sql = "UPDATE grup SET ";
 	sql += "tematica = '" + _tematica + "' ";
-	sql += "WHERE nom = '" + _nom + "' ";
+	sql += "WHERE nom = '" + _nomGrup + "' ";
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
@@ -96,7 +96,7 @@ void PassarellaGrup::modifica() {
 	}
 	catch (Exception^ ex) {
 		// codi per mostrar l'error en una finestra
-		MessageBox::WriteLine(ex->Message);
+		//MessageBox::WriteLine(ex->Message);
 	}
 	finally {
 		// si tot va be es tanca la connexio
