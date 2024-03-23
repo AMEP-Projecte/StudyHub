@@ -1,5 +1,4 @@
 #pragma once
-#include "Transaccio.h"
 #include "CercadoraGrup.h"
 
 using namespace System;
@@ -11,11 +10,7 @@ private:
 	String^ _tematica;
 
 public:
-
-	// Constructora
-	TxEditarGrup(String^ n, String^ t);
-
-	bool grupExisteix;
-
+	TxEditarGrup(String^ n, String^ t); // Constructora
 	void executar();
+	
 };
