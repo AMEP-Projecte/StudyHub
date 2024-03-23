@@ -10,9 +10,9 @@ TxEditarEstudiant::TxEditarEstudiant(String^ n, String^ cn, String^ i, String^ l
 }
 
 void TxEditarEstudiant::executar() {
-	Sistema& sistema = Sistema::getInstance();
+	Sistema^ sistema = Sistema::getInstance();
 
-	PassarellaEstudiant^ est = sistema.obteEstudiant();
+	PassarellaEstudiant^ est = sistema->obteEstudiant();
 	if (_nom != " ") est->posaNom(_nom);
 	if (_cognoms != " ") est->posaCognoms(_cognoms);
 	if (_idioma != " ") est->posaIdioma(_idioma);
@@ -21,8 +21,8 @@ void TxEditarEstudiant::executar() {
 
 	if (_contrasenya != " ") {
 		String^ username = est->obteUsername();
-		CercadoraUsuari^ cu;
+		CercadoraUsuari cu;
 		PassarellaUsuari^ usuari = cu.cercaUsuari(username);
-		usuari.modifica();
+		usuari->modifica();
 	}
 }
