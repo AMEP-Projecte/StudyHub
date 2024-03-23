@@ -141,12 +141,22 @@ namespace StudyHub {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ n = textBox1->Text; // nom del grup
-		String^ t = textBox2->Text; // tematica
-		TxEditarGrup tx = TxEditarGrup::TxEditarGrup(n, t);
-		tx.executar();
-		if (tx.grupExisteix == false) MessageBox::Show(L"Aquest grup no existeix");
-		else MessageBox::Show(L"Grup modificat");
+		String^ n = this->textBox1->Text; // nom del grup
+		String^ t = this->textBox2->Text; // tematica
+
+		try {
+			if (n == "" || t == "") {
+				MessageBox::Show("Omple els dos camps, si us plau.");
+			}
+			else {
+				TxEditarGrup^ tx = gcnew TxEditarGrup(n, t);
+				tx->executar();
+			}
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 	}
+
 };
 }
