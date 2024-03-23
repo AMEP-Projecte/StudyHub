@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "TxEsborraUsuari.h"
-
+#include "CercadoraUsuari.h"
 TxEsborraUsuari::TxEsborraUsuari(String^ contraU) {
 	//creadora
 	_contraU = contraU;
