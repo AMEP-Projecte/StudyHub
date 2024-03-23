@@ -2,7 +2,7 @@
 #include "CercadoraGrup.h"
 #include "CercadoraPertany.h"
 
- class TxConsultaGrup
+ ref class TxConsultaGrup
 {
 public:
 	//cosntructora
