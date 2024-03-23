@@ -1,5 +1,6 @@
 #pragma once
 #include "TxEditarEstudiant.h"
+#include "MenuEstudiant.h"
 
 namespace StudyHub {
 
