@@ -1,5 +1,4 @@
 #pragma once
-#include "Transaccio.h"
 #include "Sistema.h"
 #include "PassarellaEstudiant.h"
 #include "CercadoraUsuari.h"
