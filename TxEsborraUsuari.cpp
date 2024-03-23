@@ -7,17 +7,16 @@ TxEsborraUsuari::TxEsborraUsuari(String^ contraU) {
 }
 
 void TxEsborraUsuari::executar() {
-	PassarellaUsuari^ u;
 	Sistema^ StudyHub = Sistema::getInstance();
-	u = StudyHub->obteUsuari();
-	String^ contrasenyacerta = u->obteContrasenya();
-	/*if (contrasenyacerta != _contraU) {
-		throw std::runtime_error("Error: Contrasenya incorrecta.")
-	} */
+	String^ contrasenyacerta = StudyHub->obteContrasenya();
 
-	if (contrasenyacerta == _contraU) {
+	if (contrasenyacerta != _contraU) {
+		throw gcnew Exception("Error: Contrasenya incorrecta.");
+	} else {
+		PassarellaEstudiant^ est = StudyHub->obteEstudiant();
+		CercadoraUsuari^ cu;
+		PassarellaUsuari^ u = cu->cercaUsuari(est->obteUsername());
 		u->esborra();
-		//StudyHub->tancaSessio();
+		StudyHub->tancaSessio();
 	}
-
 }
