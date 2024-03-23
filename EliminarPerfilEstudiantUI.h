@@ -22,13 +22,13 @@ namespace StudyHub {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~EliminarPerfilEstudiantUI()
 		{
@@ -54,14 +54,14 @@ namespace StudyHub {
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -104,7 +104,7 @@ namespace StudyHub {
 			this->infoeliminarcompte2->Name = L"infoeliminarcompte2";
 			this->infoeliminarcompte2->Size = System::Drawing::Size(603, 20);
 			this->infoeliminarcompte2->TabIndex = 2;
-			this->infoeliminarcompte2->Text = L"Aixó tancarà la teva sessió inmediatament i no podràs tornar a iniciar-la de nou."
+			this->infoeliminarcompte2->Text = L"AixÃ³ tancarÃ  la teva sessiÃ³ inmediatament i no podrÃ s tornar a iniciar-la de nou."
 				L"";
 			// 
 			// etiquetacontrasenya
@@ -141,7 +141,7 @@ namespace StudyHub {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(94, 40);
 			this->button2->TabIndex = 6;
-			this->button2->Text = L"Cancel·ar";
+			this->button2->Text = L"CancelÂ·ar";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::button2_Click);
 			// 
@@ -173,15 +173,20 @@ namespace StudyHub {
 private: System::Void txt_contra_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	String^ contrasenya= txt_contra->Text; 
-	//try {
-		TxEsborraUsuari txEU(contrasenya);
-		txEU.executar();
-	//}
-	//catch (Exception^ ex) {
-		//MessageBox::Show(ex->Message);
-	//}
+	String^ contrasenya= txt_contra->Text;
+
+	try {
+		if (contrasenya != "") {
+			TxEsborraUsuari txEU(contrasenya);
+			txEU.executar();
+		}
+		else {
+			MessageBox::Show("Has d'omplir el camp.");
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
