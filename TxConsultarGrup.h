@@ -17,6 +17,5 @@ private:
 	String^ _nom;
 	String^ _tematica;
 	int _nombreParticipants;
-	bool grupExisteix = true;
 
 };
