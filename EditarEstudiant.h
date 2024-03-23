@@ -224,15 +224,25 @@ namespace StudyHub {
 private: System::Void EditarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
 	String^ n = textBox1->Text;    // nom
 	String^ cg = textBox2->Text;   // cognoms
 	String^ i = textBox3->Text;    // idioma
 	String^ l = textBox4->Text;    // localitat
 	String^ c = textBox5->Text;    // contrasenya
-	TxEditarEstudiant tx = TxEditarEstudiant::TxEditarEstudiant(n, cg, i, l, c);
-	tx.executar();
 
+	try {
+		if (n == "" && cg == "" && i == "" && l == "" && c == "") {
+			MessageBox::Show("Omple un camp al menys, si us plau.");
+		}
+		else {
+			TxEditarEstudiant^ tx = gcnew TxEditarEstudiant(n, cg, i, l, c);
+			tx->executar();
+		}
+	}
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
 }
+		
 };
 }
