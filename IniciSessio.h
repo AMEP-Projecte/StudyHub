@@ -136,6 +136,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();
 		this->Visible = false;
 		menuEstudiant->ShowDialog();
+		this->Close();
 	}
 }
 };
