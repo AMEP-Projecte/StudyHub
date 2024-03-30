@@ -151,6 +151,8 @@ namespace StudyHub {
 			else {
 				TxEditarGrup^ tx = gcnew TxEditarGrup(n, t);
 				tx->executar();
+				MessageBox::Show("Grup modificat correctament.");
+				this->Close();
 			}
 		}
 		catch (Exception^ ex) {
