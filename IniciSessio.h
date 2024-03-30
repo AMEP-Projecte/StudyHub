@@ -1,5 +1,6 @@
 #pragma once
 #include "TxIniciarSessio.h"
+#include "MenuEstudiant.h"
 
 namespace StudyHub {
 
@@ -130,6 +131,11 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	bool err = tx->executar();
 	if (err) {
 		MessageBox::Show("Error amb l'inici de sessio");
+	}
+	else {
+		StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();
+		this->Visible = false;
+		menuEstudiant->ShowDialog();
 	}
 }
 };
