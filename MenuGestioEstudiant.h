@@ -170,7 +170,7 @@ private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ 
 	*/
 }
 private: System::Void editar_Click(System::Object^ sender, System::EventArgs^ e) {
-	StudyHub::EditarEstudiantUI^ editar = gcnew StudyHub::EditarEstudiantUI();
+	StudyHub::EditarEstudiant^ editar = gcnew StudyHub::EditarEstudiant();
 	this->Visible = false;
 	editar->ShowDialog();
 	this->Visible = true;
