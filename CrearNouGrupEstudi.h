@@ -179,7 +179,7 @@ namespace StudyHub {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 2;
-			this->button2->Text = L"Paràmetres";
+			this->button2->Text = L"ParÃ metres";
 			this->button2->UseVisualStyleBackColor = true;
 			// 
 			// flowLayoutPanel6
@@ -267,7 +267,7 @@ namespace StudyHub {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(51, 13);
 			this->label3->TabIndex = 0;
-			this->label3->Text = L"Temàtica";
+			this->label3->Text = L"TemÃ tica";
 			// 
 			// panel3
 			// 
@@ -383,6 +383,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		if (this->textBox1->Text != "" && this->textBox2->Text != "") {
 			TxCrearNouGrupEstudi CrearGrup(this->textBox1->Text, this->textBox2->Text, sist->obteEstudiant()->obteUsername());
 			CrearGrup.executa();
+			this->Close();
 		}
 		else {
 			MessageBox::Show("No pot haver-hi un camp buit.");
