@@ -299,6 +299,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 			CognomsBox->Text, idiomaPreferitBox->Text, LocalitatBox->Text, 0);
 		tx.executa();
 	}
+	this->Close();
 
 }
 };
