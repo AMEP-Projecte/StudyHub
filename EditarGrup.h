@@ -35,13 +35,19 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ studyhub;
+	private: System::Windows::Forms::Label^ editGroup;
+	private: System::Windows::Forms::Label^ name;
+	private: System::Windows::Forms::Label^ theme;
+
+	private: System::Windows::Forms::Button^ edit;
+	private: System::Windows::Forms::TextBox^ textName;
+	private: System::Windows::Forms::TextBox^ textTheme;
+	private: System::Windows::Forms::Button^ cancel;
+
 	protected:
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
+	protected:
 
 	private:
 		/// <summary>
@@ -56,107 +62,151 @@ namespace StudyHub {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->studyhub = (gcnew System::Windows::Forms::Label());
+			this->editGroup = (gcnew System::Windows::Forms::Label());
+			this->name = (gcnew System::Windows::Forms::Label());
+			this->theme = (gcnew System::Windows::Forms::Label());
+			this->edit = (gcnew System::Windows::Forms::Button());
+			this->textName = (gcnew System::Windows::Forms::TextBox());
+			this->textTheme = (gcnew System::Windows::Forms::TextBox());
+			this->cancel = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// button1
+			// studyhub
 			// 
-			this->button1->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->button1->Location = System::Drawing::Point(559, 372);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(134, 69);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Modificar";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &EditarGrup::button1_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->studyhub->AutoSize = true;
+			this->studyhub->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(179, 46);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(358, 32);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"EDITAR GRUP D\'ESTUDI";
+			this->studyhub->Location = System::Drawing::Point(13, 24);
+			this->studyhub->Name = L"studyhub";
+			this->studyhub->Size = System::Drawing::Size(178, 42);
+			this->studyhub->TabIndex = 0;
+			this->studyhub->Text = L"StudyHub";
+			this->studyhub->Click += gcnew System::EventHandler(this, &EditarGrup::label1_Click);
 			// 
-			// label2
+			// editGroup
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->editGroup->AutoSize = true;
+			this->editGroup->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(287, 123);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(140, 25);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"Nom del grup";
+			this->editGroup->Location = System::Drawing::Point(15, 87);
+			this->editGroup->Name = L"editGroup";
+			this->editGroup->Size = System::Drawing::Size(128, 25);
+			this->editGroup->TabIndex = 1;
+			this->editGroup->Text = L"Editar Grup:";
 			// 
-			// label3
+			// name
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->name->AutoSize = true;
+			this->name->BackColor = System::Drawing::SystemColors::ControlLight;
+			this->name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(170, 233);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(107, 26);
-			this->label3->TabIndex = 3;
-			this->label3->Text = L"Temàtica:";
+			this->name->Location = System::Drawing::Point(20, 157);
+			this->name->Name = L"name";
+			this->name->Size = System::Drawing::Size(254, 22);
+			this->name->TabIndex = 2;
+			this->name->Text = L"Nom del grup que es vol editar";
 			// 
-			// textBox1
+			// theme
 			// 
-			this->textBox1->Location = System::Drawing::Point(266, 151);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(185, 26);
-			this->textBox1->TabIndex = 4;
+			this->theme->AutoSize = true;
+			this->theme->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->theme->Location = System::Drawing::Point(16, 199);
+			this->theme->Name = L"theme";
+			this->theme->Size = System::Drawing::Size(84, 22);
+			this->theme->TabIndex = 3;
+			this->theme->Text = L"Temàtica";
 			// 
-			// textBox2
+			// edit
 			// 
-			this->textBox2->Location = System::Drawing::Point(283, 233);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(252, 26);
-			this->textBox2->TabIndex = 5;
+			this->edit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->edit->Location = System::Drawing::Point(449, 276);
+			this->edit->Name = L"edit";
+			this->edit->Size = System::Drawing::Size(99, 35);
+			this->edit->TabIndex = 5;
+			this->edit->Text = L"Editar";
+			this->edit->UseVisualStyleBackColor = true;
+			this->edit->Click += gcnew System::EventHandler(this, &EditarGrup::edit_Click);
+			// 
+			// textName
+			// 
+			this->textName->BackColor = System::Drawing::SystemColors::Window;
+			this->textName->Location = System::Drawing::Point(363, 157);
+			this->textName->Name = L"textName";
+			this->textName->Size = System::Drawing::Size(185, 26);
+			this->textName->TabIndex = 6;
+			this->textName->TextChanged += gcnew System::EventHandler(this, &EditarGrup::textName_TextChanged);
+			// 
+			// textTheme
+			// 
+			this->textTheme->Location = System::Drawing::Point(363, 199);
+			this->textTheme->Name = L"textTheme";
+			this->textTheme->Size = System::Drawing::Size(185, 26);
+			this->textTheme->TabIndex = 7;
+			// 
+			// cancel
+			// 
+			this->cancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cancel->Location = System::Drawing::Point(20, 276);
+			this->cancel->Name = L"cancel";
+			this->cancel->Size = System::Drawing::Size(123, 37);
+			this->cancel->TabIndex = 8;
+			this->cancel->Text = L"Cancel·lar";
+			this->cancel->UseVisualStyleBackColor = true;
+			this->cancel->Click += gcnew System::EventHandler(this, &EditarGrup::cancel_Click_1);
 			// 
 			// EditarGrup
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(744, 495);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(573, 339);
+			this->Controls->Add(this->cancel);
+			this->Controls->Add(this->textTheme);
+			this->Controls->Add(this->textName);
+			this->Controls->Add(this->edit);
+			this->Controls->Add(this->theme);
+			this->Controls->Add(this->name);
+			this->Controls->Add(this->editGroup);
+			this->Controls->Add(this->studyhub);
 			this->Name = L"EditarGrup";
 			this->Text = L"EditarGrup";
+			this->Load += gcnew System::EventHandler(this, &EditarGrup::EditarGrup_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ n = this->textBox1->Text; // nom del grup
-		String^ t = this->textBox2->Text; // tematica
+	private: System::Void EditarGrup_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ n = this->textName->Text; // nom del grup
+	String^ t = this->textTheme->Text; // tematica
 
-		try {
-			if (n == "" || t == "") {
-				MessageBox::Show("Omple els dos camps, si us plau.");
-			}
-			else {
-				TxEditarGrup^ tx = gcnew TxEditarGrup(n, t);
-				tx->executar();
-			}
+	try {
+		if (n == "" || t == "") {
+			MessageBox::Show("Omple els dos camps, si us plau.");
 		}
-		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message);
+		else {
+			TxEditarGrup^ tx = gcnew TxEditarGrup(n, t);
+			tx->executar();
 		}
 	}
-
+	catch (Exception^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+}
+private: System::Void cancel_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
 };
 }
