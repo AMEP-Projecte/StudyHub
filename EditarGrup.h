@@ -199,6 +199,8 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 		else {
 			TxEditarGrup^ tx = gcnew TxEditarGrup(n, t);
 			tx->executar();
+			MessageBox::Show("Grup modificat correctament.");
+			this->Close();
 		}
 	}
 	catch (Exception^ ex) {
