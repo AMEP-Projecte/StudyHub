@@ -11,9 +11,6 @@ public:
 
 	void executar();
 
-
-
-private:
 	String^ _nom;
 	String^ _tematica;
 	int _nombreParticipants;
