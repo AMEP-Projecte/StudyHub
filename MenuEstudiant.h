@@ -1,6 +1,8 @@
 #pragma once
 #include "TancarSessio.h"
 #include "Sistema.h"
+#include "MenuGestioEstudiant.h"
+#include "MenuGestioGrups.h"
 
 namespace StudyHub {
 
@@ -21,13 +23,13 @@ namespace StudyHub {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~MenuEstudiant()
 		{
@@ -36,80 +38,111 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Label^ studyHub;
+	private: System::Windows::Forms::Label^ menuEstudiant;
+	private: System::Windows::Forms::Button^ gestionaPerfil;
+	private: System::Windows::Forms::Button^ gestionaGrups;
+	private: System::Windows::Forms::Button^ tancaSessio;
 	protected:
+
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MenuEstudiant::typeid));
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->studyHub = (gcnew System::Windows::Forms::Label());
+			this->menuEstudiant = (gcnew System::Windows::Forms::Label());
+			this->gestionaPerfil = (gcnew System::Windows::Forms::Button());
+			this->gestionaGrups = (gcnew System::Windows::Forms::Button());
+			this->tancaSessio = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// label1
+			// studyHub
 			// 
-			resources->ApplyResources(this->label1, L"label1");
-			this->label1->Name = L"label1";
+			this->studyHub->AutoSize = true;
+			this->studyHub->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->studyHub->Location = System::Drawing::Point(114, 18);
+			this->studyHub->Name = L"studyHub";
+			this->studyHub->Size = System::Drawing::Size(178, 42);
+			this->studyHub->TabIndex = 0;
+			this->studyHub->Text = L"StudyHub";
 			// 
-			// button1
+			// menuEstudiant
 			// 
-			resources->ApplyResources(this->button1, L"button1");
-			this->button1->Name = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
+			this->menuEstudiant->AutoSize = true;
+			this->menuEstudiant->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->menuEstudiant->Location = System::Drawing::Point(116, 75);
+			this->menuEstudiant->Name = L"menuEstudiant";
+			this->menuEstudiant->Size = System::Drawing::Size(171, 27);
+			this->menuEstudiant->TabIndex = 1;
+			this->menuEstudiant->Text = L"MenÃº Estudiant";
 			// 
-			// button2
+			// gestionaPerfil
 			// 
-			resources->ApplyResources(this->button2, L"button2");
-			this->button2->Name = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
+			this->gestionaPerfil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->gestionaPerfil->Location = System::Drawing::Point(116, 149);
+			this->gestionaPerfil->Name = L"gestionaPerfil";
+			this->gestionaPerfil->Size = System::Drawing::Size(171, 88);
+			this->gestionaPerfil->TabIndex = 2;
+			this->gestionaPerfil->Text = L"Gestionar Perfil d\'Estudiant";
+			this->gestionaPerfil->UseVisualStyleBackColor = true;
+			this->gestionaPerfil->Click += gcnew System::EventHandler(this, &MenuEstudiant::gestionaPerfil_Click);
 			// 
-			// button3
+			// gestionaGrups
 			// 
-			resources->ApplyResources(this->button3, L"button3");
-			this->button3->Name = L"button3";
-			this->button3->UseVisualStyleBackColor = true;
+			this->gestionaGrups->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->gestionaGrups->Location = System::Drawing::Point(121, 243);
+			this->gestionaGrups->Name = L"gestionaGrups";
+			this->gestionaGrups->Size = System::Drawing::Size(166, 92);
+			this->gestionaGrups->TabIndex = 3;
+			this->gestionaGrups->Text = L"Gestionar Grups d\'Estudi";
+			this->gestionaGrups->UseVisualStyleBackColor = true;
+			this->gestionaGrups->Click += gcnew System::EventHandler(this, &MenuEstudiant::gestionaGrups_Click);
 			// 
-			// button4
+			// tancaSessio
 			// 
-			resources->ApplyResources(this->button4, L"button4");
-			this->button4->Name = L"button4";
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &MenuEstudiant::button4_Click);
+			this->tancaSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->tancaSessio->Location = System::Drawing::Point(121, 367);
+			this->tancaSessio->Name = L"tancaSessio";
+			this->tancaSessio->Size = System::Drawing::Size(166, 53);
+			this->tancaSessio->TabIndex = 4;
+			this->tancaSessio->Text = L"Tancar SessiÃ³";
+			this->tancaSessio->UseVisualStyleBackColor = true;
+			this->tancaSessio->Click += gcnew System::EventHandler(this, &MenuEstudiant::tancaSessio_Click);
 			// 
 			// MenuEstudiant
 			// 
-			resources->ApplyResources(this, L"$this");
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->button4);
-			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label1);
+			this->ClientSize = System::Drawing::Size(463, 432);
+			this->Controls->Add(this->tancaSessio);
+			this->Controls->Add(this->gestionaGrups);
+			this->Controls->Add(this->gestionaPerfil);
+			this->Controls->Add(this->menuEstudiant);
+			this->Controls->Add(this->studyHub);
 			this->Name = L"MenuEstudiant";
+			this->Text = L"MenuEstudiant";
+			this->Load += gcnew System::EventHandler(this, &MenuEstudiant::MenuEstudiant_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void tancaSessio_Click(System::Object^ sender, System::EventArgs^ e) {
 		// Crear una nova instancia del nou formulari
 		StudyHub::TancarSessio^ tancarSes = gcnew StudyHub::TancarSessio();
 
@@ -125,9 +158,30 @@ namespace StudyHub {
 			this->Visible = true;
 		}
 		else {
-			// Si la sessió s'ha tancat, tanquem MenuEstudiant
+			// Si la sessiÃ³ s'ha tancat, tanquem MenuEstudiant
 			Close();
 		}
 	}
-	};
+private: System::Void gestionaGrups_Click(System::Object^ sender, System::EventArgs^ e) {
+	StudyHub::MenuGestioGrups^ gestionaGrups = gcnew StudyHub::MenuGestioGrups();
+	this->Visible = false;
+	gestionaGrups->ShowDialog();
+	this->Visible = true;
+}
+private: System::Void MenuEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void gestionaPerfil_Click(System::Object^ sender, System::EventArgs^ e) {
+	StudyHub::MenuGestioEstudiant^ gestionaEstudiant = gcnew StudyHub::MenuGestioEstudiant();
+	this->Visible = false;
+	gestionaEstudiant->ShowDialog();
+
+	Sistema^ sistema = Sistema::getInstance();
+	if (sistema->obteEstatSessio()) {
+		this->Visible = true;
+	}
+	else {
+		this->Close();
+	}
+}
+};
 }
