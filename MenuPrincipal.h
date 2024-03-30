@@ -1,7 +1,6 @@
 #pragma once
 #include "IniciSessio.h"
 #include "CrearEstudiant.h"
-#include <iostream>
 
 namespace StudyHub {
 
@@ -13,7 +12,7 @@ namespace StudyHub {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MenuPrincipal
+	/// Resumen de MenuPrincipal
 	/// </summary>
 	public ref class MenuPrincipal : public System::Windows::Forms::Form
 	{
@@ -22,13 +21,13 @@ namespace StudyHub {
 		{
 			InitializeComponent();
 			//
-			//TODO: Add the constructor code here
+			//TODO: agregar código de constructor aquí
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Clean up any resources being used.
+		/// Limpiar los recursos que se estén usando.
 		/// </summary>
 		~MenuPrincipal()
 		{
@@ -37,75 +36,134 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Label^ studyHyb;
+	private: System::Windows::Forms::Label^ menuPrincipal;
+	private: System::Windows::Forms::Button^ iniciarSessio;
+	private: System::Windows::Forms::Button^ registrar;
+	private: System::Windows::Forms::Button^ sortir;
+
+
 	protected:
 
 	protected:
 
 	private:
 		/// <summary>
-		/// Required designer variable.
+		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
+		/// Método necesario para admitir el Diseñador. No se puede modificar
+		/// el contenido de este método con el editor de código.
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->studyHyb = (gcnew System::Windows::Forms::Label());
+			this->menuPrincipal = (gcnew System::Windows::Forms::Label());
+			this->iniciarSessio = (gcnew System::Windows::Forms::Button());
+			this->registrar = (gcnew System::Windows::Forms::Button());
+			this->sortir = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// button1
+			// studyHyb
 			// 
-			this->button1->Location = System::Drawing::Point(174, 143);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(110, 23);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Iniciar Sessio";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MenuPrincipal::button1_Click);
+			this->studyHyb->AutoSize = true;
+			this->studyHyb->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->studyHyb->Location = System::Drawing::Point(71, 31);
+			this->studyHyb->Name = L"studyHyb";
+			this->studyHyb->Size = System::Drawing::Size(178, 42);
+			this->studyHyb->TabIndex = 0;
+			this->studyHyb->Text = L"StudyHub";
+			this->studyHyb->Click += gcnew System::EventHandler(this, &MenuPrincipal::label1_Click);
 			// 
-			// button2
+			// menuPrincipal
 			// 
-			this->button2->Location = System::Drawing::Point(174, 114);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(110, 23);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Registrarse";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MenuPrincipal::button2_Click);
+			this->menuPrincipal->AutoSize = true;
+			this->menuPrincipal->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->menuPrincipal->Location = System::Drawing::Point(85, 99);
+			this->menuPrincipal->Name = L"menuPrincipal";
+			this->menuPrincipal->Size = System::Drawing::Size(164, 27);
+			this->menuPrincipal->TabIndex = 1;
+			this->menuPrincipal->Text = L"Menú Principal";
+			// 
+			// iniciarSessio
+			// 
+			this->iniciarSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->iniciarSessio->Location = System::Drawing::Point(78, 148);
+			this->iniciarSessio->Name = L"iniciarSessio";
+			this->iniciarSessio->Size = System::Drawing::Size(171, 62);
+			this->iniciarSessio->TabIndex = 2;
+			this->iniciarSessio->Text = L"Iniciar Sessió";
+			this->iniciarSessio->UseVisualStyleBackColor = true;
+			this->iniciarSessio->Click += gcnew System::EventHandler(this, &MenuPrincipal::iniciarSessio_Click);
+			// 
+			// registrar
+			// 
+			this->registrar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->registrar->Location = System::Drawing::Point(78, 245);
+			this->registrar->Name = L"registrar";
+			this->registrar->Size = System::Drawing::Size(171, 64);
+			this->registrar->TabIndex = 3;
+			this->registrar->Text = L"Registrar-se";
+			this->registrar->UseVisualStyleBackColor = true;
+			this->registrar->Click += gcnew System::EventHandler(this, &MenuPrincipal::registrar_Click);
+			// 
+			// sortir
+			// 
+			this->sortir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->sortir->Location = System::Drawing::Point(78, 343);
+			this->sortir->Name = L"sortir";
+			this->sortir->Size = System::Drawing::Size(171, 56);
+			this->sortir->TabIndex = 4;
+			this->sortir->Text = L"Sortir";
+			this->sortir->UseVisualStyleBackColor = true;
+			this->sortir->Click += gcnew System::EventHandler(this, &MenuPrincipal::sortir_Click);
 			// 
 			// MenuPrincipal
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(469, 307);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(344, 478);
+			this->Controls->Add(this->sortir);
+			this->Controls->Add(this->registrar);
+			this->Controls->Add(this->iniciarSessio);
+			this->Controls->Add(this->menuPrincipal);
+			this->Controls->Add(this->studyHyb);
 			this->Name = L"MenuPrincipal";
 			this->Text = L"MenuPrincipal";
+			this->Load += gcnew System::EventHandler(this, &MenuPrincipal::MenuPrincipal_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		StudyHub::IniciSessio^ iniciSessio = gcnew StudyHub::IniciSessio();
-
-		this->Visible = false;
-
-		iniciSessio->ShowDialog();
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		StudyHub::CrearEstudiant^ crearEstudiant = gcnew CrearEstudiant();
-
-		this->Visible = false;
-
-		crearEstudiant->ShowDialog();
+	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+private: System::Void iniciarSessio_Click(System::Object^ sender, System::EventArgs^ e) {
+	StudyHub::IniciSessio^ iniciSessio = gcnew StudyHub::IniciSessio();
+	this->Visible = false;
+	iniciSessio->ShowDialog();
+	this->Visible = true;
+}
+private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^ e) {
+	StudyHub::CrearEstudiant^ registraEstudiant = gcnew StudyHub::CrearEstudiant();
+	this->Visible = false;
+	registraEstudiant->ShowDialog();
+	this->Visible = true;
+}
+private: System::Void MenuPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
