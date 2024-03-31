@@ -135,6 +135,7 @@
     <ClInclude Include="CercadoraGrup.h" />
     <ClInclude Include="CercadoraPertany.h" />
     <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="ConsultarEstudiant.h" />
     <ClInclude Include="ConsultarGrup.h" />
     <ClInclude Include="CreaEstudiantPresentacio.h" />
     <ClInclude Include="CrearEstudiant.h" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sistema.h" />
     <ClInclude Include="TancarSessio.h" />
+    <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
     <ClInclude Include="TxCreaEstudiant.h" />
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
@@ -175,6 +177,7 @@
     <ClCompile Include="CercadoraGrup.cpp" />
     <ClCompile Include="CercadoraPertany.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="ConsultarEstudiant.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CreaEstudiantPresentacio.cpp" />
@@ -201,6 +204,7 @@
     </ClCompile>
     <ClCompile Include="Sistema.cpp" />
     <ClCompile Include="TancarSessio.cpp" />
+    <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
     <ClCompile Include="TxCreaEstudiant.cpp" />
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />

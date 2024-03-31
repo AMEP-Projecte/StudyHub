@@ -2,6 +2,7 @@
 // #include "ConsultarEstudiant.h"
 #include "EditarEstudiant.h"
 #include "EliminarPerfilEstudiantUI.h"
+#include "ConsultarEstudiant.h"
 #include "Sistema.h"
 
 namespace StudyHub {
@@ -162,12 +163,12 @@ namespace StudyHub {
 private: System::Void MenuGestioEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*
+	
 	StudyHub::ConsultarEstudiant^ consultar = gcnew StudyHub::ConsultarEstudiant();
 	this->Visible = false;
 	consultar->ShowDialog();
 	this->Visible = true;
-	*/
+	
 }
 private: System::Void editar_Click(System::Object^ sender, System::EventArgs^ e) {
 	StudyHub::EditarEstudiant^ editar = gcnew StudyHub::EditarEstudiant();
