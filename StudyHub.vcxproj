@@ -93,6 +93,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <AdditionalDependencies />
@@ -134,7 +135,7 @@
     <ClInclude Include="CercadoraGrup.h" />
     <ClInclude Include="CercadoraPertany.h" />
     <ClInclude Include="CercadoraUsuari.h" />
-    <ClInclude Include="consultargrup.h" />
+    <ClInclude Include="ConsultarGrup.h" />
     <ClInclude Include="CreaEstudiantPresentacio.h" />
     <ClInclude Include="CrearEstudiant.h" />
     <ClInclude Include="CrearGrupEstudi.h" />
@@ -145,10 +146,11 @@
     <ClInclude Include="EliminarPerfilEstudiantUI.h" />
     <ClInclude Include="IniciSessio.h" />
     <ClInclude Include="MenuEstudiant.h" />
+    <ClInclude Include="MenuGestioEstudiant.h" />
+    <ClInclude Include="MenuGestioGrups.h" />
     <ClInclude Include="MenuPrincipal.h">
-      <FileType>CppForm</FileType>
+      <FileType>CppHeader</FileType>
     </ClInclude>
-    <ClInclude Include="mostraInformacioGrup.h" />
     <ClInclude Include="PassarellaEstudiant.h" />
     <ClInclude Include="PassarellaGrup.h" />
     <ClInclude Include="PassarellaPertany.h" />
@@ -166,7 +168,6 @@
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxTancarSessio.h" />
-    <ClInclude Include="Transaccio.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -174,6 +175,7 @@
     <ClCompile Include="CercadoraGrup.cpp" />
     <ClCompile Include="CercadoraPertany.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CreaEstudiantPresentacio.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />
@@ -184,8 +186,9 @@
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />
     <ClCompile Include="IniciSessio.cpp" />
     <ClCompile Include="MenuEstudiant.cpp" />
+    <ClCompile Include="MenuGestioEstudiant.cpp" />
+    <ClCompile Include="MenuGestioGrups.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
-    <ClCompile Include="mostraInformacioGrup.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
     <ClCompile Include="PassarellaGrup.cpp" />
     <ClCompile Include="PassarellaPertany.cpp" />

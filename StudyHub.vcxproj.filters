@@ -38,9 +38,6 @@
     <ClInclude Include="CercadoraUsuari.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="consultargrup.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CreaEstudiantPresentacio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -69,9 +66,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuEstudiant.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mostraInformacioGrup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PassarellaEstudiant.h">
@@ -119,10 +113,16 @@
     <ClInclude Include="TxTancarSessio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Transaccio.h">
+    <ClInclude Include="MenuPrincipal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuPrincipal.h">
+    <ClInclude Include="MenuGestioEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGestioGrups.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultarGrup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -175,9 +175,6 @@
     <ClCompile Include="MenuEstudiant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mostraInformacioGrup.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PassarellaEstudiant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -224,6 +221,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MenuPrincipal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioGrups.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarGrup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
