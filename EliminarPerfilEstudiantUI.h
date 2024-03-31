@@ -179,6 +179,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		if (contrasenya != "") {
 			TxEsborraUsuari txEU(contrasenya);
 			txEU.executar();
+			this->Close();
 		}
 		else {
 			MessageBox::Show("Has d'omplir el camp.");
@@ -189,6 +190,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 private: System::Void EliminarPerfilEstudiantUI_Load(System::Object^ sender, System::EventArgs^ e) {
 }

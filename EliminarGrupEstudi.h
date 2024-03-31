@@ -382,6 +382,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			TxEliminarGrup EliminarGrup(this->textBox1->Text, sist->obteEstudiant()->obteUsername()); 
 			EliminarGrup.executar();
 			omplir();
+			this->Close();
 		}
 		else {
 			MessageBox::Show("Escriu el nom del grup a eliminar.");

@@ -1,6 +1,5 @@
 #pragma once
 #include "TxEditarEstudiant.h"
-#include "MenuEstudiant.h"
 
 namespace StudyHub {
 
@@ -21,13 +20,13 @@ namespace StudyHub {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar c�digo de constructor aqu�
+			//TODO: agregar código de constructor aquí
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se est�n usando.
+		/// Limpiar los recursos que se estén usando.
 		/// </summary>
 		~EditarEstudiant()
 		{
@@ -36,180 +35,215 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ StudyHub;
+	private: System::Windows::Forms::Button^ cancel;
+	private: System::Windows::Forms::Button^ edit;
+	private: System::Windows::Forms::Label^ editStudent;
+	private: System::Windows::Forms::Label^ name;
+	private: System::Windows::Forms::Label^ surnames;
+	private: System::Windows::Forms::Label^ language;
+	private: System::Windows::Forms::Label^ location;
+	private: System::Windows::Forms::Label^ password;
+	private: System::Windows::Forms::TextBox^ textName;
+	private: System::Windows::Forms::TextBox^ textSurnames;
+	private: System::Windows::Forms::TextBox^ textLanguage;
+	private: System::Windows::Forms::TextBox^ textLocation;
+	private: System::Windows::Forms::TextBox^ textPassword;
+
+
+
+
+
+	protected:
+
 	protected:
 
 	private:
 		/// <summary>
-		/// Variable del dise�ador necesaria.
+		/// Variable del diseñador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// M�todo necesario para admitir el Dise�ador. No se puede modificar
-		/// el contenido de este m�todo con el editor de c�digo.
+		/// Método necesario para admitir el Diseñador. No se puede modificar
+		/// el contenido de este método con el editor de código.
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->StudyHub = (gcnew System::Windows::Forms::Label());
+			this->cancel = (gcnew System::Windows::Forms::Button());
+			this->edit = (gcnew System::Windows::Forms::Button());
+			this->editStudent = (gcnew System::Windows::Forms::Label());
+			this->name = (gcnew System::Windows::Forms::Label());
+			this->surnames = (gcnew System::Windows::Forms::Label());
+			this->language = (gcnew System::Windows::Forms::Label());
+			this->location = (gcnew System::Windows::Forms::Label());
+			this->password = (gcnew System::Windows::Forms::Label());
+			this->textName = (gcnew System::Windows::Forms::TextBox());
+			this->textSurnames = (gcnew System::Windows::Forms::TextBox());
+			this->textLanguage = (gcnew System::Windows::Forms::TextBox());
+			this->textLocation = (gcnew System::Windows::Forms::TextBox());
+			this->textPassword = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
-			// label1
+			// StudyHub
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->StudyHub->AutoSize = true;
+			this->StudyHub->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(140, 40);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(378, 29);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"EDITAR PERFIL D\'ESTUDIANT";
-			this->label1->Click += gcnew System::EventHandler(this, &EditarEstudiant::label1_Click);
+			this->StudyHub->Location = System::Drawing::Point(12, 25);
+			this->StudyHub->Name = L"StudyHub";
+			this->StudyHub->Size = System::Drawing::Size(202, 47);
+			this->StudyHub->TabIndex = 0;
+			this->StudyHub->Text = L"StudyHub";
+			this->StudyHub->Click += gcnew System::EventHandler(this, &EditarEstudiant::label1_Click);
 			// 
-			// label2
+			// cancel
 			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->cancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(60, 140);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(56, 25);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Nom";
+			this->cancel->Location = System::Drawing::Point(20, 362);
+			this->cancel->Name = L"cancel";
+			this->cancel->Size = System::Drawing::Size(127, 40);
+			this->cancel->TabIndex = 1;
+			this->cancel->Text = L"Cancel·lar";
+			this->cancel->UseVisualStyleBackColor = true;
+			this->cancel->Click += gcnew System::EventHandler(this, &EditarEstudiant::cancel_Click);
 			// 
-			// label3
+			// edit
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->edit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(60, 200);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(104, 25);
-			this->label3->TabIndex = 2;
-			this->label3->Text = L"Cognoms";
-			this->label3->Click += gcnew System::EventHandler(this, &EditarEstudiant::label3_Click);
+			this->edit->Location = System::Drawing::Point(502, 362);
+			this->edit->Name = L"edit";
+			this->edit->Size = System::Drawing::Size(117, 40);
+			this->edit->TabIndex = 2;
+			this->edit->Text = L"Editar";
+			this->edit->UseVisualStyleBackColor = true;
+			this->edit->Click += gcnew System::EventHandler(this, &EditarEstudiant::edit_Click);
 			// 
-			// label4
+			// editStudent
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->editStudent->AutoSize = true;
+			this->editStudent->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(60, 259);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(76, 25);
-			this->label4->TabIndex = 3;
-			this->label4->Text = L"Idioma";
+			this->editStudent->Location = System::Drawing::Point(15, 94);
+			this->editStudent->Name = L"editStudent";
+			this->editStudent->Size = System::Drawing::Size(197, 30);
+			this->editStudent->TabIndex = 3;
+			this->editStudent->Text = L"Editar Estudiant:";
 			// 
-			// label5
+			// name
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->name->AutoSize = true;
+			this->name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(60, 322);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(93, 25);
-			this->label5->TabIndex = 4;
-			this->label5->Text = L"Localitat";
+			this->name->Location = System::Drawing::Point(16, 143);
+			this->name->Name = L"name";
+			this->name->Size = System::Drawing::Size(47, 22);
+			this->name->TabIndex = 4;
+			this->name->Text = L"Nom";
+			this->name->Click += gcnew System::EventHandler(this, &EditarEstudiant::label1_Click_1);
 			// 
-			// label6
+			// surnames
 			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->surnames->AutoSize = true;
+			this->surnames->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(60, 386);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(135, 25);
-			this->label6->TabIndex = 5;
-			this->label6->Text = L"Contrasenya";
+			this->surnames->Location = System::Drawing::Point(16, 182);
+			this->surnames->Name = L"surnames";
+			this->surnames->Size = System::Drawing::Size(86, 22);
+			this->surnames->TabIndex = 5;
+			this->surnames->Text = L"Cognoms";
 			// 
-			// textBox1
+			// language
 			// 
-			this->textBox1->Location = System::Drawing::Point(269, 141);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(255, 26);
-			this->textBox1->TabIndex = 6;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(269, 201);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(249, 26);
-			this->textBox2->TabIndex = 7;
-			// 
-			// textBox3
-			// 
-			this->textBox3->Location = System::Drawing::Point(269, 260);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(249, 26);
-			this->textBox3->TabIndex = 8;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(269, 323);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(249, 26);
-			this->textBox4->TabIndex = 9;
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(269, 385);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(249, 26);
-			this->textBox5->TabIndex = 10;
-			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::SystemColors::ActiveBorder;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
+			this->language->AutoSize = true;
+			this->language->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(572, 459);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(155, 73);
-			this->button1->TabIndex = 11;
-			this->button1->Text = L"MODIFICA";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &EditarEstudiant::button1_Click);
+			this->language->Location = System::Drawing::Point(16, 227);
+			this->language->Name = L"language";
+			this->language->Size = System::Drawing::Size(62, 22);
+			this->language->TabIndex = 6;
+			this->language->Text = L"Idioma";
+			// 
+			// location
+			// 
+			this->location->AutoSize = true;
+			this->location->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->location->Location = System::Drawing::Point(16, 267);
+			this->location->Name = L"location";
+			this->location->Size = System::Drawing::Size(77, 22);
+			this->location->TabIndex = 7;
+			this->location->Text = L"Localitat";
+			// 
+			// password
+			// 
+			this->password->AutoSize = true;
+			this->password->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->password->Location = System::Drawing::Point(16, 311);
+			this->password->Name = L"password";
+			this->password->Size = System::Drawing::Size(112, 22);
+			this->password->TabIndex = 8;
+			this->password->Text = L"Contrasenya";
+			// 
+			// textName
+			// 
+			this->textName->Location = System::Drawing::Point(312, 139);
+			this->textName->Name = L"textName";
+			this->textName->Size = System::Drawing::Size(307, 26);
+			this->textName->TabIndex = 9;
+			// 
+			// textSurnames
+			// 
+			this->textSurnames->Location = System::Drawing::Point(312, 182);
+			this->textSurnames->Name = L"textSurnames";
+			this->textSurnames->Size = System::Drawing::Size(307, 26);
+			this->textSurnames->TabIndex = 10;
+			// 
+			// textLanguage
+			// 
+			this->textLanguage->Location = System::Drawing::Point(312, 227);
+			this->textLanguage->Name = L"textLanguage";
+			this->textLanguage->Size = System::Drawing::Size(307, 26);
+			this->textLanguage->TabIndex = 11;
+			// 
+			// textLocation
+			// 
+			this->textLocation->Location = System::Drawing::Point(312, 267);
+			this->textLocation->Name = L"textLocation";
+			this->textLocation->Size = System::Drawing::Size(307, 26);
+			this->textLocation->TabIndex = 12;
+			// 
+			// textPassword
+			// 
+			this->textPassword->Location = System::Drawing::Point(312, 311);
+			this->textPassword->Name = L"textPassword";
+			this->textPassword->Size = System::Drawing::Size(307, 26);
+			this->textPassword->TabIndex = 13;
 			// 
 			// EditarEstudiant
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(753, 574);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
-			this->Controls->Add(this->textBox3);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label6);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->ClientSize = System::Drawing::Size(651, 426);
+			this->Controls->Add(this->textPassword);
+			this->Controls->Add(this->textLocation);
+			this->Controls->Add(this->textLanguage);
+			this->Controls->Add(this->textSurnames);
+			this->Controls->Add(this->textName);
+			this->Controls->Add(this->password);
+			this->Controls->Add(this->location);
+			this->Controls->Add(this->language);
+			this->Controls->Add(this->surnames);
+			this->Controls->Add(this->name);
+			this->Controls->Add(this->editStudent);
+			this->Controls->Add(this->edit);
+			this->Controls->Add(this->cancel);
+			this->Controls->Add(this->StudyHub);
 			this->Name = L"EditarEstudiant";
 			this->Text = L"EditarEstudiant";
 			this->Load += gcnew System::EventHandler(this, &EditarEstudiant::EditarEstudiant_Load);
@@ -220,16 +254,14 @@ namespace StudyHub {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void EditarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ n = textBox1->Text;    // nom
-	String^ cg = textBox2->Text;   // cognoms
-	String^ i = textBox3->Text;    // idioma
-	String^ l = textBox4->Text;    // localitat
-	String^ c = textBox5->Text;    // contrasenya
+private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ n = textName->Text;    // nom
+	String^ cg = textSurnames->Text;   // cognoms
+	String^ i = textLanguage->Text;    // idioma
+	String^ l = textLocation->Text;    // localitat
+	String^ c = textPassword->Text;    // contrasenya
 
 	try {
 		if (n == "" && cg == "" && i == "" && l == "" && c == "") {
@@ -238,12 +270,18 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		else {
 			TxEditarEstudiant^ tx = gcnew TxEditarEstudiant(n, cg, i, l, c);
 			tx->executar();
+			MessageBox::Show("Dades modificades correctament.");
+			this->Close();
 		}
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
 }
-		
+private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void EditarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
