@@ -246,7 +246,7 @@ namespace StudyHub {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ConsultarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultarEstudiant tx("JoanGarcia12");
+		TxConsultarEstudiant tx("");
 		try
 		{
 			tx.executar();

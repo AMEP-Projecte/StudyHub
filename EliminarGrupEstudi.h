@@ -84,9 +84,10 @@ namespace StudyHub {
 		// Pre: Cert
 		// Post: Hem creat una Data Table amb l'inforamació dels grups creats per l'usuari actual 
 		void omplir() {
+			Sistema^ sist = Sistema::getInstance();
 			MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
 			DataTable^ dt = gcnew DataTable();
-			String^ sql = String::Format("SELECT * FROM grup WHERE creador = '{0}';", "RR_04");
+			String^ sql = String::Format("SELECT * FROM grup WHERE creador = '{0}';", sist->obteEstudiant()->obteUsername());
 			MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);
 
 			da->Fill(dt);

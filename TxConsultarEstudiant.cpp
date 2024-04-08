@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "TxConsultarEstudiant.h"
+#include "Sistema.h"
 #include "Alert.h"
 
 TxConsultarEstudiant::TxConsultarEstudiant(String^ nomE)
@@ -10,12 +11,10 @@ TxConsultarEstudiant::TxConsultarEstudiant(String^ nomE)
 
 void TxConsultarEstudiant::executar()
 {
-    CercadoraEstudiant ce;
-    PassarellaEstudiant^ pe;
-   
     try
     {
-        pe = ce.cercaEstudiantPerNom(nomEstudiant);
+        Sistema^ sist = Sistema::getInstance();
+        PassarellaEstudiant^ pe = sist->obteEstudiant();
         nom = pe->obteNom();
         cognom = pe->obteCognoms();
         nomUsuari = pe->obteNomUsuari();

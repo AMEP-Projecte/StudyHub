@@ -126,17 +126,22 @@ namespace StudyHub {
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ username = this->textBox1->Text;
 	String^ contrasenya = this->textBox2->Text;
-	TxIniciarSessio^ tx;
-	tx = gcnew TxIniciarSessio(username, contrasenya);
-	bool err = tx->executar();
-	if (err) {
-		MessageBox::Show("Error amb l'inici de sessio");
+	if (username == "" || contrasenya == "") {
+		MessageBox::Show("Error: Completa tots els camps");
 	}
 	else {
-		StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();
-		this->Visible = false;
-		menuEstudiant->ShowDialog();
-		this->Close();
+		TxIniciarSessio^ tx;
+		tx = gcnew TxIniciarSessio(username, contrasenya);
+		bool err = tx->executar();
+		if (err) {
+			MessageBox::Show("Error amb l'inici de sessio");
+		}
+		else {
+			StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();
+			this->Visible = false;
+			menuEstudiant->ShowDialog();
+			this->Close();
+		}
 	}
 }
 };
