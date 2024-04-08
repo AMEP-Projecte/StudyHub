@@ -137,9 +137,7 @@
     <ClInclude Include="CercadoraUsuari.h" />
     <ClInclude Include="ConsultarEstudiant.h" />
     <ClInclude Include="ConsultarGrup.h" />
-    <ClInclude Include="CreaEstudiantPresentacio.h" />
     <ClInclude Include="CrearEstudiant.h" />
-    <ClInclude Include="CrearGrupEstudi.h" />
     <ClInclude Include="CrearNouGrupEstudi.h" />
     <ClInclude Include="EditarEstudiant.h" />
     <ClInclude Include="EditarGrup.h" />
@@ -180,7 +178,6 @@
     <ClCompile Include="ConsultarEstudiant.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
-    <ClCompile Include="CreaEstudiantPresentacio.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />
     <ClCompile Include="CrearNouGrupEstudi.cpp" />
     <ClCompile Include="EditarEstudiant.cpp" />
