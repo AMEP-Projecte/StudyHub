@@ -150,9 +150,14 @@
     <ClInclude Include="MenuPrincipal.h">
       <FileType>CppHeader</FileType>
     </ClInclude>
+    <ClInclude Include="PassarellaAdmin.h" />
+    <ClInclude Include="PassarellaEspai.h" />
     <ClInclude Include="PassarellaEstudiant.h" />
     <ClInclude Include="PassarellaGrup.h" />
+    <ClInclude Include="PassarellaParticipa.h" />
     <ClInclude Include="PassarellaPertany.h" />
+    <ClInclude Include="PassarellaProveidor.h" />
+    <ClInclude Include="PassarellaSessio.h" />
     <ClInclude Include="PassarellaUsuari.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -189,9 +194,14 @@
     <ClCompile Include="MenuGestioEstudiant.cpp" />
     <ClCompile Include="MenuGestioGrups.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
+    <ClCompile Include="PassarellaAdmin.cpp" />
+    <ClCompile Include="PassarellaEspai.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
     <ClCompile Include="PassarellaGrup.cpp" />
+    <ClCompile Include="PassarellaParticipa.cpp" />
     <ClCompile Include="PassarellaPertany.cpp" />
+    <ClCompile Include="PassarellaProveidor.cpp" />
+    <ClCompile Include="PassarellaSessio.cpp" />
     <ClCompile Include="PassarellaUsuari.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
