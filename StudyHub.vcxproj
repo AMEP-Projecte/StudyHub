@@ -135,20 +135,44 @@
     <ClInclude Include="CercadoraGrup.h" />
     <ClInclude Include="CercadoraPertany.h" />
     <ClInclude Include="CercadoraUsuari.h" />
-    <ClInclude Include="ConsultarEstudiant.h" />
-    <ClInclude Include="ConsultarGrup.h" />
-    <ClInclude Include="CrearEstudiant.h" />
-    <ClInclude Include="CrearNouGrupEstudi.h" />
-    <ClInclude Include="EditarEstudiant.h" />
-    <ClInclude Include="EditarGrup.h" />
-    <ClInclude Include="EliminarGrupEstudi.h" />
-    <ClInclude Include="EliminarPerfilEstudiantUI.h" />
-    <ClInclude Include="IniciSessio.h" />
-    <ClInclude Include="MenuEstudiant.h" />
-    <ClInclude Include="MenuGestioEstudiant.h" />
-    <ClInclude Include="MenuGestioGrups.h" />
+    <ClInclude Include="ConsultarEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ConsultarGrup.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearNouGrupEstudi.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditarEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditarGrup.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EliminarGrupEstudi.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EliminarPerfilEstudiantUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="IniciSessio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MenuEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MenuGestioEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MenuGestioGrups.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MenuPrincipal.h">
-      <FileType>CppHeader</FileType>
+      <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarellaAdmin.h" />
     <ClInclude Include="PassarellaEspai.h" />
@@ -162,7 +186,9 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sistema.h" />
-    <ClInclude Include="TancarSessio.h" />
+    <ClInclude Include="TancarSessio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
     <ClInclude Include="TxCreaEstudiant.h" />

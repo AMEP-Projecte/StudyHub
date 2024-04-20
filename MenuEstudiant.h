@@ -39,7 +39,7 @@ namespace StudyHub {
 			}
 		}
 	private: System::Windows::Forms::Label^ studyHub;
-	private: System::Windows::Forms::Label^ menuEstudiant;
+	private: System::Windows::Forms::Label^ menuEstudiantt;
 	private: System::Windows::Forms::Button^ gestionaPerfil;
 	private: System::Windows::Forms::Button^ gestionaGrups;
 	private: System::Windows::Forms::Button^ tancaSessio;
@@ -60,7 +60,7 @@ namespace StudyHub {
 		void InitializeComponent(void)
 		{
 			this->studyHub = (gcnew System::Windows::Forms::Label());
-			this->menuEstudiant = (gcnew System::Windows::Forms::Label());
+			this->menuEstudiantt = (gcnew System::Windows::Forms::Label());
 			this->gestionaPerfil = (gcnew System::Windows::Forms::Button());
 			this->gestionaGrups = (gcnew System::Windows::Forms::Button());
 			this->tancaSessio = (gcnew System::Windows::Forms::Button());
@@ -79,14 +79,14 @@ namespace StudyHub {
 			// 
 			// menuEstudiant
 			// 
-			this->menuEstudiant->AutoSize = true;
-			this->menuEstudiant->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->menuEstudiantt->AutoSize = true;
+			this->menuEstudiantt->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->menuEstudiant->Location = System::Drawing::Point(116, 75);
-			this->menuEstudiant->Name = L"menuEstudiant";
-			this->menuEstudiant->Size = System::Drawing::Size(171, 27);
-			this->menuEstudiant->TabIndex = 1;
-			this->menuEstudiant->Text = L"Menú Estudiant";
+			this->menuEstudiantt->Location = System::Drawing::Point(116, 75);
+			this->menuEstudiantt->Name = L"menuEstudiant";
+			this->menuEstudiantt->Size = System::Drawing::Size(171, 27);
+			this->menuEstudiantt->TabIndex = 1;
+			this->menuEstudiantt->Text = L"Menú Estudiant";
 			// 
 			// gestionaPerfil
 			// 
@@ -132,7 +132,7 @@ namespace StudyHub {
 			this->Controls->Add(this->tancaSessio);
 			this->Controls->Add(this->gestionaGrups);
 			this->Controls->Add(this->gestionaPerfil);
-			this->Controls->Add(this->menuEstudiant);
+			this->Controls->Add(this->menuEstudiantt);
 			this->Controls->Add(this->studyHub);
 			this->Name = L"MenuEstudiant";
 			this->Text = L"MenuEstudiant";
