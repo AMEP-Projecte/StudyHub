@@ -20,5 +20,7 @@ public:
 	// setters
 	void posaEstudiant(String^ estudiant);
 	void posaGrup(String^ grup);
+
+	void insereix();
 };
 
