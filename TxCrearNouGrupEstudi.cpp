@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "TxCrearNouGrupEstudi.h"
+#include "PassarellaPertany.h"
 
 using namespace System::Windows::Forms;
 

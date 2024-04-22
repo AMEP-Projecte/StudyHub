@@ -1,8 +1,8 @@
 #pragma once
-// #include "ConsultarEstudiant.h"
+// #include "ConsultarEstudiantUI.h"
 #include "EditarEstudiant.h"
 #include "EliminarPerfilEstudiantUI.h"
-#include "ConsultarEstudiant.h"
+#include "ConsultarEstudiantUI.h"
 #include "Sistema.h"
 
 namespace StudyHub {
@@ -164,7 +164,7 @@ private: System::Void MenuGestioEstudiant_Load(System::Object^ sender, System::E
 }
 private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ e) {
 	
-	StudyHub::ConsultarEstudiant^ consultar = gcnew StudyHub::ConsultarEstudiant();
+	StudyHub::ConsultarEstudiantUI^ consultar = gcnew StudyHub::ConsultarEstudiantUI();
 	this->Visible = false;
 	consultar->ShowDialog();
 	this->Visible = true;

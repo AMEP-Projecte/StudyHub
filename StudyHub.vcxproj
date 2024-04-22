@@ -131,11 +131,16 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CercadoraAdmin.h" />
+    <ClInclude Include="CercadoraEspai.h" />
     <ClInclude Include="CercadoraEstudiant.h" />
     <ClInclude Include="CercadoraGrup.h" />
+    <ClInclude Include="CercadoraParticipa.h" />
     <ClInclude Include="CercadoraPertany.h" />
+    <ClInclude Include="CercadoraProveidor.h" />
+    <ClInclude Include="CercadoraSessio.h" />
     <ClInclude Include="CercadoraUsuari.h" />
-    <ClInclude Include="ConsultarEstudiant.h">
+    <ClInclude Include="ConsultarEstudiantUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ConsultarGrup.h">
@@ -202,11 +207,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercadoraAdmin.cpp" />
+    <ClCompile Include="CercadoraEspai.cpp" />
     <ClCompile Include="CercadoraEstudiant.cpp" />
     <ClCompile Include="CercadoraGrup.cpp" />
+    <ClCompile Include="CercadoraParticipa.cpp" />
     <ClCompile Include="CercadoraPertany.cpp" />
+    <ClCompile Include="CercadoraProveidor.cpp" />
+    <ClCompile Include="CercadoraSessio.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
-    <ClCompile Include="ConsultarEstudiant.cpp" />
+    <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />

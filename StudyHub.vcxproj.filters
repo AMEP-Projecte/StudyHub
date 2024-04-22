@@ -55,6 +55,54 @@
     <Filter Include="GestioEstudiants\PassarellaCercadora">
       <UniqueIdentifier>{24c6568f-e523-431c-a276-58b10de0f45e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GestioAdmin">
+      <UniqueIdentifier>{6c25b5b7-cfba-48d4-b2ab-a1c1009fb043}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioAdmin\PassarellaCercadora">
+      <UniqueIdentifier>{6576f1a7-0ef0-470a-b51d-db0046717cd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioAdmin\Presentacio">
+      <UniqueIdentifier>{975ebf46-9108-4cfd-8f9a-b4a3db976da6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioAdmin\Tx">
+      <UniqueIdentifier>{cd9b006d-3b0e-4fe9-8d44-944e92fe05c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioEspai">
+      <UniqueIdentifier>{1d59c509-cc61-4ed7-9343-08bcbf281dd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioEspai\PassarellaCercadora">
+      <UniqueIdentifier>{6b2961bd-d678-48c2-a13a-2a4aab83f471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioEspai\Presentacio">
+      <UniqueIdentifier>{386b4f34-0d75-4297-8da1-3dadfbea7449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioEspai\Tx">
+      <UniqueIdentifier>{1cd65106-9c8d-43b2-8d91-cef21b3e8946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioSessio">
+      <UniqueIdentifier>{f4628b33-d7d3-4f68-b5ad-5a64a1a610a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioSessio\Presentacio">
+      <UniqueIdentifier>{57df4255-0485-4a7b-afd1-a12178b9eaa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioSessio\Tx">
+      <UniqueIdentifier>{026e4049-8fd6-4c84-b3f1-c524f10cbaf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioSessio\PassarellaCercadora">
+      <UniqueIdentifier>{3d720df3-9414-451e-bcc7-441d126b1c9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioProveidor">
+      <UniqueIdentifier>{4f7b2a9c-b882-4c25-8707-f173af9a0908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioProveidor\PassarellaCercadora">
+      <UniqueIdentifier>{be3515ea-6071-4d6a-a8f2-8275c1615d2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioProveidor\Presentacio">
+      <UniqueIdentifier>{1dae7e2a-6047-4011-9014-849c73275cca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioProveidor\Tx">
+      <UniqueIdentifier>{d9ad9ac1-141c-416b-92cc-97f4448258be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -71,7 +119,7 @@
     <ClInclude Include="CrearEstudiant.h">
       <Filter>GestioEstudiants\Presentacio</Filter>
     </ClInclude>
-    <ClInclude Include="ConsultarEstudiant.h">
+    <ClInclude Include="ConsultarEstudiantUI.h">
       <Filter>GestioEstudiants\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="EditarEstudiant.h">
@@ -167,6 +215,36 @@
     <ClInclude Include="CercadoraPertany.h">
       <Filter>GestioGrups\PasarellaCercadora</Filter>
     </ClInclude>
+    <ClInclude Include="CercadoraAdmin.h">
+      <Filter>GestioAdmin\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaAdmin.h">
+      <Filter>GestioAdmin\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraEspai.h">
+      <Filter>GestioEspai\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaEspai.h">
+      <Filter>GestioEspai\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraSessio.h">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraParticipa.h">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaParticipa.h">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaSessio.h">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraProveidor.h">
+      <Filter>GestioProveidor\PassarellaCercadora</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaProveidor.h">
+      <Filter>GestioProveidor\PassarellaCercadora</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -178,7 +256,7 @@
     <ClCompile Include="CrearEstudiant.cpp">
       <Filter>GestioEstudiants\Presentacio</Filter>
     </ClCompile>
-    <ClCompile Include="ConsultarEstudiant.cpp">
+    <ClCompile Include="ConsultarEstudiantUI.cpp">
       <Filter>GestioEstudiants\Presentacio</Filter>
     </ClCompile>
     <ClCompile Include="EditarEstudiant.cpp">
@@ -276,6 +354,36 @@
     </ClCompile>
     <ClCompile Include="CercadoraPertany.cpp">
       <Filter>GestioGrups\PasarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraAdmin.cpp">
+      <Filter>GestioAdmin\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaAdmin.cpp">
+      <Filter>GestioAdmin\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraEspai.cpp">
+      <Filter>GestioEspai\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaEspai.cpp">
+      <Filter>GestioEspai\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraParticipa.cpp">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraSessio.cpp">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaParticipa.cpp">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaSessio.cpp">
+      <Filter>GestioSessio\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraProveidor.cpp">
+      <Filter>GestioProveidor\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaProveidor.cpp">
+      <Filter>GestioProveidor\PassarellaCercadora</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -10,12 +10,12 @@ namespace StudyHub {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for ConsultarEstudiant
+	/// Summary for ConsultarEstudiantUI
 	/// </summary>
-	public ref class ConsultarEstudiant : public System::Windows::Forms::Form
+	public ref class ConsultarEstudiantUI : public System::Windows::Forms::Form
 	{
 	public:
-		ConsultarEstudiant(void)
+		ConsultarEstudiantUI(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace StudyHub {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~ConsultarEstudiant()
+		~ConsultarEstudiantUI()
 		{
 			if (components)
 			{
@@ -94,7 +94,7 @@ namespace StudyHub {
 			this->label1->Size = System::Drawing::Size(938, 84);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Consultar Informació Estudiant";
-			this->label1->Click += gcnew System::EventHandler(this, &ConsultarEstudiant::label1_Click);
+			this->label1->Click += gcnew System::EventHandler(this, &ConsultarEstudiantUI::label1_Click);
 			// 
 			// Label
 			// 
@@ -215,7 +215,7 @@ namespace StudyHub {
 			this->valoracionsLabel->Size = System::Drawing::Size(0, 32);
 			this->valoracionsLabel->TabIndex = 14;
 			// 
-			// ConsultarEstudiant
+			// ConsultarEstudiantUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(16, 31);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -235,9 +235,9 @@ namespace StudyHub {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->Label);
 			this->Controls->Add(this->label1);
-			this->Name = L"ConsultarEstudiant";
-			this->Text = L"ConsultarEstudiant";
-			this->Load += gcnew System::EventHandler(this, &ConsultarEstudiant::ConsultarEstudiant_Load);
+			this->Name = L"ConsultarEstudiantUI";
+			this->Text = L"ConsultarEstudiantUI";
+			this->Load += gcnew System::EventHandler(this, &ConsultarEstudiantUI::ConsultarEstudiantUI_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -245,7 +245,7 @@ namespace StudyHub {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void ConsultarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void ConsultarEstudiantUI_Load(System::Object^ sender, System::EventArgs^ e) {
 		TxConsultarEstudiant tx("");
 		try
 		{

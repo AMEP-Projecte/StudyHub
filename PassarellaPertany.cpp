@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "PassarellaPertany.h"
 
+using namespace MySql::Data::MySqlClient;
+using namespace System;
+using namespace System::Windows::Forms;
+using namespace std;
+
 PassarellaPertany::PassarellaPertany(String^ estudiant, String^ grup) {
 	_estudiant = estudiant;
 	_grup = grup;
