@@ -35,7 +35,7 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -73,7 +73,6 @@ namespace StudyHub {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->nomGrup = (gcnew System::Windows::Forms::TextBox());
@@ -85,68 +84,62 @@ namespace StudyHub {
 			this->labelParticipants = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(12, 9);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(178, 42);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"StudyHub";
-			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(14, 62);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label2->Location = System::Drawing::Point(101, 39);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(249, 27);
+			this->label2->Size = System::Drawing::Size(402, 42);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Consultar Grup d\'Estudi";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->BackColor = System::Drawing::Color::Gainsboro;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(12, 127);
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
+			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label3->Location = System::Drawing::Point(104, 130);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(306, 25);
+			this->label3->Size = System::Drawing::Size(52, 22);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Nom del grup que es vol consultar";
+			this->label3->Text = L"Nom ";
 			this->label3->Click += gcnew System::EventHandler(this, &ConsultarGrup::label3_Click);
 			// 
 			// nomGrup
 			// 
-			this->nomGrup->Location = System::Drawing::Point(348, 127);
+			this->nomGrup->Location = System::Drawing::Point(194, 133);
+			this->nomGrup->Margin = System::Windows::Forms::Padding(2);
 			this->nomGrup->Name = L"nomGrup";
-			this->nomGrup->Size = System::Drawing::Size(320, 26);
+			this->nomGrup->Size = System::Drawing::Size(300, 20);
 			this->nomGrup->TabIndex = 3;
 			this->nomGrup->TextChanged += gcnew System::EventHandler(this, &ConsultarGrup::textBox1_TextChanged);
 			// 
 			// theme
 			// 
 			this->theme->AutoSize = true;
-			this->theme->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->theme->Location = System::Drawing::Point(196, 239);
+			this->theme->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->theme->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->theme->Location = System::Drawing::Point(105, 188);
+			this->theme->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->theme->Name = L"theme";
-			this->theme->Size = System::Drawing::Size(99, 25);
+			this->theme->Size = System::Drawing::Size(79, 20);
 			this->theme->TabIndex = 4;
 			this->theme->Text = L"Tem�tica:";
 			// 
 			// participants
 			// 
 			this->participants->AutoSize = true;
-			this->participants->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->participants->Location = System::Drawing::Point(75, 286);
+			this->participants->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->participants->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->participants->Location = System::Drawing::Point(105, 221);
+			this->participants->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->participants->Name = L"participants";
-			this->participants->Size = System::Drawing::Size(220, 25);
+			this->participants->Size = System::Drawing::Size(178, 20);
 			this->participants->TabIndex = 5;
 			this->participants->Text = L"Nombre de Participants:";
 			// 
@@ -154,9 +147,11 @@ namespace StudyHub {
 			// 
 			this->cencel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->cencel->Location = System::Drawing::Point(19, 368);
+			this->cencel->ForeColor = System::Drawing::Color::DarkCyan;
+			this->cencel->Location = System::Drawing::Point(108, 260);
+			this->cencel->Margin = System::Windows::Forms::Padding(2);
 			this->cencel->Name = L"cencel";
-			this->cencel->Size = System::Drawing::Size(130, 44);
+			this->cencel->Size = System::Drawing::Size(130, 35);
 			this->cencel->TabIndex = 6;
 			this->cencel->Text = L"Tornar";
 			this->cencel->UseVisualStyleBackColor = true;
@@ -166,9 +161,11 @@ namespace StudyHub {
 			// 
 			this->consulta->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->consulta->Location = System::Drawing::Point(570, 368);
+			this->consulta->ForeColor = System::Drawing::Color::DarkCyan;
+			this->consulta->Location = System::Drawing::Point(373, 260);
+			this->consulta->Margin = System::Windows::Forms::Padding(2);
 			this->consulta->Name = L"consulta";
-			this->consulta->Size = System::Drawing::Size(114, 44);
+			this->consulta->Size = System::Drawing::Size(130, 35);
 			this->consulta->TabIndex = 7;
 			this->consulta->Text = L"Consultar";
 			this->consulta->UseVisualStyleBackColor = true;
@@ -179,9 +176,11 @@ namespace StudyHub {
 			this->labelTematica->AutoSize = true;
 			this->labelTematica->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelTematica->Location = System::Drawing::Point(314, 239);
+			this->labelTematica->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->labelTematica->Location = System::Drawing::Point(292, 191);
+			this->labelTematica->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelTematica->Name = L"labelTematica";
-			this->labelTematica->Size = System::Drawing::Size(19, 25);
+			this->labelTematica->Size = System::Drawing::Size(13, 17);
 			this->labelTematica->TabIndex = 8;
 			this->labelTematica->Text = L"-";
 			// 
@@ -190,17 +189,20 @@ namespace StudyHub {
 			this->labelParticipants->AutoSize = true;
 			this->labelParticipants->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->labelParticipants->Location = System::Drawing::Point(314, 291);
+			this->labelParticipants->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->labelParticipants->Location = System::Drawing::Point(292, 224);
+			this->labelParticipants->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->labelParticipants->Name = L"labelParticipants";
-			this->labelParticipants->Size = System::Drawing::Size(19, 25);
+			this->labelParticipants->Size = System::Drawing::Size(13, 17);
 			this->labelParticipants->TabIndex = 9;
 			this->labelParticipants->Text = L"-";
 			// 
 			// ConsultarGrup
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(695, 424);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->ClientSize = System::Drawing::Size(607, 370);
 			this->Controls->Add(this->labelParticipants);
 			this->Controls->Add(this->labelTematica);
 			this->Controls->Add(this->consulta);
@@ -210,7 +212,8 @@ namespace StudyHub {
 			this->Controls->Add(this->nomGrup);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ConsultarGrup";
 			this->Text = L"ConsultarGrup";
 			this->Load += gcnew System::EventHandler(this, &ConsultarGrup::ConsultarGrup_Load);
