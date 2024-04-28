@@ -1,8 +1,4 @@
 #pragma once
-// #include "ConsultarEstudiantUI.h"
-#include "EditarEstudiant.h"
-#include "EliminarPerfilEstudiantUI.h"
-#include "ConsultarEstudiantUI.h"
 #include "Sistema.h"
 
 namespace StudyHub {
@@ -39,7 +35,7 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ consulta;
@@ -60,7 +56,6 @@ namespace StudyHub {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->consulta = (gcnew System::Windows::Forms::Button());
 			this->editar = (gcnew System::Windows::Forms::Button());
@@ -68,35 +63,29 @@ namespace StudyHub {
 			this->tornar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(131, 26);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(178, 42);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"StudyHub";
-			// 
 			// label2
 			// 
+			this->label2->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(83, 80);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 21, System::Drawing::FontStyle::Bold));
+			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label2->Location = System::Drawing::Point(87, 37);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(287, 27);
+			this->label2->Size = System::Drawing::Size(402, 37);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Gestionar Perfil d\'Estudiant";
 			// 
 			// consulta
 			// 
+			this->consulta->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->consulta->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->consulta->Location = System::Drawing::Point(88, 145);
+			this->consulta->ForeColor = System::Drawing::Color::DarkCyan;
+			this->consulta->Location = System::Drawing::Point(87, 126);
+			this->consulta->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->consulta->Name = L"consulta";
-			this->consulta->Size = System::Drawing::Size(268, 44);
+			this->consulta->Size = System::Drawing::Size(179, 43);
 			this->consulta->TabIndex = 2;
 			this->consulta->Text = L"Consultar Perfil";
 			this->consulta->UseVisualStyleBackColor = true;
@@ -104,11 +93,14 @@ namespace StudyHub {
 			// 
 			// editar
 			// 
+			this->editar->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->editar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->editar->Location = System::Drawing::Point(88, 195);
+			this->editar->ForeColor = System::Drawing::Color::DarkCyan;
+			this->editar->Location = System::Drawing::Point(303, 126);
+			this->editar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->editar->Name = L"editar";
-			this->editar->Size = System::Drawing::Size(268, 43);
+			this->editar->Size = System::Drawing::Size(179, 43);
 			this->editar->TabIndex = 3;
 			this->editar->Text = L"Editar Perfil";
 			this->editar->UseVisualStyleBackColor = true;
@@ -116,11 +108,14 @@ namespace StudyHub {
 			// 
 			// eliminar
 			// 
+			this->eliminar->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->eliminar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->eliminar->Location = System::Drawing::Point(88, 244);
+			this->eliminar->ForeColor = System::Drawing::Color::DarkCyan;
+			this->eliminar->Location = System::Drawing::Point(87, 225);
+			this->eliminar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->eliminar->Name = L"eliminar";
-			this->eliminar->Size = System::Drawing::Size(268, 39);
+			this->eliminar->Size = System::Drawing::Size(179, 43);
 			this->eliminar->TabIndex = 4;
 			this->eliminar->Text = L"Eliminar Perfil";
 			this->eliminar->UseVisualStyleBackColor = true;
@@ -128,11 +123,14 @@ namespace StudyHub {
 			// 
 			// tornar
 			// 
+			this->tornar->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->tornar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->tornar->Location = System::Drawing::Point(88, 313);
+			this->tornar->ForeColor = System::Drawing::Color::DarkCyan;
+			this->tornar->Location = System::Drawing::Point(303, 225);
+			this->tornar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tornar->Name = L"tornar";
-			this->tornar->Size = System::Drawing::Size(268, 53);
+			this->tornar->Size = System::Drawing::Size(179, 43);
 			this->tornar->TabIndex = 5;
 			this->tornar->Text = L"Tornar";
 			this->tornar->UseVisualStyleBackColor = true;
@@ -140,15 +138,17 @@ namespace StudyHub {
 			// 
 			// MenuGestioEstudiant
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(493, 415);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->ClientSize = System::Drawing::Size(591, 331);
 			this->Controls->Add(this->tornar);
 			this->Controls->Add(this->eliminar);
 			this->Controls->Add(this->editar);
 			this->Controls->Add(this->consulta);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"MenuGestioEstudiant";
 			this->Text = L"MenuGestioEstudiant";
 			this->Load += gcnew System::EventHandler(this, &MenuGestioEstudiant::MenuGestioEstudiant_Load);
@@ -162,32 +162,11 @@ namespace StudyHub {
 	}
 private: System::Void MenuGestioEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	StudyHub::ConsultarEstudiantUI^ consultar = gcnew StudyHub::ConsultarEstudiantUI();
-	this->Visible = false;
-	consultar->ShowDialog();
-	this->Visible = true;
-	
-}
-private: System::Void editar_Click(System::Object^ sender, System::EventArgs^ e) {
-	StudyHub::EditarEstudiant^ editar = gcnew StudyHub::EditarEstudiant();
-	this->Visible = false;
-	editar->ShowDialog();
-	this->Visible = true;
-}
-private: System::Void eliminar_Click(System::Object^ sender, System::EventArgs^ e) {
-	StudyHub::EliminarPerfilEstudiantUI^ eliminar = gcnew StudyHub::EliminarPerfilEstudiantUI();
-	this->Visible = false;
-	eliminar->ShowDialog();
+private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ e);
 
-	Sistema^ sistema = Sistema::getInstance();
-	if (sistema->obteEstatSessio()) {
-		this->Visible = true;
-	}
-	else {
-		this->Close();
-	}
-}
+private: System::Void editar_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void eliminar_Click(System::Object^ sender, System::EventArgs^ e);
+
 };
 }

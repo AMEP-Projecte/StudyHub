@@ -5,6 +5,7 @@
 
 using namespace System;
 
+
 ref class Sistema
 {
 private:
@@ -23,6 +24,8 @@ private:
 	}
 
 public:
+	//static StudyHub::MenuPrincipal^ MenuPrincipalInstance = nullptr;
+	//MenuPrincipal^ MenuPrincipalInstance;
 	static Sistema^ getInstance() {
 		if (instance == nullptr) {
 			instance = gcnew Sistema();

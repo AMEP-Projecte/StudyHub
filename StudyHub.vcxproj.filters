@@ -245,6 +245,15 @@
     <ClInclude Include="PassarellaProveidor.h">
       <Filter>GestioProveidor\PassarellaCercadora</Filter>
     </ClInclude>
+    <ClInclude Include="IniciarSessio.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuAdministrador.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuProvedor.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -384,6 +393,15 @@
     </ClCompile>
     <ClCompile Include="PassarellaProveidor.cpp">
       <Filter>GestioProveidor\PassarellaCercadora</Filter>
+    </ClCompile>
+    <ClCompile Include="IniciarSessio.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuAdministrador.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuProvedor.cpp">
+      <Filter>Menus</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

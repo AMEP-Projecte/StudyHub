@@ -1,8 +1,6 @@
 #pragma once
 #include "pch.h"
 
-#include "TxEsborraUsuari.h"
-
 namespace StudyHub {
 
 	using namespace System;
@@ -77,11 +75,12 @@ namespace StudyHub {
 			// eliminarcompte
 			// 
 			this->eliminarcompte->AutoSize = true;
-			this->eliminarcompte->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->eliminarcompte->Location = System::Drawing::Point(357, 38);
+			this->eliminarcompte->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
+			this->eliminarcompte->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->eliminarcompte->Location = System::Drawing::Point(126, 29);
+			this->eliminarcompte->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->eliminarcompte->Name = L"eliminarcompte";
-			this->eliminarcompte->Size = System::Drawing::Size(218, 26);
+			this->eliminarcompte->Size = System::Drawing::Size(332, 42);
 			this->eliminarcompte->TabIndex = 0;
 			this->eliminarcompte->Text = L"ELIMINAR COMPTE";
 			this->eliminarcompte->Click += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::label1_Click);
@@ -90,9 +89,11 @@ namespace StudyHub {
 			// 
 			this->infoeliminarcompte->AutoSize = true;
 			this->infoeliminarcompte->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->infoeliminarcompte->Location = System::Drawing::Point(43, 109);
+			this->infoeliminarcompte->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->infoeliminarcompte->Location = System::Drawing::Point(32, 94);
+			this->infoeliminarcompte->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->infoeliminarcompte->Name = L"infoeliminarcompte";
-			this->infoeliminarcompte->Size = System::Drawing::Size(304, 20);
+			this->infoeliminarcompte->Size = System::Drawing::Size(257, 17);
 			this->infoeliminarcompte->TabIndex = 1;
 			this->infoeliminarcompte->Text = L"Segur que vols eliminar el teu compte\? ";
 			// 
@@ -100,9 +101,11 @@ namespace StudyHub {
 			// 
 			this->infoeliminarcompte2->AutoSize = true;
 			this->infoeliminarcompte2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
-			this->infoeliminarcompte2->Location = System::Drawing::Point(43, 147);
+			this->infoeliminarcompte2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->infoeliminarcompte2->Location = System::Drawing::Point(32, 124);
+			this->infoeliminarcompte2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->infoeliminarcompte2->Name = L"infoeliminarcompte2";
-			this->infoeliminarcompte2->Size = System::Drawing::Size(603, 20);
+			this->infoeliminarcompte2->Size = System::Drawing::Size(510, 17);
 			this->infoeliminarcompte2->TabIndex = 2;
 			this->infoeliminarcompte2->Text = L"Aixó tancarà la teva sessió inmediatament i no podràs tornar a iniciar-la de nou."
 				L"";
@@ -110,26 +113,32 @@ namespace StudyHub {
 			// etiquetacontrasenya
 			// 
 			this->etiquetacontrasenya->AutoSize = true;
-			this->etiquetacontrasenya->Location = System::Drawing::Point(407, 213);
+			this->etiquetacontrasenya->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10));
+			this->etiquetacontrasenya->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->etiquetacontrasenya->Location = System::Drawing::Point(234, 170);
+			this->etiquetacontrasenya->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->etiquetacontrasenya->Name = L"etiquetacontrasenya";
-			this->etiquetacontrasenya->Size = System::Drawing::Size(113, 16);
+			this->etiquetacontrasenya->Size = System::Drawing::Size(116, 17);
 			this->etiquetacontrasenya->TabIndex = 3;
 			this->etiquetacontrasenya->Text = L"CONTRASENYA:";
 			this->etiquetacontrasenya->Click += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::label1_Click_1);
 			// 
 			// txt_contra
 			// 
-			this->txt_contra->Location = System::Drawing::Point(282, 246);
+			this->txt_contra->Location = System::Drawing::Point(133, 199);
+			this->txt_contra->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txt_contra->Name = L"txt_contra";
-			this->txt_contra->Size = System::Drawing::Size(364, 22);
+			this->txt_contra->Size = System::Drawing::Size(325, 20);
 			this->txt_contra->TabIndex = 4;
 			this->txt_contra->TextChanged += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::txt_contra_TextChanged);
 			// 
 			// btn_eliminar_compte
 			// 
-			this->btn_eliminar_compte->Location = System::Drawing::Point(780, 342);
+			this->btn_eliminar_compte->ForeColor = System::Drawing::Color::DarkCyan;
+			this->btn_eliminar_compte->Location = System::Drawing::Point(351, 267);
+			this->btn_eliminar_compte->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_eliminar_compte->Name = L"btn_eliminar_compte";
-			this->btn_eliminar_compte->Size = System::Drawing::Size(103, 39);
+			this->btn_eliminar_compte->Size = System::Drawing::Size(106, 32);
 			this->btn_eliminar_compte->TabIndex = 5;
 			this->btn_eliminar_compte->Text = L"Eliminar";
 			this->btn_eliminar_compte->UseVisualStyleBackColor = true;
@@ -137,9 +146,11 @@ namespace StudyHub {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(598, 342);
+			this->button2->ForeColor = System::Drawing::Color::DarkCyan;
+			this->button2->Location = System::Drawing::Point(133, 267);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(94, 40);
+			this->button2->Size = System::Drawing::Size(106, 32);
 			this->button2->TabIndex = 6;
 			this->button2->Text = L"Cancel·ar";
 			this->button2->UseVisualStyleBackColor = true;
@@ -147,9 +158,10 @@ namespace StudyHub {
 			// 
 			// EliminarPerfilEstudiantUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(995, 472);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->ClientSize = System::Drawing::Size(591, 331);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->btn_eliminar_compte);
 			this->Controls->Add(this->txt_contra);
@@ -158,6 +170,8 @@ namespace StudyHub {
 			this->Controls->Add(this->infoeliminarcompte);
 			this->Controls->Add(this->eliminarcompte);
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"EliminarPerfilEstudiantUI";
 			this->Text = L"StudyHub";
 			this->Load += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::EliminarPerfilEstudiantUI_Load);
@@ -172,23 +186,8 @@ namespace StudyHub {
 	}
 private: System::Void txt_contra_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ contrasenya= txt_contra->Text;
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 
-	try {
-		if (contrasenya != "") {
-			TxEsborraUsuari txEU(contrasenya);
-			txEU.executar();
-			this->Close();
-		}
-		else {
-			MessageBox::Show("Has d'omplir el camp.");
-		}
-	}
-	catch (Exception^ ex) {
-		MessageBox::Show(ex->Message);
-	}
-}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }

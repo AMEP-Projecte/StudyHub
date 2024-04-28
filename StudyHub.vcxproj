@@ -164,7 +164,13 @@
     <ClInclude Include="EliminarPerfilEstudiantUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="IniciarSessio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="IniciSessio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MenuAdministrador.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MenuEstudiant.h">
@@ -177,6 +183,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MenuPrincipal.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MenuProvedor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarellaAdmin.h" />
@@ -225,11 +234,14 @@
     <ClCompile Include="EditarGrup.cpp" />
     <ClCompile Include="EliminarGrupEstudi.cpp" />
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />
+    <ClCompile Include="IniciarSessio.cpp" />
     <ClCompile Include="IniciSessio.cpp" />
+    <ClCompile Include="MenuAdministrador.cpp" />
     <ClCompile Include="MenuEstudiant.cpp" />
     <ClCompile Include="MenuGestioEstudiant.cpp" />
     <ClCompile Include="MenuGestioGrups.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
+    <ClCompile Include="MenuProvedor.cpp" />
     <ClCompile Include="PassarellaAdmin.cpp" />
     <ClCompile Include="PassarellaEspai.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
@@ -273,6 +285,56 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConsultarEstudiantUI.resx">
+      <DependentUpon>ConsultarEstudiantUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="consultargrup.resx">
+      <DependentUpon>ConsultarGrup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearEstudiant.resx">
+      <DependentUpon>CrearEstudiant.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearNouGrupEstudi.resx">
+      <DependentUpon>CrearNouGrupEstudi.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarEstudiant.resx">
+      <DependentUpon>EditarEstudiant.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarGrup.resx">
+      <DependentUpon>EditarGrup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarGrupEstudi.resx">
+      <DependentUpon>EliminarGrupEstudi.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarPerfilEstudiantUI.resx">
+      <DependentUpon>EliminarPerfilEstudiantUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IniciSessio.resx">
+      <DependentUpon>IniciSessio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuAdministrador.resx">
+      <DependentUpon>MenuAdministrador.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuEstudiant.resx">
+      <DependentUpon>MenuEstudiant.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGestioEstudiant.resx">
+      <DependentUpon>MenuGestioEstudiant.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGestioGrups.resx">
+      <DependentUpon>MenuGestioGrups.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuProvedor.resx">
+      <DependentUpon>MenuProvedor.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TancarSessio.resx">
+      <DependentUpon>TancarSessio.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

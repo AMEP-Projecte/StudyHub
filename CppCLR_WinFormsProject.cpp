@@ -1,5 +1,4 @@
 #include "pch.h"
-
 using namespace System;
 
 // int main(array<System::String ^> ^args)
@@ -8,7 +7,6 @@ using namespace System;
 // }
 
 #include "MenuPrincipal.h"
-
 using namespace System::Windows::Forms;
 
 [STAThread]
@@ -16,6 +14,7 @@ int main()
 {
   Application::EnableVisualStyles();
   Application::SetCompatibleTextRenderingDefault(false);
-  Application::Run(gcnew StudyHub::MenuPrincipal());
+  StudyHub::MenuPrincipal^ MenuPrincipalInstance = StudyHub::MenuPrincipal::getInstance();
+  Application::Run(MenuPrincipalInstance);
   return 0;
 }

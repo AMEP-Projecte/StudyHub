@@ -35,7 +35,7 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ studyhub;
+
 	private: System::Windows::Forms::Label^ editGroup;
 	private: System::Windows::Forms::Label^ name;
 	private: System::Windows::Forms::Label^ theme;
@@ -62,7 +62,6 @@ namespace StudyHub {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->studyhub = (gcnew System::Windows::Forms::Label());
 			this->editGroup = (gcnew System::Windows::Forms::Label());
 			this->name = (gcnew System::Windows::Forms::Label());
 			this->theme = (gcnew System::Windows::Forms::Label());
@@ -72,47 +71,38 @@ namespace StudyHub {
 			this->cancel = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// studyhub
-			// 
-			this->studyhub->AutoSize = true;
-			this->studyhub->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->studyhub->Location = System::Drawing::Point(13, 24);
-			this->studyhub->Name = L"studyhub";
-			this->studyhub->Size = System::Drawing::Size(178, 42);
-			this->studyhub->TabIndex = 0;
-			this->studyhub->Text = L"StudyHub";
-			this->studyhub->Click += gcnew System::EventHandler(this, &EditarGrup::label1_Click);
-			// 
 			// editGroup
 			// 
 			this->editGroup->AutoSize = true;
-			this->editGroup->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->editGroup->Location = System::Drawing::Point(15, 87);
+			this->editGroup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
+			this->editGroup->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->editGroup->Location = System::Drawing::Point(194, 42);
+			this->editGroup->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->editGroup->Name = L"editGroup";
-			this->editGroup->Size = System::Drawing::Size(128, 25);
+			this->editGroup->Size = System::Drawing::Size(210, 42);
 			this->editGroup->TabIndex = 1;
 			this->editGroup->Text = L"Editar Grup:";
 			// 
 			// name
 			// 
 			this->name->AutoSize = true;
-			this->name->BackColor = System::Drawing::SystemColors::ControlLight;
-			this->name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->name->Location = System::Drawing::Point(20, 157);
+			this->name->BackColor = System::Drawing::Color::Transparent;
+			this->name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
+			this->name->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->name->Location = System::Drawing::Point(137, 131);
+			this->name->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->name->Name = L"name";
-			this->name->Size = System::Drawing::Size(254, 22);
+			this->name->Size = System::Drawing::Size(47, 22);
 			this->name->TabIndex = 2;
-			this->name->Text = L"Nom del grup que es vol editar";
+			this->name->Text = L"Nom";
 			// 
 			// theme
 			// 
 			this->theme->AutoSize = true;
-			this->theme->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->theme->Location = System::Drawing::Point(16, 199);
+			this->theme->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
+			this->theme->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->theme->Location = System::Drawing::Point(137, 182);
+			this->theme->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->theme->Name = L"theme";
 			this->theme->Size = System::Drawing::Size(84, 22);
 			this->theme->TabIndex = 3;
@@ -122,9 +112,11 @@ namespace StudyHub {
 			// 
 			this->edit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->edit->Location = System::Drawing::Point(449, 276);
+			this->edit->ForeColor = System::Drawing::Color::DarkCyan;
+			this->edit->Location = System::Drawing::Point(368, 260);
+			this->edit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->edit->Name = L"edit";
-			this->edit->Size = System::Drawing::Size(99, 35);
+			this->edit->Size = System::Drawing::Size(108, 35);
 			this->edit->TabIndex = 5;
 			this->edit->Text = L"Editar";
 			this->edit->UseVisualStyleBackColor = true;
@@ -133,26 +125,30 @@ namespace StudyHub {
 			// textName
 			// 
 			this->textName->BackColor = System::Drawing::SystemColors::Window;
-			this->textName->Location = System::Drawing::Point(363, 157);
+			this->textName->Location = System::Drawing::Point(246, 133);
+			this->textName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textName->Name = L"textName";
-			this->textName->Size = System::Drawing::Size(185, 26);
+			this->textName->Size = System::Drawing::Size(203, 20);
 			this->textName->TabIndex = 6;
 			this->textName->TextChanged += gcnew System::EventHandler(this, &EditarGrup::textName_TextChanged);
 			// 
 			// textTheme
 			// 
-			this->textTheme->Location = System::Drawing::Point(363, 199);
+			this->textTheme->Location = System::Drawing::Point(246, 184);
+			this->textTheme->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textTheme->Name = L"textTheme";
-			this->textTheme->Size = System::Drawing::Size(185, 26);
+			this->textTheme->Size = System::Drawing::Size(203, 20);
 			this->textTheme->TabIndex = 7;
 			// 
 			// cancel
 			// 
 			this->cancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->cancel->Location = System::Drawing::Point(20, 276);
+			this->cancel->ForeColor = System::Drawing::Color::DarkCyan;
+			this->cancel->Location = System::Drawing::Point(125, 260);
+			this->cancel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->cancel->Name = L"cancel";
-			this->cancel->Size = System::Drawing::Size(123, 37);
+			this->cancel->Size = System::Drawing::Size(108, 35);
 			this->cancel->TabIndex = 8;
 			this->cancel->Text = L"Cancel·lar";
 			this->cancel->UseVisualStyleBackColor = true;
@@ -160,9 +156,10 @@ namespace StudyHub {
 			// 
 			// EditarGrup
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(573, 339);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->ClientSize = System::Drawing::Size(607, 370);
 			this->Controls->Add(this->cancel);
 			this->Controls->Add(this->textTheme);
 			this->Controls->Add(this->textName);
@@ -170,7 +167,8 @@ namespace StudyHub {
 			this->Controls->Add(this->theme);
 			this->Controls->Add(this->name);
 			this->Controls->Add(this->editGroup);
-			this->Controls->Add(this->studyhub);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"EditarGrup";
 			this->Text = L"EditarGrup";
 			this->Load += gcnew System::EventHandler(this, &EditarGrup::EditarGrup_Load);

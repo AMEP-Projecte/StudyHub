@@ -72,10 +72,12 @@ namespace StudyHub {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.8F));
-			this->label1->Location = System::Drawing::Point(136, 35);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label1->Location = System::Drawing::Point(113, 65);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(355, 39);
+			this->label1->Size = System::Drawing::Size(357, 42);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Vols tancar la sessió\?";
 			this->label1->Click += gcnew System::EventHandler(this, &TancarSessio::label1_Click);
@@ -83,9 +85,11 @@ namespace StudyHub {
 			// button1
 			// 
 			this->button1->AutoSize = true;
-			this->button1->Location = System::Drawing::Point(143, 136);
+			this->button1->ForeColor = System::Drawing::Color::DarkCyan;
+			this->button1->Location = System::Drawing::Point(120, 201);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 26);
+			this->button1->Size = System::Drawing::Size(113, 39);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Sí";
 			this->button1->UseVisualStyleBackColor = true;
@@ -94,9 +98,11 @@ namespace StudyHub {
 			// button2
 			// 
 			this->button2->AutoSize = true;
-			this->button2->Location = System::Drawing::Point(416, 136);
+			this->button2->ForeColor = System::Drawing::Color::DarkCyan;
+			this->button2->Location = System::Drawing::Point(347, 201);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 26);
+			this->button2->Size = System::Drawing::Size(123, 39);
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"No";
 			this->button2->UseVisualStyleBackColor = true;
@@ -104,16 +110,20 @@ namespace StudyHub {
 			// 
 			// TancarSessio
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(624, 253);
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->ClientSize = System::Drawing::Size(591, 331);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"TancarSessio";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"StudyHub";
+			this->Load += gcnew System::EventHandler(this, &TancarSessio::TancarSessio_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -122,26 +132,12 @@ namespace StudyHub {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		TxTancarSessio tancamentSessio;
-		tancamentSessio.executar();
-		Sistema^ sist = Sistema::getInstance();
-		if (sist->obteEstatSessio()) {
-			String^ missatge = "No s'ha pogut tancar la sessió";
-			MessageBox::Show(missatge);
-			// Al fer Close() es tornarà al menú d'estudiant
-		}
-		else {
-			String^ missatge = "La sessió s'ha tancat correctament." + "\n" +
-				"Gràcies per fer servir StudyHub.";
-			MessageBox::Show(missatge);
-			// Al fer Close() s'anirà a la pantalla d'inici
-		}
-		Close();
-	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		Close();
 	}
+private: System::Void TancarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
