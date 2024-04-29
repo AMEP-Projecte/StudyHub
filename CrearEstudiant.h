@@ -126,7 +126,7 @@ namespace StudyHub {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(88, 13);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Correu Electronic";
+			this->label3->Text = L"Correu Electr\u00F2nic";
 			// 
 			// label4
 			// 

@@ -107,7 +107,7 @@ namespace StudyHub {
 			this->infoeliminarcompte2->Name = L"infoeliminarcompte2";
 			this->infoeliminarcompte2->Size = System::Drawing::Size(510, 17);
 			this->infoeliminarcompte2->TabIndex = 2;
-			this->infoeliminarcompte2->Text = L"Aixó tancarà la teva sessió inmediatament i no podràs tornar a iniciar-la de nou."
+			this->infoeliminarcompte2->Text = L"Aix\u00f2 tancar\u00e0 la teva sessi\u00F3 immediatament i no podr\u00e0s tornar a iniciar-la de nou."
 				L"";
 			// 
 			// etiquetacontrasenya
@@ -152,7 +152,7 @@ namespace StudyHub {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(106, 32);
 			this->button2->TabIndex = 6;
-			this->button2->Text = L"Cancel·ar";
+			this->button2->Text = L"Cancel·lar";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::button2_Click);
 			// 

@@ -69,7 +69,7 @@ namespace StudyHub {
 			this->tancaSessio->Name = L"tancaSessio";
 			this->tancaSessio->Size = System::Drawing::Size(153, 48);
 			this->tancaSessio->TabIndex = 8;
-			this->tancaSessio->Text = L"Tancar Sessi\u00F3";
+			this->tancaSessio->Text = L"Tancar Sessi\u00f3";
 			this->tancaSessio->UseVisualStyleBackColor = true;
 			// 
 			// gestionaGrups

@@ -136,7 +136,7 @@ namespace StudyHub {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(84, 22);
 			this->label3->TabIndex = 0;
-			this->label3->Text = L"Temàtica";
+			this->label3->Text = L"Tem\u00e0tica";
 			// 
 			// textBox2
 			// 
