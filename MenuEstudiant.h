@@ -76,7 +76,7 @@ namespace StudyHub {
 			this->menuEstudiantt->Name = L"menuEstudiantt";
 			this->menuEstudiantt->Size = System::Drawing::Size(272, 42);
 			this->menuEstudiantt->TabIndex = 1;
-			this->menuEstudiantt->Text = L"Menu Estudiant";
+			this->menuEstudiantt->Text = L"Men\u00fa Estudiant";
 			this->menuEstudiantt->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			this->menuEstudiantt->Click += gcnew System::EventHandler(this, &MenuEstudiant::menuEstudiantt_Click);
 			// 
@@ -118,7 +118,7 @@ namespace StudyHub {
 			this->tancaSessio->Name = L"tancaSessio";
 			this->tancaSessio->Size = System::Drawing::Size(171, 48);
 			this->tancaSessio->TabIndex = 4;
-			this->tancaSessio->Text = L"Tancar Sessió";
+			this->tancaSessio->Text = L"Tancar Sessi\u00F3";
 			this->tancaSessio->UseVisualStyleBackColor = true;
 			this->tancaSessio->Click += gcnew System::EventHandler(this, &MenuEstudiant::tancaSessio_Click);
 			// 
