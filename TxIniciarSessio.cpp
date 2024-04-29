@@ -15,7 +15,7 @@ bool TxIniciarSessio::executar() {
 	Sistema^ sist = Sistema::getInstance();
 	CercadoraUsuari cu;
 	PassarellaUsuari^ user = cu.cercaUsuari(_username);
-	if (user == nullptr) {
+	if (user == nullptr || user->obteContrasenya() != _contrasenya) {
 		return true;
 	}
 
