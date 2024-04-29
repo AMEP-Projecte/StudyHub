@@ -231,6 +231,7 @@ namespace StudyHub {
 			this->PanelLogo->Name = L"PanelLogo";
 			this->PanelLogo->Size = System::Drawing::Size(220, 70);
 			this->PanelLogo->TabIndex = 6;
+			this->PanelLogo->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelLogo_Paint);
 			// 
 			// panelTitle
 			// 
@@ -293,6 +294,9 @@ namespace StudyHub {
 			// 
 			// LabelTitle
 			// 
+			this->LabelTitle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->LabelTitle->AutoSize = true;
 			this->LabelTitle->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 26, System::Drawing::FontStyle::Bold));
 			this->LabelTitle->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
@@ -402,5 +406,8 @@ private: System::Void panelTitle_Paint(System::Object^ sender, System::Windows::
 private: System::Void ButtonMenuProveidors_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void ButtonMenuAdmin_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void PanelLogo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
 };
 }
