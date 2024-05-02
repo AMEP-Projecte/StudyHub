@@ -254,6 +254,15 @@
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
     </ClInclude>
+    <ClInclude Include="TxConsultarProveidor.h">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultarProveidorUI.h">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGestioProveidor.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -401,6 +410,15 @@
       <Filter>Menus</Filter>
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarProveidor.cpp">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarProveidorUI.cpp">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioProveidor.cpp">
       <Filter>Menus</Filter>
     </ClCompile>
   </ItemGroup>

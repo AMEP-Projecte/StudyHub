@@ -146,6 +146,9 @@
     <ClInclude Include="ConsultarGrup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ConsultarProveidorUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CrearEstudiant.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -182,6 +185,9 @@
     <ClInclude Include="MenuGestioGrups.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MenuGestioProveidor.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MenuPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -205,6 +211,7 @@
     </ClInclude>
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
+    <ClInclude Include="TxConsultarProveidor.h" />
     <ClInclude Include="TxCreaEstudiant.h" />
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
     <ClInclude Include="TxEditarEstudiant.h" />
@@ -227,6 +234,7 @@
     <ClCompile Include="CercadoraUsuari.cpp" />
     <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
+    <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />
     <ClCompile Include="CrearNouGrupEstudi.cpp" />
@@ -240,6 +248,7 @@
     <ClCompile Include="MenuEstudiant.cpp" />
     <ClCompile Include="MenuGestioEstudiant.cpp" />
     <ClCompile Include="MenuGestioGrups.cpp" />
+    <ClCompile Include="MenuGestioProveidor.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="MenuProvedor.cpp" />
     <ClCompile Include="PassarellaAdmin.cpp" />
@@ -261,6 +270,7 @@
     <ClCompile Include="TancarSessio.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
+    <ClCompile Include="TxConsultarProveidor.cpp" />
     <ClCompile Include="TxCreaEstudiant.cpp" />
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />
     <ClCompile Include="TxEditarEstudiant.cpp" />
@@ -292,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="consultargrup.resx">
       <DependentUpon>ConsultarGrup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarProveidorUI.resx">
+      <DependentUpon>ConsultarProveidorUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearEstudiant.resx">
       <DependentUpon>CrearEstudiant.h</DependentUpon>
@@ -325,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestioGrups.resx">
       <DependentUpon>MenuGestioGrups.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGestioProveidor.resx">
+      <DependentUpon>MenuGestioProveidor.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.h</DependentUpon>
