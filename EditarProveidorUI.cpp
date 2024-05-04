@@ -18,9 +18,15 @@ System::Void EditarProveidorUI::edit_Click(System::Object^ sender, System::Event
 		TxEditarProveidor^ txEdit = gcnew TxEditarProveidor(ca, cn);
 		try {
 			txEdit->executar();
+			MessageBox::Show("Contrasenya modificada correctament.");
+			this->Close();
 		}
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
 		}
 	}
+}
+
+System::Void EditarProveidorUI::cancel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }

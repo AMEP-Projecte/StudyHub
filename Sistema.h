@@ -37,6 +37,7 @@ public:
 
 	bool obteEstatSessio();
 	void canviaEstatSessio(bool estat);
+	void canviaContrasenya(String^ cNova);
 
 	String^ obteContrasenya();
 

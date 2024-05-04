@@ -118,8 +118,6 @@ namespace StudyHub {
 		}
 #pragma endregion
 	private: System::Void consultar_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void editar_Click(System::Object^ sender, System::EventArgs^ e) {
-		// implementación en el cpp
-	}
+	private: System::Void editar_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

@@ -21,6 +21,7 @@ void TxEditarProveidor::executar() {
 		PassarellaUsuari^ pu = cu.cercaUsuari(usernameProveidor);
 		pu->posaContrasenya(_contrasenyaNova);
 		pu->modifica();
+		sist->canviaContrasenya(_contrasenyaNova);
 	}
 	else {
 		throw gcnew Exception("Error: Contrasenya actual incorrecta.");

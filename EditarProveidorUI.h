@@ -105,7 +105,7 @@ namespace StudyHub {
 			this->newPasswordLabel->AutoSize = true;
 			this->newPasswordLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->newPasswordLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->newPasswordLabel->Location = System::Drawing::Point(91, 137);
+			this->newPasswordLabel->Location = System::Drawing::Point(76, 137);
 			this->newPasswordLabel->Name = L"newPasswordLabel";
 			this->newPasswordLabel->Size = System::Drawing::Size(187, 26);
 			this->newPasswordLabel->TabIndex = 12;
@@ -116,11 +116,11 @@ namespace StudyHub {
 			this->oldPasswordLabel->AutoSize = true;
 			this->oldPasswordLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->oldPasswordLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->oldPasswordLabel->Location = System::Drawing::Point(89, 101);
+			this->oldPasswordLabel->Location = System::Drawing::Point(74, 101);
 			this->oldPasswordLabel->Name = L"oldPasswordLabel";
-			this->oldPasswordLabel->Size = System::Drawing::Size(200, 26);
+			this->oldPasswordLabel->Size = System::Drawing::Size(199, 26);
 			this->oldPasswordLabel->TabIndex = 11;
-			this->oldPasswordLabel->Text = L"Contrasenya antiga";
+			this->oldPasswordLabel->Text = L"Contrasenya actual";
 			// 
 			// edit
 			// 
@@ -148,6 +148,7 @@ namespace StudyHub {
 			this->cancel->TabIndex = 15;
 			this->cancel->Text = L"Cancel·lar";
 			this->cancel->UseVisualStyleBackColor = true;
+			this->cancel->Click += gcnew System::EventHandler(this, &EditarProveidorUI::cancel_Click);
 			// 
 			// EditarProveidorUI
 			// 
@@ -171,5 +172,6 @@ namespace StudyHub {
 		}
 #pragma endregion
 	private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
