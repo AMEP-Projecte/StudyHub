@@ -9,6 +9,10 @@ void Sistema::canviaEstatSessio(bool estat) {
 	_sessioIniciada = estat;
 }
 
+void Sistema::canviaContrasenya(String^ cNova) {
+	_contrasenya = cNova;
+}
+
 String^ Sistema::obteContrasenya() {
 	return _contrasenya;
 }
