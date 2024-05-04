@@ -40,10 +40,10 @@ void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, Pas
 	if (_tipusUsuari == "estudiant" && estu != nullptr) {
 		_est = estu;
 	}
-	else if (_tipusUsuari == "proveidor"/* && pro != nullptr */ ) {
+	else if (_tipusUsuari == "proveidor" && pro != nullptr) {
 		_pro = pro;
 	}
-	else if (_tipusUsuari == "administrador"/* && admin != nullptr*/) {
+	else if (_tipusUsuari == "administrador" && admin != nullptr) {
 		_adm = admin;
 	}
 	else {
