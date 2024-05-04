@@ -161,6 +161,9 @@
     <ClInclude Include="EditarGrup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="EditarProveidorUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="EliminarGrupEstudi.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -216,6 +219,7 @@
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
+    <ClInclude Include="TxEditarProveidor.h" />
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
@@ -240,6 +244,7 @@
     <ClCompile Include="CrearNouGrupEstudi.cpp" />
     <ClCompile Include="EditarEstudiant.cpp" />
     <ClCompile Include="EditarGrup.cpp" />
+    <ClCompile Include="EditarProveidorUI.cpp" />
     <ClCompile Include="EliminarGrupEstudi.cpp" />
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />
     <ClCompile Include="IniciarSessio.cpp" />
@@ -275,6 +280,7 @@
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
+    <ClCompile Include="TxEditarProveidor.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
@@ -317,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarGrup.resx">
       <DependentUpon>EditarGrup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarProveidorUI.resx">
+      <DependentUpon>EditarProveidorUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarGrupEstudi.resx">
       <DependentUpon>EliminarGrupEstudi.h</DependentUpon>
