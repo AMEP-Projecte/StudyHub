@@ -254,6 +254,9 @@
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
     </ClInclude>
+    <ClInclude Include="TxEliminarEspai.h">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -402,6 +405,9 @@
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
       <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEliminarEspai.cpp">
+      <Filter>GestioEspai\Tx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

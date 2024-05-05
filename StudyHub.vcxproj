@@ -209,6 +209,7 @@
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
+    <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
@@ -265,6 +266,7 @@
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
+    <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
