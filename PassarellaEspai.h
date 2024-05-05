@@ -21,5 +21,6 @@ public:
 	String^ obteNom();
 	int obteCapacitat();
 	String^ obteProveidor();
-};
 
+	void insereix(); 
+};
