@@ -14,7 +14,6 @@ ref class TxCreaEspai {
 
 	public:
 		TxCreaEspai(String^ AdrecaEspai, String^ NomEspai, int Capacitat, String^ UProveidor);
-
 		void executa();
 
 };

@@ -2,22 +2,21 @@
 #include "CercadoraEspai.h"
 #include "CercadoraProveidor.h"
 
+value struct Resultat{
+	String^ _adreca;
+	String^ _nom;
+	int _capacitat;
+	String^ _uproveidor;
+};
+
 ref class TxConsultaEspai
 {
 	private:
+		Resultat _resultat;
 		String^ _adreca;
-		String^ _nom;
-		int _capacitat;
-		String^ _uproveidor;
 	public:
 	
 	TxConsultaEspai(String^ a);
-
 	void executar();
-
-	String^ obteAdreca();
-	String^ obteNom();
-	int obteCapacitat();
-	String^ obteUproveidor();
-
+	Resultat obteResultat();
 };

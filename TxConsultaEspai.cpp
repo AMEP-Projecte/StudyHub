@@ -15,22 +15,12 @@ void TxConsultaEspai::executar() {
 		throw gcnew Exception("Aquesta adreça no existeix.");
 	}
 	else {
-		_nom = e->obteNom();
-		_capacitat = e->obteCapacitat();
-		_uproveidor = e->obteProveidor();
+		_resultat._nom = e->obteNom();
+		_resultat._capacitat = e->obteCapacitat();
+		_resultat._uproveidor = e->obteProveidor();
 	}
 }
 
-
-String^ TxConsultaEspai::obteAdreca() {
-	return _adreca;
-}
-String^ TxConsultaEspai::obteNom() {
-	return _nom;
-}
-int TxConsultaEspai::obteCapacitat() {
-	return _capacitat;
-}
-String^ TxConsultaEspai::obteUproveidor() {
-	return _uproveidor;
+Resultat TxConsultaEspai::obteResultat(){
+	return _resultat;
 }

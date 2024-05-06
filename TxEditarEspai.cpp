@@ -12,10 +12,10 @@ void TxEditarEspai::executar() {
 	CercadoraEspai ce;
 	PassarellaEspai^ espai = ce.cercaEspaiAdreca(_adr);
 
-	if (espai->obteProveidor() != sistema->obteProveidor()->obteUsername()) throw gcnew Exception("No pots modificar un grup que no has creat tu.");
+	if (espai->obteProveidor() != sistema->obteProveidor()->obteUsername()) throw gcnew Exception("No pots modificar un espai que no has creat tu.");
 	else if (espai->obteNom() != "") {
 		espai->posarCapacitat(_capacitat);
 		espai->modifica();
 	}
-	else throw gcnew Exception("No existeix aquest grup.");
+	else throw gcnew Exception("No existeix aquest espai.");
 }
