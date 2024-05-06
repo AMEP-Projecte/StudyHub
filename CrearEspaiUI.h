@@ -127,7 +127,7 @@ namespace StudyHub {
 			this->botonetcrea->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->botonetcrea->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->botonetcrea->ForeColor = System::Drawing::Color::DarkCyan;
-			this->botonetcrea->Location = System::Drawing::Point(312, 343);
+			this->botonetcrea->Location = System::Drawing::Point(497, 325);
 			this->botonetcrea->Margin = System::Windows::Forms::Padding(4);
 			this->botonetcrea->Name = L"botonetcrea";
 			this->botonetcrea->Size = System::Drawing::Size(192, 48);

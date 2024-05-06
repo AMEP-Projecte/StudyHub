@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 using namespace System;
+
 ref class PassarellaEspai
 {
 private:
@@ -24,4 +25,5 @@ public:
 	String^ obteProveidor();
 
 	void insereix(); 
+	void modifica();
 };

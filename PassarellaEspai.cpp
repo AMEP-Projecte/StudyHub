@@ -71,30 +71,25 @@ void PassarellaEspai::insereix() {
 
 }
 
-/*
-void PassarellaGrup::insereix() {
-	bool totcorrecte = true;
+void PassarellaEspai::modifica() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	String^ sql = String::Format("INSERT INTO grup VALUES ('{0}', '{1}', '{2}');", _nomGrup, _tematica, _creador);
+	String^ sql = "UPDATE espai SET ";
+	sql += "capacitat = '" + _capacitat + "' ";
+	sql += "WHERE adreca = '" + _adreca + "' ";
+
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
 	try {
 		// obrim la connexio
 		conn->Open();
-		// executem la comanda (cmd) que s'ha creat abans del try
 		dataReader = cmd->ExecuteReader();
 	}
-	catch (MySqlException^ ex) {
-		MessageBox::Show(ex->Message);
-		totcorrecte = false;
+	catch (Exception^ ex) {
+		// codi per mostrar l'error en una finestra
+		//MessageBox::WriteLine(ex->Message);
 	}
 	finally {
-		// si tot va be es tanca la connexio
-		if (totcorrecte) {
-			MessageBox::Show("Grup Creat Correctament.");
-		}
 		conn->Close();
 	}
 }
-*/

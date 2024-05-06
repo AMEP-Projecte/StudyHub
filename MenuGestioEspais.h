@@ -38,6 +38,8 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ botoncrear;
 	private: System::Windows::Forms::Button^ botoneditar;
 	private: System::Windows::Forms::Button^ botonconsultar;
+
+
 	private: System::Windows::Forms::Button^ botoneliminar;
 
 

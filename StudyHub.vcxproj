@@ -221,6 +221,7 @@
     <ClInclude Include="TxCreaEspai.h" />
     <ClInclude Include="TxCreaEstudiant.h" />
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
+    <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
     <ClInclude Include="TxEliminarGrup.h" />
@@ -283,6 +284,7 @@
     <ClCompile Include="TxCreaEspai.cpp" />
     <ClCompile Include="TxCreaEstudiant.cpp" />
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />
+    <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />

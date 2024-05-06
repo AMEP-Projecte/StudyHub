@@ -18,10 +18,6 @@ void TxConsultaEspai::executar() {
 		_nom = e->obteNom();
 		_capacitat = e->obteCapacitat();
 		_uproveidor = e->obteProveidor();
-
-		//CercadoraPertany aux;
-		//List<PassarellaPertany^>^ l = aux.cercaParticipants(_nom);
-		//_nombreParticipants = l->Count;
 	}
 }
 

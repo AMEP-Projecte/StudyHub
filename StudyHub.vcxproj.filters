@@ -272,6 +272,9 @@
     <ClInclude Include="EditarEspaiUI.h">
       <Filter>GestioEspai\Presentacio</Filter>
     </ClInclude>
+    <ClInclude Include="TxEditarEspai.h">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -438,6 +441,9 @@
     </ClCompile>
     <ClCompile Include="EditarEspaiUI.cpp">
       <Filter>GestioEspai\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarEspai.cpp">
+      <Filter>GestioEspai\Tx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
