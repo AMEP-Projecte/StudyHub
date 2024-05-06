@@ -311,9 +311,6 @@
     <EmbeddedResource Include="EditarGrup.resx">
       <DependentUpon>EditarGrup.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarEspai.resx">
-      <DependentUpon>EliminarEspai.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EliminarGrupEstudi.resx">
       <DependentUpon>EliminarGrupEstudi.h</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "TxEliminarEspai.h"
 #include "Sistema.h"
 
@@ -99,7 +99,7 @@ namespace StudyHub {
 		/// 
 
 		// Pre: Cert
-		// Post: Hem creat una Data Table amb l'inforamació dels espais creats 
+		// Post: Hem creat una Data Table amb l'inforamaciï¿½ dels espais creats 
 		void omplir() {
 			Sistema^ sist = Sistema::getInstance();
 			MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
@@ -242,7 +242,7 @@ namespace StudyHub {
 			this->Name = L"EliminarEspai";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"StudyHub";
-		
+
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -264,7 +264,7 @@ namespace StudyHub {
 		Sistema^ sist = Sistema::getInstance();
 		try {
 			if (this->textBox1->Text != "") {
-				TxEliminarEspai EliminarEspai(this->textBox1->Text, sist->obteEstudiant()->obteUsername());
+				TxEliminarEspai EliminarEspai(this->textBox1->Text, sist->obteProveidor()->obteNomUsuari());
 				EliminarEspai.executar();
 				omplir();
 				this->Close();
@@ -277,7 +277,7 @@ namespace StudyHub {
 			MessageBox::Show(ex->Message);
 		}
 	}
-	private: System::Void EliminarGrupEstudi_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void EliminarEspai_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

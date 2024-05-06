@@ -257,6 +257,9 @@
     <ClInclude Include="TxEliminarEspai.h">
       <Filter>GestioEspai\Tx</Filter>
     </ClInclude>
+    <ClInclude Include="EliminarEspai.h">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -408,6 +411,9 @@
     </ClCompile>
     <ClCompile Include="TxEliminarEspai.cpp">
       <Filter>GestioEspai\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarEspai.cpp">
+      <Filter>GestioEspai\Presentacio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

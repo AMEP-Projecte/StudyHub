@@ -66,26 +66,23 @@ void PassarellaEspai::insereix() {
 }
 
 void PassarellaEspai::esborra() {
-
-	bool totperfe = true;
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	String^ sql = String::Format("DELETE INTO espai VALUES ('{0}', '{1}', '{2}', '{3}');", _adreca, _nom, _capacitat, _userProveidor);
+
+	String^ sql = "DELETE FROM espai WHERE adreca=@a";
+
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-	MySqlDataReader^ dataReader;
+
+	cmd->Parameters->AddWithValue("@a", _adreca);
+
 	try {
 		conn->Open();
-		dataReader = cmd->ExecuteReader();
+		cmd->ExecuteNonQuery();
 	}
-	catch (MySqlException^ ex) {
-		MessageBox::Show(ex->Message);
-		totperfe = false;
+	catch (Exception^ ex) {
+		//Errors
 	}
 	finally {
-		if (totperfe) {
-			MessageBox::Show("Nou espai creat perfectament.");
-		}
 		conn->Close();
 	}
-
 }
