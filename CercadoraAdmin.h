@@ -1,7 +1,11 @@
 #pragma once
 #include "PassarellaAdmin.h"
+
+using namespace System;
+
 ref class CercadoraAdmin
 {
-	PassarellaAdmin^ cercaAdmin(String^ useraname);
+public:
+	PassarellaAdmin^ cercaAdmin(String^ username);
 };
 

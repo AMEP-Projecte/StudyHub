@@ -6,20 +6,22 @@ ref class PassarellaEspai
 private:
 	String^ _adreca;
 	String^ _nom;
-	String^ _capacitat;
+	int _capacitat;
 	String^ _userProveidor;
 public:
 	PassarellaEspai();
-	PassarellaEspai(String^ adreca, String^ nom, String^ capacitat, String^ proveidor);
+	PassarellaEspai(String^ adreca, String^ nom, int capacitat, String^ proveidor);
+	PassarellaEspai(const PassarellaEspai% P);
 
 	void posarAdreca(String^ adreca);
 	void posarNom(String^ nom);
-	void posarCapacitat(String^ capacitat);
+	void posarCapacitat(int capacitat);
 	void posarProveidor(String^ proveidor);
 
 	String^ obteAdreca();
 	String^ obteNom();
-	String^ obteCapacitat();
+	int obteCapacitat();
 	String^ obteProveidor();
-};
 
+	void insereix(); 
+};

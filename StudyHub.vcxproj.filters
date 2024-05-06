@@ -254,6 +254,24 @@
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
     </ClInclude>
+    <ClInclude Include="MenuGestioEspais.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearEspaiUI.h">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCreaEspai.h">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultarEspaiUI.h">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaEspai.h">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarEspaiUI.h">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -402,6 +420,24 @@
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
       <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioEspais.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearEspaiUI.cpp">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCreaEspai.cpp">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarEspaiUI.cpp">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaEspai.cpp">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarEspaiUI.cpp">
+      <Filter>GestioEspai\Presentacio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
