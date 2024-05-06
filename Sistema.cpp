@@ -13,6 +13,10 @@ void Sistema::canviaContrasenya(String^ cNova) {
 	_contrasenya = cNova;
 }
 
+String^ Sistema::obteUsername() {
+	return _username;
+}
+
 String^ Sistema::obteContrasenya() {
 	return _contrasenya;
 }
@@ -35,6 +39,7 @@ PassarellaAdmin^ Sistema::obteAdministrador() {
 
 void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^ pro) {
 	_sessioIniciada = true;
+	_username = usu->obteNomUsuari();
 	_tipusUsuari = usu->obteTipus();
 	_contrasenya = usu->obteContrasenya();
 	if (_tipusUsuari == "estudiant" && estu != nullptr) {
