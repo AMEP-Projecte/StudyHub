@@ -146,25 +146,3 @@ void PassarellaEstudiant::modifica()
     }
 }
 
-void PassarellaEstudiant::esborra()
-{
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
-    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-
-    String^ sql = "DELETE FROM estudiant WHERE username = @username";
-
-    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-
-    cmd->Parameters->AddWithValue("@username", _username);
-
-    try {
-        conn->Open();
-        cmd->ExecuteNonQuery();
-    }
-    catch (Exception^ ex) {
-        //Errors
-    }
-    finally {
-        conn->Close();
-    }
-}

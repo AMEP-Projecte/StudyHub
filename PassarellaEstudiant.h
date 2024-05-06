@@ -42,5 +42,4 @@ public:
 
     void insereix() override;
     void modifica() override;
-    void esborra() override;
 };
