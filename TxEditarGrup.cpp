@@ -9,7 +9,7 @@ TxEditarGrup::TxEditarGrup(String^ n, String^ t) {
 void TxEditarGrup::executar() {
 	CercadoraGrup cg;
 	PassarellaGrup^ grup = cg.cercaPerNomGrup(_nom);
-	if (grup->obteNom() != " ") {
+	if (grup->obteNom() != "") {
 		grup->posaTematica(_tematica);
 		grup->modifica();
 	}
