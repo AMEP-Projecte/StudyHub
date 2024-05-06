@@ -16,13 +16,13 @@ System::Void EditarProveidorUI::edit_Click(System::Object^ sender, System::Event
 	}
 	else {
 		TxEditarProveidor^ txEdit = gcnew TxEditarProveidor(ca, cn);
-		try {
-			txEdit->executar();
+		txEdit->executar();
+		if (txEdit->obteError()) {
+			MessageBox::Show("Error: Contrasenya actual incorrecta.");
+		}
+		else {
 			MessageBox::Show("Contrasenya modificada correctament.");
 			this->Close();
-		}
-		catch (Exception^ ex) {
-			MessageBox::Show(ex->Message);
 		}
 	}
 }

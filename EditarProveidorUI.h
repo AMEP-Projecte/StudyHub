@@ -165,7 +165,7 @@ namespace StudyHub {
 			this->Controls->Add(this->editStudent);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"EditarProveidorUI";
-			this->Text = L"EditarProveidorUI";
+			this->Text = L"0";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

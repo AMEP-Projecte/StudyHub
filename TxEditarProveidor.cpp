@@ -22,9 +22,10 @@ void TxEditarProveidor::executar() {
 		pu->posaContrasenya(_contrasenyaNova);
 		pu->modifica();
 		sist->canviaContrasenya(_contrasenyaNova);
+		_error = false;
 	}
 	else {
-		throw gcnew Exception("Error: Contrasenya actual incorrecta.");
+		_error = true;
 	}
 }
 
