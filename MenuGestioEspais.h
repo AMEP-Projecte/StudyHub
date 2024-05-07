@@ -148,6 +148,7 @@ namespace StudyHub {
 			this->botoneliminar->TabIndex = 10;
 			this->botoneliminar->Text = L"Eliminar Espai";
 			this->botoneliminar->UseVisualStyleBackColor = true;
+			this->botoneliminar->Click += gcnew System::EventHandler(this, &MenuGestioEspais::botoneliminar_Click);
 			// 
 			// MenuGestioEspais
 			// 
@@ -172,5 +173,6 @@ namespace StudyHub {
 	private: System::Void botoncrear_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void botonconsultar_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void botoneditar_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void botoneliminar_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
