@@ -22,13 +22,13 @@ namespace StudyHub {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar cÛdigo de constructor aquÌ
+			//TODO: agregar c√≥digo de constructor aqu√≠
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estÈn usando.
+		/// Limpiar los recursos que se est√©n usando.
 		/// </summary>
 		~ConsultarSessionsUI()
 		{
@@ -45,14 +45,14 @@ namespace StudyHub {
 
 	private:
 		/// <summary>
-		/// Variable del diseÒador necesaria.
+		/// Variable del dise√±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// MÈtodo necesario para admitir el DiseÒador. No se puede modificar
-		/// el contenido de este mÈtodo con el editor de cÛdigo.
+		/// M√©todo necesario para admitir el Dise√±ador. No se puede modificar
+		/// el contenido de este m√©todo con el editor de c√≥digo.
 		/// </summary>
 		void omplir() {
 			Sistema^ sist = Sistema::getInstance();
@@ -63,7 +63,7 @@ namespace StudyHub {
 			DataTable^ dt = gcnew DataTable();
 			String^ sql = "SELECT * FROM sessio ";
 			sql += "WHERE grup IN(SELECT grup FROM pertany WHERE estudiant = '" + username + "') ";
-			sql += " AND ((data < CURDATE()) OR (data = CURDATE() and hora_inici > CURTIME()));";
+			sql += " AND ((data > CURDATE()) OR (data = CURDATE() and hora_inici > CURTIME()));";
 
 			MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);
 			da->Fill(dt);
@@ -88,7 +88,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(382, 36);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"PrÚximes Sessions d\'Estudi";
+			this->label1->Text = L"Pr√≤ximes Sessions d\'Estudi";
 			// 
 			// dataGridView1
 			// 
