@@ -254,6 +254,9 @@
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
     </ClInclude>
+    <ClInclude Include="MenuSessionsUI.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -401,6 +404,9 @@
       <Filter>Menus</Filter>
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSessionsUI.cpp">
       <Filter>Menus</Filter>
     </ClCompile>
   </ItemGroup>
