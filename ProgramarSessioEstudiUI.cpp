@@ -19,10 +19,20 @@ System::Void StudyHub::ProgamarSessioEstudiUI::buttonOK_Click(System::Object^ se
 	}
 	else {
 		// Los campos están seleccionados, proceder con la lógica principal
-		String^ data = dateTimePicker1->Value.ToString("yyyy-MM-dd");
-		String^ horaFi = horaFnumeric->Value.ToString("HH:mm:ss");
-		String^ horaI = horaINumeric->Value.ToString("HH:mm:ss");
-		tx.ProgramarSessio(grupComboBox->SelectedItem->ToString(), data, horaI, horaFi, espaiComboBox->SelectedItem->ToString());
+		
+		
+		try {
+			
+			String^ data = dateTimePicker1->Value.ToString("yyyy-MM-dd");
+			String^ horaFi = horaFnumeric->Value.ToString() + ":00:00";
+			String^ horaI = horaINumeric->Value.ToString() + ":00:00";
+			TxProgramarSessioEstudi tx(grupComboBox->SelectedItem->ToString(), data, horaI, horaFi, espaiComboBox->SelectedItem->ToString());
+			tx.executar();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
+
 	}
 	
 }
