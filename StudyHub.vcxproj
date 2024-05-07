@@ -164,6 +164,9 @@
     <ClInclude Include="EliminarPerfilEstudiantUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="IniciarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -235,6 +238,7 @@
     <ClCompile Include="EditarGrup.cpp" />
     <ClCompile Include="EliminarGrupEstudi.cpp" />
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />
+    <ClCompile Include="EsborraSessioUI.cpp" />
     <ClCompile Include="IniciarSessio.cpp" />
     <ClCompile Include="IniciSessio.cpp" />
     <ClCompile Include="MenuAdministrador.cpp" />
@@ -312,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarPerfilEstudiantUI.resx">
       <DependentUpon>EliminarPerfilEstudiantUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EsborraSessioUI.resx">
+      <DependentUpon>EsborraSessioUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciSessio.resx">
       <DependentUpon>IniciSessio.h</DependentUpon>
