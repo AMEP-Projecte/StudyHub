@@ -6,7 +6,9 @@
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
+using namespace System::Collections::Generic;
 using namespace std;
+
 PassarellaGrup^ CercadoraGrup::cercaPerNomGrup(String^ NomGrup) {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -30,29 +32,26 @@ PassarellaGrup^ CercadoraGrup::cercaPerNomGrup(String^ NomGrup) {
 		}
 	}
 	catch (MySqlException^ ex) {
-		//MessageBox::Show(ex->Message);
+		MessageBox::Show(ex->Message);
 	}
 	PassarellaGrup^ Grup = gcnew PassarellaGrup(nomGrup, tematica, creador);
 	conn->Close();
 	return Grup;
 }
 
-List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ username)
+List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ nomCreador)
 {
-
-
-
-	 List<PassarellaGrup^>^ result = gcnew List<PassarellaGrup^>();
+    List<PassarellaGrup^>^ result = gcnew List<PassarellaGrup^>();
 
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-    String^ sql = String::Format("SELECT * FROM grup WHERE creador = '{0}';", username);
+    String^ sql = "SELECT * FROM grup WHERE creador = @nomCreador";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-    
+    cmd->Parameters->AddWithValue("@nomCreador", nomCreador);
 
     MySqlDataReader^ reader = nullptr;
-    Console::WriteLine("PassarellaGrup creada: ");
+
     try {
         // Abrimos la conexión
         conn->Open();
@@ -62,19 +61,15 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ username)
 
         // Leemos los resultados
         while (reader->Read()) {
-            String^ nomGrup = safe_cast<String^>(reader["nom"]);
-            String^ tematica = safe_cast<String^>(reader["tematica"]);
-            String^ creador = safe_cast<String^>(reader["creador"]);
-            Console::WriteLine("PassarellaGrup creada: " + nomGrup + tematica+creador);
+            String^nom = reader->GetString("nom");
+            String^ tematica = reader->GetString("tematica");
+            String^ creador = reader->GetString("creador");
             // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
-            PassarellaGrup^ passarella = gcnew PassarellaGrup( nomGrup, tematica, creador);
+            PassarellaGrup^ passarella = gcnew PassarellaGrup(nom, tematica, creador);
             result->Add(passarella);
         }
-       
     }
-    catch (Exception^ ex) {
-        MessageBox::Show("Error: " + ex->Message);
-    }
+   
     finally {
         // Cerramos el lector
         if (reader != nullptr) {
@@ -87,5 +82,3 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ username)
 
     return result;
 }
-	
-
