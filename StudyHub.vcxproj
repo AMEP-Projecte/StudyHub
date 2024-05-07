@@ -210,6 +210,7 @@
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
     <ClInclude Include="TxEliminarGrup.h" />
+    <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxTancarSessio.h" />
@@ -266,6 +267,7 @@
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
+    <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
     <ClCompile Include="TxTancarSessio.cpp" />
