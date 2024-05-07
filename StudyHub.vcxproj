@@ -188,6 +188,9 @@
     <ClInclude Include="MenuProvedor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ParticipacioSessio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaAdmin.h" />
     <ClInclude Include="PassarellaEspai.h" />
     <ClInclude Include="PassarellaEstudiant.h" />
@@ -212,6 +215,7 @@
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
+    <ClInclude Include="TxParticipacioSessio.h" />
     <ClInclude Include="TxTancarSessio.h" />
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +246,7 @@
     <ClCompile Include="MenuGestioGrups.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="MenuProvedor.cpp" />
+    <ClCompile Include="ParticipacioSessio.cpp" />
     <ClCompile Include="PassarellaAdmin.cpp" />
     <ClCompile Include="PassarellaEspai.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
@@ -268,6 +273,7 @@
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
+    <ClCompile Include="TxParticipacioSessio.cpp" />
     <ClCompile Include="TxTancarSessio.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuProvedor.resx">
       <DependentUpon>MenuProvedor.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParticipacioSessio.resx">
+      <DependentUpon>ParticipacioSessio.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TancarSessio.resx">
       <DependentUpon>TancarSessio.h</DependentUpon>

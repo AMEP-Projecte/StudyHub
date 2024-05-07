@@ -254,6 +254,12 @@
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
     </ClInclude>
+    <ClInclude Include="TxParticipacioSessio.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticipacioSessio.h">
+      <Filter>GestioSessio\Presentacio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -402,6 +408,12 @@
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
       <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="TxParticipacioSessio.cpp">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticipacioSessio.cpp">
+      <Filter>GestioSessio\Presentacio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
