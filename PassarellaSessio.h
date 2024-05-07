@@ -28,6 +28,8 @@ public:
 	String^ obteHoraFi();
 	String^ obteAdreca();
 	int obteLlocsLliures();
+		
 	void insereix();
+	void modifica();
 };
 
