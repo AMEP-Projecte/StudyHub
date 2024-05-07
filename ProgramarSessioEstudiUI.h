@@ -18,9 +18,9 @@ namespace StudyHub {
 		ProgamarSessioEstudiUI(void)
 		{
 			InitializeComponent();
-
-			List<PassarellaGrup^>^ grups = tx.obteGrups();
-			List<PassarellaEspai^>^ espais = tx.obteEspais();
+			List<PassarellaGrup^>^ grups = ProgamarSessioEstudiUI::tx.obteResultat().grups;
+			List<PassarellaEspai^>^ espais = ProgamarSessioEstudiUI::tx.obteResultat().espais;
+			
 			for each (PassarellaGrup ^ grup in grups)
 			{
 				grupComboBox->Items->Add(grup->obteNom());
@@ -29,6 +29,7 @@ namespace StudyHub {
 			{
 				espaiComboBox->Items->Add(espai->obteAdreca());
 			}
+
 
 		}
 

@@ -14,37 +14,57 @@ TxProgramarSessioEstudi::TxProgramarSessioEstudi() {
 	Sistema^ sist = Sistema::getInstance();
 	String^ username = sist->obteEstudiant()->obteNomUsuari();
 	CercadoraGrup cercadoraGrups;
-	grups = cercadoraGrups.cercaPerCreador(username);
+	_resultat.grups = cercadoraGrups.cercaPerCreador(username);
 	CercadoraEspai cercadoraEspai;
-	espais = cercadoraEspai.totsEspai();
+	_resultat.espais = cercadoraEspai.totsEspai();
 	
-	
-}
-List<PassarellaGrup^>^ TxProgramarSessioEstudi::obteGrups() {
-	return grups;
-}
-List<PassarellaEspai^>^ TxProgramarSessioEstudi::obteEspais() {
-	return espais;
-}
 
+	
+}
+TxProgramarSessioEstudi::TxProgramarSessioEstudi(String^ grup, String^ data, String^ horaI, String^ horaF, String^ adreca)
+{
+	Sistema^ sist = Sistema::getInstance();
+	String^ username = sist->obteEstudiant()->obteNomUsuari();
+	CercadoraGrup cercadoraGrups;
+	_resultat.grups = cercadoraGrups.cercaPerCreador(username);
+	CercadoraEspai cercadoraEspai;
+	_resultat.espais = cercadoraEspai.totsEspai();
+	_grup = grup;
+	_data = data;
+	_horaI = horaI;
+	_horaF = horaF;
+	_adreca = adreca;
+}
 List<PassarellaSessio^>^ TxProgramarSessioEstudi::obteSessionsPerAdreca(String^ adreca)
 {
 	CercadoraSessio cercadoraSessio;
-	sessions = cercadoraSessio.cercaSessioAdreca(adreca);
-	return sessions;
+	return cercadoraSessio.cercaSessioAdreca(adreca);
+
 }
-
-
-
-void  TxProgramarSessioEstudi::ProgramarSessio(String^ grup, String^ data, String^ horaI, String^ horaF, String^ adreca){
+void TxProgramarSessioEstudi::executar()
+{
+	int capacitat = 0;
 	
-	int^ capacitat;
-	for each  (PassarellaEspai^ espai in espais)
+	for each (PassarellaEspai ^ espai in _resultat.espais)
 	{
-		if (espai->obteAdreca() == adreca) {
+		
+		if (espai->obteAdreca() == _adreca) {
 			capacitat = espai->obteCapacitat();
+			
 		}
 	}
-	PassarellaSessio p(grup, data, horaI, horaF, adreca, (int)capacitat);
+	PassarellaSessio p(_grup, _data, _horaI, _horaF, _adreca, capacitat);
 	p.insereix();
+	
+
+	
+		
+	
+
+	
+	
+}
+Resultat TxProgramarSessioEstudi::obteResultat()
+{
+	return _resultat;
 }

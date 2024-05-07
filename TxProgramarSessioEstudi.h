@@ -10,18 +10,26 @@
 using namespace System;
 using namespace std;
 using namespace System::Collections::Generic;
-ref class TxProgramarSessioEstudi
-{
-private:
+value struct Resultat {
 	List<PassarellaGrup^>^ grups;
 	List<PassarellaEspai^>^ espais;
 	List<PassarellaSessio^>^ sessions;
-
+};
+ref class TxProgramarSessioEstudi
+{
+private:
+	Resultat _resultat;
+	String^ _grup;
+	String^ _data;
+	String^ _horaI;
+	String^ _horaF;
+	String^ _adreca;
 public:
 	TxProgramarSessioEstudi();
-	List<PassarellaGrup^>^ obteGrups();
-	List<PassarellaEspai^>^ obteEspais();
-	List<PassarellaSessio^>^ obteSessionsPerAdreca(String^ adreca);
-	void ProgramarSessio(String^ grup, String^ data, String^ horaI, String^ horaF, String^ adreca);
+	TxProgramarSessioEstudi(String^ grup, String^ data, String^ horaI, String^ horaF, String^ adreca);
+	void executar();
+	Resultat obteResultat();
+	List<PassarellaSessio^>^ TxProgramarSessioEstudi::obteSessionsPerAdreca(String^ adreca);
+
 };
 
