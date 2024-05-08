@@ -43,7 +43,9 @@ System::Void StudyHub::IniciSessio::button1_Click(System::Object^ sender, System
 				Menu->HacerVisibleProvedor();
 				Menu->AbrirSubFormularioEnPanel(menuProv);
 			}
-
+			else {
+				MessageBox::Show("Error amb l'inici de sessio");
+			}
 		}
 	}
 }
