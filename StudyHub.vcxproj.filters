@@ -259,6 +259,20 @@
     </ClInclude>
     <ClInclude Include="EliminarEspai.h">
       <Filter>GestioEspai\Presentacio</Filter>
+    <ClInclude Include="EsborrarProveidorUI.h">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGestioProveidorAdmin.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborrarProveidor.h">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearProveidorUI.h">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCrearProveidor.h">
+      <Filter>GestioProveidor\Tx</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -414,6 +428,21 @@
     </ClCompile>
     <ClCompile Include="EliminarEspai.cpp">
       <Filter>GestioEspai\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="EsborrarProveidorUI.cpp">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioProveidorAdmin.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborrarProveidor.cpp">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearProveidorUI.cpp">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCrearProveidor.cpp">
+      <Filter>GestioProveidor\Tx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
