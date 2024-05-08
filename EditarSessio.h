@@ -21,13 +21,13 @@ namespace StudyHub {
 		{
 			InitializeComponent();
 			//
-			//TODO: agregar código de constructor aquí
+			//TODO: agregar cÃ³digo de constructor aquÃ­
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Limpiar los recursos que se estén usando.
+		/// Limpiar los recursos que se estÃ©n usando.
 		/// </summary>
 		~EditarSessio()
 		{
@@ -42,20 +42,24 @@ namespace StudyHub {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ buttonEditar;
 	private: System::Windows::Forms::Button^ buttonTornar;
-	private: TxEditarSessio^ tx;
+
+	private: String^ grup;
+	private: String^ data;
+	private: String^ hora_inici;
+	private: String^ hora_fi;
 
 	protected:
 
 	private:
 		/// <summary>
-		/// Variable del diseñador necesaria.
+		/// Variable del diseÃ±ador necesaria.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Método necesario para admitir el Diseñador. No se puede modificar
-		/// el contenido de este método con el editor de código.
+		/// MÃ©todo necesario para admitir el DiseÃ±ador. No se puede modificar
+		/// el contenido de este mÃ©todo con el editor de cÃ³digo.
 		/// </summary>
 		void omplir() {
 			Sistema^ sist = Sistema::getInstance();
@@ -94,7 +98,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(303, 36);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Editar Sessió d\'Estudi";
+			this->label1->Text = L"Editar SessiÃ³ d\'Estudi";
 			// 
 			// dataGridView1
 			// 
@@ -125,7 +129,7 @@ namespace StudyHub {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(258, 26);
 			this->label2->TabIndex = 7;
-			this->label2->Text = L"Nova hora de fi de sessió:";
+			this->label2->Text = L"Nova hora de fi de sessiÃ³:";
 			// 
 			// textBox1
 			// 
@@ -194,18 +198,23 @@ namespace StudyHub {
 	}
 	private: System::Void buttonEditar_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (textBox1->Text == "") {
-			MessageBox::Show("Selecciona una sessió per editar.");
+			MessageBox::Show("Selecciona una sessiÃ³ per editar.");
 		}
 		else {
-			tx->posaNovaHoraFi(textBox1->Text);
+			TxEditarSessio^ tx = gcnew TxEditarSessio(grup, data, hora_inici, hora_fi);
 
-			try {
-				tx->executar();
-				MessageBox::Show("Hora de fi de sessió modificada correctament.");
-				this->omplir();
-			}
-			catch (Exception^ ex) {
-				MessageBox::Show(ex->Message);
+			if (hora_fi == textBox1->Text) MessageBox::Show("Posa una nova hora de fi.");
+			else {
+				tx->posaNovaHoraFi(textBox1->Text);
+
+				try {
+					tx->executar();
+					MessageBox::Show("Hora de fi de sessiÃ³ modificada correctament.");
+					this->omplir();
+				}
+				catch (Exception^ ex) {
+					MessageBox::Show(ex->Message);
+				}
 			}
 		}
 	}
@@ -217,13 +226,15 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	int index = e->RowIndex;
 	dataGridView1->Rows[index]->Selected = true;
 
-	String^ grup = Convert::ToString(dataGridView1->Rows[index]->Cells[0]->Value);
-	String^ data = Convert::ToString(dataGridView1->Rows[index]->Cells[1]->Value);
-	String^ horaInici = Convert::ToString(dataGridView1->Rows[index]->Cells[2]->Value);
-	String^ horaFi = Convert::ToString(dataGridView1->Rows[index]->Cells[3]->Value);;
+	grup = Convert::ToString(dataGridView1->Rows[index]->Cells[0]->Value);
 
-	tx = gcnew TxEditarSessio(grup, data, horaInici, horaFi);
-	textBox1->Text = horaFi;
+	DateTime^ d = Convert::ToDateTime(dataGridView1->Rows[index]->Cells[1]->Value);
+	data = d->ToString("yyyy-MM-dd");
+
+	hora_inici = Convert::ToString(dataGridView1->Rows[index]->Cells[2]->Value);
+	hora_fi = Convert::ToString(dataGridView1->Rows[index]->Cells[3]->Value);
+
+	textBox1->Text = hora_fi;
 }
 };
 }
