@@ -142,5 +142,8 @@ namespace StudyHub {
 	}
 	private: System::Void gestionaPerfil_Click(System::Object^ sender, System::EventArgs^ e);
 
+	private: System::Void gestionaEspais_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	}
 };
 }
