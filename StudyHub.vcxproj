@@ -418,6 +418,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ParticipacioSessio.resx">
       <DependentUpon>ParticipacioSessio.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuSessionsUI.resx">
       <DependentUpon>MenuSessionsUI.h</DependentUpon>
     </EmbeddedResource>
