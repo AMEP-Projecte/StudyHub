@@ -3,15 +3,9 @@
 
 ref class PassarellaProveidor : PassarellaUsuari
 {
-    private:
+public:
+	PassarellaProveidor(String^ username, String^ contrasenya, String^ tipus);
 
-
-    public:
-    // Constructor
-    PassarellaProveidor(String^ username);
-
-    // Getters y setters
-    //void posaUsername(String^ username);
-    String^ obteUsername();
+	void insereix() override;
 };
 
