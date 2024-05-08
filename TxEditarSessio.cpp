@@ -14,12 +14,8 @@ void TxEditarSessio::executar() {
 	sessio->posaGrup(grup);
 	sessio->posaData(data);
 	sessio->posaHoraInici(hora_inici);
-
-	if (nova_hora_fi == hora_fi) throw gcnew Exception("Posa una nova hora de fi.");
-	else {
-		sessio->posaHoraFi(nova_hora_fi);
-		sessio->modifica();
-	}
+	sessio->posaHoraFi(nova_hora_fi);
+	sessio->modifica();
 }
 
 void TxEditarSessio::posaNovaHoraFi(String^ nhf) {
