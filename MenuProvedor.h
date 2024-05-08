@@ -1,4 +1,6 @@
 #pragma once
+#include "Sistema.h"
+#include "PassarellaProveidor.h"
 
 namespace StudyHub {
 
@@ -43,6 +45,7 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ gestionaPerfil;
 	private: System::Windows::Forms::Label^ menuEstudiantt;
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -72,7 +75,7 @@ namespace StudyHub {
 			this->tancaSessio->Name = L"tancaSessio";
 			this->tancaSessio->Size = System::Drawing::Size(204, 59);
 			this->tancaSessio->TabIndex = 12;
-			this->tancaSessio->Text = L"Tancar Sessió";
+			this->tancaSessio->Text = L"Tancar SessiÃ³";
 			this->tancaSessio->UseVisualStyleBackColor = true;
 			// 
 			// gestionaEspais
@@ -101,6 +104,7 @@ namespace StudyHub {
 			this->gestionaPerfil->TabIndex = 10;
 			this->gestionaPerfil->Text = L"Gestionar Perfil";
 			this->gestionaPerfil->UseVisualStyleBackColor = true;
+			this->gestionaPerfil->Click += gcnew System::EventHandler(this, &MenuProvedor::gestionaPerfil_Click);
 			// 
 			// menuEstudiantt
 			// 
@@ -111,7 +115,7 @@ namespace StudyHub {
 			this->menuEstudiantt->Name = L"menuEstudiantt";
 			this->menuEstudiantt->Size = System::Drawing::Size(348, 52);
 			this->menuEstudiantt->TabIndex = 9;
-			this->menuEstudiantt->Text = L"Menu ProveÏdor";
+			this->menuEstudiantt->Text = L"Menu ProveÃdor";
 			this->menuEstudiantt->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// MenuProvedor
@@ -128,14 +132,15 @@ namespace StudyHub {
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MenuProvedor";
 			this->Text = L"MenuProvedor";
+			this->Load += gcnew System::EventHandler(this, &MenuProvedor::MenuProvedor_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	private: System::Void MenuProvedor_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void gestionaPerfil_Click(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void gestionaEspais_Click(System::Object^ sender, System::EventArgs^ e);
-	//Menu gestiona Espais que despres connecta amb la pantalla MenuGestioEspais que sera la pantalla
-	//on el proveidor podra crear un espai nou
 };
 }

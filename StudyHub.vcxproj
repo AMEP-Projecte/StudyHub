@@ -149,6 +149,9 @@
     <ClInclude Include="ConsultarGrup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ConsultarProveidorUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CrearEspaiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -168,6 +171,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="EditarGrup.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditarProveidorUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="EliminarEspaiUI.h">
@@ -209,6 +215,9 @@
     <ClInclude Include="MenuGestioGrups.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MenuGestioProveidor.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MenuGestioProveidorAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -242,12 +251,14 @@
     <ClInclude Include="TxConsultaEspai.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
+    <ClInclude Include="TxConsultarProveidor.h" />
     <ClInclude Include="TxCreaEspai.h" />
     <ClInclude Include="TxCreaEstudiant.h" />
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
     <ClInclude Include="TxCrearProveidor.h" />
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
+    <ClInclude Include="TxEditarProveidor.h" />
     <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
@@ -272,6 +283,7 @@
     <ClCompile Include="ConsultarEspaiUI.cpp" />
     <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
+    <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CrearEspaiUI.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />
@@ -280,6 +292,7 @@
     <ClCompile Include="EditarEspaiUI.cpp" />
     <ClCompile Include="EditarEstudiant.cpp" />
     <ClCompile Include="EditarGrup.cpp" />
+    <ClCompile Include="EditarProveidorUI.cpp" />
     <ClCompile Include="EliminarEspaiUI.cpp" />
     <ClCompile Include="EliminarEspai.cpp" />
     <ClCompile Include="EliminarGrupEstudi.cpp" />
@@ -293,6 +306,7 @@
     <ClCompile Include="MenuGestioEspais.cpp" />
     <ClCompile Include="MenuGestioEstudiant.cpp" />
     <ClCompile Include="MenuGestioGrups.cpp" />
+    <ClCompile Include="MenuGestioProveidor.cpp" />
     <ClCompile Include="MenuGestioProveidorAdmin.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="MenuProvedor.cpp" />
@@ -318,12 +332,14 @@
     <ClCompile Include="TxConsultaEspai.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
+    <ClCompile Include="TxConsultarProveidor.cpp" />
     <ClCompile Include="TxCreaEspai.cpp" />
     <ClCompile Include="TxCreaEstudiant.cpp" />
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />
     <ClCompile Include="TxCrearProveidor.cpp" />
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
+    <ClCompile Include="TxEditarProveidor.cpp" />
     <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
@@ -360,6 +376,9 @@
     <EmbeddedResource Include="consultargrup.resx">
       <DependentUpon>ConsultarGrup.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarProveidorUI.resx">
+      <DependentUpon>ConsultarProveidorUI.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrearEspaiUI.resx">
       <DependentUpon>CrearEspaiUI.h</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarGrup.resx">
       <DependentUpon>EditarGrup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarProveidorUI.resx">
+      <DependentUpon>EditarProveidorUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarGrupEstudi.resx">
       <DependentUpon>EliminarGrupEstudi.h</DependentUpon>
@@ -410,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestioGrups.resx">
       <DependentUpon>MenuGestioGrups.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGestioProveidor.resx">
+      <DependentUpon>MenuGestioProveidor.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestioProveidorAdmin.resx">
       <DependentUpon>MenuGestioProveidorAdmin.h</DependentUpon>

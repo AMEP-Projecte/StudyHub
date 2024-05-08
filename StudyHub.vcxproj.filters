@@ -31,9 +31,6 @@
     <Filter Include="GestioUsuaris\PassarellesCercadores">
       <UniqueIdentifier>{5822e92b-359a-4ab3-8a6d-c0f45129bf48}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GestioUsuaris\Presentacio">
-      <UniqueIdentifier>{f078b4a6-c306-45ef-8fd8-9eeab1ef3a4c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GestioUsuaris\Tx">
       <UniqueIdentifier>{284e4326-5ed5-4268-93b3-d05c752b7e66}</UniqueIdentifier>
     </Filter>
@@ -102,6 +99,9 @@
     </Filter>
     <Filter Include="GestioProveidor\Tx">
       <UniqueIdentifier>{d9ad9ac1-141c-416b-92cc-97f4448258be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioUsuaris\Presentacio">
+      <UniqueIdentifier>{f078b4a6-c306-45ef-8fd8-9eeab1ef3a4c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +253,21 @@
     </ClInclude>
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultarProveidor.h">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultarProveidorUI.h">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGestioProveidor.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarProveidor.h">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarProveidorUI.h">
+      <Filter>GestioProveidor\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="TxParticipacioSessio.h">
       <Filter>GestioSessio\Tx</Filter>
@@ -470,6 +485,21 @@
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
       <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarProveidor.cpp">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarProveidorUI.cpp">
+      <Filter>GestioProveidor\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioProveidor.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarProveidor.cpp">
+      <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarProveidorUI.cpp">
+      <Filter>GestioProveidor\Presentacio</Filter>
     </ClCompile>
     <ClCompile Include="TxParticipacioSessio.cpp">
       <Filter>GestioSessio\Tx</Filter>
