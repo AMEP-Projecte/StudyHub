@@ -53,6 +53,7 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ ButtonMenuGrups;
 	private: System::Windows::Forms::Button^ ButtonMenuAdmin;
 	private: System::Windows::Forms::Button^ ButtonMenuProveidors;
+	private: System::Windows::Forms::Button^ buttonMenuSessions;
 
 
 
@@ -80,6 +81,7 @@ namespace StudyHub {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MenuPrincipal::typeid));
 			this->studyHyb = (gcnew System::Windows::Forms::Label());
 			this->panelMenu = (gcnew System::Windows::Forms::Panel());
+			this->buttonMenuSessions = (gcnew System::Windows::Forms::Button());
 			this->ButtonMenuAdmin = (gcnew System::Windows::Forms::Button());
 			this->ButtonMenuProveidors = (gcnew System::Windows::Forms::Button());
 			this->ButtonMenuGrups = (gcnew System::Windows::Forms::Button());
@@ -116,6 +118,7 @@ namespace StudyHub {
 			// panelMenu
 			// 
 			this->panelMenu->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->panelMenu->Controls->Add(this->buttonMenuSessions);
 			this->panelMenu->Controls->Add(this->ButtonMenuAdmin);
 			this->panelMenu->Controls->Add(this->ButtonMenuProveidors);
 			this->panelMenu->Controls->Add(this->ButtonMenuGrups);
@@ -127,6 +130,25 @@ namespace StudyHub {
 			this->panelMenu->Name = L"panelMenu";
 			this->panelMenu->Size = System::Drawing::Size(220, 395);
 			this->panelMenu->TabIndex = 5;
+			// 
+			// buttonMenuSessions
+			// 
+			this->buttonMenuSessions->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonMenuSessions->FlatAppearance->BorderSize = 0;
+			this->buttonMenuSessions->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonMenuSessions->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
+			this->buttonMenuSessions->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->buttonMenuSessions->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonMenuSessions.Image")));
+			this->buttonMenuSessions->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonMenuSessions->Location = System::Drawing::Point(0, 390);
+			this->buttonMenuSessions->Name = L"buttonMenuSessions";
+			this->buttonMenuSessions->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
+			this->buttonMenuSessions->Size = System::Drawing::Size(220, 64);
+			this->buttonMenuSessions->TabIndex = 12;
+			this->buttonMenuSessions->Text = L" Menu Sessions";
+			this->buttonMenuSessions->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonMenuSessions->UseVisualStyleBackColor = true;
+			this->buttonMenuSessions->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonMenuSessions_Click);
 			// 
 			// ButtonMenuAdmin
 			// 
@@ -231,6 +253,7 @@ namespace StudyHub {
 			this->PanelLogo->Name = L"PanelLogo";
 			this->PanelLogo->Size = System::Drawing::Size(220, 70);
 			this->PanelLogo->TabIndex = 6;
+			this->PanelLogo->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelLogo_Paint);
 			// 
 			// panelTitle
 			// 
@@ -293,10 +316,13 @@ namespace StudyHub {
 			// 
 			// LabelTitle
 			// 
+			this->LabelTitle->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->LabelTitle->AutoSize = true;
 			this->LabelTitle->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 26, System::Drawing::FontStyle::Bold));
 			this->LabelTitle->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->LabelTitle->Location = System::Drawing::Point(213, 10);
+			this->LabelTitle->Location = System::Drawing::Point(236, 10);
 			this->LabelTitle->Name = L"LabelTitle";
 			this->LabelTitle->Size = System::Drawing::Size(133, 46);
 			this->LabelTitle->TabIndex = 0;
@@ -402,5 +428,10 @@ private: System::Void panelTitle_Paint(System::Object^ sender, System::Windows::
 private: System::Void ButtonMenuProveidors_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void ButtonMenuAdmin_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void PanelLogo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void buttonMenuSessions_Click(System::Object^ sender, System::EventArgs^ e);
+
 };
 }

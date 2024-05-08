@@ -141,12 +141,10 @@ namespace StudyHub {
 #pragma endregion
 private: System::Void ButtonIniciarSessio_Click(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^ e) {
-	//StudyHub::CrearEstudiant^ registraEstudiant = gcnew StudyHub::CrearEstudiant();
-}
-private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
+private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e);
+
 private: System::Void IniciarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };

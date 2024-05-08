@@ -1,5 +1,6 @@
 #pragma once
 #include "CercadoraGrup.h"
+#include "Sistema.h"
 
 using namespace System;
 
@@ -10,7 +11,7 @@ private:
 	String^ _tematica;
 
 public:
-	TxEditarGrup(String^ n, String^ t); // Constructora
+	TxEditarGrup(String^ n, String^ t);
 	void executar();
-	
+
 };
