@@ -456,7 +456,7 @@
     </ClCompile>
     <ClCompile Include="TxEditarEspai.cpp">
       <Filter>GestioEspai\Tx</Filter>
-    </ClInclude>
+    </ClCompile>
     <ClCompile Include="TxEsborrarSessio.cpp">
       <Filter>GestioSessio\Tx</Filter>
     </ClCompile>
