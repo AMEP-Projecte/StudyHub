@@ -129,7 +129,7 @@ namespace StudyHub {
 			this->theme->Name = L"theme";
 			this->theme->Size = System::Drawing::Size(79, 20);
 			this->theme->TabIndex = 4;
-			this->theme->Text = L"Tem�tica:";
+			this->theme->Text = L"Tem\u00e0tica:";
 			// 
 			// participants
 			// 

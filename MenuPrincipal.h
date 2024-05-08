@@ -164,7 +164,7 @@ namespace StudyHub {
 			this->ButtonMenuAdmin->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->ButtonMenuAdmin->Size = System::Drawing::Size(220, 64);
 			this->ButtonMenuAdmin->TabIndex = 11;
-			this->ButtonMenuAdmin->Text = L"      Menu Administrador";
+			this->ButtonMenuAdmin->Text = L"      Men\u00fa Administrador";
 			this->ButtonMenuAdmin->UseVisualStyleBackColor = true;
 			this->ButtonMenuAdmin->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuAdmin_Click);
 			// 
@@ -182,7 +182,7 @@ namespace StudyHub {
 			this->ButtonMenuProveidors->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->ButtonMenuProveidors->Size = System::Drawing::Size(220, 64);
 			this->ButtonMenuProveidors->TabIndex = 10;
-			this->ButtonMenuProveidors->Text = L" Menu Proveidors";
+			this->ButtonMenuProveidors->Text = L" Men\u00fa Proveidors";
 			this->ButtonMenuProveidors->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenuProveidors->UseVisualStyleBackColor = true;
 			this->ButtonMenuProveidors->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuProveidors_Click);
@@ -201,7 +201,7 @@ namespace StudyHub {
 			this->ButtonMenuGrups->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->ButtonMenuGrups->Size = System::Drawing::Size(220, 64);
 			this->ButtonMenuGrups->TabIndex = 9;
-			this->ButtonMenuGrups->Text = L" Menu Grups";
+			this->ButtonMenuGrups->Text = L" Men\u00fa Grups";
 			this->ButtonMenuGrups->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenuGrups->UseVisualStyleBackColor = true;
 			this->ButtonMenuGrups->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuGrups_Click);
@@ -220,7 +220,7 @@ namespace StudyHub {
 			this->ButtonMenuEstudiant->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->ButtonMenuEstudiant->Size = System::Drawing::Size(220, 64);
 			this->ButtonMenuEstudiant->TabIndex = 8;
-			this->ButtonMenuEstudiant->Text = L" Menu Estudiant";
+			this->ButtonMenuEstudiant->Text = L" Men\u00fa Estudiant";
 			this->ButtonMenuEstudiant->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenuEstudiant->UseVisualStyleBackColor = true;
 			this->ButtonMenuEstudiant->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuEstudiant_Click);
@@ -239,7 +239,7 @@ namespace StudyHub {
 			this->ButtonMenu->Padding = System::Windows::Forms::Padding(3, 0, 0, 0);
 			this->ButtonMenu->Size = System::Drawing::Size(220, 64);
 			this->ButtonMenu->TabIndex = 7;
-			this->ButtonMenu->Text = L" Menu Principal";
+			this->ButtonMenu->Text = L" Men\u00fa Principal";
 			this->ButtonMenu->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenu->UseVisualStyleBackColor = true;
 			this->ButtonMenu->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonMenu);
@@ -326,7 +326,7 @@ namespace StudyHub {
 			this->LabelTitle->Name = L"LabelTitle";
 			this->LabelTitle->Size = System::Drawing::Size(133, 46);
 			this->LabelTitle->TabIndex = 0;
-			this->LabelTitle->Text = L"MENU";
+			this->LabelTitle->Text = L"MEN\u00da";
 			this->LabelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// PanelContainer

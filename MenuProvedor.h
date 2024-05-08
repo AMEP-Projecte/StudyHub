@@ -70,12 +70,12 @@ namespace StudyHub {
 			this->tancaSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->tancaSessio->ForeColor = System::Drawing::Color::DarkCyan;
+			this->tancaSessio->Name = L"tancaSessio";
+			this->tancaSessio->Text = L"Tancar Sessi\u00F3";
 			this->tancaSessio->Location = System::Drawing::Point(289, 294);
 			this->tancaSessio->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->tancaSessio->Name = L"tancaSessio";
 			this->tancaSessio->Size = System::Drawing::Size(204, 59);
 			this->tancaSessio->TabIndex = 12;
-			this->tancaSessio->Text = L"Tancar Sessió";
 			this->tancaSessio->UseVisualStyleBackColor = true;
 			// 
 			// gestionaEspais
@@ -115,7 +115,7 @@ namespace StudyHub {
 			this->menuEstudiantt->Name = L"menuEstudiantt";
 			this->menuEstudiantt->Size = System::Drawing::Size(348, 52);
 			this->menuEstudiantt->TabIndex = 9;
-			this->menuEstudiantt->Text = L"Menu ProveÏdor";
+			this->menuEstudiantt->Text = L"Men\u00fa Prove\u00efdor";
 			this->menuEstudiantt->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// MenuProvedor

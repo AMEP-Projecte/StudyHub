@@ -79,7 +79,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(357, 42);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Vols tancar la sessió\?";
+			this->label1->Text = L"Vols tancar la sessi\u00F3\?";
 			this->label1->Click += gcnew System::EventHandler(this, &TancarSessio::label1_Click);
 			// 
 			// button1
@@ -91,7 +91,7 @@ namespace StudyHub {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(113, 39);
 			this->button1->TabIndex = 1;
-			this->button1->Text = L"Sí";
+			this->button1->Text = L"S\u00ed";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &TancarSessio::button1_Click);
 			// 

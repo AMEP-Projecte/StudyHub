@@ -69,7 +69,7 @@ namespace StudyHub {
 			this->tancaSessio->Name = L"tancaSessio";
 			this->tancaSessio->Size = System::Drawing::Size(204, 59);
 			this->tancaSessio->TabIndex = 8;
-			this->tancaSessio->Text = L"Tancar Sessió";
+			this->tancaSessio->Text = L"Tancar Sessi\u00f3";
 			this->tancaSessio->UseVisualStyleBackColor = true;
 			// 
 			// gestionaGrups
@@ -96,7 +96,7 @@ namespace StudyHub {
 			this->gestionaPerfil->Name = L"gestionaPerfil";
 			this->gestionaPerfil->Size = System::Drawing::Size(204, 63);
 			this->gestionaPerfil->TabIndex = 6;
-			this->gestionaPerfil->Text = L"Gestionar Proveïdors";
+			this->gestionaPerfil->Text = L"Gestionar Prove\u00efdors";
 			this->gestionaPerfil->UseVisualStyleBackColor = true;
 			this->gestionaPerfil->Click += gcnew System::EventHandler(this, &MenuAdministrador::gestionaPerfil_Click);
 			// 
@@ -110,7 +110,7 @@ namespace StudyHub {
 			this->menuEstudiantt->Name = L"menuEstudiantt";
 			this->menuEstudiantt->Size = System::Drawing::Size(443, 52);
 			this->menuEstudiantt->TabIndex = 5;
-			this->menuEstudiantt->Text = L"Menu Administrador";
+			this->menuEstudiantt->Text = L"Men\u00fa Administrador";
 			this->menuEstudiantt->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// MenuAdministrador
