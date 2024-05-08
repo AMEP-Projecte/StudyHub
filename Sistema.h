@@ -2,6 +2,8 @@
 #include <string>
 #include "PassarellaUsuari.h"
 #include "PassarellaEstudiant.h"
+=======
+#include "PassarellaAdmin.h"
 #include "PassarellaProveidor.h"
 
 using namespace System;
@@ -13,8 +15,11 @@ private:
 	PassarellaEstudiant^ _est = nullptr;
 	PassarellaProveidor^ _pro = nullptr;
 	//PassarellaAdministrador* _adm = nullptr;
+=======
+	PassarellaAdmin^ _adm = nullptr;
 
 	bool _sessioIniciada;
+	String^ _username;
 	String^ _tipusUsuari;
 	String^ _contrasenya;
 
@@ -36,6 +41,9 @@ public:
 
 	bool obteEstatSessio();
 	void canviaEstatSessio(bool estat);
+	void canviaContrasenya(String^ cNova);
+
+	String^ obteUsername();
 
 	String^ obteContrasenya();
 
@@ -44,8 +52,9 @@ public:
 	PassarellaEstudiant^ obteEstudiant();
 	PassarellaProveidor^ obteProveidor();
 	//PassarelaAdministrador* obteAdministrador();
+	PassarellaAdmin^ obteAdministrador();
 
-	void iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu);
+	void iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^);
 	void tancaSessio();
 };
 */

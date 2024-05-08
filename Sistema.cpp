@@ -1,51 +1,3 @@
-/*#include "pch.h"
-#include "Sistema.h"
-
-bool Sistema::obteEstatSessio() {
-	return _sessioIniciada;
-}
-
-void Sistema::canviaEstatSessio(bool estat) {
-	_sessioIniciada = estat;
-}
-
-String^ Sistema::obteContrasenya() {
-	return _contrasenya;
-}
-
-String^ Sistema::obteTipusUsuari() {
-	return _tipusUsuari;
-}
-
-PassarellaEstudiant^ Sistema::obteEstudiant() {
-	return _est;
-}
-
-PassarellaProveidor^ Sistema::obteProveidor() {
-	return _pro;
- }
-
-//PassarelaAdministrador* Sistema::obteAdministrador() {
-//  return _adm;
-// }
-
-void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu) {
-	_sessioIniciada = true;
-	_est = estu;
-	_tipusUsuari = usu->obteTipus();
-	_contrasenya = usu->obteContrasenya();
-}
-
-void Sistema::tancaSessio() {
-	if (_est != nullptr) delete _est;
-	// if (_pro != nullptr) delete _pro;
-	// if (_adm != nullptr) delete _adm;
-	_sessioIniciada = false;
-	_tipusUsuari = "";
-	_contrasenya = "";
-}
-*/
-
 #include "pch.h"
 #include "Sistema.h"
 
@@ -57,6 +9,14 @@ void Sistema::canviaEstatSessio(bool estat) {
 	_sessioIniciada = estat;
 }
 
+void Sistema::canviaContrasenya(String^ cNova) {
+	_contrasenya = cNova;
+}
+
+String^ Sistema::obteUsername() {
+	return _username;
+}
+
 String^ Sistema::obteContrasenya() {
 	return _contrasenya;
 }
@@ -73,21 +33,23 @@ PassarellaProveidor^ Sistema::obteProveidor() {
 	return _pro;
 }
 
+
 PassarellaAdmin^ Sistema::obteAdministrador() {
 	return _adm;
 }
 
 void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^ pro) {
 	_sessioIniciada = true;
+	_username = usu->obteNomUsuari();
 	_tipusUsuari = usu->obteTipus();
 	_contrasenya = usu->obteContrasenya();
 	if (_tipusUsuari == "estudiant" && estu != nullptr) {
 		_est = estu;
 	}
-	else if (_tipusUsuari == "proveidor"/* && pro != nullptr */) {
+	else if (_tipusUsuari == "proveidor" && pro != nullptr) {
 		_pro = pro;
 	}
-	else if (_tipusUsuari == "administrador"/* && admin != nullptr*/) {
+	else if (_tipusUsuari == "administrador" && admin != nullptr) {
 		_adm = admin;
 	}
 	else {

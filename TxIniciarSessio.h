@@ -10,6 +10,7 @@ private:
 public:
 	TxIniciarSessio(String^ username, String^ contrasenya);
 
+
 	bool executar(/*string amb si te error??);
 }; 
 
@@ -24,6 +25,7 @@ private:
 	String^ _contrasenya;
 public:
 	TxIniciarSessio(String^ username, String^ contrasenya);
+
 
 	bool executar();
 };

@@ -4,7 +4,11 @@
 ref class CercadoraProveidor
 {
 public:
+
 	//PassarellaProveidor^ cercaProveidor(String^ username);
+
+	PassarellaProveidor^ cercaProveidor(String^ username);
+
 };
 
 */

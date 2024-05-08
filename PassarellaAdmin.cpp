@@ -6,3 +6,4 @@ PassarellaAdmin::PassarellaAdmin(String^ username)
 {
     _username = username;
 }
+

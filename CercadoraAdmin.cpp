@@ -27,7 +27,7 @@ PassarellaAdmin^ CercadoraAdmin::cercaAdmin(String^ username) {
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexión
+        // Cerramos la conexiï¿½n
         conn->Close();
     }
 	return pa;
@@ -53,11 +53,10 @@ PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexión
+        // Cerramos la conexiï¿½n
         conn->Close();
     }
     return pp;
 }
 */
-
 

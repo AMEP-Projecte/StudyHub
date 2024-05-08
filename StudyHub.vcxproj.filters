@@ -274,6 +274,11 @@
     </ClInclude>
     <ClInclude Include="TxEditarEspai.h">
       <Filter>GestioEspai\Tx</Filter>
+    <ClInclude Include="TxEsborrarSessio.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <Filter>GestioSessio\Presentacio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -444,6 +449,11 @@
     </ClCompile>
     <ClCompile Include="TxEditarEspai.cpp">
       <Filter>GestioEspai\Tx</Filter>
+    <ClCompile Include="TxEsborrarSessio.cpp">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EsborraSessioUI.cpp">
+      <Filter>GestioSessio\Presentacio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
