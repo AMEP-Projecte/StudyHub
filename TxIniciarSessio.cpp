@@ -27,11 +27,11 @@ bool TxIniciarSessio::executar() {
 		CercadoraEstudiant ce;
 		est = ce.cercaEstudiantPerNom(_username);
 	}
-	else if (user->obteTipus() == "proveidor") {
+	else if (user->obteTipus() == "administrador") {
 		CercadoraAdmin ca;
 		admin = ca.cercaAdmin(_username);
 	}
-	else if (user->obteTipus() == "administrador") {
+	else if (user->obteTipus() == "proveidor") {
 		CercadoraProveidor cp;
 		pro = cp.cercaProveidor(_username);
 	}

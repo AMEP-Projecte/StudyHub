@@ -1,5 +1,6 @@
 #pragma once
 #include "CercadoraGrup.h"
+#include "Sistema.h"
 
 using namespace System;
 

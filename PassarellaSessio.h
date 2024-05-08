@@ -29,6 +29,11 @@ public:
 	String^ obteAdreca();
 	int obteLlocsLliures();
 
-	void esborra();
+	
+=======
+		
+	void insereix();
+	void modifica();
+  void esborra();
 };
 
