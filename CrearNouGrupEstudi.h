@@ -56,6 +56,7 @@ namespace StudyHub {
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button1;
 
 
 
@@ -90,6 +91,7 @@ namespace StudyHub {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -99,7 +101,7 @@ namespace StudyHub {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(200, 34);
+			this->label4->Location = System::Drawing::Point(202, 42);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(204, 42);
 			this->label4->TabIndex = 3;
@@ -112,7 +114,7 @@ namespace StudyHub {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(85, 121);
+			this->label2->Location = System::Drawing::Point(126, 131);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(47, 22);
 			this->label2->TabIndex = 0;
@@ -121,18 +123,17 @@ namespace StudyHub {
 			// textBox1
 			// 
 			this->textBox1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->textBox1->Location = System::Drawing::Point(199, 123);
+			this->textBox1->Location = System::Drawing::Point(246, 133);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(213, 20);
+			this->textBox1->Size = System::Drawing::Size(230, 20);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label3
 			// 
-			this->label3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(85, 170);
+			this->label3->Location = System::Drawing::Point(126, 182);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(84, 22);
 			this->label3->TabIndex = 0;
@@ -141,9 +142,9 @@ namespace StudyHub {
 			// textBox2
 			// 
 			this->textBox2->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->textBox2->Location = System::Drawing::Point(199, 172);
+			this->textBox2->Location = System::Drawing::Point(246, 184);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(213, 20);
+			this->textBox2->Size = System::Drawing::Size(230, 20);
 			this->textBox2->TabIndex = 1;
 			// 
 			// button3
@@ -151,13 +152,26 @@ namespace StudyHub {
 			this->button3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->button3->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->button3->ForeColor = System::Drawing::Color::DarkCyan;
-			this->button3->Location = System::Drawing::Point(227, 279);
+			this->button3->Location = System::Drawing::Point(332, 279);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(144, 39);
 			this->button3->TabIndex = 6;
-			this->button3->Text = L"CREAR GRUP";
+			this->button3->Text = L"Crear Grup";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &CrearNouGrupEstudi::button3_Click);
+			// 
+			// button1
+			// 
+			this->button1->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->button1->ForeColor = System::Drawing::Color::DarkCyan;
+			this->button1->Location = System::Drawing::Point(130, 279);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(144, 39);
+			this->button1->TabIndex = 7;
+			this->button1->Text = L"Cancel·lar";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &CrearNouGrupEstudi::button1_Click);
 			// 
 			// CrearNouGrupEstudi
 			// 
@@ -166,6 +180,7 @@ namespace StudyHub {
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(607, 370);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->textBox2);
@@ -207,5 +222,7 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void flowLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
+
 };
 }

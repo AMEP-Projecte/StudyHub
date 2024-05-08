@@ -99,7 +99,7 @@ namespace StudyHub {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(107, 22);
+			this->label1->Location = System::Drawing::Point(103, 15);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(391, 42);
@@ -110,104 +110,114 @@ namespace StudyHub {
 			// 
 			this->NomLabel->AutoSize = true;
 			this->NomLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->NomLabel->Location = System::Drawing::Point(38, 87);
+			this->NomLabel->Location = System::Drawing::Point(38, 70);
 			this->NomLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->NomLabel->Name = L"NomLabel";
 			this->NomLabel->Size = System::Drawing::Size(29, 13);
 			this->NomLabel->TabIndex = 1;
 			this->NomLabel->Text = L"Nom";
+			this->NomLabel->Click += gcnew System::EventHandler(this, &CrearEstudiant::NomLabel_Click);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(39, 193);
+			this->label3->Location = System::Drawing::Point(39, 176);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(88, 13);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Correu Electronic";
+			this->label3->Click += gcnew System::EventHandler(this, &CrearEstudiant::label3_Click);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(360, 87);
+			this->label4->Location = System::Drawing::Point(360, 70);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(68, 13);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Nom d\'usuari";
+			this->label4->Click += gcnew System::EventHandler(this, &CrearEstudiant::label4_Click);
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label5->Location = System::Drawing::Point(38, 238);
+			this->label5->Location = System::Drawing::Point(38, 221);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(66, 13);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"Contrasenya";
+			this->label5->Click += gcnew System::EventHandler(this, &CrearEstudiant::label5_Click);
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
 			this->label6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label6->Location = System::Drawing::Point(40, 288);
+			this->label6->Location = System::Drawing::Point(40, 271);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(121, 13);
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"Repeteix la contrasenya";
+			this->label6->Click += gcnew System::EventHandler(this, &CrearEstudiant::label6_Click);
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
 			this->label7->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label7->Location = System::Drawing::Point(361, 193);
+			this->label7->Location = System::Drawing::Point(361, 176);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(74, 13);
 			this->label7->TabIndex = 6;
 			this->label7->Text = L"Idioma Preferit";
+			this->label7->Click += gcnew System::EventHandler(this, &CrearEstudiant::label7_Click);
 			// 
 			// nomBox
 			// 
-			this->nomBox->Location = System::Drawing::Point(41, 106);
-			this->nomBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->nomBox->Location = System::Drawing::Point(41, 89);
+			this->nomBox->Margin = System::Windows::Forms::Padding(2);
 			this->nomBox->Name = L"nomBox";
 			this->nomBox->Size = System::Drawing::Size(297, 20);
 			this->nomBox->TabIndex = 7;
+			this->nomBox->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::nomBox_TextChanged);
 			// 
 			// correuBox
 			// 
-			this->correuBox->Location = System::Drawing::Point(41, 211);
-			this->correuBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->correuBox->Location = System::Drawing::Point(41, 194);
+			this->correuBox->Margin = System::Windows::Forms::Padding(2);
 			this->correuBox->Name = L"correuBox";
 			this->correuBox->Size = System::Drawing::Size(297, 20);
 			this->correuBox->TabIndex = 8;
+			this->correuBox->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::correuBox_TextChanged);
 			// 
 			// nomusuariBox
 			// 
-			this->nomusuariBox->Location = System::Drawing::Point(363, 106);
-			this->nomusuariBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->nomusuariBox->Location = System::Drawing::Point(363, 89);
+			this->nomusuariBox->Margin = System::Windows::Forms::Padding(2);
 			this->nomusuariBox->Name = L"nomusuariBox";
 			this->nomusuariBox->Size = System::Drawing::Size(175, 20);
 			this->nomusuariBox->TabIndex = 9;
+			this->nomusuariBox->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::nomusuariBox_TextChanged);
 			// 
 			// contrasenyaBox
 			// 
-			this->contrasenyaBox->Location = System::Drawing::Point(41, 258);
-			this->contrasenyaBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->contrasenyaBox->Location = System::Drawing::Point(41, 241);
+			this->contrasenyaBox->Margin = System::Windows::Forms::Padding(2);
 			this->contrasenyaBox->Name = L"contrasenyaBox";
 			this->contrasenyaBox->Size = System::Drawing::Size(297, 20);
 			this->contrasenyaBox->TabIndex = 10;
+			this->contrasenyaBox->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::contrasenyaBox_TextChanged);
 			// 
 			// repeteixContrasenyaBox
 			// 
-			this->repeteixContrasenyaBox->Location = System::Drawing::Point(41, 310);
-			this->repeteixContrasenyaBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->repeteixContrasenyaBox->Location = System::Drawing::Point(41, 293);
+			this->repeteixContrasenyaBox->Margin = System::Windows::Forms::Padding(2);
 			this->repeteixContrasenyaBox->Name = L"repeteixContrasenyaBox";
 			this->repeteixContrasenyaBox->Size = System::Drawing::Size(297, 20);
 			this->repeteixContrasenyaBox->TabIndex = 11;
@@ -222,17 +232,18 @@ namespace StudyHub {
 					L"Tiếng Việt (Vietnamese)", L"Nederlands (Dutch)", L"Svenska (Swedish)", L"Norsk (Norwegian)", L"Dansk (Danish)", L"Suomi (Finnish)",
 					L"Ελληνικά (Greek)", L"Polski (Polish)"
 			});
-			this->idiomaPreferitBox->Location = System::Drawing::Point(363, 211);
-			this->idiomaPreferitBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->idiomaPreferitBox->Location = System::Drawing::Point(363, 194);
+			this->idiomaPreferitBox->Margin = System::Windows::Forms::Padding(2);
 			this->idiomaPreferitBox->Name = L"idiomaPreferitBox";
 			this->idiomaPreferitBox->Size = System::Drawing::Size(175, 21);
 			this->idiomaPreferitBox->TabIndex = 12;
+			this->idiomaPreferitBox->SelectedIndexChanged += gcnew System::EventHandler(this, &CrearEstudiant::idiomaPreferitBox_SelectedIndexChanged);
 			// 
 			// button1
 			// 
 			this->button1->ForeColor = System::Drawing::Color::DarkCyan;
-			this->button1->Location = System::Drawing::Point(393, 301);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Location = System::Drawing::Point(393, 284);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(118, 29);
 			this->button1->TabIndex = 13;
@@ -242,41 +253,45 @@ namespace StudyHub {
 			// 
 			// CognomsBox
 			// 
-			this->CognomsBox->Location = System::Drawing::Point(41, 161);
-			this->CognomsBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->CognomsBox->Location = System::Drawing::Point(41, 144);
+			this->CognomsBox->Margin = System::Windows::Forms::Padding(2);
 			this->CognomsBox->Name = L"CognomsBox";
 			this->CognomsBox->Size = System::Drawing::Size(297, 20);
 			this->CognomsBox->TabIndex = 15;
+			this->CognomsBox->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::CognomsBox_TextChanged);
 			// 
 			// Cognom
 			// 
 			this->Cognom->AutoSize = true;
 			this->Cognom->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Cognom->Location = System::Drawing::Point(38, 142);
+			this->Cognom->Location = System::Drawing::Point(38, 125);
 			this->Cognom->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Cognom->Name = L"Cognom";
 			this->Cognom->Size = System::Drawing::Size(51, 13);
 			this->Cognom->TabIndex = 14;
 			this->Cognom->Text = L"Cognoms";
+			this->Cognom->Click += gcnew System::EventHandler(this, &CrearEstudiant::Cognom_Click);
 			// 
 			// LocalitatBox
 			// 
-			this->LocalitatBox->Location = System::Drawing::Point(364, 161);
-			this->LocalitatBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->LocalitatBox->Location = System::Drawing::Point(364, 144);
+			this->LocalitatBox->Margin = System::Windows::Forms::Padding(2);
 			this->LocalitatBox->Name = L"LocalitatBox";
 			this->LocalitatBox->Size = System::Drawing::Size(175, 20);
 			this->LocalitatBox->TabIndex = 17;
+			this->LocalitatBox->TextChanged += gcnew System::EventHandler(this, &CrearEstudiant::LocalitatBox_TextChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(361, 142);
+			this->label2->Location = System::Drawing::Point(361, 125);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(47, 13);
 			this->label2->TabIndex = 16;
 			this->label2->Text = L"Localitat";
+			this->label2->Click += gcnew System::EventHandler(this, &CrearEstudiant::label2_Click);
 			// 
 			// CrearEstudiant
 			// 
@@ -303,7 +318,7 @@ namespace StudyHub {
 			this->Controls->Add(this->NomLabel);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"CrearEstudiant";
 			this->Text = L" ";
 			this->ResumeLayout(false);
@@ -320,6 +335,36 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	this->Close();
 
+}
+private: System::Void NomLabel_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void nomBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void nomusuariBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Cognom_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void CognomsBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void LocalitatBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void correuBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label7_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void idiomaPreferitBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void contrasenyaBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
