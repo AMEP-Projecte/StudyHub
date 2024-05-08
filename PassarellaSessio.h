@@ -28,7 +28,5 @@ public:
 	String^ obteHoraFi();
 	String^ obteAdreca();
 	int obteLlocsLliures();
-
-	void esborra();
 };
 
