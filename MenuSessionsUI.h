@@ -1,7 +1,5 @@
 #pragma once
 
-
-
 namespace StudyHub {
 
 	using namespace System;
@@ -12,12 +10,12 @@ namespace StudyHub {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for IniciarSessio
+	/// Summary for MenuSessionsUI
 	/// </summary>
-	public ref class IniciarSessio : public System::Windows::Forms::Form
+	public ref class MenuSessionsUI : public System::Windows::Forms::Form
 	{
 	public:
-		IniciarSessio(void)
+		MenuSessionsUI(void)
 		{
 			InitializeComponent();
 			//
@@ -29,7 +27,7 @@ namespace StudyHub {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~IniciarSessio()
+		~MenuSessionsUI()
 		{
 			if (components)
 			{
@@ -38,10 +36,9 @@ namespace StudyHub {
 		}
 	private: System::Windows::Forms::Label^ textBenvinguda;
 	private: System::Windows::Forms::Button^ ButtonIniciarSessio;
-	protected:
-
 	private: System::Windows::Forms::Button^ registrar;
 	private: System::Windows::Forms::Button^ sortir;
+	protected:
 
 	private:
 		/// <summary>
@@ -68,11 +65,11 @@ namespace StudyHub {
 			this->textBenvinguda->AutoSize = true;
 			this->textBenvinguda->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->textBenvinguda->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->textBenvinguda->Location = System::Drawing::Point(107, 59);
+			this->textBenvinguda->Location = System::Drawing::Point(174, 40);
 			this->textBenvinguda->Name = L"textBenvinguda";
-			this->textBenvinguda->Size = System::Drawing::Size(392, 42);
-			this->textBenvinguda->TabIndex = 9;
-			this->textBenvinguda->Text = L"Benvingut a StudyHub!";
+			this->textBenvinguda->Size = System::Drawing::Size(259, 42);
+			this->textBenvinguda->TabIndex = 10;
+			this->textBenvinguda->Text = L"Menu Sessions";
 			// 
 			// ButtonIniciarSessio
 			// 
@@ -81,14 +78,14 @@ namespace StudyHub {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ButtonIniciarSessio->ForeColor = System::Drawing::Color::DarkCyan;
 			this->ButtonIniciarSessio->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->ButtonIniciarSessio->Location = System::Drawing::Point(120, 141);
+			this->ButtonIniciarSessio->Location = System::Drawing::Point(120, 152);
 			this->ButtonIniciarSessio->Margin = System::Windows::Forms::Padding(2);
 			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
 			this->ButtonIniciarSessio->Size = System::Drawing::Size(138, 51);
-			this->ButtonIniciarSessio->TabIndex = 6;
-			this->ButtonIniciarSessio->Text = L"Iniciar Sessió";
+			this->ButtonIniciarSessio->TabIndex = 11;
+			this->ButtonIniciarSessio->Text = L"1";
 			this->ButtonIniciarSessio->UseVisualStyleBackColor = true;
-			this->ButtonIniciarSessio->Click += gcnew System::EventHandler(this, &IniciarSessio::ButtonIniciarSessio_Click);
+			this->ButtonIniciarSessio->Click += gcnew System::EventHandler(this, &MenuSessionsUI::ButtonIniciarSessio_Click);
 			// 
 			// registrar
 			// 
@@ -96,14 +93,13 @@ namespace StudyHub {
 			this->registrar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->registrar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->registrar->Location = System::Drawing::Point(345, 141);
+			this->registrar->Location = System::Drawing::Point(345, 152);
 			this->registrar->Margin = System::Windows::Forms::Padding(2);
 			this->registrar->Name = L"registrar";
 			this->registrar->Size = System::Drawing::Size(141, 51);
-			this->registrar->TabIndex = 7;
-			this->registrar->Text = L"Registrar-se";
+			this->registrar->TabIndex = 12;
+			this->registrar->Text = L"2";
 			this->registrar->UseVisualStyleBackColor = true;
-			this->registrar->Click += gcnew System::EventHandler(this, &IniciarSessio::registrar_Click);
 			// 
 			// sortir
 			// 
@@ -111,41 +107,33 @@ namespace StudyHub {
 			this->sortir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->sortir->ForeColor = System::Drawing::Color::DarkCyan;
-			this->sortir->Location = System::Drawing::Point(223, 261);
+			this->sortir->Location = System::Drawing::Point(223, 272);
 			this->sortir->Margin = System::Windows::Forms::Padding(2);
 			this->sortir->Name = L"sortir";
 			this->sortir->Size = System::Drawing::Size(156, 51);
-			this->sortir->TabIndex = 8;
-			this->sortir->Text = L"Sortir";
+			this->sortir->TabIndex = 13;
+			this->sortir->Text = L"3";
 			this->sortir->UseVisualStyleBackColor = true;
-			this->sortir->Click += gcnew System::EventHandler(this, &IniciarSessio::sortir_Click);
 			// 
-			// IniciarSessio
+			// MenuSessionsUI
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(607, 370);
-			this->Controls->Add(this->textBenvinguda);
 			this->Controls->Add(this->ButtonIniciarSessio);
 			this->Controls->Add(this->registrar);
 			this->Controls->Add(this->sortir);
+			this->Controls->Add(this->textBenvinguda);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"IniciarSessio";
-			this->Text = L"IniciarSessio";
-			this->Load += gcnew System::EventHandler(this, &IniciarSessio::IniciarSessio_Load);
+			this->Name = L"MenuSessionsUI";
+			this->Text = L"MenuSessionsUI";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-private: System::Void ButtonIniciarSessio_Click(System::Object^ sender, System::EventArgs^ e);
-
-private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^ e);
-
-private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e);
-
-private: System::Void IniciarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void ButtonIniciarSessio_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 };
 }

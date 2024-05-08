@@ -203,6 +203,9 @@
     <ClInclude Include="MenuProvedor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MenuSessionsUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaAdmin.h" />
     <ClInclude Include="PassarellaEspai.h" />
     <ClInclude Include="PassarellaEstudiant.h" />
@@ -266,6 +269,7 @@
     <ClCompile Include="MenuGestioGrups.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="MenuProvedor.cpp" />
+    <ClCompile Include="MenuSessionsUI.cpp" />
     <ClCompile Include="PassarellaAdmin.cpp" />
     <ClCompile Include="PassarellaEspai.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
@@ -374,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuProvedor.resx">
       <DependentUpon>MenuProvedor.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuSessionsUI.resx">
+      <DependentUpon>MenuSessionsUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TancarSessio.resx">
       <DependentUpon>TancarSessio.h</DependentUpon>

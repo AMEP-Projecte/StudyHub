@@ -254,6 +254,9 @@
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
     </ClInclude>
+    <ClInclude Include="MenuSessionsUI.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
     <ClInclude Include="MenuGestioEspais.h">
       <Filter>Menus</Filter>
     </ClInclude>
@@ -427,6 +430,9 @@
       <Filter>Menus</Filter>
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSessionsUI.cpp">
       <Filter>Menus</Filter>
     </ClCompile>
     <ClCompile Include="MenuGestioEspais.cpp">
