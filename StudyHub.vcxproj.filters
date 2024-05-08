@@ -278,6 +278,7 @@
     <ClInclude Include="TxEditarEspai.h">
       <Filter>GestioEspai\Tx</Filter>
     </ClInclude>
+    </ClInclude>
     <ClInclude Include="TxEsborrarSessio.h">
       <Filter>GestioSessio\Tx</Filter>
     </ClInclude>
@@ -456,6 +457,7 @@
     </ClCompile>
     <ClCompile Include="TxEditarEspai.cpp">
       <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
     <ClCompile Include="TxEsborrarSessio.cpp">
       <Filter>GestioSessio\Tx</Filter>
     </ClCompile>
