@@ -12,7 +12,7 @@ void TxParticipacioSessio::executar() {
 	List<PassarellaParticipa^>^participa = CercadoraParticipa::cercaParticipaEstudiant(_estudiant);
 	String^ res = "";
 
-	//buscar si l'estudiant esta dins el grup
+	//buscar si l'estudiant esta dins el grup/sessio
 	for each (PassarellaParticipa ^ participes in participa) {
 		if (participes->obteGrup() == _grup) res = _grup;
 		

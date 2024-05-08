@@ -144,11 +144,7 @@ namespace StudyHub {
 	}
 
 	private: System::Void confirmar_Click(System::Object^ sender, System::EventArgs^ e) {
-		Sistema^ sist = Sistema::getInstance();
-		TxParticipacioSessio participa(sist->obteEstudiant()->obteUsername(), );
-			participa.executar();
-
-
+		
 
 		
 	}
