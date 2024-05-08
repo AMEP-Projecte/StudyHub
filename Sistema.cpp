@@ -29,7 +29,7 @@ PassarellaEstudiant^ Sistema::obteEstudiant() {
 	return _est;
 }
 
-PassarellaProveidor^ Sistema::obteProveidor() {
+PassarellaProveidor* Sistema::obteProveidor() {
 	return _pro;
 }
 
@@ -38,7 +38,8 @@ PassarellaAdmin^ Sistema::obteAdministrador() {
 	return _adm;
 }
 
-void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^ pro) {
+
+void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu) {
 	_sessioIniciada = true;
 	_username = usu->obteNomUsuari();
 	_tipusUsuari = usu->obteTipus();

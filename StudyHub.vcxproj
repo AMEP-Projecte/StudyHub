@@ -170,6 +170,9 @@
     <ClInclude Include="EditarGrup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="EliminarEspai.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="EliminarGrupEstudi.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -239,6 +242,7 @@
     <ClInclude Include="TxCrearProveidor.h" />
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
+    <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
     <ClInclude Include="TxEsborrarSessio.h" />
@@ -269,6 +273,7 @@
     <ClCompile Include="EditarEspaiUI.cpp" />
     <ClCompile Include="EditarEstudiant.cpp" />
     <ClCompile Include="EditarGrup.cpp" />
+    <ClCompile Include="EliminarEspai.cpp" />
     <ClCompile Include="EliminarGrupEstudi.cpp" />
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />
     <ClCompile Include="EsborrarProveidorUI.cpp" />
@@ -310,6 +315,7 @@
     <ClCompile Include="TxCrearProveidor.cpp" />
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
+    <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
     <ClCompile Include="TxEsborrarSessio.cpp" />

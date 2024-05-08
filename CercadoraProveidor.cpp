@@ -14,8 +14,7 @@ PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
 
 /*
 PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
-	PassarellaProveidor^ pp = gcnew PassarellaProveidor();
-	pp->posaNomUsuari(username);
+	PassarellaProveidor^ pp;
 	return pp;
     PassarellaProveidor^ pp = nullptr;
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global

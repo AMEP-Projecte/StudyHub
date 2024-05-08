@@ -15,9 +15,14 @@ void TxConsultaGrup::executar() {
 		throw gcnew Exception("Aquest grup no existeix.");
 	}
 	else {
-		_tematica = p->obteTematica();
+		resultat[0] = p->obteTematica();
 		CercadoraPertany aux;
 		List<PassarellaPertany^>^ l = aux.cercaParticipants(_nom);
-		_nombreParticipants = l->Count;
+		int p = l->Count;
+		resultat[1] = p.ToString();
 	}
+}
+
+List<String^>^ TxConsultaGrup::obteResultat() {
+	return resultat;
 }

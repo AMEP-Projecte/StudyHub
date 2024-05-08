@@ -1,13 +1,5 @@
 #include "pch.h"
 #include "CercadoraAdmin.h"
-
-/*
-PassarellaAdmin^ CercadoraAdmin::cercaAdmin(String^ useraname) {
-	PassarellaAdmin^ pa;
-	return pa;
-}
-*/
-
 PassarellaAdmin^ CercadoraAdmin::cercaAdmin(String^ username) {
 	PassarellaAdmin^ pa = nullptr;
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global

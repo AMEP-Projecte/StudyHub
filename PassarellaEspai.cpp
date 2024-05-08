@@ -71,6 +71,7 @@ void PassarellaEspai::insereix() {
 
 }
 
+
 void PassarellaEspai::modifica() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -94,7 +95,6 @@ void PassarellaEspai::modifica() {
 	}
 }
 
-
 void PassarellaEspai::esborra() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -116,3 +116,4 @@ void PassarellaEspai::esborra() {
 		conn->Close();
 	}
 }
+

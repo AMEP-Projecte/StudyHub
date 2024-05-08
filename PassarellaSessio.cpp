@@ -8,6 +8,7 @@ using namespace System;
 using namespace System::Windows::Forms;
 using namespace System::Collections::Generic;
 using namespace std;
+
 PassarellaSessio::PassarellaSessio(){}
 PassarellaSessio::PassarellaSessio(String^ grup, String^ data, String^ horaInici, String^ horaFi, String^ adreca, int llocs) {
 	_grup = grup;
@@ -152,4 +153,3 @@ void PassarellaSessio::esborra() {
 		//Errors
   }
 }
-

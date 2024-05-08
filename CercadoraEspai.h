@@ -13,4 +13,3 @@ public:
 
 	List<PassarellaEspai^>^ totsEspai();
 };
-
