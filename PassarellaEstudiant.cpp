@@ -96,7 +96,6 @@ void PassarellaEstudiant::insereix()
     String^ sql = "INSERT INTO estudiant(username, correu_electronic, nom, cognoms, idioma, localitat, numValoracions) VALUES('"
         + _username + "', '" + _correuElectronic + "', ' " + _nom + "', ' " + _cognoms + "', '" + _idioma + "', '" + _localitat + "', " + 0+")";
 
-
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 
     try {
@@ -145,5 +144,4 @@ void PassarellaEstudiant::modifica()
         conn->Close();
     }
 }
-
 

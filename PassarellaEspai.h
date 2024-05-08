@@ -27,4 +27,5 @@ public:
 	void insereix(); 
 	void modifica();
 	void esborra();
+
 };

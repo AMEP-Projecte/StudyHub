@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CercadoraEspai.h"
+
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
@@ -53,7 +54,7 @@ List<PassarellaEspai^>^ CercadoraEspai::totsEspai()
     MySqlDataReader^ reader = nullptr;
 
     try {
-        // Abrimos la conexión
+        // Abrimos la conexiÃ³n
         conn->Open();
 
         // Ejecutamos la consulta
@@ -77,7 +78,7 @@ List<PassarellaEspai^>^ CercadoraEspai::totsEspai()
             reader->Close();
         }
 
-        // Cerramos la conexión
+        // Cerramos la conexiÃ³n
         conn->Close();
     }
 

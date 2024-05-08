@@ -7,8 +7,11 @@ ref class PassarellaProveidor : PassarellaUsuari
 
 
     public:
-        PassarellaProveidor(String^ username);
+    // Constructor
+    PassarellaProveidor(String^ username);
 
+    // Getters y setters
     //void posaUsername(String^ username);
-        String^ obteUsername();
+    String^ obteUsername();
 };
+

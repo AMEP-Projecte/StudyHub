@@ -33,6 +33,7 @@ PassarellaProveidor^ Sistema::obteProveidor() {
 	return _pro;
 }
 
+
 PassarellaAdmin^ Sistema::obteAdministrador() {
 	return _adm;
 }

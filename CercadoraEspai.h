@@ -10,6 +10,7 @@ ref class CercadoraEspai
 public:
 	static PassarellaEspai^ cercaEspaiAdreca(String^ Adreca);
 	List<PassarellaEspai^>^ cercaEspaiProveidor(String^ proveidor);
+
 	List<PassarellaEspai^>^ totsEspai();
 };
 
