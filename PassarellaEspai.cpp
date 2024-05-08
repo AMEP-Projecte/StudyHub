@@ -71,6 +71,7 @@ void PassarellaEspai::insereix() {
 
 }
 
+
 void PassarellaEspai::modifica() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -93,3 +94,26 @@ void PassarellaEspai::modifica() {
 		conn->Close();
 	}
 }
+
+void PassarellaEspai::esborra() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+	String^ sql = "DELETE FROM espai WHERE adreca=@a";
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+
+	cmd->Parameters->AddWithValue("@a", _adreca);
+
+	try {
+		conn->Open();
+		cmd->ExecuteNonQuery();
+	}
+	catch (Exception^ ex) {
+		//Errors
+	}
+	finally {
+		conn->Close();
+	}
+}
+

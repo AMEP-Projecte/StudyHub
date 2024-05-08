@@ -2,10 +2,8 @@
 #include "PassarellaUsuari.h"
 ref class PassarellaAdmin : PassarellaUsuari
 {
-private:
+  private:
 
-public:
-    // Constructor
-    PassarellaAdmin(String^ username);
+  public:
+      PassarellaAdmin(String^ username);
 };
-

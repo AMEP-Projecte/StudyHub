@@ -1,8 +1,13 @@
 #include "pch.h"
 #include "CercadoraGrup.h"
+#include "Sistema.h"
+
 
 using namespace MySql::Data::MySqlClient;
 using namespace System;
+using namespace System::Windows::Forms;
+using namespace System::Collections::Generic;
+using namespace std;
 
 PassarellaGrup^ CercadoraGrup::cercaPerNomGrup(String^ NomGrup) {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
@@ -27,9 +32,53 @@ PassarellaGrup^ CercadoraGrup::cercaPerNomGrup(String^ NomGrup) {
 		}
 	}
 	catch (MySqlException^ ex) {
-		//MessageBox::Show(ex->Message);
+		MessageBox::Show(ex->Message);
 	}
 	PassarellaGrup^ Grup = gcnew PassarellaGrup(nomGrup, tematica, creador);
 	conn->Close();
 	return Grup;
+}
+
+List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ nomCreador)
+{
+    List<PassarellaGrup^>^ result = gcnew List<PassarellaGrup^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "SELECT * FROM grup WHERE creador = @nomCreador";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@nomCreador", nomCreador);
+
+    MySqlDataReader^ reader = nullptr;
+
+    try {
+        // Abrimos la conexión
+        conn->Open();
+
+        // Ejecutamos la consulta
+        reader = cmd->ExecuteReader();
+
+        // Leemos los resultados
+        while (reader->Read()) {
+            String^nom = reader->GetString("nom");
+            String^ tematica = reader->GetString("tematica");
+            String^ creador = reader->GetString("creador");
+            // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
+            PassarellaGrup^ passarella = gcnew PassarellaGrup(nom, tematica, creador);
+            result->Add(passarella);
+        }
+    }
+   
+    finally {
+        // Cerramos el lector
+        if (reader != nullptr) {
+            reader->Close();
+        }
+
+        // Cerramos la conexión
+        conn->Close();
+    }
+
+    return result;
 }

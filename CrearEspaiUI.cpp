@@ -16,7 +16,7 @@ System::Void CrearEspaiUI::botonetcrea_Click(System::Object^ sender, System::Eve
 			 // Convertir el valor Decimal a int
 			int capacitatEnter = Decimal::ToInt32(this->numericUpDown1->Value);
 			
-			TxCreaEspai txCE(this->textBox1->Text, this->textBox2->Text, capacitatEnter, sist->obteProveidor()->obteUsername());
+			TxCreaEspai txCE(this->textBox1->Text, this->textBox2->Text, capacitatEnter, sist->obteProveidor()->obteNomUsuari());
 			//String^ upc = "upc";
 			//TxCreaEspai txCE(this->textBox1->Text, this->textBox2->Text, capacitatEnter, upc);
 			txCE.executa();

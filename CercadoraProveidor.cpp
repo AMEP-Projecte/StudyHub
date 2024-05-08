@@ -14,13 +14,8 @@ PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
 
 /*
 PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
-	PassarellaProveidor^ pp = gcnew PassarellaProveidor();
-	pp->posaNomUsuari(username);
+	PassarellaProveidor^ pp;
 	return pp;
-}
-*/
-
-PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
     PassarellaProveidor^ pp = nullptr;
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -39,7 +34,33 @@ PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexión
+        // Cerramos la conexiÃ³n
+        conn->Close();
+    }
+    return pp;
+}
+*/
+
+PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
+    PassarellaProveidor^ pp = nullptr;
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    String^ sql = "SELECT * FROM proveidor WHERE username = '" + username + "'";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    MySqlDataReader^ dataReader;
+    try {
+        conn->Open();
+        dataReader = cmd->ExecuteReader();
+        if (dataReader->Read()) {
+            String^ username = dataReader->GetString(0);
+            pp = gcnew PassarellaProveidor(username, "", "proveidor");
+        }
+    }
+    catch (Exception^ ex) {
+        // Manejamos el error
+    }
+    finally {
+        // Cerramos la conexiï¿½n
         conn->Close();
     }
     return pp;
@@ -54,7 +75,7 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) 
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     MySqlDataReader^ dataReader;
     try {
-        // Abrimos la conexión
+        // Abrimos la conexiï¿½n
         conn->Open();
         // Ejecutamos la consulta
         dataReader = cmd->ExecuteReader();
@@ -77,7 +98,7 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) 
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexión
+        // Cerramos la conexiï¿½n
         conn->Close();
     }
     return pe; // Devolvemos el objeto PassarellaEstudiant
