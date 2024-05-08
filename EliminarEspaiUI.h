@@ -104,7 +104,7 @@ namespace StudyHub {
 			Sistema^ sist = Sistema::getInstance();
 			MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
 			DataTable^ dt = gcnew DataTable();
-			String^ sql = String::Format("SELECT * FROM espai WHERE proveidor = '{0}';", sist->obteProveidor()->obteUsername());
+			String^ sql = String::Format("SELECT * FROM espai WHERE proveidor = '{0}';", sist->obteProveidor()->obteNomUsuari());
 			MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);
 
 			da->Fill(dt);
