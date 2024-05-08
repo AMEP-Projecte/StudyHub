@@ -105,25 +105,17 @@ int PassarellaSessio::obteLlocsLliures() {
     }
 
 void PassarellaSessio::modifica() {
-	MySqlConnection^ conn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch - ;");
-
-	// String^ sql = "UPDATE sessio SET hora_fi = @horaFi WHERE grup = @grup and data = @data and hora_inci = @horaInici;";
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "UPDATE sessio SET ";
 	sql += "hora_fi = '" + _horaFi + "' ";
-	sql += "WHERE grup = '" + _grup + "' ";
-	sql += "and data = '" + _data + "' ";
-	sql += "and hora_inci = '" + _horaInici + "';";
-	
+	sql += "WHERE (grup = '" + _grup + "') ";
+	sql += "and (data = '" + _data + "') ";
+	sql += "and (hora_inici = '" + _horaInici + "');";
+
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
-
-	/*
-	cmd->Parameters->AddWithValue("@horaFi", _horaFi);
-	cmd->Parameters->AddWithValue("@grup", _grup);
-	cmd->Parameters->AddWithValue("@data", _data);
-	cmd->Parameters->AddWithValue("@horaInici", _horaInici);
-	*/
 
 	try {
 		conn->Open();
