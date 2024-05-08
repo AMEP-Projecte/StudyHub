@@ -114,7 +114,7 @@ namespace StudyHub {
 			this->confirmar->TabIndex = 7;
 			this->confirmar->Text = L"Sí";
 			this->confirmar->UseVisualStyleBackColor = true;
-			this->confirmar->Click += gcnew System::EventHandler(this, &ParticipaSessio::consulta_Click);
+			this->confirmar->Click += gcnew System::EventHandler(this, &ParticipaSessio::confirmar_Click);
 			// 
 			// ParticipaSessio
 			// 
@@ -144,8 +144,9 @@ namespace StudyHub {
 	}
 
 	private: System::Void confirmar_Click(System::Object^ sender, System::EventArgs^ e) {
-
-
+		Sistema^ sist = Sistema::getInstance();
+		TxParticipacioSessio participa(sist->obteEstudiant()->obteUsername(), );
+			participa.executar();
 
 
 

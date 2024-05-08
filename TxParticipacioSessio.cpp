@@ -10,7 +10,16 @@ TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, Stri
 
 void TxParticipacioSessio::executar() {
 	List<PassarellaParticipa^>^participa = CercadoraParticipa::cercaParticipaEstudiant(_estudiant);
-	if (participa->obteNomUsuari() == " "  ) {
+	String^ res = "";
+
+	//buscar si l'estudiant esta dins el grup
+	for each (PassarellaParticipa ^ participes in participa) {
+		if (participes->obteGrup() == _grup) res = _grup;
+		
+	}
+
+	//si no està l'afegim a participa
+	if (res == "") {
 		PassarellaParticipa^ NouParticipa = gcnew PassarellaParticipa(_estudiant,_grup, _data,_horaInici);
 		NouParticipa->insereix();
 

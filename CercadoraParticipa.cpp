@@ -5,7 +5,7 @@ using namespace MySql::Data::MySqlClient;
 using namespace System::Data;
 using namespace System::Windows::Forms;
 
-List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaSessio(String^ grup) {
+List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaSessio(String^ nom) {
     List<PassarellaParticipa^>^ result = gcnew List<PassarellaParticipa^>();
     return result;
 }
