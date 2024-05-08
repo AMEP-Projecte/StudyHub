@@ -53,7 +53,7 @@ PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
         dataReader = cmd->ExecuteReader();
         if (dataReader->Read()) {
             String^ username = dataReader->GetString(0);
-            pp = gcnew PassarellaProveidor(username);
+            pp = gcnew PassarellaProveidor(username, "", "proveidor");
         }
     }
     catch (Exception^ ex) {
