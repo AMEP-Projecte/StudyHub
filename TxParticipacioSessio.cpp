@@ -9,8 +9,8 @@ TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, Stri
 }
 
 void TxParticipacioSessio::executar() {
-	PassarellaParticipa^participa = CercadoraParticipa::cercaParticipaSessio(_grup);
-	if (participa->obteEstudiant() != _estudiant ) {
+	List<PassarellaParticipa^>^participa = CercadoraParticipa::cercaParticipaEstudiant(_estudiant);
+	if (participa->obteNomUsuari() == " "  ) {
 		PassarellaParticipa^ NouParticipa = gcnew PassarellaParticipa(_estudiant,_grup, _data,_horaInici);
 		NouParticipa->insereix();
 

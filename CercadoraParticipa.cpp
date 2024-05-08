@@ -2,50 +2,64 @@
 #include "CercadoraParticipa.h"
 
 using namespace MySql::Data::MySqlClient;
-using namespace System;
+using namespace System::Data;
 using namespace System::Windows::Forms;
-using namespace System::Collections::Generic;
-using namespace std;
 
-PassarellaParticipa^ CercadoraParticipa::cercaParticipaSessio(String^ nom) {
-	
-String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
-MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-String^ sql = String::Format("SELECT * FROM participa WHERE grup = '{0}';", nom);
-MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-MySqlDataReader^ dataReader;
-String^ _estudiant = "";
-String^ data = "";
-String^ hora = "";
-try {
-	conn->Open();
-	dataReader = cmd->ExecuteReader();
-	if (dataReader->Read()) {
-		_estudiant = dataReader->GetString(0);
-		data = dataReader->GetString(2);
-		hora = dataReader->GetString(3);
-
-	}
-}
-catch (MySqlException^ ex) {
-	//MessageBox::Show(ex->Message);
-}
-PassarellaParticipa^ participa = gcnew PassarellaParticipa(_estudiant, nom, data, hora);
-conn->Close();
-return participa;
+List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaSessio(String^ grup) {
+    List<PassarellaParticipa^>^ result = gcnew List<PassarellaParticipa^>();
+    return result;
 }
 
 
 
+List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaEstudiant(String^ nom) {
+    List<PassarellaParticipa^>^ result = gcnew List<PassarellaParticipa^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "SELECT * FROM participa WHERE estudiant = @nomestudiant";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@nomestudiant", nom);
+
+    MySqlDataReader^ reader = nullptr;
+
+    try {
+        // Abrimos la conexión
+        conn->Open();
+
+        // Ejecutamos la consulta
+        reader = cmd->ExecuteReader();
+
+        // Leemos los resultados
+        while (reader->Read()) {
+            String^ grup= reader->GetString("grup");
+            String^ data = reader->GetString("data");
+            String^ hora = reader->GetString("hora");
 
 
+            // Creamos un nuevo objeto PassarellaPartany y lo agregamos al resultado
+            PassarellaParticipa^ passarella = gcnew PassarellaParticipa(nom,grup,data,hora);
+            result->Add(passarella);
+        }
+    }
+    catch (Exception^ ex) {
+        // Manejo de errores
+        // Por ejemplo, puedes mostrar un mensaje de error
+        Console::WriteLine("Error: " + ex->Message);
+    }
+    finally {
+        // Cerramos el lector
+        if (reader != nullptr) {
+            reader->Close();
+        }
 
+        // Cerramos la conexión
+        conn->Close();
+    }
 
-
-
-
-
-List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaEstudiant(String^ username) {
-	List<PassarellaParticipa^>^ result = gcnew List<PassarellaParticipa^>();
-	return result;
+    return result;
 }
+
+
+
