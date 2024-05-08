@@ -254,6 +254,12 @@
     <ClInclude Include="MenuProvedor.h">
       <Filter>Menus</Filter>
     </ClInclude>
+    <ClInclude Include="TxParticipacioSessio.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticipacioSessio.h">
+      <Filter>GestioSessio\Presentacio</Filter>
+    </ClInclude>
     <ClInclude Include="TxEliminarEspai.h">
       <Filter>GestioEspai\Tx</Filter>
     </ClInclude>
@@ -464,6 +470,12 @@
     </ClCompile>
     <ClCompile Include="MenuProvedor.cpp">
       <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="TxParticipacioSessio.cpp">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticipacioSessio.cpp">
+      <Filter>GestioSessio\Presentacio</Filter>
     </ClCompile>
     <ClCompile Include="TxEliminarEspai.cpp">
       <Filter>GestioEspai\Tx</Filter>
