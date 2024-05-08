@@ -9,6 +9,14 @@ void Sistema::canviaEstatSessio(bool estat) {
 	_sessioIniciada = estat;
 }
 
+void Sistema::canviaContrasenya(String^ cNova) {
+	_contrasenya = cNova;
+}
+
+String^ Sistema::obteUsername() {
+	return _username;
+}
+
 String^ Sistema::obteContrasenya() {
 	return _contrasenya;
 }
@@ -25,21 +33,23 @@ PassarellaProveidor^ Sistema::obteProveidor() {
 	return _pro;
 }
 
+
 PassarellaAdmin^ Sistema::obteAdministrador() {
 	return _adm;
 }
 
 void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^ pro) {
 	_sessioIniciada = true;
+	_username = usu->obteNomUsuari();
 	_tipusUsuari = usu->obteTipus();
 	_contrasenya = usu->obteContrasenya();
 	if (_tipusUsuari == "estudiant" && estu != nullptr) {
 		_est = estu;
 	}
-	else if (_tipusUsuari == "proveidor"/* && pro != nullptr */ ) {
+	else if (_tipusUsuari == "proveidor" && pro != nullptr) {
 		_pro = pro;
 	}
-	else if (_tipusUsuari == "administrador"/* && admin != nullptr*/) {
+	else if (_tipusUsuari == "administrador" && admin != nullptr) {
 		_adm = admin;
 	}
 	else {

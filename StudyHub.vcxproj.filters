@@ -269,6 +269,36 @@
     <ClInclude Include="TxCrearProveidor.h">
       <Filter>GestioProveidor\Tx</Filter>
     </ClInclude>
+    <ClInclude Include="MenuSessionsUI.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGestioEspais.h">
+      <Filter>Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearEspaiUI.h">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCreaEspai.h">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultarEspaiUI.h">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxConsultaEspai.h">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarEspaiUI.h">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarEspai.h">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborrarSessio.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <Filter>GestioSessio\Presentacio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -432,6 +462,36 @@
     </ClCompile>
     <ClCompile Include="TxCrearProveidor.cpp">
       <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuSessionsUI.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioEspais.cpp">
+      <Filter>Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearEspaiUI.cpp">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCreaEspai.cpp">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarEspaiUI.cpp">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultaEspai.cpp">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarEspaiUI.cpp">
+      <Filter>GestioEspai\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarEspai.cpp">
+      <Filter>GestioEspai\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborrarSessio.cpp">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EsborraSessioUI.cpp">
+      <Filter>GestioSessio\Presentacio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

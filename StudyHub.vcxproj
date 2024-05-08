@@ -140,10 +140,16 @@
     <ClInclude Include="CercadoraProveidor.h" />
     <ClInclude Include="CercadoraSessio.h" />
     <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="ConsultarEspaiUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ConsultarEstudiantUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ConsultarGrup.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CrearEspaiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CrearEstudiant.h">
@@ -153,6 +159,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="CrearProveidorUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditarEspaiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="EditarEstudiant.h">
@@ -170,6 +179,9 @@
     <ClInclude Include="EsborrarProveidorUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="IniciarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -180,6 +192,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MenuEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MenuGestioEspais.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MenuGestioEstudiant.h">
@@ -197,6 +212,9 @@
     <ClInclude Include="MenuProvedor.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MenuSessionsUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaAdmin.h" />
     <ClInclude Include="PassarellaEspai.h" />
     <ClInclude Include="PassarellaEstudiant.h" />
@@ -212,8 +230,10 @@
     <ClInclude Include="TancarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TxConsultaEspai.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
+    <ClInclude Include="TxCreaEspai.h" />
     <ClInclude Include="TxCreaEstudiant.h" />
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
     <ClInclude Include="TxCrearProveidor.h" />
@@ -221,6 +241,7 @@
     <ClInclude Include="TxEditarGrup.h" />
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
+    <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxTancarSessio.h" />
@@ -236,26 +257,32 @@
     <ClCompile Include="CercadoraProveidor.cpp" />
     <ClCompile Include="CercadoraSessio.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="ConsultarEspaiUI.cpp" />
     <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
+    <ClCompile Include="CrearEspaiUI.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />
     <ClCompile Include="CrearNouGrupEstudi.cpp" />
     <ClCompile Include="CrearProveidorUI.cpp" />
+    <ClCompile Include="EditarEspaiUI.cpp" />
     <ClCompile Include="EditarEstudiant.cpp" />
     <ClCompile Include="EditarGrup.cpp" />
     <ClCompile Include="EliminarGrupEstudi.cpp" />
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />
     <ClCompile Include="EsborrarProveidorUI.cpp" />
+    <ClCompile Include="EsborraSessioUI.cpp" />
     <ClCompile Include="IniciarSessio.cpp" />
     <ClCompile Include="IniciSessio.cpp" />
     <ClCompile Include="MenuAdministrador.cpp" />
     <ClCompile Include="MenuEstudiant.cpp" />
+    <ClCompile Include="MenuGestioEspais.cpp" />
     <ClCompile Include="MenuGestioEstudiant.cpp" />
     <ClCompile Include="MenuGestioGrups.cpp" />
     <ClCompile Include="MenuGestioProveidorAdmin.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="MenuProvedor.cpp" />
+    <ClCompile Include="MenuSessionsUI.cpp" />
     <ClCompile Include="PassarellaAdmin.cpp" />
     <ClCompile Include="PassarellaEspai.cpp" />
     <ClCompile Include="PassarellaEstudiant.cpp" />
@@ -273,8 +300,10 @@
     </ClCompile>
     <ClCompile Include="Sistema.cpp" />
     <ClCompile Include="TancarSessio.cpp" />
+    <ClCompile Include="TxConsultaEspai.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
+    <ClCompile Include="TxCreaEspai.cpp" />
     <ClCompile Include="TxCreaEstudiant.cpp" />
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />
     <ClCompile Include="TxCrearProveidor.cpp" />
@@ -282,6 +311,7 @@
     <ClCompile Include="TxEditarGrup.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
+    <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
     <ClCompile Include="TxTancarSessio.cpp" />
@@ -303,11 +333,17 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConsultarEspaiUI.resx">
+      <DependentUpon>ConsultarEspaiUI.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultarEstudiantUI.resx">
       <DependentUpon>ConsultarEstudiantUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="consultargrup.resx">
       <DependentUpon>ConsultarGrup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearEspaiUI.resx">
+      <DependentUpon>CrearEspaiUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearEstudiant.resx">
       <DependentUpon>CrearEstudiant.h</DependentUpon>
@@ -317,6 +353,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearProveidorUI.resx">
       <DependentUpon>CrearProveidorUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarEspaiUI.resx">
+      <DependentUpon>EditarEspaiUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarEstudiant.resx">
       <DependentUpon>EditarEstudiant.h</DependentUpon>
@@ -333,6 +372,9 @@
     <EmbeddedResource Include="EsborrarProveidorUI.resx">
       <DependentUpon>EsborrarProveidorUI.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EsborraSessioUI.resx">
+      <DependentUpon>EsborraSessioUI.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IniciSessio.resx">
       <DependentUpon>IniciSessio.h</DependentUpon>
     </EmbeddedResource>
@@ -341,6 +383,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuEstudiant.resx">
       <DependentUpon>MenuEstudiant.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGestioEspais.resx">
+      <DependentUpon>MenuGestioEspais.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGestioEstudiant.resx">
       <DependentUpon>MenuGestioEstudiant.h</DependentUpon>
@@ -356,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuProvedor.resx">
       <DependentUpon>MenuProvedor.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuSessionsUI.resx">
+      <DependentUpon>MenuSessionsUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TancarSessio.resx">
       <DependentUpon>TancarSessio.h</DependentUpon>
