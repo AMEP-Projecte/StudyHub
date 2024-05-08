@@ -63,7 +63,7 @@ int PassarellaSessio::obteLlocsLliures() {
         String^ sql = "INSERT INTO sessio (grup, data, hora_inici, hora_fi, adreca, llocs_lliures) VALUES (@grup, @data, @horaInici, @horaFi, @adreca, @llocsLliures)";
         MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
        
-        // Agregar parámetros
+        // Agregar parÃ¡metros
         cmd->Parameters->AddWithValue("@grup", _grup);
         cmd->Parameters->AddWithValue("@data", _data);
         cmd->Parameters->AddWithValue("@horaInici", _horaInici);
@@ -79,7 +79,7 @@ int PassarellaSessio::obteLlocsLliures() {
 
             conn->Open();
             cmd->ExecuteNonQuery();
-            MessageBox::Show("Sesión creada correctamente.");
+            MessageBox::Show("SesiÃ³n creada correctamente.");
         }
         catch (MySqlException^ ex) {
             if (ex->Number == 1062) {
@@ -103,4 +103,29 @@ int PassarellaSessio::obteLlocsLliures() {
             conn->Close();
         }
     }
+
+void PassarellaSessio::modifica() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+	String^ sql = "UPDATE sessio SET ";
+	sql += "hora_fi = '" + _horaFi + "' ";
+	sql += "WHERE (grup = '" + _grup + "') ";
+	sql += "and (data = '" + _data + "') ";
+	sql += "and (hora_inici = '" + _horaInici + "');";
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	MySqlDataReader^ dataReader;
+
+	try {
+		conn->Open();
+		dataReader = cmd->ExecuteReader();
+	}
+	catch (Exception^ ex) {
+		// Errors
+	}
+	finally {
+		conn->Close();
+	}
+}
 

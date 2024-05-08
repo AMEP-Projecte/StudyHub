@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 using namespace System;
+
 ref class PassarellaEspai
 {
 private:
@@ -11,6 +12,7 @@ private:
 public:
 	PassarellaEspai();
 	PassarellaEspai(String^ adreca, String^ nom, int capacitat, String^ proveidor);
+	PassarellaEspai(const PassarellaEspai% P);
 
 	void posarAdreca(String^ adreca);
 	void posarNom(String^ nom);
@@ -21,5 +23,8 @@ public:
 	String^ obteNom();
 	int obteCapacitat();
 	String^ obteProveidor();
-};
 
+	void insereix(); 
+	void modifica();
+	void esborra();
+};

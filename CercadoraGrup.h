@@ -1,6 +1,7 @@
 #pragma once
 #include "PassarellaGrup.h"
 
+using namespace System::Collections::Generic;
 using namespace System;
 using namespace MySql::Data::MySqlClient;
 using namespace System;

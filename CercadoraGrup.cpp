@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "CercadoraGrup.h"
+#include "Sistema.h"
+
 
 using namespace MySql::Data::MySqlClient;
 using namespace System;
