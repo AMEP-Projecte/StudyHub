@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "PassarellaEspai.h"
 PassarellaEspai::PassarellaEspai(){}
-PassarellaEspai::PassarellaEspai(String^ adreca, String^ nom, String^ capacitat, String^ proveidor) {
+PassarellaEspai::PassarellaEspai(String^ adreca, String^ nom, int capacitat, String^ proveidor) {
 	_adreca = adreca;
 	_nom = nom;
 	_capacitat = capacitat;
@@ -14,7 +14,7 @@ void PassarellaEspai::posarAdreca(String^ adreca) {
 void PassarellaEspai::posarNom(String^ nom) {
 	_nom = nom;
 }
-void PassarellaEspai::posarCapacitat(String^ capacitat) {
+void PassarellaEspai::posarCapacitat(int capacitat) {
 	_capacitat = capacitat;
 }
 void PassarellaEspai::posarProveidor(String^ proveidor) {
@@ -27,7 +27,7 @@ String^ PassarellaEspai::obteAdreca() {
 String^ PassarellaEspai::obteNom() {
 	return _nom;
 }
-String^ PassarellaEspai::obteCapacitat() {
+int PassarellaEspai::obteCapacitat() {
 	return _capacitat;
 }
 String^ PassarellaEspai::obteProveidor() {
