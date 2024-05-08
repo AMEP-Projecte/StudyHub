@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 using namespace System;
+
 ref class PassarellaParticipa
 {
 private:
@@ -22,5 +23,7 @@ public:
 	String^ obteGrup();
 	String^ obteData();
 	String^ obteHoraInici();
+
+	void insereix();
 };
 

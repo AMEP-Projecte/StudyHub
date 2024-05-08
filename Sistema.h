@@ -16,6 +16,7 @@ private:
 	PassarellaAdmin^ _adm = nullptr;
 
 	bool _sessioIniciada;
+	String^ _username;
 	String^ _tipusUsuari;
 	String^ _contrasenya;
 
@@ -39,6 +40,8 @@ public:
 	void canviaEstatSessio(bool estat);
 	void canviaContrasenya(String^ cNova);
 
+	String^ obteUsername();
+
 	String^ obteContrasenya();
 
 	String^ obteTipusUsuari();
@@ -47,6 +50,6 @@ public:
 	PassarellaProveidor^ obteProveidor();
 	PassarellaAdmin^ obteAdministrador();
 
-	void iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^);
+	void iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^ pro);
 	void tancaSessio();
 };

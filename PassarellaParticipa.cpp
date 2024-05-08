@@ -1,5 +1,12 @@
 #include "pch.h"
 #include "PassarellaParticipa.h"
+
+using namespace MySql::Data::MySqlClient;
+using namespace System;
+using namespace System::Windows::Forms;
+using namespace System::Collections::Generic;
+using namespace std;
+
 PassarellaParticipa::PassarellaParticipa(){}
 PassarellaParticipa::PassarellaParticipa(String^ estudiant, String^ grup, String^ data, String^ horaInici) {
 	_estudiant = estudiant;
@@ -32,4 +39,31 @@ String^ PassarellaParticipa::obteData() {
 }
 String^ PassarellaParticipa::obteHoraInici() {
 	return _horaInici;
+}
+
+
+void PassarellaParticipa::insereix() {
+	bool totcorrecte = true;
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+	String^ sql = "INSERT INTO participa(estudiant, grup,data,hora) VALUES('" + _estudiant + "', '" + _grup + "', '" + _data + "', '" + _horaInici + "')";
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	MySqlDataReader^ dataReader;
+	try {
+		// obrim la connexio
+		conn->Open();
+		// executem la comanda (cmd) que s'ha creat abans del try
+		dataReader = cmd->ExecuteReader();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+		totcorrecte = false;
+	}
+	finally {
+		// si tot va be es tanca la connexio
+		if (totcorrecte) {
+			MessageBox::Show("Participat correctament.");
+		}
+		conn->Close();
+	}
 }

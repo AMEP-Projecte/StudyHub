@@ -4,15 +4,16 @@
 
  ref class TxConsultaGrup
 {
+private:
+	String^ _nom;
+	List<String^>^ resultat;
+	// resultat[0] és el nom
+	// resultat[1] té el nombre de participants
 public:
-	//cosntructora
-	
-	TxConsultaGrup(String^ n);
+	TxConsultaGrup(String^ n); // constructora
 
 	void executar();
-
-	String^ _nom;
-	String^ _tematica;
-	int _nombreParticipants;
+	
+	List<String^>^ obteResultat();
 
 };

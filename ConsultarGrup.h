@@ -243,10 +243,9 @@ private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ 
 			TxConsultaGrup^ tx = gcnew TxConsultaGrup(nom);
 			tx->executar();
 
-			labelTematica->Text = tx->_tematica;
-
-			int p = tx->_nombreParticipants;
-			labelParticipants->Text = p.ToString();
+			List<String^>^ resultat = tx->obteResultat();
+			labelTematica->Text = resultat[0];
+			labelParticipants->Text = resultat[1];
 		}
 	}
 	catch (Exception^ ex) {

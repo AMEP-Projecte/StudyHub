@@ -13,16 +13,15 @@ void TxEditarEstudiant::executar() {
 	Sistema^ sistema = Sistema::getInstance();
 
 	PassarellaEstudiant^ est = sistema->obteEstudiant();
-	if (_nom != " ") est->posaNom(_nom);
-	if (_cognoms != " ") est->posaCognoms(_cognoms);
-	if (_idioma != " ") est->posaIdioma(_idioma);
-	if (_localitat != " ") est->posaLocalitat(_localitat);
+	if (_nom != "") est->posaNom(_nom);
+	if (_cognoms != "") est->posaCognoms(_cognoms);
+	if (_idioma != "") est->posaIdioma(_idioma);
+	if (_localitat != "") est->posaLocalitat(_localitat);
 	est->modifica();
 
-	if (_contrasenya != " ") {
-		String^ username = est->obteUsername();
-		CercadoraUsuari cu;
-		PassarellaUsuari^ usuari = cu.cercaUsuari(username);
+	if (_contrasenya != "") {
+		PassarellaUsuari^ usuari = gcnew PassarellaUsuari(est->obteUsername(), _contrasenya, "estudiant");
 		usuari->modifica();
+		sistema->canviaContrasenya(_contrasenya);
 	}
 }

@@ -4,9 +4,12 @@
 using namespace System::Collections::Generic;
 ref class CercadoraParticipa
 {
-public:
-	List<PassarellaParticipa^>^ cercaParticipaGrup(String^ nom);
 
-	List<PassarellaParticipa^>^ cercaParticipaEstudiant(String^ username);
+public:
+	List<PassarellaParticipa^>^ cercaParticipaSessio(String^ grup);
+
+	//List<PassarellaParticipa^>^ cercaParticipaGrup(String^ nom);
+
+	static List<PassarellaParticipa^>^ cercaParticipaEstudiant(String^ nom);
 };
 
