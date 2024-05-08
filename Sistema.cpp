@@ -21,19 +21,32 @@ PassarellaEstudiant^ Sistema::obteEstudiant() {
 	return _est;
 }
 
-//PassarellaProveidor* Sistema::obteProveidor() {
-//	return _pro;
-// }
+PassarellaProveidor^ Sistema::obteProveidor() {
+	return _pro;
+}
 
-//PassarelaAdministrador* Sistema::obteAdministrador() {
-//  return _adm;
-// }
+PassarellaAdmin^ Sistema::obteAdministrador() {
+	return _adm;
+}
 
-void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu) {
+void Sistema::iniciaSessio(PassarellaUsuari^ usu, PassarellaEstudiant^ estu, PassarellaAdmin^ admin, PassarellaProveidor^ pro) {
 	_sessioIniciada = true;
-	_est = estu;
 	_tipusUsuari = usu->obteTipus();
 	_contrasenya = usu->obteContrasenya();
+	if (_tipusUsuari == "estudiant" && estu != nullptr) {
+		_est = estu;
+	}
+	else if (_tipusUsuari == "proveidor"/* && pro != nullptr */ ) {
+		_pro = pro;
+	}
+	else if (_tipusUsuari == "administrador"/* && admin != nullptr*/) {
+		_adm = admin;
+	}
+	else {
+		_sessioIniciada = false;
+		_tipusUsuari = "";
+		_contrasenya = "";
+	}
 }
 
 void Sistema::tancaSessio() {
