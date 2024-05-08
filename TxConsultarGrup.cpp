@@ -16,7 +16,6 @@ void TxConsultaGrup::executar() {
 	}
 	else {
 		resultat[0] = p->obteTematica();
-
 		CercadoraPertany aux;
 		List<PassarellaPertany^>^ l = aux.cercaParticipants(_nom);
 		int p = l->Count;

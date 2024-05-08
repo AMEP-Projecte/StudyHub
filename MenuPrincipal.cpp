@@ -4,6 +4,7 @@
 #include "IniciarSessio.h"
 #include "CrearEstudiant.h"
 #include "MenuEstudiant.h"
+#include "MenuSessionsUI.h"
 #include "MenuPrincipal.h"
 
 
@@ -50,6 +51,7 @@ System::Void MenuPrincipal::AbrirSubFormularioEnPanel(Form^ formHijo) {
 System::Void MenuPrincipal::HacerVisible() {
 	this->ButtonMenuEstudiant->Visible = true;
 	this->ButtonMenuGrups->Visible = true;
+	this->buttonMenuSessions->Visible = true;
 	this->ButtonMenu->Visible = false;
 	this->ButtonMenuProveidors->Visible = false;
 	this->ButtonMenuAdmin->Visible = false;
@@ -61,6 +63,7 @@ System::Void MenuPrincipal::HacerVisibleProvedor() {
 	this->ButtonMenuEstudiant->Visible = false;
 	this->ButtonMenuGrups->Visible = false;
 	this->ButtonMenu->Visible = false;
+	this->buttonMenuSessions->Visible = false;
 }
 
 System::Void MenuPrincipal::HacerVisibleAdmin() {
@@ -69,6 +72,7 @@ System::Void MenuPrincipal::HacerVisibleAdmin() {
 	this->ButtonMenuEstudiant->Visible = false;
 	this->ButtonMenuGrups->Visible = false;
 	this->ButtonMenu->Visible = false;
+	this->buttonMenuSessions->Visible = false;
 }
 
 System::Void MenuPrincipal::HacerInivisible_Load() {
@@ -77,6 +81,8 @@ System::Void MenuPrincipal::HacerInivisible_Load() {
 	this->ButtonMenuGrups->Visible = false;
 	this->ButtonMenuAdmin->Visible = false;
 	this->ButtonMenuProveidors->Visible = false;
+	this->ButtonMaximized->Visible = false;
+	this->buttonMenuSessions->Visible = false;
 }
 
 System::Void MenuPrincipal::MenuPrincipal_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -146,6 +152,12 @@ System::Void MenuPrincipal::ButtonMenuProveidors_Click(System::Object^ sender, S
 
 System::Void MenuPrincipal::ButtonMenuAdmin_Click(System::Object^ sender, System::EventArgs^ e) {
 	MenuAdministrador^ NewForm = gcnew MenuAdministrador();
+	// Abrir el formulario en el PanelContainer
+	AbrirFormularioEnPanel(NewForm);
+}
+
+System::Void MenuPrincipal::buttonMenuSessions_Click(System::Object^ sender, System::EventArgs^ e) {
+	MenuSessionsUI^ NewForm = gcnew MenuSessionsUI();
 	// Abrir el formulario en el PanelContainer
 	AbrirFormularioEnPanel(NewForm);
 }

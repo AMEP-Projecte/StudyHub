@@ -15,6 +15,12 @@ PassarellaEspai::PassarellaEspai(String^ adreca, String^ nom, int capacitat, Str
 	_userProveidor = proveidor;
 }
 
+PassarellaEspai::PassarellaEspai(const PassarellaEspai% P) {
+	_adreca = P._adreca;
+	_nom = P._nom;
+	_capacitat = P._capacitat;
+	_userProveidor = P._userProveidor;
+}
 void PassarellaEspai::posarAdreca(String^ adreca) {
 	_adreca = adreca;
 }
@@ -65,6 +71,30 @@ void PassarellaEspai::insereix() {
 
 }
 
+
+void PassarellaEspai::modifica() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+	String^ sql = "UPDATE espai SET ";
+	sql += "capacitat = '" + _capacitat + "' ";
+	sql += "WHERE adreca = '" + _adreca + "' ";
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	MySqlDataReader^ dataReader;
+	try {
+		// obrim la connexio
+		conn->Open();
+		dataReader = cmd->ExecuteReader();
+	}
+	catch (Exception^ ex) {
+		// codi per mostrar l'error en una finestra
+		//MessageBox::WriteLine(ex->Message);
+	}
+	finally {
+		conn->Close();
+	}
+}
+
 void PassarellaEspai::esborra() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -86,3 +116,4 @@ void PassarellaEspai::esborra() {
 		conn->Close();
 	}
 }
+
