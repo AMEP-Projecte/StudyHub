@@ -4,6 +4,7 @@
 #include "CrearEspaiUI.h"
 #include "ConsultarEspaiUI.h"
 #include "EditarEspaiUI.h"
+#include "EliminarEspaiUI.h"
 
 using namespace StudyHub;
 
@@ -21,6 +22,11 @@ System::Void MenuGestioEspais::botonconsultar_Click(System::Object^ sender, Syst
 
 System::Void MenuGestioEspais::botoneditar_Click(System::Object^ sender, System::EventArgs^ e) {
 	EditarEspaiUI^ Crear = gcnew EditarEspaiUI();
+	MenuPrincipal^ Menu = Menu->getInstance();
+	Menu->AbrirFormularioEnPanel(Crear);
+}
+System::Void MenuGestioEspais::botoneliminar_Click(System::Object^ sender, System::EventArgs^ e) {
+	EliminarEspai^ Crear = gcnew EliminarEspai();
 	MenuPrincipal^ Menu = Menu->getInstance();
 	Menu->AbrirFormularioEnPanel(Crear);
 }

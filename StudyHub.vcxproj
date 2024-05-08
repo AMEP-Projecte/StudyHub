@@ -170,6 +170,9 @@
     <ClInclude Include="EditarGrup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="EliminarEspaiUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="EliminarEspai.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -277,6 +280,7 @@
     <ClCompile Include="EditarEspaiUI.cpp" />
     <ClCompile Include="EditarEstudiant.cpp" />
     <ClCompile Include="EditarGrup.cpp" />
+    <ClCompile Include="EliminarEspaiUI.cpp" />
     <ClCompile Include="EliminarEspai.cpp" />
     <ClCompile Include="EliminarGrupEstudi.cpp" />
     <ClCompile Include="EliminarPerfilEstudiantUI.cpp" />

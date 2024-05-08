@@ -20,7 +20,8 @@ void TxEliminarEspai::executar() {
 		}
 	}
 	else {
-		throw gcnew Exception("No existeix un espai amb aquesta adrec\u00E7a.");
+		throw gcnew Exception("No existeix un espai amb aquesta adre\u00E7a.");
 
 	}
 }
+
