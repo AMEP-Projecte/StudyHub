@@ -11,18 +11,22 @@ TxConsultaGrup::TxConsultaGrup(String^ n) {
 
 void TxConsultaGrup::executar() {
 	PassarellaGrup^ p = CercadoraGrup::cercaPerNomGrup(_nom);
-	if (_nom == "") {
+	if (p->obteNom() == "") {
 		throw gcnew Exception("Aquest grup no existeix.");
 	}
 	else {
-		resultat[0] = p->obteTematica();
+		String^ t = p->obteTematica();
+
 		CercadoraPertany aux;
 		List<PassarellaPertany^>^ l = aux.cercaParticipants(_nom);
 		int p = l->Count;
-		resultat[1] = p.ToString();
+		String^ np = p.ToString();
+
+		resultat._tematica = t;
+		resultat._nombreParticipants = np;
 	}
 }
 
-List<String^>^ TxConsultaGrup::obteResultat() {
+ConsultaGrup TxConsultaGrup::obteResultat() {
 	return resultat;
 }
