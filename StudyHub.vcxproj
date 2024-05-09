@@ -152,6 +152,15 @@
     <ClInclude Include="ConsultarProveidorUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ConsultarSessionsUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditarSessio.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="ProgamarSessioEstudiUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CrearEspaiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -284,6 +293,9 @@
     <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="ConsultarProveidorUI.cpp" />
+    <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="ProgamarSessioEstudiUI.cpp" />
+    <ClCompile Include="ConsultarSessionsUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
     <ClCompile Include="CrearEspaiUI.cpp" />
     <ClCompile Include="CrearEstudiant.cpp" />
@@ -378,6 +390,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarProveidorUI.resx">
       <DependentUpon>ConsultarProveidorUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarSessionsUI.resx">
+      <DependentUpon>ConsultarSessionsUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarSessio.resx">
+      <DependentUpon>EditarSessio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgamarSessioEstudiUI.resx">
+      <DependentUpon>ProgamarSessioEstudiUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearEspaiUI.resx">
       <DependentUpon>CrearEspaiUI.h</DependentUpon>
