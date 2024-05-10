@@ -46,7 +46,7 @@ namespace StudyHub {
 	private: String^ grup;
 	private: String^ data;
 	private: String^ hora_inici;
-	private: String^ hora_fi;
+	private: String^ hora_fi = "";
 
 	protected:
 
@@ -93,12 +93,13 @@ namespace StudyHub {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(142, 19);
+			this->label1->Location = System::Drawing::Point(142, 9);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(303, 36);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Editar Sessió d\'Estudi";
+			this->label1->Text = L"Editar Sessio d\'Estudi";
+			this->label1->Click += gcnew System::EventHandler(this, &EditarSessio::label1_Click);
 			// 
 			// dataGridView1
 			// 
@@ -109,12 +110,12 @@ namespace StudyHub {
 			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->GridColor = System::Drawing::SystemColors::ControlLightLight;
-			this->dataGridView1->Location = System::Drawing::Point(9, 64);
+			this->dataGridView1->Location = System::Drawing::Point(42, 72);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(589, 230);
+			this->dataGridView1->Size = System::Drawing::Size(521, 184);
 			this->dataGridView1->TabIndex = 6;
 			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &EditarSessio::dataGridView1_CellClick);
 			// 
@@ -124,16 +125,17 @@ namespace StudyHub {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(20, 303);
+			this->label2->Location = System::Drawing::Point(37, 270);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(258, 26);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Nova hora de fi de sessió:";
+			this->label2->Click += gcnew System::EventHandler(this, &EditarSessio::label2_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(25, 338);
+			this->textBox1->Location = System::Drawing::Point(42, 298);
 			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(247, 20);
@@ -145,7 +147,7 @@ namespace StudyHub {
 			this->buttonEditar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->buttonEditar->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->buttonEditar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->buttonEditar->Location = System::Drawing::Point(301, 319);
+			this->buttonEditar->Location = System::Drawing::Point(301, 298);
 			this->buttonEditar->Name = L"buttonEditar";
 			this->buttonEditar->Size = System::Drawing::Size(144, 36);
 			this->buttonEditar->TabIndex = 7;
@@ -159,7 +161,7 @@ namespace StudyHub {
 			this->buttonTornar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->buttonTornar->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->buttonTornar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->buttonTornar->Location = System::Drawing::Point(454, 319);
+			this->buttonTornar->Location = System::Drawing::Point(451, 298);
 			this->buttonTornar->Name = L"buttonTornar";
 			this->buttonTornar->Size = System::Drawing::Size(144, 36);
 			this->buttonTornar->TabIndex = 7;
@@ -193,12 +195,10 @@ namespace StudyHub {
 
 		}
 #pragma endregion
-	private: System::Void buttonTornar_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
+	private: System::Void buttonTornar_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void buttonEditar_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (textBox1->Text == "") {
-			MessageBox::Show("Selecciona una sessió per editar.");
+		if (textBox1->Text == "" || hora_fi == "") {
+			MessageBox::Show("Selecciona una sessio per editar.");
 		}
 		else {
 			TxEditarSessio^ tx = gcnew TxEditarSessio(grup, data, hora_inici, hora_fi);
@@ -209,7 +209,7 @@ namespace StudyHub {
 
 				try {
 					tx->executar();
-					MessageBox::Show("Hora de fi de sessió modificada correctament.");
+					MessageBox::Show("Hora de fi de sessio modificada correctament.");
 					this->omplir();
 				}
 				catch (Exception^ ex) {
@@ -235,6 +235,10 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	hora_fi = Convert::ToString(dataGridView1->Rows[index]->Cells[3]->Value);
 
 	textBox1->Text = hora_fi;
+}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

@@ -2,7 +2,7 @@
 #include "CercadoraEspai.h"
 #include "CercadoraProveidor.h"
 
-value struct Resultat{
+value struct ConsultaEspai {
 	String^ _adreca;
 	String^ _nom;
 	int _capacitat;
@@ -12,11 +12,11 @@ value struct Resultat{
 ref class TxConsultaEspai
 {
 	private:
-		Resultat _resultat;
+		ConsultaEspai _resultat;
 		String^ _adreca;
 	public:
 	
 	TxConsultaEspai(String^ a);
 	void executar();
-	Resultat obteResultat();
+	ConsultaEspai obteResultat();
 };

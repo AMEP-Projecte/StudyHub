@@ -1,8 +1,5 @@
 #pragma once
-#include <iostream>
 #include "PassarellaSessio.h"
-
-using namespace System;
 
 ref class TxEditarSessio
 {

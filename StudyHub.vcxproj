@@ -238,7 +238,7 @@
     </ClInclude>
     <ClInclude Include="ParticipacioSessio.h">
       <FileType>CppForm</FileType>
-    </ClInclude>      
+    </ClInclude>
     <ClInclude Include="MenuSessionsUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -268,6 +268,10 @@
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
     <ClInclude Include="TxEditarProveidor.h" />
+    <ClInclude Include="TxEditarSessio.h">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
@@ -276,6 +280,10 @@
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxParticipacioSessio.h" />
+    <ClInclude Include="TxProgramarSessioEstudi.h">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="TxTancarSessio.h" />
   </ItemGroup>
   <ItemGroup>
@@ -352,6 +360,10 @@
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
     <ClCompile Include="TxEditarProveidor.cpp" />
+    <ClCompile Include="TxEditarSessio.cpp">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
@@ -360,6 +372,10 @@
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
     <ClCompile Include="TxParticipacioSessio.cpp" />
+    <ClCompile Include="TxProgramarSessioEstudi.cpp">
+      <DeploymentContent>true</DeploymentContent>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="TxTancarSessio.cpp" />
   </ItemGroup>
   <ItemGroup>

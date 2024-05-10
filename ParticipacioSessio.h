@@ -23,6 +23,9 @@ namespace StudyHub {
 			//TODO: agregar c�digo de constructor aqu�
 			//
 		}
+		String^ grup;
+		String^ data;
+		String^ horaInici;
 
 	protected:
 		/// <summary>
@@ -137,17 +140,11 @@ namespace StudyHub {
 	}
 	private: System::Void ConsultarGrup_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void cencel_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
+	private: System::Void cencel_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	private: System::Void confirmar_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-
-		
-	}
+	private: System::Void confirmar_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void theme_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };

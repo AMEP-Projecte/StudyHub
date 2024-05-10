@@ -3,6 +3,8 @@
 #include "PassarellaSessio.h"
 #include "TxEsborrarSessio.h"
 #include "Sistema.h"
+#include "MenuPrincipal.h"
+#include "MenuSessionsUI.h"
 
 using namespace StudyHub;
 
@@ -33,7 +35,9 @@ void EsborraSessioUI::omplir() {
 }
 
 System::Void EsborraSessioUI::ButtonTornar_Click(System::Object^ sender, System::EventArgs^ e) {
-    this->Close();
+    MenuSessionsUI^ menuGestioSessions = gcnew MenuSessionsUI();
+    MenuPrincipal^ menu = MenuPrincipal::getInstance();
+    menu->AbrirFormularioEnPanel(menuGestioSessions);
 }
 
 System::Void EsborraSessioUI::button3_Click(System::Object^ sender, System::EventArgs^ e) {

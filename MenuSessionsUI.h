@@ -35,9 +35,16 @@ namespace StudyHub {
 			}
 		}
 	private: System::Windows::Forms::Label^ textBenvinguda;
-	private: System::Windows::Forms::Button^ ButtonIniciarSessio;
-	private: System::Windows::Forms::Button^ registrar;
-	private: System::Windows::Forms::Button^ sortir;
+	private: System::Windows::Forms::Button^ consultaSessions;
+	private: System::Windows::Forms::Button^ editaSessions;
+	private: System::Windows::Forms::Button^ programaSessio;
+
+	private: System::Windows::Forms::Button^ esborraSessio;
+
+
+
+
+
 	protected:
 
 	private:
@@ -54,9 +61,10 @@ namespace StudyHub {
 		void InitializeComponent(void)
 		{
 			this->textBenvinguda = (gcnew System::Windows::Forms::Label());
-			this->ButtonIniciarSessio = (gcnew System::Windows::Forms::Button());
-			this->registrar = (gcnew System::Windows::Forms::Button());
-			this->sortir = (gcnew System::Windows::Forms::Button());
+			this->consultaSessions = (gcnew System::Windows::Forms::Button());
+			this->editaSessions = (gcnew System::Windows::Forms::Button());
+			this->programaSessio = (gcnew System::Windows::Forms::Button());
+			this->esborraSessio = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// textBenvinguda
@@ -71,49 +79,66 @@ namespace StudyHub {
 			this->textBenvinguda->TabIndex = 10;
 			this->textBenvinguda->Text = L"Menu Sessions";
 			// 
-			// ButtonIniciarSessio
+			// consultaSessions
 			// 
-			this->ButtonIniciarSessio->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->ButtonIniciarSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->ButtonIniciarSessio->ForeColor = System::Drawing::Color::DarkCyan;
-			this->ButtonIniciarSessio->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->ButtonIniciarSessio->Location = System::Drawing::Point(120, 152);
-			this->ButtonIniciarSessio->Margin = System::Windows::Forms::Padding(2);
-			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
-			this->ButtonIniciarSessio->Size = System::Drawing::Size(138, 51);
-			this->ButtonIniciarSessio->TabIndex = 11;
-			this->ButtonIniciarSessio->Text = L"1";
-			this->ButtonIniciarSessio->UseVisualStyleBackColor = true;
-			this->ButtonIniciarSessio->Click += gcnew System::EventHandler(this, &MenuSessionsUI::ButtonIniciarSessio_Click);
-			// 
-			// registrar
-			// 
-			this->registrar->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->registrar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->consultaSessions->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->consultaSessions->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->registrar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->registrar->Location = System::Drawing::Point(345, 152);
-			this->registrar->Margin = System::Windows::Forms::Padding(2);
-			this->registrar->Name = L"registrar";
-			this->registrar->Size = System::Drawing::Size(141, 51);
-			this->registrar->TabIndex = 12;
-			this->registrar->Text = L"2";
-			this->registrar->UseVisualStyleBackColor = true;
+			this->consultaSessions->ForeColor = System::Drawing::Color::DarkCyan;
+			this->consultaSessions->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->consultaSessions->Location = System::Drawing::Point(117, 141);
+			this->consultaSessions->Margin = System::Windows::Forms::Padding(2);
+			this->consultaSessions->Name = L"consultaSessions";
+			this->consultaSessions->Size = System::Drawing::Size(138, 51);
+			this->consultaSessions->TabIndex = 11;
+			this->consultaSessions->Text = L"Consultar Sessions i Participa";
+			this->consultaSessions->UseVisualStyleBackColor = true;
+			this->consultaSessions->Click += gcnew System::EventHandler(this, &MenuSessionsUI::consultaSessions_Click);
 			// 
-			// sortir
+			// editaSessions
 			// 
-			this->sortir->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->sortir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->editaSessions->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->editaSessions->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->sortir->ForeColor = System::Drawing::Color::DarkCyan;
-			this->sortir->Location = System::Drawing::Point(223, 272);
-			this->sortir->Margin = System::Windows::Forms::Padding(2);
-			this->sortir->Name = L"sortir";
-			this->sortir->Size = System::Drawing::Size(156, 51);
-			this->sortir->TabIndex = 13;
-			this->sortir->Text = L"3";
-			this->sortir->UseVisualStyleBackColor = true;
+			this->editaSessions->ForeColor = System::Drawing::Color::DarkCyan;
+			this->editaSessions->Location = System::Drawing::Point(364, 141);
+			this->editaSessions->Margin = System::Windows::Forms::Padding(2);
+			this->editaSessions->Name = L"editaSessions";
+			this->editaSessions->Size = System::Drawing::Size(141, 51);
+			this->editaSessions->TabIndex = 12;
+			this->editaSessions->Text = L"Editar Sessions";
+			this->editaSessions->UseVisualStyleBackColor = true;
+			this->editaSessions->Click += gcnew System::EventHandler(this, &MenuSessionsUI::editaSessions_Click);
+			// 
+			// programaSessio
+			// 
+			this->programaSessio->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->programaSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->programaSessio->ForeColor = System::Drawing::Color::DarkCyan;
+			this->programaSessio->Location = System::Drawing::Point(117, 223);
+			this->programaSessio->Margin = System::Windows::Forms::Padding(2);
+			this->programaSessio->Name = L"programaSessio";
+			this->programaSessio->Size = System::Drawing::Size(138, 52);
+			this->programaSessio->TabIndex = 13;
+			this->programaSessio->Text = L"Programar Sessió";
+			this->programaSessio->UseVisualStyleBackColor = true;
+			this->programaSessio->Click += gcnew System::EventHandler(this, &MenuSessionsUI::programaSessio_Click);
+			// 
+			// esborraSessio
+			// 
+			this->esborraSessio->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->esborraSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->esborraSessio->ForeColor = System::Drawing::Color::DarkCyan;
+			this->esborraSessio->Location = System::Drawing::Point(364, 223);
+			this->esborraSessio->Margin = System::Windows::Forms::Padding(2);
+			this->esborraSessio->Name = L"esborraSessio";
+			this->esborraSessio->Size = System::Drawing::Size(141, 52);
+			this->esborraSessio->TabIndex = 14;
+			this->esborraSessio->Text = L"Esborrar Sessió";
+			this->esborraSessio->UseVisualStyleBackColor = true;
+			this->esborraSessio->Click += gcnew System::EventHandler(this, &MenuSessionsUI::esborraSessio_Click);
 			// 
 			// MenuSessionsUI
 			// 
@@ -121,9 +146,10 @@ namespace StudyHub {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(607, 370);
-			this->Controls->Add(this->ButtonIniciarSessio);
-			this->Controls->Add(this->registrar);
-			this->Controls->Add(this->sortir);
+			this->Controls->Add(this->esborraSessio);
+			this->Controls->Add(this->consultaSessions);
+			this->Controls->Add(this->editaSessions);
+			this->Controls->Add(this->programaSessio);
 			this->Controls->Add(this->textBenvinguda);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MenuSessionsUI";
@@ -133,7 +159,9 @@ namespace StudyHub {
 
 		}
 #pragma endregion
-	private: System::Void ButtonIniciarSessio_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	private: System::Void consultaSessions_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void editaSessions_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void esborraSessio_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void programaSessio_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

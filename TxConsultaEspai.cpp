@@ -21,6 +21,6 @@ void TxConsultaEspai::executar() {
 	}
 }
 
-Resultat TxConsultaEspai::obteResultat(){
+ConsultaEspai TxConsultaEspai::obteResultat(){
 	return _resultat;
 }
