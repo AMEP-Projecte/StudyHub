@@ -244,7 +244,7 @@ private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ 
 			tx->executar();
 
 			ConsultaGrup consulta = tx->obteResultat();
-			labelTematica->Text = consulta._tematica;;
+			labelTematica->Text = consulta._tematica;
 			labelParticipants->Text = consulta._nombreParticipants;
 		}
 	}

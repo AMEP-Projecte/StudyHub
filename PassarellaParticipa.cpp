@@ -43,27 +43,24 @@ String^ PassarellaParticipa::obteHoraInici() {
 
 
 void PassarellaParticipa::insereix() {
-	bool totcorrecte = true;
+
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	String^ sql = "INSERT INTO participa(estudiant, grup,data,hora) VALUES('" + _estudiant + "', '" + _grup + "', '" + _data + "', '" + _horaInici + "')";
+	String^ sql = "INSERT INTO participa(estudiant, grup,data,hora_inici) VALUES('" + _estudiant + "', '" + _grup + "', '" + _data + "', '" + _horaInici + "')";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-	MySqlDataReader^ dataReader;
+
 	try {
 		// obrim la connexio
 		conn->Open();
 		// executem la comanda (cmd) que s'ha creat abans del try
-		dataReader = cmd->ExecuteReader();
+		cmd->ExecuteNonQuery();
 	}
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
-		totcorrecte = false;
+	
 	}
 	finally {
-		// si tot va be es tanca la connexio
-		if (totcorrecte) {
-			MessageBox::Show("Participat correctament.");
-		}
+		
 		conn->Close();
 	}
 }
