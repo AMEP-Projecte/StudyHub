@@ -28,9 +28,10 @@ PassarellaEspai^ CercadoraEspai::cercaEspaiAdreca(String^ Adreca) {
 			adreca = dataReader->GetString(0);
 			nom = dataReader->GetString(1);
 			//capacitat = dataReader->GetString(2);
-			capacitat = Int32::Parse(dataReader->GetString(2));  // Convierte String^ a int
-
+			//capacitat = Int32::Parse(dataReader->GetString(2));  // Convierte String^ a int
+			capacitat = dataReader->GetInt32(2);
 			proveidor = dataReader->GetString(3);
+
 		}
 	}
 	catch (MySqlException^ ex) {
