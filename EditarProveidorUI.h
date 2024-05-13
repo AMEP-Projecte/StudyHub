@@ -76,31 +76,30 @@ namespace StudyHub {
 			this->editStudent->AutoSize = true;
 			this->editStudent->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->editStudent->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->editStudent->Location = System::Drawing::Point(155, 18);
-			this->editStudent->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->editStudent->Location = System::Drawing::Point(207, 22);
 			this->editStudent->Name = L"editStudent";
-			this->editStudent->Size = System::Drawing::Size(280, 42);
+			this->editStudent->Size = System::Drawing::Size(361, 52);
 			this->editStudent->TabIndex = 4;
-			this->editStudent->Text = L"Editar Estudiant:";
+			this->editStudent->Text = L"Editar Proveïdor:";
 			// 
 			// newPassword
 			// 
-			this->newPassword->Location = System::Drawing::Point(221, 113);
-			this->newPassword->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->newPassword->Location = System::Drawing::Point(295, 139);
+			this->newPassword->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->newPassword->MaxLength = 45;
 			this->newPassword->Name = L"newPassword";
 			this->newPassword->PasswordChar = '*';
-			this->newPassword->Size = System::Drawing::Size(273, 20);
+			this->newPassword->Size = System::Drawing::Size(363, 22);
 			this->newPassword->TabIndex = 14;
 			// 
 			// oldPassword
 			// 
-			this->oldPassword->Location = System::Drawing::Point(221, 84);
-			this->oldPassword->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->oldPassword->Location = System::Drawing::Point(295, 103);
+			this->oldPassword->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->oldPassword->MaxLength = 45;
 			this->oldPassword->Name = L"oldPassword";
 			this->oldPassword->PasswordChar = '*';
-			this->oldPassword->Size = System::Drawing::Size(273, 20);
+			this->oldPassword->Size = System::Drawing::Size(363, 22);
 			this->oldPassword->TabIndex = 13;
 			// 
 			// newPasswordLabel
@@ -108,10 +107,9 @@ namespace StudyHub {
 			this->newPasswordLabel->AutoSize = true;
 			this->newPasswordLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->newPasswordLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->newPasswordLabel->Location = System::Drawing::Point(57, 111);
-			this->newPasswordLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->newPasswordLabel->Location = System::Drawing::Point(76, 137);
 			this->newPasswordLabel->Name = L"newPasswordLabel";
-			this->newPasswordLabel->Size = System::Drawing::Size(155, 22);
+			this->newPasswordLabel->Size = System::Drawing::Size(187, 26);
 			this->newPasswordLabel->TabIndex = 12;
 			this->newPasswordLabel->Text = L"Nova contrasenya";
 			// 
@@ -120,10 +118,9 @@ namespace StudyHub {
 			this->oldPasswordLabel->AutoSize = true;
 			this->oldPasswordLabel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->oldPasswordLabel->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->oldPasswordLabel->Location = System::Drawing::Point(56, 82);
-			this->oldPasswordLabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->oldPasswordLabel->Location = System::Drawing::Point(75, 101);
 			this->oldPasswordLabel->Name = L"oldPasswordLabel";
-			this->oldPasswordLabel->Size = System::Drawing::Size(165, 22);
+			this->oldPasswordLabel->Size = System::Drawing::Size(199, 26);
 			this->oldPasswordLabel->TabIndex = 11;
 			this->oldPasswordLabel->Text = L"Contrasenya actual";
 			// 
@@ -132,10 +129,10 @@ namespace StudyHub {
 			this->edit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->edit->ForeColor = System::Drawing::Color::DarkCyan;
-			this->edit->Location = System::Drawing::Point(386, 266);
-			this->edit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->edit->Location = System::Drawing::Point(515, 327);
+			this->edit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->edit->Name = L"edit";
-			this->edit->Size = System::Drawing::Size(109, 37);
+			this->edit->Size = System::Drawing::Size(145, 46);
 			this->edit->TabIndex = 16;
 			this->edit->Text = L"Editar";
 			this->edit->UseVisualStyleBackColor = true;
@@ -146,10 +143,10 @@ namespace StudyHub {
 			this->cancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cancel->ForeColor = System::Drawing::Color::DarkCyan;
-			this->cancel->Location = System::Drawing::Point(72, 266);
-			this->cancel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->cancel->Location = System::Drawing::Point(96, 327);
+			this->cancel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->cancel->Name = L"cancel";
-			this->cancel->Size = System::Drawing::Size(109, 37);
+			this->cancel->Size = System::Drawing::Size(145, 46);
 			this->cancel->TabIndex = 15;
 			this->cancel->Text = L"Tornar";
 			this->cancel->UseVisualStyleBackColor = true;
@@ -157,10 +154,10 @@ namespace StudyHub {
 			// 
 			// EditarProveidorUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(607, 370);
+			this->ClientSize = System::Drawing::Size(809, 455);
 			this->Controls->Add(this->edit);
 			this->Controls->Add(this->cancel);
 			this->Controls->Add(this->newPassword);
@@ -169,7 +166,7 @@ namespace StudyHub {
 			this->Controls->Add(this->oldPasswordLabel);
 			this->Controls->Add(this->editStudent);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"EditarProveidorUI";
 			this->Text = L"0";
 			this->ResumeLayout(false);
