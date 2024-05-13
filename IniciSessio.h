@@ -87,6 +87,7 @@ namespace StudyHub {
 			// 
 			this->textBox2->Location = System::Drawing::Point(151, 124);
 			this->textBox2->Name = L"textBox2";
+			this->textBox2->PasswordChar = '*';
 			this->textBox2->Size = System::Drawing::Size(353, 20);
 			this->textBox2->TabIndex = 3;
 			// 
@@ -109,7 +110,7 @@ namespace StudyHub {
 			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
 			this->ButtonIniciarSessio->Size = System::Drawing::Size(166, 44);
 			this->ButtonIniciarSessio->TabIndex = 4;
-			this->ButtonIniciarSessio->Text = L"Iniciar Sessio";
+			this->ButtonIniciarSessio->Text = L"Iniciar Sessió";
 			this->ButtonIniciarSessio->UseVisualStyleBackColor = true;
 			this->ButtonIniciarSessio->Click += gcnew System::EventHandler(this, &IniciSessio::button1_Click);
 			// 

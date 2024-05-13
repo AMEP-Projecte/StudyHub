@@ -86,7 +86,7 @@ namespace StudyHub {
 			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
 			this->ButtonIniciarSessio->Size = System::Drawing::Size(138, 51);
 			this->ButtonIniciarSessio->TabIndex = 6;
-			this->ButtonIniciarSessio->Text = L"Iniciar Sessió";
+			this->ButtonIniciarSessio->Text = L"Iniciar Sessi\u00F3";
 			this->ButtonIniciarSessio->UseVisualStyleBackColor = true;
 			this->ButtonIniciarSessio->Click += gcnew System::EventHandler(this, &IniciarSessio::ButtonIniciarSessio_Click);
 			// 
@@ -141,12 +141,10 @@ namespace StudyHub {
 #pragma endregion
 private: System::Void ButtonIniciarSessio_Click(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^ e) {
-	//StudyHub::CrearEstudiant^ registraEstudiant = gcnew StudyHub::CrearEstudiant();
-}
-private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
+private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e);
+
 private: System::Void IniciarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };

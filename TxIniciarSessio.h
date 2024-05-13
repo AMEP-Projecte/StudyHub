@@ -9,6 +9,5 @@ private:
 public:
 	TxIniciarSessio(String^ username, String^ contrasenya);
 
-	bool executar(/*string amb si te error??*/);
+	bool executar();
 };
-

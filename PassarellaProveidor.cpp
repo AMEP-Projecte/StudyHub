@@ -33,3 +33,4 @@ void PassarellaProveidor::insereix() {
 		conn->Close();
 	}
 }
+

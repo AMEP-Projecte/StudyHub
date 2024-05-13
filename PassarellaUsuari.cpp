@@ -70,12 +70,13 @@ void PassarellaUsuari::insereix() {
 		conn->Close();
 	}
 }
+
 void PassarellaUsuari::modifica() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "UPDATE usuari SET ";
-	sql += "contrasenya = '" + _contrasenya + "', tipus = '" + _tipus + "' ";
+	sql += "contrasenya = '" + _contrasenya + "' ";
 	sql += "WHERE username = '" + _username + "'";
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -83,19 +84,17 @@ void PassarellaUsuari::modifica() {
 
 
 	try {
-		// obrim la connexió
 		conn->Open();
-		// executem la comanda creada abans del try
 		dataReader = cmd->ExecuteReader();
 	}
 	catch (Exception^ ex) {
 		//Errors
 	}
 	finally {
-		// si tot va bé es tanca la connexió
 		conn->Close();
 	}
 }
+
 void PassarellaUsuari::esborra()
 {
 	// Cadena de conexión a la base de datos

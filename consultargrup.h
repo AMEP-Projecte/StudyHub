@@ -129,7 +129,7 @@ namespace StudyHub {
 			this->theme->Name = L"theme";
 			this->theme->Size = System::Drawing::Size(79, 20);
 			this->theme->TabIndex = 4;
-			this->theme->Text = L"Tem�tica:";
+			this->theme->Text = L"Tem\u00e0tica:";
 			// 
 			// participants
 			// 
@@ -243,10 +243,9 @@ private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ 
 			TxConsultaGrup^ tx = gcnew TxConsultaGrup(nom);
 			tx->executar();
 
-			labelTematica->Text = tx->_tematica;
-
-			int p = tx->_nombreParticipants;
-			labelParticipants->Text = p.ToString();
+			ConsultaGrup consulta = tx->obteResultat();
+			labelTematica->Text = consulta._tematica;
+			labelParticipants->Text = consulta._nombreParticipants;
 		}
 	}
 	catch (Exception^ ex) {
