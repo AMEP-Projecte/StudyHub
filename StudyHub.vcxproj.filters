@@ -322,6 +322,7 @@
     </ClInclude>
     <ClInclude Include="EliminarEspai.h">
       <Filter>GestioEspai\Presentacio</Filter>
+    </ClInclude>
     <ClInclude Include="EsborrarProveidorUI.h">
       <Filter>GestioProveidor\Presentacio</Filter>
     </ClInclude>
