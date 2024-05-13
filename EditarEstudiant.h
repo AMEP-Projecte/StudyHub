@@ -49,8 +49,11 @@ namespace StudyHub {
 	private: System::Windows::Forms::TextBox^ textLanguage;
 	private: System::Windows::Forms::TextBox^ textLocation;
 	private: System::Windows::Forms::TextBox^ textPassword;
-
-
+	private: String^ nom;
+	private: String^ cognoms;
+	private: String^ idioma;
+	private: String^ localitat;
+	private: String^ contrasenya;
 
 
 
@@ -92,11 +95,11 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->cancel->ForeColor = System::Drawing::Color::DarkCyan;
 			this->cancel->Location = System::Drawing::Point(72, 266);
-			this->cancel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->cancel->Margin = System::Windows::Forms::Padding(2);
 			this->cancel->Name = L"cancel";
 			this->cancel->Size = System::Drawing::Size(109, 37);
 			this->cancel->TabIndex = 1;
-			this->cancel->Text = L"Cancel·lar";
+			this->cancel->Text = L"Tornar";
 			this->cancel->UseVisualStyleBackColor = true;
 			this->cancel->Click += gcnew System::EventHandler(this, &EditarEstudiant::cancel_Click);
 			// 
@@ -106,7 +109,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->edit->ForeColor = System::Drawing::Color::DarkCyan;
 			this->edit->Location = System::Drawing::Point(386, 266);
-			this->edit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->edit->Margin = System::Windows::Forms::Padding(2);
 			this->edit->Name = L"edit";
 			this->edit->Size = System::Drawing::Size(109, 37);
 			this->edit->TabIndex = 2;
@@ -190,7 +193,7 @@ namespace StudyHub {
 			// textName
 			// 
 			this->textName->Location = System::Drawing::Point(202, 84);
-			this->textName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textName->Margin = System::Windows::Forms::Padding(2);
 			this->textName->Name = L"textName";
 			this->textName->Size = System::Drawing::Size(293, 20);
 			this->textName->TabIndex = 9;
@@ -198,7 +201,7 @@ namespace StudyHub {
 			// textSurnames
 			// 
 			this->textSurnames->Location = System::Drawing::Point(202, 113);
-			this->textSurnames->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textSurnames->Margin = System::Windows::Forms::Padding(2);
 			this->textSurnames->Name = L"textSurnames";
 			this->textSurnames->Size = System::Drawing::Size(293, 20);
 			this->textSurnames->TabIndex = 10;
@@ -206,7 +209,7 @@ namespace StudyHub {
 			// textLanguage
 			// 
 			this->textLanguage->Location = System::Drawing::Point(202, 143);
-			this->textLanguage->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textLanguage->Margin = System::Windows::Forms::Padding(2);
 			this->textLanguage->Name = L"textLanguage";
 			this->textLanguage->Size = System::Drawing::Size(293, 20);
 			this->textLanguage->TabIndex = 11;
@@ -214,7 +217,7 @@ namespace StudyHub {
 			// textLocation
 			// 
 			this->textLocation->Location = System::Drawing::Point(202, 173);
-			this->textLocation->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textLocation->Margin = System::Windows::Forms::Padding(2);
 			this->textLocation->Name = L"textLocation";
 			this->textLocation->Size = System::Drawing::Size(293, 20);
 			this->textLocation->TabIndex = 12;
@@ -222,7 +225,7 @@ namespace StudyHub {
 			// textPassword
 			// 
 			this->textPassword->Location = System::Drawing::Point(202, 205);
-			this->textPassword->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textPassword->Margin = System::Windows::Forms::Padding(2);
 			this->textPassword->Name = L"textPassword";
 			this->textPassword->Size = System::Drawing::Size(293, 20);
 			this->textPassword->TabIndex = 13;
@@ -247,7 +250,7 @@ namespace StudyHub {
 			this->Controls->Add(this->edit);
 			this->Controls->Add(this->cancel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"EditarEstudiant";
 			this->Text = L"EditarEstudiant";
 			this->Load += gcnew System::EventHandler(this, &EditarEstudiant::EditarEstudiant_Load);
@@ -261,15 +264,15 @@ namespace StudyHub {
 	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ n = textName->Text;    // nom
-	String^ cg = textSurnames->Text;   // cognoms
-	String^ i = textLanguage->Text;    // idioma
-	String^ l = textLocation->Text;    // localitat
-	String^ c = textPassword->Text;    // contrasenya
+	String^ n = textName->Text;     
+	String^ cg = textSurnames->Text;    
+	String^ i = textLanguage->Text;     
+	String^ l = textLocation->Text;     
+	String^ c = textPassword->Text;    
 
 	try {
-		if (n == "" && cg == "" && i == "" && l == "" && c == "") {
-			MessageBox::Show("Omple un camp al menys, si us plau.");
+		if (n == nom && cg == cognoms && i == idioma && l == localitat && c == contrasenya) {
+			MessageBox::Show("Modifica un camp al menys, si us plau.");
 		}
 		else {
 			TxEditarEstudiant^ tx = gcnew TxEditarEstudiant(n, cg, i, l, c);
@@ -286,6 +289,19 @@ private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e)
 	this->Close();
 }
 private: System::Void EditarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
+	Sistema^ sistema = Sistema::getInstance();
+
+	nom = sistema->obteEstudiant()->obteNom();
+	cognoms = sistema->obteEstudiant()->obteCognoms();
+	idioma = sistema->obteEstudiant()->obteIdioma();
+	localitat = sistema->obteEstudiant()->obteLocalitat();
+	contrasenya = sistema->obteContrasenya();
+
+	textName->Text = nom;
+	textSurnames->Text = cognoms;
+	textLanguage->Text = idioma;
+	textLocation->Text = localitat;
+	textPassword->Text = contrasenya;
 }
 };
 }

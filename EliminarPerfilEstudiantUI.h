@@ -105,9 +105,9 @@ namespace StudyHub {
 			this->infoeliminarcompte2->Location = System::Drawing::Point(32, 124);
 			this->infoeliminarcompte2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->infoeliminarcompte2->Name = L"infoeliminarcompte2";
-			this->infoeliminarcompte2->Size = System::Drawing::Size(510, 17);
+			this->infoeliminarcompte2->Size = System::Drawing::Size(513, 17);
 			this->infoeliminarcompte2->TabIndex = 2;
-			this->infoeliminarcompte2->Text = L"Aix\u00f2 tancar\u00e0 la teva sessi\u00F3 immediatament i no podr\u00e0s tornar a iniciar-la de nou."
+			this->infoeliminarcompte2->Text = L"Això tancarà la teva sessió immediatament i no podràs tornar a iniciar-la de nou."
 				L"";
 			// 
 			// etiquetacontrasenya
@@ -126,8 +126,9 @@ namespace StudyHub {
 			// txt_contra
 			// 
 			this->txt_contra->Location = System::Drawing::Point(133, 199);
-			this->txt_contra->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txt_contra->Margin = System::Windows::Forms::Padding(2);
 			this->txt_contra->Name = L"txt_contra";
+			this->txt_contra->PasswordChar = '*';
 			this->txt_contra->Size = System::Drawing::Size(325, 20);
 			this->txt_contra->TabIndex = 4;
 			this->txt_contra->TextChanged += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::txt_contra_TextChanged);
@@ -136,7 +137,7 @@ namespace StudyHub {
 			// 
 			this->btn_eliminar_compte->ForeColor = System::Drawing::Color::DarkCyan;
 			this->btn_eliminar_compte->Location = System::Drawing::Point(351, 267);
-			this->btn_eliminar_compte->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_eliminar_compte->Margin = System::Windows::Forms::Padding(2);
 			this->btn_eliminar_compte->Name = L"btn_eliminar_compte";
 			this->btn_eliminar_compte->Size = System::Drawing::Size(106, 32);
 			this->btn_eliminar_compte->TabIndex = 5;
@@ -148,11 +149,11 @@ namespace StudyHub {
 			// 
 			this->button2->ForeColor = System::Drawing::Color::DarkCyan;
 			this->button2->Location = System::Drawing::Point(133, 267);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(106, 32);
 			this->button2->TabIndex = 6;
-			this->button2->Text = L"Cancel·lar";
+			this->button2->Text = L"Tornar";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::button2_Click);
 			// 
@@ -171,7 +172,7 @@ namespace StudyHub {
 			this->Controls->Add(this->eliminarcompte);
 			this->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"EliminarPerfilEstudiantUI";
 			this->Text = L"StudyHub";
 			this->Load += gcnew System::EventHandler(this, &EliminarPerfilEstudiantUI::EliminarPerfilEstudiantUI_Load);

@@ -64,23 +64,24 @@ namespace StudyHub {
 			this->tancaSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->tancaSessio->ForeColor = System::Drawing::Color::DarkCyan;
-			this->tancaSessio->Location = System::Drawing::Point(299, 294);
-			this->tancaSessio->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tancaSessio->Location = System::Drawing::Point(224, 239);
+			this->tancaSessio->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tancaSessio->Name = L"tancaSessio";
-			this->tancaSessio->Size = System::Drawing::Size(204, 59);
+			this->tancaSessio->Size = System::Drawing::Size(153, 48);
 			this->tancaSessio->TabIndex = 8;
-			this->tancaSessio->Text = L"Tancar Sessi\u00f3";
+			this->tancaSessio->Text = L"Tancar Sessió";
 			this->tancaSessio->UseVisualStyleBackColor = true;
+			this->tancaSessio->Click += gcnew System::EventHandler(this, &MenuAdministrador::tancaSessio_Click);
 			// 
 			// gestionaGrups
 			// 
 			this->gestionaGrups->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gestionaGrups->ForeColor = System::Drawing::Color::DarkCyan;
-			this->gestionaGrups->Location = System::Drawing::Point(449, 149);
-			this->gestionaGrups->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->gestionaGrups->Location = System::Drawing::Point(337, 121);
+			this->gestionaGrups->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->gestionaGrups->Name = L"gestionaGrups";
-			this->gestionaGrups->Size = System::Drawing::Size(204, 63);
+			this->gestionaGrups->Size = System::Drawing::Size(153, 51);
 			this->gestionaGrups->TabIndex = 7;
 			this->gestionaGrups->Text = L"Gestionar Estudiants";
 			this->gestionaGrups->UseVisualStyleBackColor = true;
@@ -91,12 +92,12 @@ namespace StudyHub {
 			this->gestionaPerfil->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->gestionaPerfil->ForeColor = System::Drawing::Color::DarkCyan;
-			this->gestionaPerfil->Location = System::Drawing::Point(153, 149);
-			this->gestionaPerfil->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->gestionaPerfil->Location = System::Drawing::Point(115, 121);
+			this->gestionaPerfil->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->gestionaPerfil->Name = L"gestionaPerfil";
-			this->gestionaPerfil->Size = System::Drawing::Size(204, 63);
+			this->gestionaPerfil->Size = System::Drawing::Size(153, 51);
 			this->gestionaPerfil->TabIndex = 6;
-			this->gestionaPerfil->Text = L"Gestionar Prove\u00efdors";
+			this->gestionaPerfil->Text = L"Gestionar Proveïdors";
 			this->gestionaPerfil->UseVisualStyleBackColor = true;
 			this->gestionaPerfil->Click += gcnew System::EventHandler(this, &MenuAdministrador::gestionaPerfil_Click);
 			// 
@@ -106,25 +107,25 @@ namespace StudyHub {
 			this->menuEstudiantt->AutoSize = true;
 			this->menuEstudiantt->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->menuEstudiantt->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->menuEstudiantt->Location = System::Drawing::Point(168, 50);
+			this->menuEstudiantt->Location = System::Drawing::Point(126, 41);
+			this->menuEstudiantt->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->menuEstudiantt->Name = L"menuEstudiantt";
-			this->menuEstudiantt->Size = System::Drawing::Size(443, 52);
+			this->menuEstudiantt->Size = System::Drawing::Size(354, 42);
 			this->menuEstudiantt->TabIndex = 5;
-			this->menuEstudiantt->Text = L"Men\u00fa Administrador";
+			this->menuEstudiantt->Text = L"Menú Administrador";
 			this->menuEstudiantt->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// MenuAdministrador
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(809, 455);
+			this->ClientSize = System::Drawing::Size(607, 370);
 			this->Controls->Add(this->tancaSessio);
 			this->Controls->Add(this->gestionaGrups);
 			this->Controls->Add(this->gestionaPerfil);
 			this->Controls->Add(this->menuEstudiantt);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MenuAdministrador";
 			this->Text = L"MenuAdministrador";
 			this->Load += gcnew System::EventHandler(this, &MenuAdministrador::MenuAdministrador_Load);
@@ -138,5 +139,6 @@ private: System::Void MenuAdministrador_Load(System::Object^ sender, System::Eve
 }
 private: System::Void gestionaGrups_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void tancaSessio_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
