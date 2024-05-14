@@ -103,6 +103,15 @@
     <Filter Include="GestioUsuaris\Presentacio">
       <UniqueIdentifier>{f078b4a6-c306-45ef-8fd8-9eeab1ef3a4c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GestioValoracions">
+      <UniqueIdentifier>{d6a4681b-b8af-45dd-919a-77c9177ede56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\Tx">
+      <UniqueIdentifier>{3864e8ee-a1e4-48c9-bea6-01f127cf0f19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\PassarellesCercadores">
+      <UniqueIdentifier>{865044a3-0b67-4990-a4d6-95d444eb3f3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -338,6 +347,33 @@
     <ClInclude Include="TxCrearProveidor.h">
       <Filter>GestioProveidor\Tx</Filter>
     </ClInclude>
+    <ClInclude Include="ConsultarSessionsUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramarSessioEstudiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarEspaiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxProgramarSessioEstudi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraValoracio.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaValoracio.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -558,6 +594,33 @@
     </ClCompile>
     <ClCompile Include="TxCrearProveidor.cpp">
       <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramarSessioEstudiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarSessionsUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarEspaiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EsborraSessioUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxProgramarSessioEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraValoracio.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaValoracio.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

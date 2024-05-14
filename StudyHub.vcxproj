@@ -140,6 +140,7 @@
     <ClInclude Include="CercadoraProveidor.h" />
     <ClInclude Include="CercadoraSessio.h" />
     <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="CercadoraValoracio.h" />
     <ClInclude Include="ConsultarEspaiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -158,6 +159,7 @@
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PassarellaValoracio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -297,11 +299,13 @@
     <ClCompile Include="CercadoraProveidor.cpp" />
     <ClCompile Include="CercadoraSessio.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="CercadoraValoracio.cpp" />
     <ClCompile Include="ConsultarEspaiUI.cpp" />
     <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="PassarellaValoracio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
     <ClCompile Include="ConsultarSessionsUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
