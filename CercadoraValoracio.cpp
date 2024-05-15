@@ -20,7 +20,7 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
             // Creamos una instancia de PassarellaUsuari y le asignamos los valores recuperados de la base de datos
             String^ estudiant = dataReader->GetString(0);
             String^ grup = dataReader->GetString(1);
-            int puntuacio = dataReader->GetInt64(2);
+            Int64^ puntuacio = dataReader->GetInt64(2);
             String^ comentari = dataReader->GetString(3);
             pu = gcnew PassarellaValoracio(estudiant, grup, puntuacio, comentari);
         }
@@ -32,4 +32,5 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
         // Cerramos la conexión
         conn->Close();
     }
+    return pu;
 }

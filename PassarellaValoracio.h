@@ -5,18 +5,20 @@ ref class PassarellaValoracio
 protected:
     String^ _estudiant;
     String^ _grup;
-    int _puntuacio;
+    Int64^ _puntuacio;
     String^ _comentari;
 
 public:
     PassarellaValoracio();
-    PassarellaValoracio(String^ estudiant, String^ grup, int puntuacio, String^ comentari); // Constructor
-    void posaValoracio(int valoracio);
-    int obteValoracio();
-
+    PassarellaValoracio(String^ estudiant, String^ grup, Int64^ puntuacio, String^ comentari); // Constructor
+    void posaValoracio(Int64^ valoracio);
+    Int64^ obteValoracio();
 
     void posaComentari(String^ comentari);
     String^ obteComentari();
+
+    String^ obteEstudiant();
+    String^ obteGrup();
 
     virtual void insereix();
     virtual void modifica();

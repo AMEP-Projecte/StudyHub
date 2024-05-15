@@ -112,6 +112,9 @@
     <Filter Include="GestioValoracions\PassarellesCercadores">
       <UniqueIdentifier>{865044a3-0b67-4990-a4d6-95d444eb3f3b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GestioValoracions\Presentació">
+      <UniqueIdentifier>{04fde041-f824-4924-b8db-65fd6bf6ecf3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -374,6 +377,12 @@
     <ClInclude Include="PassarellaValoracio.h">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClInclude>
+    <ClInclude Include="TxCrearValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="StarRatingControl.h">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -621,6 +630,12 @@
     </ClCompile>
     <ClCompile Include="PassarellaValoracio.cpp">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCrearValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingControl.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
