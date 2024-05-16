@@ -383,6 +383,9 @@
     <ClInclude Include="StarRatingControl.h">
       <Filter>GestioValoracions\Presentació</Filter>
     </ClInclude>
+    <ClInclude Include="StarRatingView.h">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -635,6 +638,9 @@
       <Filter>GestioValoracions\Tx</Filter>
     </ClCompile>
     <ClCompile Include="StarRatingControl.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingView.cpp">
       <Filter>GestioValoracions\Presentació</Filter>
     </ClCompile>
   </ItemGroup>

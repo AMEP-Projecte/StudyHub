@@ -1,6 +1,7 @@
 #pragma once
 #include "TxConsultarGrup.h"
 #include "StarRatingControl.h"
+#include "StarRatingView.h"
 
 namespace StudyHub {
 
@@ -216,6 +217,7 @@ namespace StudyHub {
 			// 
 			this->PanelValorar->Location = System::Drawing::Point(312, 245);
 			this->PanelValorar->Name = L"PanelValorar";
+			this->panelEstrellas->AutoSize = true;
 			this->PanelValorar->Size = System::Drawing::Size(182, 31);
 			this->PanelValorar->TabIndex = 11;
 			// 
@@ -275,51 +277,14 @@ namespace StudyHub {
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-	}	private: System::Void Valorar() {
+	}	
+	private: System::Void Valorar() {
 		StarRatingControl^ starRatingControl = gcnew StarRatingControl();
 		this->PanelValorar->Controls->Add(starRatingControl);
 	}
 	private: System::Void carregarValoracio() {
-		// ESTRELLAS
-		// Crear un contenedor para las imágenes de las estrellas
-		panelEstrellas->AutoSize = true;
-		this->Controls->Add(panelEstrellas);
-
-		// Número de estrellas
-		int numeroEstrellas = 5;
-
-		// Rutas de las imágenes de estrellas
-		String^ rutaEstrellaEntera = "estrella_entera.png";
-		String^ rutaMediaEstrella = "media_estrella.png";
-		String^ rutaMediaVacia = "estrella_vacia.png";
-
-		// Valoración del grupo (del 0 al 5)
-		double valoracion = 3.5;
-
-		// Mostrar las imágenes de las estrellas correspondientes a la valoración
-		for (int i = 0; i < numeroEstrellas; i++)
-		{
-			PictureBox^ pictureBox = gcnew PictureBox();
-			pictureBox->SizeMode = PictureBoxSizeMode::StretchImage; // Ajustar el tamaño de la imagen
-			pictureBox->Size = System::Drawing::Size(20, 20);
-			panelEstrellas->Controls->Add(pictureBox);
-
-			if (valoracion >= i + 1)
-			{
-				// Estrella entera
-				pictureBox->ImageLocation = rutaEstrellaEntera;
-			}
-			else if (valoracion > i)
-			{
-				// Media estrella
-				pictureBox->ImageLocation = rutaMediaEstrella;
-			}
-			else
-			{
-				// Sin estrella (opcionalmente, puedes agregar una imagen de estrella vacía)
-				pictureBox->ImageLocation = rutaMediaVacia;
-			}
-		}
+		StarRatingView^ starRatingControl = gcnew StarRatingView();
+		this->panelEstrellas->Controls->Add(starRatingControl);
 	}
 	};
 }

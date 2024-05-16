@@ -9,7 +9,7 @@ using namespace std;
 PassarellaValoracio::PassarellaValoracio() {
     _estudiant = "";
     _grup = "";
-    _puntuacio = Int64(0);
+    _puntuacio = gcnew Int64(0);
     _comentari = "";
 }
 

@@ -257,6 +257,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sistema.h" />
     <ClInclude Include="StarRatingControl.h" />
+    <ClInclude Include="StarRatingView.h" />
     <ClInclude Include="TancarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -355,6 +356,7 @@
     </ClCompile>
     <ClCompile Include="Sistema.cpp" />
     <ClCompile Include="StarRatingControl.cpp" />
+    <ClCompile Include="StarRatingView.cpp" />
     <ClCompile Include="TancarSessio.cpp" />
     <ClCompile Include="TxConsultaEspai.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
