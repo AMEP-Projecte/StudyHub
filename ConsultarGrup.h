@@ -279,11 +279,12 @@ namespace StudyHub {
 		}
 	}	
 	private: System::Void Valorar() {
-		StarRatingControl^ starRatingControl = gcnew StarRatingControl();
+		StarRatingControl^ starRatingControl = gcnew StarRatingControl("GRUPO_EJEMPLO");
 		this->PanelValorar->Controls->Add(starRatingControl);
 	}
+	#include "StarRatingView.h"
 	private: System::Void carregarValoracio() {
-		StarRatingView^ starRatingControl = gcnew StarRatingView();
+		StarRatingView^ starRatingControl = gcnew StarRatingView(2.5);
 		this->panelEstrellas->Controls->Add(starRatingControl);
 	}
 	};

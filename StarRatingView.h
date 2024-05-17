@@ -16,6 +16,11 @@ public:
         InitializeComponent();
         carregarValoracio(5.0);
     }
+    StarRatingView(float valoracion)
+    {
+        InitializeComponent();
+        carregarValoracio(valoracion);
+    }
 
     void carregarValoracio(double valoracion)
     {

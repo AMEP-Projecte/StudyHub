@@ -383,6 +383,8 @@ public: System::Void AbrirFormularioEnPanel(Form^ formHijo);
 
 // Abrir SubMenu:
 public: System::Void AbrirSubFormularioEnPanel(Form^ formHijo);
+// Abrir SubMenu Sin Aplicar Cambios:
+public: System::Void AbrirSubFormularioEnPanelOriginal(Form^ formHijo);
 
 //Hacer Visible (Para Estudiantes):
 public: System::Void HacerVisible();

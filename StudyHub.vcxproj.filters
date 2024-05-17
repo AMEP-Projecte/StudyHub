@@ -365,12 +365,6 @@
     <ClInclude Include="EsborraSessioUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TxEditarSessio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TxProgramarSessioEstudi.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CercadoraValoracio.h">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClInclude>
@@ -384,6 +378,24 @@
       <Filter>GestioValoracions\Presentació</Filter>
     </ClInclude>
     <ClInclude Include="StarRatingView.h">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercaValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborraValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarSessio.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxProgramarSessioEstudi.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxModificaValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearValoracioUI.h">
       <Filter>GestioValoracions\Presentació</Filter>
     </ClInclude>
   </ItemGroup>
@@ -641,6 +653,18 @@
       <Filter>GestioValoracions\Presentació</Filter>
     </ClCompile>
     <ClCompile Include="StarRatingView.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercaValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborraValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxModificaValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearValoracioUI.cpp">
       <Filter>GestioValoracions\Presentació</Filter>
     </ClCompile>
   </ItemGroup>

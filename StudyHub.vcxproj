@@ -156,6 +156,9 @@
     <ClInclude Include="ConsultarSessionsUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CrearValoracioUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -261,6 +264,7 @@
     <ClInclude Include="TancarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TxCercaValoracio.h" />
     <ClInclude Include="TxConsultaEspai.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
@@ -283,7 +287,9 @@
     <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
+    <ClInclude Include="TxEsborraValoracio.h" />
     <ClInclude Include="TxIniciarSessio.h" />
+    <ClInclude Include="TxModificaValoracio.h" />
     <ClInclude Include="TxParticipacioSessio.h" />
     <ClInclude Include="TxProgramarSessioEstudi.h">
       <DeploymentContent>true</DeploymentContent>
@@ -307,6 +313,7 @@
     <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="ConsultarProveidorUI.cpp" />
+    <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
     <ClCompile Include="PassarellaValoracio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
@@ -358,6 +365,7 @@
     <ClCompile Include="StarRatingControl.cpp" />
     <ClCompile Include="StarRatingView.cpp" />
     <ClCompile Include="TancarSessio.cpp" />
+    <ClCompile Include="TxCercaValoracio.cpp" />
     <ClCompile Include="TxConsultaEspai.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
@@ -380,7 +388,9 @@
     <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
+    <ClCompile Include="TxEsborraValoracio.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
+    <ClCompile Include="TxModificaValoracio.cpp" />
     <ClCompile Include="TxParticipacioSessio.cpp" />
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <DeploymentContent>true</DeploymentContent>
@@ -419,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarSessionsUI.resx">
       <DependentUpon>ConsultarSessionsUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearValoracioUI.resx">
+      <DependentUpon>CrearValoracioUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarSessio.resx">
       <DependentUpon>EditarSessio.h</DependentUpon>
