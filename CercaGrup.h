@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Sistema.h"
 #include "TxCercarGrups.h"
+#include "StarRatingView.h"
 
 namespace StudyHub {
 
@@ -109,18 +110,17 @@ namespace StudyHub {
 			// 
 			this->tableLayoutPanel1->ColumnCount = 4;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
+				25)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
+				25)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
+				10)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
+				40)));
 			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 20)));
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->tableLayoutPanel1->AutoSize = true;
 			this->tableLayoutPanel1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
@@ -170,10 +170,12 @@ namespace StudyHub {
 			label2->Text = grups[i]._nombreParticipants.ToString();
 			this->tableLayoutPanel1->Controls->Add(label2, 2, i);
 
-			//fer estrelles!
-			System::Windows::Forms::Label^ label3 = gcnew System::Windows::Forms::Label();
-			label3->Text = grups[i]._valMitja.ToString();
-			this->tableLayoutPanel1->Controls->Add(label3, 3, i);
+			System::Windows::Forms::FlowLayoutPanel^ panelEstrellas = gcnew System::Windows::Forms::FlowLayoutPanel();
+			StarRatingView^ starRatingControl = gcnew StarRatingView(grups[i]._valMitja);
+			panelEstrellas->Controls->Add(starRatingControl);
+			panelEstrellas->Size = System::Drawing::Size(197, 20);
+			panelEstrellas->AutoSize = true;
+			this->tableLayoutPanel1->Controls->Add(panelEstrellas, 3, i);
 		}
 	}
 	};
