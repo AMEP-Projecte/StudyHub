@@ -365,6 +365,11 @@
     <ClInclude Include="EsborraSessioUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CercaGrup.h">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercarGrups.h">
+      <Filter>GestioGrups\Tx</Filter>
     <ClInclude Include="CercadoraValoracio.h">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClInclude>
@@ -640,6 +645,11 @@
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CercaGrup.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercarGrups.cpp">
+      <Filter>GestioGrups\Tx</Filter>
     <ClCompile Include="CercadoraValoracio.cpp">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClCompile>
