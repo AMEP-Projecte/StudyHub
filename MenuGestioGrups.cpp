@@ -7,6 +7,10 @@
 #include "EditarGrup.h"
 #include "EliminarGrupEstudi.h"
 
+#include "TxCercaValoracio.h"
+#include "StarRatingControl.h"
+#include "StarRatingView.h"
+
 using namespace StudyHub;
 
 System::Void MenuGestioGrups::crea_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -67,7 +71,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		TableLayoutPanel^ layoutDades = gcnew TableLayoutPanel();
 		layoutDades->AutoSize = true;
 		layoutDades->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-		layoutDades->ColumnCount = 2;
+		layoutDades->ColumnCount = 3;
 		layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
 		layoutDades->ForeColor = System::Drawing::Color::White;
 		layoutDades->Location = System::Drawing::Point(294, 127);
@@ -94,18 +98,19 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		columnaTematica->Text = L"Temàtica";
 		columnaTematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
-		/*
+		
 		Label^ columnaValoracio = gcnew Label();
 		columnaValoracio->AutoSize = true;
 		columnaValoracio->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		columnaValoracio->Dock = System::Windows::Forms::DockStyle::Fill;
-		columnaValoracio->Text = L"Nom";
+		columnaValoracio->Text = L"Valoració";
 		columnaValoracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-		*/
+		
 
 		layoutDades->Controls->Add(columnaNom, 0, 0);
 		layoutDades->Controls->Add(columnaTematica, 1, 0);
+		layoutDades->Controls->Add(columnaValoracio, 2, 0);
 
 
 		// List<Label^>^ dades = gcnew List<Label^>();
@@ -133,6 +138,15 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 
 			layoutDades->Controls->Add(labelNom, 0, i + 1);
 			layoutDades->Controls->Add(labelTematica, 1, i + 1);
+
+			// valoracio
+			Sistema^ sistema = Sistema::getInstance();
+			TxCercaValoracio^ Cerca = gcnew TxCercaValoracio(sistema->obteUsername(), nomGrup);
+			PassarellaValoracio^ p = Cerca->executar();
+			Int64^ prueba = p->obteValoracio();
+			float floatValue = static_cast<float>(*prueba);
+			StarRatingView^ starRatingControl = gcnew StarRatingView(floatValue);
+			layoutDades->Controls->Add(starRatingControl, 2, i + 1);
 		}
 
 		this->layoutPanel->Controls->Add(layoutDades, 0, 1);

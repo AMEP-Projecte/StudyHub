@@ -140,6 +140,7 @@
     <ClInclude Include="CercadoraProveidor.h" />
     <ClInclude Include="CercadoraSessio.h" />
     <ClInclude Include="CercadoraUsuari.h" />
+    <ClInclude Include="CercadoraValoracio.h" />
     <ClInclude Include="ConsultarEspaiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -155,9 +156,11 @@
     <ClInclude Include="ConsultarSessionsUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="CrearValoracioUI.h" />
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PassarellaValoracio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -254,9 +257,12 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Sistema.h" />
+    <ClInclude Include="StarRatingControl.h" />
+    <ClInclude Include="StarRatingView.h" />
     <ClInclude Include="TancarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TxCercaValoracio.h" />
     <ClInclude Include="TxConsultaEspai.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
@@ -297,11 +303,14 @@
     <ClCompile Include="CercadoraProveidor.cpp" />
     <ClCompile Include="CercadoraSessio.cpp" />
     <ClCompile Include="CercadoraUsuari.cpp" />
+    <ClCompile Include="CercadoraValoracio.cpp" />
     <ClCompile Include="ConsultarEspaiUI.cpp" />
     <ClCompile Include="ConsultarEstudiantUI.cpp" />
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="ConsultarProveidorUI.cpp" />
+    <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="PassarellaValoracio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
     <ClCompile Include="ConsultarSessionsUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
@@ -348,7 +357,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Sistema.cpp" />
+    <ClCompile Include="StarRatingControl.cpp" />
+    <ClCompile Include="StarRatingView.cpp" />
     <ClCompile Include="TancarSessio.cpp" />
+    <ClCompile Include="TxCercaValoracio.cpp" />
     <ClCompile Include="TxConsultaEspai.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
@@ -410,6 +422,7 @@
     <EmbeddedResource Include="ConsultarSessionsUI.resx">
       <DependentUpon>ConsultarSessionsUI.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrearValoracioUI.resx" />
     <EmbeddedResource Include="EditarSessio.resx">
       <DependentUpon>EditarSessio.h</DependentUpon>
     </EmbeddedResource>

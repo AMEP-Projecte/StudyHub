@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "PassarellaProveidor.h"
 
+using namespace System::Windows::Forms;
+
 PassarellaProveidor::PassarellaProveidor(String^ username, String^ contrasenya, String^ tipus)
 {
 	_username = username;
@@ -8,7 +10,8 @@ PassarellaProveidor::PassarellaProveidor(String^ username, String^ contrasenya, 
 	_tipus = tipus;
 }
 
-void PassarellaProveidor::insereix() {
+void PassarellaProveidor::insereix() 
+{
 	PassarellaUsuari::insereix();
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -24,9 +27,7 @@ void PassarellaProveidor::insereix() {
 		cmd->ExecuteNonQuery();
 	}
 	catch (Exception^ ex) {
-		//Errors;
-
-
+		MessageBox::Show(ex->Message);
 	}
 	finally {
 		//Tanquem conexio
