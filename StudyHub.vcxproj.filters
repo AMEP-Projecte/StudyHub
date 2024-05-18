@@ -404,6 +404,9 @@
     <ClInclude Include="CrearValoracioUI.h">
       <Filter>GestioValoracions\Presentació</Filter>
     </ClInclude>
+    <ClInclude Include="UnirseGrupUI.h">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -678,6 +681,9 @@
     </ClCompile>
     <ClCompile Include="CrearValoracioUI.cpp">
       <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="UnirseGrupUI.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
