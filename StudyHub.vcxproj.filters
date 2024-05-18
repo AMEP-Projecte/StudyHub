@@ -651,6 +651,7 @@
     </ClCompile>
     <ClCompile Include="TxCercarGrups.cpp">
       <Filter>GestioGrups\Tx</Filter>
+    </ClCompile>
     <ClCompile Include="CercadoraValoracio.cpp">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClCompile>
