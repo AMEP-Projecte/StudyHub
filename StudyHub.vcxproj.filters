@@ -370,6 +370,7 @@
     </ClInclude>
     <ClInclude Include="TxCercarGrups.h">
       <Filter>GestioGrups\Tx</Filter>
+    </ClInclude>
     <ClInclude Include="CercadoraValoracio.h">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClInclude>
