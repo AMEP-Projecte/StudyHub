@@ -131,6 +131,9 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CercaGrup.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CercadoraAdmin.h" />
     <ClInclude Include="CercadoraEspai.h" />
     <ClInclude Include="CercadoraEstudiant.h" />
@@ -257,6 +260,7 @@
     <ClInclude Include="TancarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TxCercarGrups.h" />
     <ClInclude Include="TxConsultaEspai.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
@@ -288,6 +292,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercaGrup.cpp" />
     <ClCompile Include="CercadoraAdmin.cpp" />
     <ClCompile Include="CercadoraEspai.cpp" />
     <ClCompile Include="CercadoraEstudiant.cpp" />
@@ -349,6 +354,7 @@
     </ClCompile>
     <ClCompile Include="Sistema.cpp" />
     <ClCompile Include="TancarSessio.cpp" />
+    <ClCompile Include="TxCercarGrups.cpp" />
     <ClCompile Include="TxConsultaEspai.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
@@ -395,6 +401,9 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CercaGrup.resx">
+      <DependentUpon>CercaGrup.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultarEspaiUI.resx">
       <DependentUpon>ConsultarEspaiUI.h</DependentUpon>
     </EmbeddedResource>

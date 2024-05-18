@@ -338,6 +338,33 @@
     <ClInclude Include="TxCrearProveidor.h">
       <Filter>GestioProveidor\Tx</Filter>
     </ClInclude>
+    <ClInclude Include="ConsultarSessionsUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramarSessioEstudiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarEspaiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxProgramarSessioEstudi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercaGrup.h">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercarGrups.h">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -558,6 +585,33 @@
     </ClCompile>
     <ClCompile Include="TxCrearProveidor.cpp">
       <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramarSessioEstudiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarSessionsUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarEspaiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EsborraSessioUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxProgramarSessioEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercaGrup.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercarGrups.cpp">
+      <Filter>GestioGrups\Tx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
