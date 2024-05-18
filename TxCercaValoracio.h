@@ -7,10 +7,9 @@ ref class TxCercaValoracio{
 private:
 	String^ _estudiant;
 	String^ _grup;
-	Int64^ _valoracio;
-	String^ _comentari;
+
 public:
-	TxCercaValoracio(String^ estudiant, String^ grup, Int64^ valoracio, String^ comentari); // constructora
+	TxCercaValoracio(String^ estudiant, String^ grup); // constructora
 
 	PassarellaValoracio^ executar();
 };

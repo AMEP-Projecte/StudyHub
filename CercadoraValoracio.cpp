@@ -8,7 +8,7 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
     PassarellaValoracio^ pu = nullptr; // Inicializamos el puntero a nullptr
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-    String^ sql = "SELECT * FROM valoracioGrup WHERE estudiant = '" + estudiant + "' AND grupo = '" + grup + "';";
+    String^ sql = "SELECT * FROM valoracioGrup WHERE estudiant = '" + estudiant + "' AND grup = '" + grup + "';";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     MySqlDataReader^ dataReader;
     try {

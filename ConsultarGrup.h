@@ -1,5 +1,6 @@
 #pragma once
 #include "TxConsultarGrup.h"
+#include "TxCercaValoracio.h"
 #include "StarRatingControl.h"
 #include "StarRatingView.h"
 
@@ -277,14 +278,18 @@ namespace StudyHub {
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
 		}
-	}	
+	}
 	private: System::Void Valorar() {
-		StarRatingControl^ starRatingControl = gcnew StarRatingControl("GRUPO_EJEMPLO");
+		StarRatingControl^ starRatingControl = gcnew StarRatingControl("ho");
 		this->PanelValorar->Controls->Add(starRatingControl);
 	}
-	#include "StarRatingView.h"
+
 	private: System::Void carregarValoracio() {
-		StarRatingView^ starRatingControl = gcnew StarRatingView(2.5);
+		TxCercaValoracio^ Cerca = gcnew TxCercaValoracio("saa", "ho");
+		PassarellaValoracio^ p = Cerca->executar();
+		Int64^ prueba = p->obteValoracio();
+		float floatValue = static_cast<float>(*prueba);
+		StarRatingView^ starRatingControl = gcnew StarRatingView(floatValue);
 		this->panelEstrellas->Controls->Add(starRatingControl);
 	}
 	};

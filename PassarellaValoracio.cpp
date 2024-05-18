@@ -24,24 +24,43 @@ void PassarellaValoracio::posaValoracio(Int64^ valoracio) {
     _puntuacio = valoracio;
 }
 
-Int64^ PassarellaValoracio::obteValoracio() {
-    return _puntuacio;
+void PassarellaValoracio::posaComentari(String^ comentari) {
+	_comentari = comentari;
 }
 
-void PassarellaValoracio::posaComentari(String^ comentari) {
-    _comentari = comentari;
+Int64^ PassarellaValoracio::obteValoracio() {
+	if (this==nullptr) {
+		return Int64(0);
+	}
+	else {
+		return _puntuacio;
+	}
 }
 
 String^ PassarellaValoracio::obteComentari() {
-    return _comentari;
+	if (this == nullptr) {
+		return "";
+	} else {
+		return _comentari;
+	}
 }
 
 String^ PassarellaValoracio::obteEstudiant() {
-	return _estudiant;
+	if (this == nullptr) {
+		return "";
+	}
+	else {
+		return _estudiant;
+	}
 }
 
 String^ PassarellaValoracio::obteGrup() {
-	return _grup;
+	if (this == nullptr) {
+		return "";
+	}
+	else {
+		return _grup;
+	}
 }
 
 void PassarellaValoracio::insereix() {

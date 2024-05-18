@@ -13,13 +13,13 @@ TxCrearValoracio::TxCrearValoracio(String^ estudiant, String^ grup, Int64^ valor
 }
 
 void TxCrearValoracio::executar() {
-	if ((_estudiant == "") || (_grup = "")) {
+	if ((_estudiant == "") || (_grup == "")) {
 		System::Windows::Forms::MessageBox::Show("Camps sense omplir.");
 	}
 	else {
 		CercadoraValoracio^ buscador = gcnew CercadoraValoracio();
 		PassarellaValoracio^ p = buscador->cercaValoracio(_estudiant, _grup);
-		if (p->obteEstudiant() == "" && p->obteGrup() == "") {
+		if(p==nullptr){
 			PassarellaValoracio^ NovaValoracio = gcnew PassarellaValoracio(_estudiant, _grup, _valoracio, _comentari);
 			NovaValoracio->insereix();
 		}

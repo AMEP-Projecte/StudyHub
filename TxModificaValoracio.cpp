@@ -20,7 +20,7 @@ void TxModificaValoracio::executar() {
 	else {
 		CercadoraValoracio^ buscador = gcnew CercadoraValoracio();
 		p = buscador->cercaValoracio(_estudiant, _grup);
-		if (p->obteEstudiant() != "" || p->obteGrup() != "") {
+		if (p == nullptr) {
 			System::Windows::Forms::MessageBox::Show("No existeix valoració.");
 		}
 		else {
