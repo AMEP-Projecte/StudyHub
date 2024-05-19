@@ -12,7 +12,6 @@ namespace StudyHub {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for IniciarSessio
 	/// </summary>
 	public ref class IniciarSessio : public System::Windows::Forms::Form
 	{
