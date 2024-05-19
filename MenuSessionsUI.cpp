@@ -48,7 +48,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
         String^ username = sist->obteEstudiant()->obteUsername();
 
         // Consulta SQL para obtener las sesiones del usuario.
-        String^ sql = "SELECT grup, data, adreca FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username);";
+        String^ sql = "SELECT grup, data, adreca FROM sessio WHERE grup  IN (SELECT grup FROM pertany WHERE estudiant = @username) and grup NOT IN (SELECT grup FROM participa WHERE estudiant = @username);";
         cmd->Connection = cn;
         cmd->CommandText = sql;
         cmd->Parameters->AddWithValue("@username", username);

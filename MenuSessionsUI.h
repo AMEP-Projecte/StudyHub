@@ -171,7 +171,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(568, 51);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Sessions";
+			this->label1->Text = L"Sessions participables";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MenuSessionsUI
