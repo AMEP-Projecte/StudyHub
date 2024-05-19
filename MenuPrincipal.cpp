@@ -78,7 +78,7 @@ System::Void MenuPrincipal::AbrirSubFormularioEnPanel(Form^ formHijo) {
 }
 
 System::Void MenuPrincipal::HacerVisible() {
-	this->ButtonMenu->Visible = true;
+	this->ButtonMenu->Visible = false;
 	this->ButtonMaximized->Visible = false;
 
 	this->ButtonMenuEstudiant->Visible = true;
@@ -92,7 +92,7 @@ System::Void MenuPrincipal::HacerVisible() {
 }
 
 System::Void MenuPrincipal::HacerVisibleProvedor() {
-	this->ButtonMenu->Visible = true;
+	this->ButtonMenu->Visible = false;
 	this->ButtonMaximized->Visible = false;
 
 	this->ButtonMenuEstudiant->Visible = true;
@@ -106,7 +106,7 @@ System::Void MenuPrincipal::HacerVisibleProvedor() {
 }
 
 System::Void MenuPrincipal::HacerVisibleAdmin() {
-	this->ButtonMenu->Visible = true;
+	this->ButtonMenu->Visible = false;
 	this->ButtonMaximized->Visible = false;
 
 	this->ButtonMenuEstudiant->Visible = false;

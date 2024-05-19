@@ -143,10 +143,16 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 			Sistema^ sistema = Sistema::getInstance();
 			TxCercaValoracio^ Cerca = gcnew TxCercaValoracio(sistema->obteUsername(), nomGrup);
 			PassarellaValoracio^ p = Cerca->executar();
-			Int64^ prueba = p->obteValoracio();
-			float floatValue = static_cast<float>(*prueba);
-			StarRatingView^ starRatingControl = gcnew StarRatingView(floatValue);
-			layoutDades->Controls->Add(starRatingControl, 2, i + 1);
+			if (p==nullptr) {
+				StarRatingControl^ starRatingControl = gcnew StarRatingControl(nomGrup);
+				layoutDades->Controls->Add(starRatingControl, 2, i + 1);
+			}
+			else {
+				Int64^ prueba = p->obteValoracio();
+				float floatValue = static_cast<float>(*prueba);
+				StarRatingView^ starRatingControl = gcnew StarRatingView(floatValue);
+				layoutDades->Controls->Add(starRatingControl, 2, i + 1);
+			}
 		}
 
 		this->layoutPanel->Controls->Add(layoutDades, 0, 1);

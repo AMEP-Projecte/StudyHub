@@ -338,6 +338,45 @@
     <ClInclude Include="TxCrearProveidor.h">
       <Filter>GestioProveidor\Tx</Filter>
     </ClInclude>
+    <ClInclude Include="CercadoraValoracio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsultarSessionsUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearValoracioUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaValoracio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramarSessioEstudiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarEspaiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StarRatingControl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StarRatingView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercaValoracio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxProgramarSessioEstudi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -559,6 +598,45 @@
     <ClCompile Include="TxCrearProveidor.cpp">
       <Filter>GestioProveidor\Tx</Filter>
     </ClCompile>
+    <ClCompile Include="CercadoraValoracio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearValoracioUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaValoracio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramarSessioEstudiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarSessionsUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarEspaiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EsborraSessioUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingControl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercaValoracio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxProgramarSessioEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico">
@@ -567,5 +645,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrearValoracioUI.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

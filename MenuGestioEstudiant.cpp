@@ -3,9 +3,17 @@
 #include "ConsultarEstudiantUI.h"
 #include "EliminarPerfilEstudiantUI.h"
 #include "MenuPrincipal.h"
+#include "TancarSessio.h"
 #include "EditarEstudiant.h"
 
 using namespace StudyHub;
+
+System::Void MenuGestioEstudiant::tornar_Click(System::Object^ sender, System::EventArgs^ e) {
+	// Crear una nova instancia del nou formulari
+	TancarSessio^ tancarSes = gcnew TancarSessio();
+	MenuPrincipal^ Menu = Menu->getInstance();
+	Menu->AbrirSubFormularioEnPanel(tancarSes);
+}
 
 System::Void MenuGestioEstudiant::editar_Click(System::Object^ sender, System::EventArgs^ e) {
 	EditarEstudiant^ editar = gcnew EditarEstudiant();

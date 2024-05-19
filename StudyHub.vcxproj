@@ -156,7 +156,9 @@
     <ClInclude Include="ConsultarSessionsUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="CrearValoracioUI.h" />
+    <ClInclude Include="CrearValoracioUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>

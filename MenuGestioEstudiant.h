@@ -1,6 +1,7 @@
 #pragma once
 #include "Sistema.h"
 
+
 namespace StudyHub {
 
 	using namespace System;
@@ -83,7 +84,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->consulta->ForeColor = System::Drawing::Color::DarkCyan;
 			this->consulta->Location = System::Drawing::Point(87, 126);
-			this->consulta->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->consulta->Margin = System::Windows::Forms::Padding(2);
 			this->consulta->Name = L"consulta";
 			this->consulta->Size = System::Drawing::Size(179, 43);
 			this->consulta->TabIndex = 2;
@@ -98,7 +99,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->editar->ForeColor = System::Drawing::Color::DarkCyan;
 			this->editar->Location = System::Drawing::Point(303, 126);
-			this->editar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->editar->Margin = System::Windows::Forms::Padding(2);
 			this->editar->Name = L"editar";
 			this->editar->Size = System::Drawing::Size(179, 43);
 			this->editar->TabIndex = 3;
@@ -113,7 +114,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->eliminar->ForeColor = System::Drawing::Color::DarkCyan;
 			this->eliminar->Location = System::Drawing::Point(87, 225);
-			this->eliminar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->eliminar->Margin = System::Windows::Forms::Padding(2);
 			this->eliminar->Name = L"eliminar";
 			this->eliminar->Size = System::Drawing::Size(179, 43);
 			this->eliminar->TabIndex = 4;
@@ -128,11 +129,11 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->tornar->ForeColor = System::Drawing::Color::DarkCyan;
 			this->tornar->Location = System::Drawing::Point(303, 225);
-			this->tornar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tornar->Margin = System::Windows::Forms::Padding(2);
 			this->tornar->Name = L"tornar";
 			this->tornar->Size = System::Drawing::Size(179, 43);
 			this->tornar->TabIndex = 5;
-			this->tornar->Text = L"Tornar";
+			this->tornar->Text = L"Tancar Sessio";
 			this->tornar->UseVisualStyleBackColor = true;
 			this->tornar->Click += gcnew System::EventHandler(this, &MenuGestioEstudiant::tornar_Click);
 			// 
@@ -148,7 +149,7 @@ namespace StudyHub {
 			this->Controls->Add(this->consulta);
 			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MenuGestioEstudiant";
 			this->Text = L"MenuGestioEstudiant";
 			this->Load += gcnew System::EventHandler(this, &MenuGestioEstudiant::MenuGestioEstudiant_Load);
@@ -157,9 +158,8 @@ namespace StudyHub {
 
 		}
 #pragma endregion
-	private: System::Void tornar_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
+private: System::Void tornar_Click(System::Object^ sender, System::EventArgs^ e);
+
 private: System::Void MenuGestioEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ e);
