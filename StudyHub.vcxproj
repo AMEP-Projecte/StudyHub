@@ -413,6 +413,9 @@
     <EmbeddedResource Include="EditarSessio.resx">
       <DependentUpon>EditarSessio.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSessio.resx">
+      <DependentUpon>IniciarSessio.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProgramarSessioEstudiUI.resx">
       <DependentUpon>ProgramarSessioEstudiUI.h</DependentUpon>
     </EmbeddedResource>
