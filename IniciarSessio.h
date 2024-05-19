@@ -68,10 +68,9 @@ namespace StudyHub {
 			this->textBenvinguda->AutoSize = true;
 			this->textBenvinguda->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->textBenvinguda->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->textBenvinguda->Location = System::Drawing::Point(153, 47);
-			this->textBenvinguda->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->textBenvinguda->Location = System::Drawing::Point(107, 59);
 			this->textBenvinguda->Name = L"textBenvinguda";
-			this->textBenvinguda->Size = System::Drawing::Size(493, 52);
+			this->textBenvinguda->Size = System::Drawing::Size(392, 42);
 			this->textBenvinguda->TabIndex = 9;
 			this->textBenvinguda->Text = L"Benvingut a StudyHub!";
 			// 
@@ -82,12 +81,12 @@ namespace StudyHub {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ButtonIniciarSessio->ForeColor = System::Drawing::Color::DarkCyan;
 			this->ButtonIniciarSessio->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->ButtonIniciarSessio->Location = System::Drawing::Point(12, 127);
-			this->ButtonIniciarSessio->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->ButtonIniciarSessio->Location = System::Drawing::Point(120, 141);
+			this->ButtonIniciarSessio->Margin = System::Windows::Forms::Padding(2);
 			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
-			this->ButtonIniciarSessio->Size = System::Drawing::Size(146, 45);
+			this->ButtonIniciarSessio->Size = System::Drawing::Size(138, 51);
 			this->ButtonIniciarSessio->TabIndex = 6;
-			this->ButtonIniciarSessio->Text = L"Iniciar Sessió";
+			this->ButtonIniciarSessio->Text = L"Iniciar Sessi\u00F3";
 			this->ButtonIniciarSessio->UseVisualStyleBackColor = true;
 			this->ButtonIniciarSessio->Click += gcnew System::EventHandler(this, &IniciarSessio::ButtonIniciarSessio_Click);
 			// 
@@ -97,10 +96,10 @@ namespace StudyHub {
 			this->registrar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->registrar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->registrar->Location = System::Drawing::Point(12, 190);
-			this->registrar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->registrar->Location = System::Drawing::Point(345, 141);
+			this->registrar->Margin = System::Windows::Forms::Padding(2);
 			this->registrar->Name = L"registrar";
-			this->registrar->Size = System::Drawing::Size(146, 87);
+			this->registrar->Size = System::Drawing::Size(141, 51);
 			this->registrar->TabIndex = 7;
 			this->registrar->Text = L"Registrar-se";
 			this->registrar->UseVisualStyleBackColor = true;
@@ -112,10 +111,10 @@ namespace StudyHub {
 			this->sortir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->sortir->ForeColor = System::Drawing::Color::DarkCyan;
-			this->sortir->Location = System::Drawing::Point(12, 417);
-			this->sortir->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->sortir->Location = System::Drawing::Point(223, 261);
+			this->sortir->Margin = System::Windows::Forms::Padding(2);
 			this->sortir->Name = L"sortir";
-			this->sortir->Size = System::Drawing::Size(103, 27);
+			this->sortir->Size = System::Drawing::Size(156, 51);
 			this->sortir->TabIndex = 8;
 			this->sortir->Text = L"Sortir";
 			this->sortir->UseVisualStyleBackColor = true;
@@ -123,16 +122,15 @@ namespace StudyHub {
 			// 
 			// IniciarSessio
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(809, 455);
+			this->ClientSize = System::Drawing::Size(607, 370);
 			this->Controls->Add(this->textBenvinguda);
 			this->Controls->Add(this->ButtonIniciarSessio);
 			this->Controls->Add(this->registrar);
 			this->Controls->Add(this->sortir);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"IniciarSessio";
 			this->Text = L"IniciarSessio";
 			this->Load += gcnew System::EventHandler(this, &IniciarSessio::IniciarSessio_Load);
