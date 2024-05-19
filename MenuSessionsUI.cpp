@@ -126,21 +126,21 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
                 String^ direccioSessio = fila["adreca"]->ToString();
 
                 Label^ labelGrup = gcnew Label();
-                labelGrup->AutoSize = false;
+                labelGrup->AutoSize = true;
                 labelGrup->Font = gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0));
                 labelGrup->Dock = System::Windows::Forms::DockStyle::Fill;
                 labelGrup->Text = nomGrup;
                 labelGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
                 Label^ labelData = gcnew Label();
-                labelData->AutoSize = false;
+                labelData->AutoSize = true;
                 labelData->Font = gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0));
                 labelData->Dock = System::Windows::Forms::DockStyle::Fill;
                 labelData->Text = dataSessio;
                 labelData->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
                 Label^ labelDireccio = gcnew Label();
-                labelDireccio->AutoSize = false;
+                labelDireccio->AutoSize = true;
                 labelDireccio->Font = gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0));
                 labelDireccio->Dock = System::Windows::Forms::DockStyle::Fill;
                 labelDireccio->Text = direccioSessio;
