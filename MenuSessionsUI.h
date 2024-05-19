@@ -40,6 +40,10 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ programaSessio;
 
 	private: System::Windows::Forms::Button^ esborraSessio;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::Label^ label1;
+
+
 
 
 
@@ -51,7 +55,7 @@ namespace StudyHub {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -65,6 +69,9 @@ namespace StudyHub {
 			this->editaSessions = (gcnew System::Windows::Forms::Button());
 			this->programaSessio = (gcnew System::Windows::Forms::Button());
 			this->esborraSessio = (gcnew System::Windows::Forms::Button());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// textBenvinguda
@@ -73,11 +80,13 @@ namespace StudyHub {
 			this->textBenvinguda->AutoSize = true;
 			this->textBenvinguda->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->textBenvinguda->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->textBenvinguda->Location = System::Drawing::Point(174, 40);
+			this->textBenvinguda->Location = System::Drawing::Point(200, 34);
+			this->textBenvinguda->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->textBenvinguda->Name = L"textBenvinguda";
-			this->textBenvinguda->Size = System::Drawing::Size(259, 42);
+			this->textBenvinguda->Size = System::Drawing::Size(481, 64);
 			this->textBenvinguda->TabIndex = 10;
-			this->textBenvinguda->Text = L"Menu Sessions";
+			this->textBenvinguda->Text = L"Gestionar Sessions";
+			this->textBenvinguda->Click += gcnew System::EventHandler(this, &MenuSessionsUI::textBenvinguda_Click);
 			// 
 			// consultaSessions
 			// 
@@ -86,10 +95,9 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->consultaSessions->ForeColor = System::Drawing::Color::DarkCyan;
 			this->consultaSessions->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->consultaSessions->Location = System::Drawing::Point(117, 141);
-			this->consultaSessions->Margin = System::Windows::Forms::Padding(2);
+			this->consultaSessions->Location = System::Drawing::Point(36, 111);
 			this->consultaSessions->Name = L"consultaSessions";
-			this->consultaSessions->Size = System::Drawing::Size(138, 51);
+			this->consultaSessions->Size = System::Drawing::Size(207, 71);
 			this->consultaSessions->TabIndex = 11;
 			this->consultaSessions->Text = L"Consultar Sessions i Participa";
 			this->consultaSessions->UseVisualStyleBackColor = true;
@@ -101,10 +109,9 @@ namespace StudyHub {
 			this->editaSessions->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->editaSessions->ForeColor = System::Drawing::Color::DarkCyan;
-			this->editaSessions->Location = System::Drawing::Point(364, 141);
-			this->editaSessions->Margin = System::Windows::Forms::Padding(2);
+			this->editaSessions->Location = System::Drawing::Point(36, 299);
 			this->editaSessions->Name = L"editaSessions";
-			this->editaSessions->Size = System::Drawing::Size(141, 51);
+			this->editaSessions->Size = System::Drawing::Size(212, 71);
 			this->editaSessions->TabIndex = 12;
 			this->editaSessions->Text = L"Editar Sessions";
 			this->editaSessions->UseVisualStyleBackColor = true;
@@ -116,10 +123,9 @@ namespace StudyHub {
 			this->programaSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->programaSessio->ForeColor = System::Drawing::Color::DarkCyan;
-			this->programaSessio->Location = System::Drawing::Point(117, 223);
-			this->programaSessio->Margin = System::Windows::Forms::Padding(2);
+			this->programaSessio->Location = System::Drawing::Point(36, 202);
 			this->programaSessio->Name = L"programaSessio";
-			this->programaSessio->Size = System::Drawing::Size(138, 52);
+			this->programaSessio->Size = System::Drawing::Size(207, 72);
 			this->programaSessio->TabIndex = 13;
 			this->programaSessio->Text = L"Programar Sessió";
 			this->programaSessio->UseVisualStyleBackColor = true;
@@ -131,29 +137,62 @@ namespace StudyHub {
 			this->esborraSessio->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->esborraSessio->ForeColor = System::Drawing::Color::DarkCyan;
-			this->esborraSessio->Location = System::Drawing::Point(364, 223);
-			this->esborraSessio->Margin = System::Windows::Forms::Padding(2);
+			this->esborraSessio->Location = System::Drawing::Point(36, 391);
 			this->esborraSessio->Name = L"esborraSessio";
-			this->esborraSessio->Size = System::Drawing::Size(141, 52);
+			this->esborraSessio->Size = System::Drawing::Size(212, 72);
 			this->esborraSessio->TabIndex = 14;
 			this->esborraSessio->Text = L"Esborrar Sessió";
 			this->esborraSessio->UseVisualStyleBackColor = true;
 			this->esborraSessio->Click += gcnew System::EventHandler(this, &MenuSessionsUI::esborraSessio_Click);
 			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Single;
+			this->tableLayoutPanel1->ColumnCount = 1;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
+			this->tableLayoutPanel1->Controls->Add(this->label1, 0, 0);
+			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(294, 114);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 2;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 51)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 100)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(576, 329);
+			this->tableLayoutPanel1->TabIndex = 8;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(4, 1);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(568, 51);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Sessions";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// MenuSessionsUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(607, 370);
+			this->ClientSize = System::Drawing::Size(910, 512);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->esborraSessio);
 			this->Controls->Add(this->consultaSessions);
 			this->Controls->Add(this->editaSessions);
 			this->Controls->Add(this->programaSessio);
 			this->Controls->Add(this->textBenvinguda);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MenuSessionsUI";
 			this->Text = L"MenuSessionsUI";
+			this->Load += gcnew System::EventHandler(this, &MenuSessionsUI::MenuSessionsUI_Load);
+			this->tableLayoutPanel1->ResumeLayout(false);
+			this->tableLayoutPanel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -163,5 +202,12 @@ namespace StudyHub {
 	private: System::Void editaSessions_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void esborraSessio_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void programaSessio_Click(System::Object^ sender, System::EventArgs^ e);
-};
+	private: System::Void textBenvinguda_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void MenuSessionsUI_Load(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	};
 }
