@@ -407,6 +407,12 @@
     <ClInclude Include="UnirseGrupUI.h">
       <Filter>GestioGrups\Presentacio</Filter>
     </ClInclude>
+    <ClInclude Include="TxValoracioMitjana.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraValoracioMitjana.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -684,6 +690,12 @@
     </ClCompile>
     <ClCompile Include="UnirseGrupUI.cpp">
       <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxValoracioMitjana.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraValoracioMitjana.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

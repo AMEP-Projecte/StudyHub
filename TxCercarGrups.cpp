@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "TxCercarGrups.h"
 #include "CercadoraGrup.h"
+#include "TxValoracioMitjana.h"
 #include "CercadoraPertany.h"
 
 TxCercarGrups::TxCercarGrups(){}
@@ -16,7 +17,8 @@ void TxCercarGrups::executar() {
 		CercadoraPertany aux;
 		List<PassarellaPertany^>^ l = aux.cercaParticipants(grups[i]->obteNom());
 		g._nombreParticipants = l->Count;
-		g._valMitja = 2.5;
+		TxValoracioMitjana^ valoracioMitja = gcnew TxValoracioMitjana(grups[i]->obteNom());
+		g._valMitja = valoracioMitja->executar();
 		resultat->Add(g);
 	}
 }

@@ -131,6 +131,7 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CercadoraValoracioMitjana.h" />
     <ClInclude Include="CercaGrup.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -300,12 +301,14 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h" />
+    <ClInclude Include="TxValoracioMitjana.h" />
     <ClInclude Include="UnirseGrupUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercadoraValoracioMitjana.cpp" />
     <ClCompile Include="CercaGrup.cpp" />
     <ClCompile Include="CercadoraAdmin.cpp" />
     <ClCompile Include="CercadoraEspai.cpp" />
@@ -406,6 +409,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="TxTancarSessio.cpp" />
+    <ClCompile Include="TxValoracioMitjana.cpp" />
     <ClCompile Include="UnirseGrupUI.cpp" />
   </ItemGroup>
   <ItemGroup>
