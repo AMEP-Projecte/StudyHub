@@ -4,6 +4,7 @@
 #include "ConsultarSessionsUI.h"
 #include "TxParticipacioSessio.h"
 #include "Sistema.h"
+#include "CercadoraSessio.h"
 
 System::Void StudyHub::ParticipaSessio::cencel_Click(System::Object^ sender, System::EventArgs^ e) {
 	ConsultarSessionsUI^ consulta = gcnew ConsultarSessionsUI();
@@ -19,8 +20,7 @@ System::Void StudyHub::ParticipaSessio::confirmar_Click(System::Object^ sender, 
 
 	try {
 		tx->executar();
-		MessageBox::Show("Has confirmat la teva participacio al grup correctament.");
-
+		
 		ConsultarSessionsUI^ consulta = gcnew ConsultarSessionsUI();
 		MenuPrincipal^ menu = MenuPrincipal::getInstance();
 		menu->AbrirFormularioEnPanel(consulta);

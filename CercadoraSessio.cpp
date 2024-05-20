@@ -57,3 +57,6 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessioAdreca(String^ adreca) {
 
     return result;
 }
+
+
+

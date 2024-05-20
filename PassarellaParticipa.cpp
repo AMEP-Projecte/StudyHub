@@ -28,6 +28,7 @@ void PassarellaParticipa::posaHoraInici(String^ hora) {
 	_horaInici = hora;
 }
 
+
 String^ PassarellaParticipa::obteEstudiant() {
 	return _estudiant;
 }
@@ -56,7 +57,7 @@ void PassarellaParticipa::insereix() {
 		cmd->ExecuteNonQuery();
 	}
 	catch (MySqlException^ ex) {
-		MessageBox::Show(ex->Message);
+		MessageBox::Show("Ja estàs a la sessió");
 	
 	}
 	finally {

@@ -38,6 +38,7 @@ void PassarellaSessio::posaLlocs(int llocs) {
 	_llocsLliures = llocs;
 }
 
+
 String^ PassarellaSessio::obteGrup() {
 	return _grup;
 }
@@ -54,7 +55,7 @@ String^ PassarellaSessio::obteAdreca() {
 	return _adreca;
 }
 int PassarellaSessio::obteLlocsLliures() {
-	return _llocsLliures;
+    return _llocsLliures;
 }
 
 void PassarellaSessio::insereix()
@@ -130,6 +131,33 @@ void PassarellaSessio::modifica() {
 	finally {
 		conn->Close();
 	}
+}
+void PassarellaSessio::modificaLlocs() {
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "UPDATE sessio SET ";
+    sql += "llocslliures = @llocslliures "; // Set only the llocslliures column
+    sql += "WHERE (grup = @grup) ";
+    sql += "and (data = @data) ";
+    sql += "and (hora_inici = @hora_inici);";
+
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@llocslliures", _llocsLliures - 1); // Set the new value
+    cmd->Parameters->AddWithValue("@grup", _grup); // Assuming _grup, _data, and _horaInici are variables holding values
+    cmd->Parameters->AddWithValue("@data", _data);
+    cmd->Parameters->AddWithValue("@hora_inici", _horaInici);
+
+    try {
+        conn->Open();
+        cmd->ExecuteNonQuery(); // Use ExecuteNonQuery since you're not expecting a result set
+    }
+    catch (Exception^ ex) {
+        // Handle errors
+    }
+    finally {
+        conn->Close();
+    }
 }
 void PassarellaSessio::esborra() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";

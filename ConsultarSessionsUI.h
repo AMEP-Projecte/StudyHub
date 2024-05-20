@@ -44,6 +44,7 @@ namespace StudyHub {
 	private: String^ grupSessio = "";
 	private: String^ dataSessio = "";
 	private: String^ horaIniciSessio = "";
+	private: String^ adrecaSessio = "";
 
 	protected:
 
@@ -181,6 +182,8 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	dataSessio = d->ToString("yyyy-MM-dd");
 
 	horaIniciSessio = Convert::ToString(dataGridView1->Rows[index]->Cells[2]->Value);
+	adrecaSessio = Convert::ToString(dataGridView1->Rows[index]->Cells[3]->Value);
+	
 }
 private: System::Void participa_Click(System::Object^ sender, System::EventArgs^ e);
 };

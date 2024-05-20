@@ -8,5 +8,7 @@ public:
 	List<PassarellaSessio^>^ cercaSessioGrup(String^ nom);
 
 	List<PassarellaSessio^>^ cercaSessioAdreca(String^ adreca);
+
+	
 };
 

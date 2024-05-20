@@ -26,6 +26,7 @@ namespace StudyHub {
 		String^ grup;
 		String^ data;
 		String^ horaInici;
+		String^ adreca;
 
 	protected:
 		/// <summary>

@@ -1,5 +1,6 @@
 #pragma once
-
+#include "MenuPrincipal.h"
+#include "MenuGestioEspais.h"
 namespace StudyHub {
 
 	using namespace System;

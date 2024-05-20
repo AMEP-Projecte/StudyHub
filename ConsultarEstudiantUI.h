@@ -1,5 +1,6 @@
 #pragma once
 #include"TxConsultarEstudiant.h"
+
 namespace StudyHub {
 
 	using namespace System;

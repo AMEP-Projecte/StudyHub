@@ -2,7 +2,8 @@
 #include "CrearEspaiUI.h"
 #include "Sistema.h"
 #include "TxCreaEspai.h"
-
+#include "MenuPrincipal.h"
+#include "MenuGestioEspais.h"
 
 using namespace StudyHub;
 using namespace System::Windows::Forms;
@@ -21,6 +22,10 @@ System::Void CrearEspaiUI::botonetcrea_Click(System::Object^ sender, System::Eve
 			//TxCreaEspai txCE(this->textBox1->Text, this->textBox2->Text, capacitatEnter, upc);
 			txCE.executa();
 			//this->Close();
+
+			MenuGestioEspais^ espai = gcnew MenuGestioEspais();
+			MenuPrincipal^ menu = MenuPrincipal::getInstance();
+			menu->AbrirFormularioEnPanel(espai);
 		}
 		else {
 			MessageBox::Show("No pot haver-hi un camp buit o ja existeix un espai amb aquella adreça.");
