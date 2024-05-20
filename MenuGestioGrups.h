@@ -46,10 +46,8 @@ namespace StudyHub {
 	private: System::Windows::Forms::TableLayoutPanel^ layoutPanel;
 	private: System::Windows::Forms::Label^ label1;
 
-
-
-
-
+	// LAYOUT FILA
+	// private: System::Windows::Forms::TableLayoutPanel^ layoutFila;
 
 
 
@@ -240,7 +238,11 @@ private: System::Void crea_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void MenuGestioGrups_Load(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void proba_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e); // clicar fila
+
+private: System::Void selecciona(TableLayoutPanel^ table); // seleccionar fila
+
+private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e); // clicar algun label dins de la fila
 };
 
 
