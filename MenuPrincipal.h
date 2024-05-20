@@ -90,12 +90,12 @@ namespace StudyHub {
 			this->ButtonMenu = (gcnew System::Windows::Forms::Button());
 			this->PanelLogo = (gcnew System::Windows::Forms::Panel());
 			this->panelTitle = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->ButtonMinimized = (gcnew System::Windows::Forms::Button());
 			this->ButtonMaximized = (gcnew System::Windows::Forms::Button());
 			this->ButtonCloseForm = (gcnew System::Windows::Forms::Button());
 			this->LabelTitle = (gcnew System::Windows::Forms::Label());
 			this->PanelContainer = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->panelMenu->SuspendLayout();
 			this->PanelLogo->SuspendLayout();
 			this->panelTitle->SuspendLayout();
@@ -129,7 +129,7 @@ namespace StudyHub {
 			this->panelMenu->Controls->Add(this->PanelLogo);
 			this->panelMenu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
-			this->panelMenu->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panelMenu->Margin = System::Windows::Forms::Padding(4);
 			this->panelMenu->Name = L"panelMenu";
 			this->panelMenu->Size = System::Drawing::Size(293, 486);
 			this->panelMenu->TabIndex = 5;
@@ -144,7 +144,7 @@ namespace StudyHub {
 			this->buttonMenuSessions->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonMenuSessions.Image")));
 			this->buttonMenuSessions->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->buttonMenuSessions->Location = System::Drawing::Point(0, 481);
-			this->buttonMenuSessions->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->buttonMenuSessions->Margin = System::Windows::Forms::Padding(4);
 			this->buttonMenuSessions->Name = L"buttonMenuSessions";
 			this->buttonMenuSessions->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
 			this->buttonMenuSessions->Size = System::Drawing::Size(293, 79);
@@ -164,7 +164,7 @@ namespace StudyHub {
 			this->ButtonMenuAdmin->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuAdmin.Image")));
 			this->ButtonMenuAdmin->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->ButtonMenuAdmin->Location = System::Drawing::Point(0, 402);
-			this->ButtonMenuAdmin->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonMenuAdmin->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenuAdmin->Name = L"ButtonMenuAdmin";
 			this->ButtonMenuAdmin->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
 			this->ButtonMenuAdmin->Size = System::Drawing::Size(293, 79);
@@ -183,7 +183,7 @@ namespace StudyHub {
 			this->ButtonMenuProveidors->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuProveidors.Image")));
 			this->ButtonMenuProveidors->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->ButtonMenuProveidors->Location = System::Drawing::Point(0, 323);
-			this->ButtonMenuProveidors->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonMenuProveidors->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenuProveidors->Name = L"ButtonMenuProveidors";
 			this->ButtonMenuProveidors->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
 			this->ButtonMenuProveidors->Size = System::Drawing::Size(293, 79);
@@ -203,7 +203,7 @@ namespace StudyHub {
 			this->ButtonMenuGrups->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuGrups.Image")));
 			this->ButtonMenuGrups->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->ButtonMenuGrups->Location = System::Drawing::Point(0, 244);
-			this->ButtonMenuGrups->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonMenuGrups->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenuGrups->Name = L"ButtonMenuGrups";
 			this->ButtonMenuGrups->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
 			this->ButtonMenuGrups->Size = System::Drawing::Size(293, 79);
@@ -223,7 +223,7 @@ namespace StudyHub {
 			this->ButtonMenuEstudiant->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuEstudiant.Image")));
 			this->ButtonMenuEstudiant->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->ButtonMenuEstudiant->Location = System::Drawing::Point(0, 165);
-			this->ButtonMenuEstudiant->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonMenuEstudiant->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenuEstudiant->Name = L"ButtonMenuEstudiant";
 			this->ButtonMenuEstudiant->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
 			this->ButtonMenuEstudiant->Size = System::Drawing::Size(293, 79);
@@ -243,7 +243,7 @@ namespace StudyHub {
 			this->ButtonMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenu.Image")));
 			this->ButtonMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->ButtonMenu->Location = System::Drawing::Point(0, 86);
-			this->ButtonMenu->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonMenu->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenu->Name = L"ButtonMenu";
 			this->ButtonMenu->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
 			this->ButtonMenu->Size = System::Drawing::Size(293, 79);
@@ -259,7 +259,7 @@ namespace StudyHub {
 			this->PanelLogo->Controls->Add(this->studyHyb);
 			this->PanelLogo->Dock = System::Windows::Forms::DockStyle::Top;
 			this->PanelLogo->Location = System::Drawing::Point(0, 0);
-			this->PanelLogo->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->PanelLogo->Margin = System::Windows::Forms::Padding(4);
 			this->PanelLogo->Name = L"PanelLogo";
 			this->PanelLogo->Size = System::Drawing::Size(293, 86);
 			this->PanelLogo->TabIndex = 6;
@@ -275,11 +275,21 @@ namespace StudyHub {
 			this->panelTitle->Controls->Add(this->LabelTitle);
 			this->panelTitle->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelTitle->Location = System::Drawing::Point(293, 0);
-			this->panelTitle->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panelTitle->Margin = System::Windows::Forms::Padding(4);
 			this->panelTitle->Name = L"panelTitle";
 			this->panelTitle->Size = System::Drawing::Size(823, 86);
 			this->panelTitle->TabIndex = 6;
 			this->panelTitle->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::panelTitle_Paint);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(0, 18);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(77, 68);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 4;
+			this->pictureBox1->TabStop = false;
 			// 
 			// ButtonMinimized
 			// 
@@ -290,7 +300,7 @@ namespace StudyHub {
 			this->ButtonMinimized->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonMinimized->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMinimized.Image")));
 			this->ButtonMinimized->Location = System::Drawing::Point(640, 0);
-			this->ButtonMinimized->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonMinimized->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMinimized->Name = L"ButtonMinimized";
 			this->ButtonMinimized->Size = System::Drawing::Size(61, 86);
 			this->ButtonMinimized->TabIndex = 3;
@@ -306,7 +316,7 @@ namespace StudyHub {
 			this->ButtonMaximized->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonMaximized->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMaximized.Image")));
 			this->ButtonMaximized->Location = System::Drawing::Point(701, 0);
-			this->ButtonMaximized->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonMaximized->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMaximized->Name = L"ButtonMaximized";
 			this->ButtonMaximized->Size = System::Drawing::Size(61, 86);
 			this->ButtonMaximized->TabIndex = 2;
@@ -322,7 +332,7 @@ namespace StudyHub {
 			this->ButtonCloseForm->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonCloseForm->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonCloseForm.Image")));
 			this->ButtonCloseForm->Location = System::Drawing::Point(762, 0);
-			this->ButtonCloseForm->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->ButtonCloseForm->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonCloseForm->Name = L"ButtonCloseForm";
 			this->ButtonCloseForm->Size = System::Drawing::Size(61, 86);
 			this->ButtonCloseForm->TabIndex = 1;
@@ -351,21 +361,11 @@ namespace StudyHub {
 			this->PanelContainer->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->PanelContainer->ForeColor = System::Drawing::Color::Black;
 			this->PanelContainer->Location = System::Drawing::Point(293, 86);
-			this->PanelContainer->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->PanelContainer->Margin = System::Windows::Forms::Padding(4);
 			this->PanelContainer->Name = L"PanelContainer";
 			this->PanelContainer->Size = System::Drawing::Size(823, 400);
 			this->PanelContainer->TabIndex = 7;
 			this->PanelContainer->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelContainer_Paint);
-			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 18);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(77, 68);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 4;
-			this->pictureBox1->TabStop = false;
 			// 
 			// MenuPrincipal
 			// 
