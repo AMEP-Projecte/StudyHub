@@ -56,7 +56,6 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 
 	int files = dt->Rows->Count;
 	if (files == 0) {
-		// MessageBox::Show("Encara no pertanys a cap grup.");
 		Label^ MissatgeNoGrups = gcnew Label();
 		MissatgeNoGrups->AutoSize = true;
 		MissatgeNoGrups->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -97,6 +96,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		columnaTematica->Dock = System::Windows::Forms::DockStyle::Fill;
 		columnaTematica->Text = L"Temàtica";
 		columnaTematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+		columnaTematica->Click += gcnew System::EventHandler(this, &MenuGestioGrups::proba_Click); // Click
 
 		
 		Label^ columnaValoracio = gcnew Label();
@@ -157,4 +157,8 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 
 		this->layoutPanel->Controls->Add(layoutDades, 0, 1);
 	}
+}
+
+System::Void MenuGestioGrups::proba_Click(System::Object^ sender, System::EventArgs^ e) {
+	MessageBox::Show("Hola.");
 }

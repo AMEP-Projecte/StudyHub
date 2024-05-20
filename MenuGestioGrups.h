@@ -240,5 +240,8 @@ private: System::Void crea_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void MenuGestioGrups_Load(System::Object^ sender, System::EventArgs^ e);
 
+private: System::Void proba_Click(System::Object^ sender, System::EventArgs^ e);
 };
+
+
 }

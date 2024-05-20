@@ -170,6 +170,7 @@ namespace StudyHub {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MenuGestioProveidorAdmin";
 			this->Text = L"MenuGestioProveidorAdmin";
+			this->Load += gcnew System::EventHandler(this, &MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel1->PerformLayout();
 			this->ResumeLayout(false);

@@ -23,11 +23,21 @@ System::Void MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load(System::Obj
 
     DataTable^ dt = gcnew DataTable();
 
-    String^ sql = "SELECT p.username, COUNT(e.id) AS num_espais FROM proveidor p " +
-        "LEFT JOIN espai e ON p.username = e.proveidor " +
-        "GROUP BY p.username;";
-    MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);
+    String^ sql = "SELECT p.username AS Proveedor, ";
+    sql += "COUNT(e.proveidor) AS NumeroEspacios ";
+    sql += "FROM proveidor p ";
+    sql += "LEFT JOIN espai e ON p.username = e.proveidor ";
+    sql += "GROUP BY p.username ";
+    sql += "ORDER BY p.username;";
 
+    MySqlDataAdapter^ da;
+    try {
+        da = gcnew MySqlDataAdapter(sql, cn);
+    }
+    catch(Exception^ e) {
+        MessageBox::Show(e->Message);
+    }
+    
     da->Fill(dt);
 
     int files = dt->Rows->Count;
@@ -79,8 +89,8 @@ System::Void MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load(System::Obj
         for (int i = 0; i < files; ++i) {
             DataRow^ fila = dt->Rows[i];
 
-            String^ usernameProveidor = fila["username"]->ToString();
-            String^ numEspais = fila["num_espais"]->ToString();
+            String^ usernameProveidor = fila[0]->ToString();
+            String^ numEspais = fila[1]->ToString();
 
             Label^ labelUsername = gcnew Label();
             labelUsername->AutoSize = true;
