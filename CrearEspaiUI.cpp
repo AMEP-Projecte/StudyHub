@@ -8,7 +8,6 @@
 using namespace StudyHub;
 using namespace System::Windows::Forms;
 
-
 System::Void CrearEspaiUI::botonetcrea_Click(System::Object^ sender, System::EventArgs^ e) {
 	Sistema^ sist = Sistema::getInstance();
 	try {

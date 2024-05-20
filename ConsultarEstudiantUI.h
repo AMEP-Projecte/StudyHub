@@ -53,7 +53,6 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ TancarButton;
 
 
-
 	protected:
 
 	private:

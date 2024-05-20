@@ -10,6 +10,7 @@ namespace StudyHub {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+
 	/// <summary>
 	/// Resumen de ConsultarEspaiUI
 	/// </summary>

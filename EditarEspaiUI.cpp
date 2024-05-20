@@ -30,5 +30,6 @@ System::Void EditarEspaiUI::cancel_Click(System::Object^ sender, System::EventAr
 	MenuGestioEspais^ espai = gcnew MenuGestioEspais();
 	MenuPrincipal^ menu = MenuPrincipal::getInstance();
 	menu->AbrirFormularioEnPanel(espai);
+
 }
 

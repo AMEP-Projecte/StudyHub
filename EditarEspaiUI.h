@@ -96,6 +96,7 @@ namespace StudyHub {
 			this->adreca->TabIndex = 3;
 			this->adreca->Text = L"Adreça";
 			// 
+			// 
 			// capacitat
 			// 
 			this->capacitat->AutoSize = true;
