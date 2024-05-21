@@ -148,7 +148,7 @@ namespace StudyHub {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
 			this->tableLayoutPanel1->Controls->Add(this->label1, 0, 0);
 			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
-			this->tableLayoutPanel1->Location = System::Drawing::Point(294, 114);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(292, 101);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 2;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 51)));
@@ -205,5 +205,8 @@ namespace StudyHub {
 	private: System::Void MenuSessionsUI_Load(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 	}
+	private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e);
+	private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void selecciona(TableLayoutPanel^ table);
 	};
 }
