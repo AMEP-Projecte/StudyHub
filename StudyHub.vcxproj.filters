@@ -413,6 +413,9 @@
     <ClInclude Include="CercadoraValoracioMitjana.h">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClInclude>
+    <ClInclude Include="TxEnviarPeticioGrup.h">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -696,6 +699,9 @@
     </ClCompile>
     <ClCompile Include="CercadoraValoracioMitjana.cpp">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEnviarPeticioGrup.cpp">
+      <Filter>GestioGrups\Tx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -66,20 +66,23 @@ namespace StudyHub {
 			// ButtonUnirse
 			// 
 			this->ButtonUnirse->ForeColor = System::Drawing::SystemColors::MenuHighlight;
-			this->ButtonUnirse->Location = System::Drawing::Point(400, 249);
+			this->ButtonUnirse->Location = System::Drawing::Point(533, 306);
+			this->ButtonUnirse->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->ButtonUnirse->Name = L"ButtonUnirse";
-			this->ButtonUnirse->Size = System::Drawing::Size(108, 28);
+			this->ButtonUnirse->Size = System::Drawing::Size(144, 34);
 			this->ButtonUnirse->TabIndex = 6;
-			this->ButtonUnirse->Text = L"Unirse";
+			this->ButtonUnirse->Text = L"Unir-se";
 			this->ButtonUnirse->UseVisualStyleBackColor = true;
+			this->ButtonUnirse->Click += gcnew System::EventHandler(this, &UnirseGrupUI::ButtonUnirse_Click);
 			// 
 			// Usuari
 			// 
 			this->Usuari->AutoSize = true;
 			this->Usuari->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Usuari->Location = System::Drawing::Point(30, 101);
+			this->Usuari->Location = System::Drawing::Point(40, 124);
+			this->Usuari->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->Usuari->Name = L"Usuari";
-			this->Usuari->Size = System::Drawing::Size(40, 13);
+			this->Usuari->Size = System::Drawing::Size(49, 16);
 			this->Usuari->TabIndex = 11;
 			this->Usuari->Text = L"Usuari:";
 			// 
@@ -87,9 +90,10 @@ namespace StudyHub {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(134, 101);
+			this->label3->Location = System::Drawing::Point(179, 124);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(57, 13);
+			this->label3->Size = System::Drawing::Size(71, 16);
 			this->label3->TabIndex = 12;
 			this->label3->Text = L"Comentari:";
 			// 
@@ -97,9 +101,10 @@ namespace StudyHub {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(247, 101);
+			this->label1->Location = System::Drawing::Point(329, 124);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(54, 13);
+			this->label1->Size = System::Drawing::Size(68, 16);
 			this->label1->TabIndex = 13;
 			this->label1->Text = L"Valoracio:";
 			// 
@@ -107,9 +112,10 @@ namespace StudyHub {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(30, 18);
+			this->label2->Location = System::Drawing::Point(40, 22);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(33, 13);
+			this->label2->Size = System::Drawing::Size(39, 16);
 			this->label2->TabIndex = 14;
 			this->label2->Text = L"Grup:";
 			// 
@@ -117,18 +123,19 @@ namespace StudyHub {
 			// 
 			this->label4->AutoSize = true;
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(134, 18);
+			this->label4->Location = System::Drawing::Point(179, 22);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(54, 13);
+			this->label4->Size = System::Drawing::Size(67, 16);
 			this->label4->TabIndex = 15;
 			this->label4->Text = L"Temàtica:";
 			// 
 			// UnirseGrupUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DarkSlateGray;
-			this->ClientSize = System::Drawing::Size(520, 289);
+			this->ClientSize = System::Drawing::Size(693, 356);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -136,6 +143,7 @@ namespace StudyHub {
 			this->Controls->Add(this->Usuari);
 			this->Controls->Add(this->ButtonUnirse);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"UnirseGrupUI";
 			this->Text = L"UnirseGrupUI";
 			this->ResumeLayout(false);
@@ -143,5 +151,6 @@ namespace StudyHub {
 
 		}
 #pragma endregion
-	};
+	private: System::Void ButtonUnirse_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }
