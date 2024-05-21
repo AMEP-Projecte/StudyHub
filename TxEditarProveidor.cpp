@@ -3,7 +3,7 @@
 #include "Sistema.h"
 #include "Alert.h"
 #include "CercadoraUsuari.h"
-
+#include "Encriptacio.h"
 TxEditarProveidor::TxEditarProveidor(String^ ca, String^ cn) {
 	_contrasenyaActual = ca;
 	_contrasenyaNova = cn;
@@ -11,21 +11,15 @@ TxEditarProveidor::TxEditarProveidor(String^ ca, String^ cn) {
 
 void TxEditarProveidor::executar() {
 	Sistema^ sist = Sistema::getInstance();
-	String^ ccorrecta = sist->obteContrasenya();
-	if (ccorrecta == _contrasenyaActual) {
+	
+	Encriptacio e;
+	if (e.VerificarContrasenya(sist->obteUsername(), _contrasenyaActual)) {
 		PassarellaProveidor^ pprov = sist->obteProveidor();
-		String^ usernameProveidor = pprov->obteNomUsuari();
-		// Com que només modifiquem la contrasenya, no necessitarem fer
-		// "modifica()" amb la PassarellaProveidor
-		CercadoraUsuari cu;
-		PassarellaUsuari^ pu = cu.cercaUsuari(usernameProveidor);
-		pu->posaContrasenya(_contrasenyaNova);
-		pu->modifica();
-		sist->canviaContrasenya(_contrasenyaNova);
-		_error = false;
+		pprov->GenerarContrasenya(_contrasenyaNova);
+		pprov->modifica();
 	}
 	else {
-		_error = true;
+		gcnew Exception("La contrasenya no es correcta.");
 	}
 }
 

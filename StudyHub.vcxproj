@@ -158,6 +158,7 @@
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Encriptacio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -302,6 +303,7 @@
     <ClCompile Include="ConsultarGrup.cpp" />
     <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="Encriptacio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
     <ClCompile Include="ConsultarSessionsUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />

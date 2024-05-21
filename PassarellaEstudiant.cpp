@@ -5,7 +5,21 @@ using namespace MySql::Data::MySqlClient;
 PassarellaEstudiant::PassarellaEstudiant(String^ username,String^ contrasenya, String^ correuElectronic, String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions)
 {
     _username = username;
+    GenerarContrasenya(contrasenya);
+    _tipus = "estudiant";
+    _correuElectronic = correuElectronic;
+    _nom = nom;
+    _cognoms = cognoms;
+    _idioma = idioma;
+    _localitat = localitat;
+    _numValoracions = numValoracions;
+}
+
+PassarellaEstudiant::PassarellaEstudiant(String^ username, String^ contrasenya, String^ salt, String^ correuElectronic, String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions)
+{
+    _username = username;
     _contrasenya = contrasenya;
+    _salt = salt;
     _tipus = "estudiant";
     _correuElectronic = correuElectronic;
     _nom = nom;
@@ -118,6 +132,7 @@ void PassarellaEstudiant::insereix()
 
 void PassarellaEstudiant::modifica()
 {
+    PassarellaUsuari::modifica();
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 

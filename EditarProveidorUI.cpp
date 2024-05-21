@@ -9,21 +9,22 @@ System::Void EditarProveidorUI::edit_Click(System::Object^ sender, System::Event
 	String^ ca = oldPassword->Text;
 	String^ cn = newPassword->Text;
 	if (ca == "" || cn == "") {
-		MessageBox::Show("Error: Completa tots els camps.");
+		MessageBox::Show("Omple tots els camps per continuar.");
 	}
 	else if (ca == cn) {
 		MessageBox::Show("Error: Els dos camps no poden tenir el mateix valor.");
 	}
 	else {
-		TxEditarProveidor^ txEdit = gcnew TxEditarProveidor(ca, cn);
-		txEdit->executar();
-		if (txEdit->obteError()) {
-			MessageBox::Show("Error: Contrasenya actual incorrecta.");
+		TxEditarProveidor^ txEdit = gcnew TxEditarProveidor(ca,  cn);
+		try {
+			txEdit->executar();
 		}
-		else {
-			MessageBox::Show("Contrasenya modificada correctament.");
-			this->Close();
+		catch (Exception^ e) {
+			MessageBox::Show(e->Message);
 		}
+		this->Close();
+		
+		
 	}
 }
 

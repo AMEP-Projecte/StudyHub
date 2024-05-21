@@ -24,7 +24,8 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) 
             int numValoracions = dataReader->GetInt32(6);
             CercadoraUsuari cu;
             String^ contrasenya = cu.cercaUsuari(username)->obteContrasenya();
-            pe = gcnew PassarellaEstudiant(username,contrasenya, correu, nom, cognoms, idioma, localitat, numValoracions);
+            String^ salt = cu.cercaUsuari(username)->obteSalt();
+            pe = gcnew PassarellaEstudiant(username,contrasenya, salt, correu, nom, cognoms, idioma, localitat, numValoracions);
             
         }
     }
@@ -60,7 +61,8 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerCorreu(String^ correu)
             int numValoracions = dataReader->GetInt32(6);
             CercadoraUsuari cu;
             String^ contrasenya = cu.cercaUsuari(username)->obteContrasenya();
-            pe = gcnew PassarellaEstudiant(username, contrasenya, correu, nom, cognoms, idioma, localitat, numValoracions);
+            String^ salt = cu.cercaUsuari(username)->obteSalt();
+            pe = gcnew PassarellaEstudiant(username, contrasenya, salt, correu, nom, cognoms, idioma, localitat, numValoracions);
 
         }
     }
