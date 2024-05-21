@@ -113,15 +113,9 @@ namespace StudyHub {
 			this->tableLayoutPanel1->AutoSize = true;
 			this->tableLayoutPanel1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-			this->tableLayoutPanel1->ColumnCount = 4;
+			this->tableLayoutPanel1->ColumnCount = 1;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				100)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				100)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				100)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				20)));
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
 			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
@@ -161,13 +155,30 @@ namespace StudyHub {
 		List<Grup>^ grups = tx->obteResultat();
 		this->tableLayoutPanel1->RowCount = grups->Count+1;
 		//Creacion de los titulos:
+		System::Windows::Forms::TableLayoutPanel^ panell = gcnew System::Windows::Forms::TableLayoutPanel();
+		panell->ColumnCount = 4;
+		panell->RowCount = 1;
+		panell->AutoSize = true;
+		panell->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+		panell->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+			100)));
+		panell->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+			100)));
+		panell->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+			100)));
+		panell->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+			20)));
+		panell->Dock = System::Windows::Forms::DockStyle::Top;
+		panell->ForeColor = System::Drawing::Color::White;
+		panell->Padding = System::Windows::Forms::Padding(3);
+
 		System::Windows::Forms::Label^ NomGrup = gcnew System::Windows::Forms::Label();
 		NomGrup->Text = "Nom";
 		NomGrup->Anchor = System::Windows::Forms::AnchorStyles::None;
 		NomGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		NomGrup->Font = gcnew System::Drawing::Font("Arial Black", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);
 		NomGrup->AutoSize = true;
-		this->tableLayoutPanel1->Controls->Add(NomGrup, 0, 0);
+		panell->Controls->Add(NomGrup, 0, 0);
 
 		System::Windows::Forms::Label^ Tematica = gcnew System::Windows::Forms::Label();
 		Tematica->Text = "Temàtica";
@@ -175,7 +186,7 @@ namespace StudyHub {
 		Tematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		Tematica->Font = gcnew System::Drawing::Font("Arial Black",12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);
 		Tematica->AutoSize = true;
-		this->tableLayoutPanel1->Controls->Add(Tematica, 1, 0);
+		panell->Controls->Add(Tematica, 1, 0);
 
 		System::Windows::Forms::Label^ Participants = gcnew System::Windows::Forms::Label();
 		Participants->Text = "Participants";
@@ -183,7 +194,7 @@ namespace StudyHub {
 		Participants->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		Participants->Font = gcnew System::Drawing::Font("Arial Black", 9, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);
 		Participants->AutoSize = true;
-		this->tableLayoutPanel1->Controls->Add(Participants, 2, 0);
+		panell->Controls->Add(Participants, 2, 0);
 
 		System::Windows::Forms::Label^ Valoracio = gcnew System::Windows::Forms::Label();
 		Valoracio->Text = "Valoració";
@@ -191,10 +202,28 @@ namespace StudyHub {
 		Valoracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		Valoracio->Font = gcnew System::Drawing::Font("Arial Black", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);
 		Valoracio->AutoSize = true;
-		this->tableLayoutPanel1->Controls->Add(Valoracio, 3, 0);
+		panell->Controls->Add(Valoracio, 3, 0);
+
+		this->tableLayoutPanel1->Controls->Add(panell, 0, 0);
 		// Creacion de la tabla:
 		for (int i = 0; i < grups->Count; i++)
 		{
+			System::Windows::Forms::TableLayoutPanel^ panel = gcnew System::Windows::Forms::TableLayoutPanel();
+			panel->ColumnCount = 4;
+			panel->RowCount = 1;
+			panel->AutoSize = true;
+			panel->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			panel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				100)));
+			panel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				100)));
+			panel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				100)));
+			panel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				20)));
+			panel->Dock = System::Windows::Forms::DockStyle::Top;
+			panel->Tag = grups[i]._grup->obteNom();
+
 			System::Windows::Forms::Label^ label = gcnew System::Windows::Forms::Label();
 			label->Text = grups[i]._grup->obteNom();
 			label->Anchor = System::Windows::Forms::AnchorStyles::None;
@@ -202,7 +231,9 @@ namespace StudyHub {
 			label->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			label->Font = gcnew System::Drawing::Font("Arial", 10, System::Drawing::FontStyle::Bold);
 			label->AutoSize = true;
-			this->tableLayoutPanel1->Controls->Add(label, 0, i+1);
+			label->Tag = grups[i]._grup->obteNom();
+			panel->Controls->Add(label, 0, 0);
+			
 
 			System::Windows::Forms::Label^ label1 = gcnew System::Windows::Forms::Label();
 			label1->Text = grups[i]._grup->obteTematica();
@@ -211,7 +242,8 @@ namespace StudyHub {
 			label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			label1->Font = gcnew System::Drawing::Font("Arial", 8, System::Drawing::FontStyle::Bold);
 			label1->AutoSize = true;
-			this->tableLayoutPanel1->Controls->Add(label1, 1, i+1);
+			label1->Tag = grups[i]._grup->obteNom();
+			panel->Controls->Add(label1, 1, 0);
 
 			System::Windows::Forms::Label^ label2 = gcnew System::Windows::Forms::Label();
 			label2->Text = grups[i]._nombreParticipants.ToString();
@@ -220,21 +252,36 @@ namespace StudyHub {
 			label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			label2->Font = gcnew System::Drawing::Font("Arial", 12, System::Drawing::FontStyle::Bold);
 			label2->AutoSize = true;
-			this->tableLayoutPanel1->Controls->Add(label2, 2, i+1);
+			label2->Tag = grups[i]._grup->obteNom();
+			panel->Controls->Add(label2, 2, 0);
 
 			System::Windows::Forms::FlowLayoutPanel^ panelEstrellas = gcnew System::Windows::Forms::FlowLayoutPanel();
 			StarRatingView^ starRatingControl = gcnew StarRatingView(grups[i]._valMitja);
 			panelEstrellas->Controls->Add(starRatingControl);
 			//panelEstrellas->Size = System::Drawing::Size(197, 20);
 			panelEstrellas->AutoSize = true;
-			this->tableLayoutPanel1->Controls->Add(panelEstrellas, 3, i+1);
+			panel->Controls->Add(panelEstrellas, 3, 0);
+
+			panel->Click += gcnew System::EventHandler(this, &CercaGrup::On_Click);
+
+			this->tableLayoutPanel1->Controls->Add(panel, 0, i+1);
 		}
 	}
 	private: System::Void On_Click(System::Object^ sender, System::EventArgs^ e) {
 		MenuPrincipal^ Menu = Menu->getInstance();
 		UnirseGrupUI^ Unirse = gcnew UnirseGrupUI(); // Aqui podrias hacer una constructora
 		// con los parametros necesarios, es decir, UnirseGrupUI(NomGrup, Estudiant(Opcional))
-		Menu->AbrirSubFormularioEnPanelOriginal(Unirse);
+		TableLayoutPanel^ clickedPanel = dynamic_cast<TableLayoutPanel^>(sender);
+		Label^ clickedLabel = dynamic_cast<Label^>(sender);
+		String^ labelInfo;
+		if (clickedPanel) {
+			labelInfo = dynamic_cast<String^>(clickedPanel->Tag);
+		}
+		else if (clickedLabel) {
+			labelInfo = dynamic_cast<String^>(clickedLabel->Tag);
+		}
+		MessageBox::Show("Row clicked: " + labelInfo);
+		//Menu->AbrirSubFormularioEnPanelOriginal(Unirse);
 	}
 	};
 }
