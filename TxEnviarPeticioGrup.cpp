@@ -1,12 +1,37 @@
 #include "pch.h"
 #include "TxEnviarPeticioGrup.h"
 
-TxEnviarPeticioGrup::TxEnviarPeticioGrup(String^ ng) {
+TxEnviarPeticioGrup::TxEnviarPeticioGrup(String^ ue, String^ ng) {
+	_usernameEstudiant = ue;
 	_nomGrup = ng;
 }
 
 void TxEnviarPeticioGrup::executar() {
-	// Comprovar que l'estudiant no hagi enviat anteriorment una petició d'accés al grup o que no
-	// estigui ja al grup. Si l'estudiant no es troba en cap d'aquests casos, crear una nova fila
-	// a la taula Pertany
+	// CercadoraPertany^ cercp = gcnew CercadoraPertany(); BORRAR
+	PassarellaPertany^ p = CercadoraPertany::cercaEstudiantEnGrup (_usernameEstudiant, _nomGrup);
+	
+	if (p != nullptr) {
+		// L'estudiant ja és membre del grup o ja ha demanat unir-se a ell anteriorment
+		if (p->obteEstat() == "Pendent") {
+			throw gcnew Exception("Ja has demanat unir-te a aquest grup.\nEspera a que acceptin la teva sol·licitud.");
+		}
+		else { // l'estat és Acceptat
+			throw gcnew Exception("Ja formes part d'aquest grup.");
+		}
+	}
+	else {
+		// L'estudiant no és membre del grup ni ha demanat unir-se al grup anteriorment
+		p = gcnew PassarellaPertany(_usernameEstudiant, _nomGrup, "Pendent");
+		p->insereix();
+	}
+
+	// throw gcnew Exception("Ja existeix un grup amb aquest nom.");
+	/* catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+		totcorrecte = false;
+	}
+	finally {
+		// si tot va be es tanca la connexio
+		if (totcorrecte) {
+			MessageBox::Show("Grup Creat Correctament.");*/
 }
