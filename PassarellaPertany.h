@@ -8,14 +8,16 @@ ref class PassarellaPertany
 private:
 	String^ _estudiant;
 	String^ _grup;
+	String^ _estat;
 	
 public:
     //creadora
-	PassarellaPertany(String^ estudiant, String^ grup); 
-	
+	PassarellaPertany(String^ estudiant, String^ grup, String^ estat);
+
 	// getters
 	String^ obteEstudiant();
 	String^ obteGrup();
+	String^ obteEstat();
 	
 	// setters
 	void posaEstudiant(String^ estudiant);

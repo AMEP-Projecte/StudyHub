@@ -50,7 +50,6 @@ void PassarellaGrup::posaCreador(String^ c) {
 }
 
 void PassarellaGrup::insereix() {
-	bool totcorrecte = true;
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = String::Format("INSERT INTO grup VALUES ('{0}', '{1}', '{2}');", _nomGrup, _tematica, _creador);
@@ -64,13 +63,9 @@ void PassarellaGrup::insereix() {
 	}
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
-		totcorrecte = false;
 	}
 	finally {
 		// si tot va be es tanca la connexio
-		if (totcorrecte) {
-			MessageBox::Show("Grup Creat Correctament.");
-		}
 		conn->Close();
 	}
 }
