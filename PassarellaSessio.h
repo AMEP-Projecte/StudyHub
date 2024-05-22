@@ -32,7 +32,6 @@ public:
 		
 	void insereix();
 	void modifica();
-	void modificaLlocs();
-  void esborra();
+	void esborra();
 };
 

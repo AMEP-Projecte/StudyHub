@@ -57,7 +57,7 @@ void PassarellaParticipa::insereix() {
 		cmd->ExecuteNonQuery();
 	}
 	catch (MySqlException^ ex) {
-		MessageBox::Show("Ja estàs a la sessió");
+		MessageBox::Show(ex->Message);
 	
 	}
 	finally {

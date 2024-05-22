@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CercadoraSessio.h"
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
@@ -59,4 +60,80 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessioAdreca(String^ adreca) {
 }
 
 
+PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^ adreca) {
+    PassarellaSessio^ pp = gcnew PassarellaSessio();
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
+    String^ sql = "SELECT * FROM sessio WHERE Data = @data AND Hora = @hora AND Adreca = @adreca";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@data", data);
+    cmd->Parameters->AddWithValue("@adreca", adreca);
+    cmd->Parameters->AddWithValue("@grup", grup);
+
+    MySqlDataReader^ dataReader;
+
+    try {
+        conn->Open();
+        dataReader = cmd->ExecuteReader();
+        if (dataReader->Read()) {
+     
+            String^ horaIni = dataReader->GetString(3);
+            String^ horaFi = dataReader->GetString(4);
+            String^ dataf = dataReader->GetDateTime("data").ToString("yyyy-MM-dd");
+            int llocs = dataReader->GetInt32("llocs_lliures");
+
+            pp = gcnew PassarellaSessio (grup, dataf, horaIni, horaFi,adreca,llocs);
+        }
+    }
+    catch (Exception^ ex) {
+        Console::WriteLine("An error occurred: " + ex->Message);
+        // Log the error message or handle accordingly
+    }
+    finally {
+        if (dataReader != nullptr) {
+            dataReader->Close(); // Ensure dataReader is closed
+        }
+        conn->Close();
+    }
+    return pp;
+}
+
+PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ grup, String^ data, String^ hora) {
+    PassarellaSessio^ pp = gcnew PassarellaSessio();
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "SELECT * FROM sessio WHERE grup= @grup AND data = @data AND hora = @hora ";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@grup", grup);
+    cmd->Parameters->AddWithValue("@data", data);
+    cmd->Parameters->AddWithValue("@hora", hora);
+    
+
+    MySqlDataReader^ dataReader;
+
+    try {
+        conn->Open();
+        dataReader = cmd->ExecuteReader();
+        if (dataReader->Read()) {
+
+            String^ adreca= dataReader->GetString(4);
+            String^ horaFi = dataReader->GetString(3);
+            int llocs = dataReader->GetInt32("llocs_lliures");
+
+            pp = gcnew PassarellaSessio(grup, data, hora, horaFi, adreca, llocs);
+        }
+    }
+    catch (Exception^ ex) {
+        Console::WriteLine("An error occurred: " + ex->Message);
+        // Log the error message or handle accordingly
+    }
+    finally {
+        if (dataReader != nullptr) {
+            dataReader->Close(); // Ensure dataReader is closed
+        }
+        conn->Close();
+    }
+    return pp;
+}

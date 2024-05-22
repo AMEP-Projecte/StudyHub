@@ -12,6 +12,9 @@ namespace StudyHub {
 	/// <summary>
 	/// Summary for MenuSessionsUI
 	/// </summary>
+
+	
+
 	public ref class MenuSessionsUI : public System::Windows::Forms::Form
 	{
 	public:
@@ -22,6 +25,10 @@ namespace StudyHub {
 			//TODO: Add the constructor code here
 			//
 		}
+
+		String^ _grup;
+		String^ _data;
+		String^ _adreca;
 
 	protected:
 		/// <summary>
@@ -42,6 +49,10 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ esborraSessio;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Label^ label1;
+	private: String^ grupSessio = "";
+	private: String^ dataSessio = "";
+	private: String^ adrecaSessio = "";
+
 
 
 
@@ -52,7 +63,7 @@ namespace StudyHub {
 		/// Required designer variable.
 		/// </summary>
 		System::ComponentModel::Container^ components;
-
+		
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
@@ -95,9 +106,9 @@ namespace StudyHub {
 			this->consultaSessions->Name = L"consultaSessions";
 			this->consultaSessions->Size = System::Drawing::Size(207, 71);
 			this->consultaSessions->TabIndex = 11;
-			this->consultaSessions->Text = L"Consultar Sessions i Participa";
+			this->consultaSessions->Text = L"Participa";
 			this->consultaSessions->UseVisualStyleBackColor = true;
-			this->consultaSessions->Click += gcnew System::EventHandler(this, &MenuSessionsUI::consultaSessions_Click);
+			this->consultaSessions->Click += gcnew System::EventHandler(this, &MenuSessionsUI::participaSessions_Click);
 			// 
 			// editaSessions
 			// 
@@ -194,7 +205,7 @@ namespace StudyHub {
 
 		}
 #pragma endregion
-	private: System::Void consultaSessions_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void participaSessions_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void editaSessions_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void esborraSessio_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void programaSessio_Click(System::Object^ sender, System::EventArgs^ e);

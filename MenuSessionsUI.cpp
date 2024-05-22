@@ -6,13 +6,19 @@
 #include "EditarSessio.h"
 #include "EsborraSessioUI.h"
 #include "ProgramarSessioEstudiUI.h"
+#include "ParticipacioSessio.h"
 
 using namespace StudyHub;
 
-System::Void MenuSessionsUI::consultaSessions_Click(System::Object^ sender, System::EventArgs^ e) {
-    ConsultarSessionsUI^ consulta = gcnew ConsultarSessionsUI();
+System::Void MenuSessionsUI::participaSessions_Click(System::Object^ sender, System::EventArgs^ e) {
+    ParticipaSessio^ participa = gcnew ParticipaSessio();
+    participa->grup = grupSessio;
+    participa->data = dataSessio;
+    PassarellaSessio^ sessio = CercadoraSessio::cercaHora(dataSessio, grupSessio, adrecaSessio);
+    participa->horaInici = sessio->obteHoraInici();
+    
     MenuPrincipal^ menu = MenuPrincipal::getInstance();
-    menu->AbrirFormularioEnPanel(consulta);
+    menu->AbrirFormularioEnPanel(participa);
 }
 
 System::Void MenuSessionsUI::editaSessions_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -42,7 +48,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
     Sistema^ sist = Sistema::getInstance();
     String^ username = sist->obteEstudiant()->obteUsername();
-    String^ sql = "SELECT grup, data, adreca FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND grup NOT IN (SELECT grup FROM participa WHERE estudiant = @username);";
+    String^ sql = "SELECT grup, data, adreca FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data) NOT IN (SELECT grup, data FROM participa WHERE estudiant = @username);";
     cmd->Connection = cn;
     cmd->CommandText = sql;
     cmd->Parameters->AddWithValue("@username", username);
@@ -76,9 +82,9 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
         layoutDades1->AutoSize = true;
         layoutDades1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
         layoutDades1->ColumnCount = 3;
-        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 28.33F)));
-        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 28.33F)));
-        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 43.33F)));
+        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 27.33F)));
+        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 25.33F)));
+        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 47.33F)));
         layoutDades1->ForeColor = System::Drawing::Color::White;
         layoutDades1->Dock = System::Windows::Forms::DockStyle::Top;
         layoutDades1->RowCount = 1;
@@ -158,8 +164,11 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
             DataRow^ fila = dt->Rows[i];
 
             String^ nomGrup = fila["grup"]->ToString();
-            String^ dataSessio = fila["data"]->ToString();
-            dataSessio = dataSessio->Substring(0, dataSessio->Length - 7);
+            DateTime^ fecha = Convert::ToDateTime(fila["data"]);
+
+            // Formatear la fecha a "yyyy-MM-dd"
+            String^ dataSessio = fecha->ToString("yyyy-MM-dd");
+          
             String^ direccioSessio = fila["adreca"]->ToString();
 
             Label^ labelGrup = gcnew Label();
@@ -241,17 +250,32 @@ System::Void MenuSessionsUI::fila_Click(System::Object^ sender, System::EventArg
 }
 
 System::Void MenuSessionsUI::selecciona(TableLayoutPanel^ table) {
-    String^ infoLabel = "";
+   
+    int labelCount = 0;
+    table->BackColor = System::Drawing::Color::White;
+    
+
     for each (Control ^ control in table->Controls)
     {
         Label^ label = dynamic_cast<Label^>(control);
         if (label != nullptr)
         {
-            infoLabel += " " + label->Text;
-  
+            if (labelCount == 0)
+                grupSessio = label->Text;
+            else if (labelCount == 1)
+                dataSessio = label->Text;
+            else if (labelCount == 2)
+                adrecaSessio = label->Text;
+
+            labelCount++;
+
+            if (labelCount == 3)
+                break; // Stop iterating after finding three labels
         }
     }
 
-    MessageBox::Show(infoLabel);
+
+    // Aquí puedes hacer lo que necesites con los tres strings guardados.
 }
+
 
