@@ -23,6 +23,7 @@ namespace StudyHub {
 			//
 		}
 
+
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.

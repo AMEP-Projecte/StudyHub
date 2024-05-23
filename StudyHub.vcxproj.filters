@@ -25,15 +25,6 @@
     <Filter Include="GestioGrups\PasarellaCercadora">
       <UniqueIdentifier>{2bd7e96e-afcf-4fbc-b511-53c5014bdedb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GestioUsuaris">
-      <UniqueIdentifier>{c7ec3133-ff2c-4ee4-9d90-c15a80497729}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GestioUsuaris\PassarellesCercadores">
-      <UniqueIdentifier>{5822e92b-359a-4ab3-8a6d-c0f45129bf48}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GestioUsuaris\Tx">
-      <UniqueIdentifier>{284e4326-5ed5-4268-93b3-d05c752b7e66}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Menus">
       <UniqueIdentifier>{9387af62-3271-41b9-9106-009077455988}</UniqueIdentifier>
     </Filter>
@@ -100,7 +91,16 @@
     <Filter Include="GestioProveidor\Tx">
       <UniqueIdentifier>{d9ad9ac1-141c-416b-92cc-97f4448258be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GestioUsuaris\Presentacio">
+    <Filter Include="GestioSessio\Tx\GestioUsuaris">
+      <UniqueIdentifier>{c7ec3133-ff2c-4ee4-9d90-c15a80497729}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioSessio\Tx\GestioUsuaris\PassarellesCercadores">
+      <UniqueIdentifier>{5822e92b-359a-4ab3-8a6d-c0f45129bf48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioSessio\Tx\GestioUsuaris\Tx">
+      <UniqueIdentifier>{284e4326-5ed5-4268-93b3-d05c752b7e66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioSessio\Tx\GestioUsuaris\Presentacio">
       <UniqueIdentifier>{f078b4a6-c306-45ef-8fd8-9eeab1ef3a4c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -168,28 +168,28 @@
       <Filter>GestioGrups\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxIniciarSessio.h">
-      <Filter>GestioUsuaris\Tx</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h">
-      <Filter>GestioUsuaris\Tx</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxEsborraUsuari.h">
-      <Filter>GestioUsuaris\Tx</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
     </ClInclude>
     <ClInclude Include="CrearNouGrupEstudi.h">
       <Filter>GestioGrups\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="CercadoraUsuari.h">
-      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
     </ClInclude>
     <ClInclude Include="PassarellaUsuari.h">
-      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
     </ClInclude>
     <ClInclude Include="IniciSessio.h">
-      <Filter>GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="TancarSessio.h">
-      <Filter>GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="MenuEstudiant.h">
       <Filter>Menus</Filter>
@@ -440,19 +440,19 @@
       <Filter>GestioGrups\Tx</Filter>
     </ClCompile>
     <ClCompile Include="TxIniciarSessio.cpp">
-      <Filter>GestioUsuaris\Tx</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
     </ClCompile>
     <ClCompile Include="TxTancarSessio.cpp">
-      <Filter>GestioUsuaris\Tx</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
     </ClCompile>
     <ClCompile Include="TxEsborraUsuari.cpp">
-      <Filter>GestioUsuaris\Tx</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
     </ClCompile>
     <ClCompile Include="CercadoraUsuari.cpp">
-      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
     </ClCompile>
     <ClCompile Include="PassarellaUsuari.cpp">
-      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
     </ClCompile>
     <ClCompile Include="PassarellaEstudiant.cpp">
       <Filter>GestioEstudiants\PassarellaCercadora</Filter>
@@ -470,10 +470,10 @@
       <Filter>Menus</Filter>
     </ClCompile>
     <ClCompile Include="IniciSessio.cpp">
-      <Filter>GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
     </ClCompile>
     <ClCompile Include="TancarSessio.cpp">
-      <Filter>GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
     </ClCompile>
     <ClCompile Include="Sistema.cpp">
       <Filter>Sistema</Filter>

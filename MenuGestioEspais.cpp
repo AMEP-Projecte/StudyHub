@@ -259,7 +259,10 @@ System::Void MenuGestioEspais::fila_Click(System::Object^ sender, System::EventA
 System::Void MenuGestioEspais::selecciona(TableLayoutPanel^ table) {
 
     int labelCount = 0;
-    table->BackColor = System::Drawing::Color::White;
+
+    
+
+    table->BackColor = System::Drawing::Color::Black;
 
 
     for each (Control ^ control in table->Controls)
@@ -284,3 +287,4 @@ System::Void MenuGestioEspais::selecciona(TableLayoutPanel^ table) {
 
     // Aquí puedes hacer lo que necesites con los tres strings guardados.
 }
+

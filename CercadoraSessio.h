@@ -7,7 +7,8 @@ ref class CercadoraSessio
 public:
 	List<PassarellaSessio^>^ cercaSessioGrup(String^ nom);
 
-	List<PassarellaSessio^>^ cercaSessioAdreca(String^ adreca);
+
+	static List<PassarellaSessio^>^ cercaSessioAdreca(String^ adreca);
 
 	static PassarellaSessio^ cercaHora(String^ data, String^ grup, String^ adreca);
 	static PassarellaSessio^ cercaAdreca(String^ grup, String^ data, String^ hora);

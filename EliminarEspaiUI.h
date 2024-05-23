@@ -3,6 +3,7 @@
 #include "Sistema.h"
 #include "MenuPrincipal.h"
 #include "MenuGestioEspais.h"
+#include "CercadoraSessio.h"
 namespace StudyHub {
 
 	using namespace System;
@@ -319,13 +320,20 @@ namespace StudyHub {
 		Sistema^ sist = Sistema::getInstance();
 		try {
 			if (_adreca_ != "") {
-				TxEliminarEspai EliminarEspai(_adreca_, sist->obteProveidor()->obteNomUsuari());
-				EliminarEspai.executar();
-				omplir();
+				List<PassarellaSessio^>^ busca = CercadoraSessio::cercaSessioAdreca(_adreca_);
+				if (busca->Count != 0) {
+					MessageBox::Show("Hi ha sessions programades per aquest espai, no pots eliminar en aquest moment.");
+				}
+				else{
+					TxEliminarEspai EliminarEspai(_adreca_, sist->obteProveidor()->obteNomUsuari());
+					EliminarEspai.executar();
+					omplir();
 
-				MenuGestioEspais^ espai = gcnew MenuGestioEspais();
-				MenuPrincipal^ menu = MenuPrincipal::getInstance();
-				menu->AbrirFormularioEnPanel(espai);
+					MenuGestioEspais^ espai = gcnew MenuGestioEspais();
+					MenuPrincipal^ menu = MenuPrincipal::getInstance();
+					menu->AbrirFormularioEnPanel(espai);
+				}
+				
 			}
 			else {
 				MessageBox::Show("Selecciona el nom de l'espai a eliminar.");
