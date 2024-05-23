@@ -38,9 +38,18 @@ System::Void MenuGestioEspais::botoneditar_Click(System::Object^ sender, System:
 
 
 System::Void MenuGestioEspais::botoneliminar_Click(System::Object^ sender, System::EventArgs^ e) {
-	EliminarEspai^ Crear = gcnew EliminarEspai();
-	MenuPrincipal^ Menu = Menu->getInstance();
-	Menu->AbrirFormularioEnPanel(Crear);
+    EliminarEspai^ eliminar = gcnew EliminarEspai();
+    eliminar->_espai_ = espai;
+    eliminar->_adreca_ = adreca;
+    eliminar->_capacitat_ = capacitat;
+
+    if (adreca == "") {
+        MessageBox::Show("Selecciona un espai.");
+    }
+    else {
+        MenuPrincipal^ Menu = Menu->getInstance();
+        Menu->AbrirFormularioEnPanel(eliminar);
+    }
 }
 
 System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, System::EventArgs^ e) {
