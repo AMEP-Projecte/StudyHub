@@ -49,6 +49,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
     Sistema^ sist = Sistema::getInstance();
     String^ username = sist->obteEstudiant()->obteUsername();
     String^ sql = "SELECT grup, data, adreca FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data) NOT IN (SELECT grup, data FROM participa WHERE estudiant = @username);";
+   
     cmd->Connection = cn;
     cmd->CommandText = sql;
     cmd->Parameters->AddWithValue("@username", username);
@@ -252,7 +253,7 @@ System::Void MenuSessionsUI::fila_Click(System::Object^ sender, System::EventArg
 System::Void MenuSessionsUI::selecciona(TableLayoutPanel^ table) {
    
     int labelCount = 0;
-    table->BackColor = System::Drawing::Color::White;
+    table->BackColor = System::Drawing::Color::Black;
     
 
     for each (Control ^ control in table->Controls)

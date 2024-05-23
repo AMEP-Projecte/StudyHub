@@ -120,7 +120,7 @@ namespace StudyHub {
 			this->editaSessions->Name = L"editaSessions";
 			this->editaSessions->Size = System::Drawing::Size(212, 71);
 			this->editaSessions->TabIndex = 12;
-			this->editaSessions->Text = L"Editar Sessions";
+			this->editaSessions->Text = L"Les Meves Sessions";
 			this->editaSessions->UseVisualStyleBackColor = true;
 			this->editaSessions->Click += gcnew System::EventHandler(this, &MenuSessionsUI::editaSessions_Click);
 			// 
