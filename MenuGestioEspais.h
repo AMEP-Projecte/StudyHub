@@ -37,13 +37,16 @@ namespace StudyHub {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ botoncrear;
 	private: System::Windows::Forms::Button^ botoneditar;
-	private: System::Windows::Forms::Button^ botonconsultar;
+
 
 
 	private: System::Windows::Forms::Button^ botoneliminar;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Label^ label2;
 
+	private: String^ espai = "";
+	private: String^ adreca= "";
+	private: String^ capacitat = "";
 
 	protected:
 
@@ -64,7 +67,6 @@ namespace StudyHub {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->botoncrear = (gcnew System::Windows::Forms::Button());
 			this->botoneditar = (gcnew System::Windows::Forms::Button());
-			this->botonconsultar = (gcnew System::Windows::Forms::Button());
 			this->botoneliminar = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -92,7 +94,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->botoncrear->ForeColor = System::Drawing::Color::DarkCyan;
 			this->botoncrear->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->botoncrear->Location = System::Drawing::Point(61, 204);
+			this->botoncrear->Location = System::Drawing::Point(61, 144);
 			this->botoncrear->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->botoncrear->Name = L"botoncrear";
 			this->botoncrear->Size = System::Drawing::Size(175, 60);
@@ -109,7 +111,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->botoneditar->ForeColor = System::Drawing::Color::DarkCyan;
 			this->botoneditar->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->botoneditar->Location = System::Drawing::Point(61, 289);
+			this->botoneditar->Location = System::Drawing::Point(61, 254);
 			this->botoneditar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->botoneditar->Name = L"botoneditar";
 			this->botoneditar->Size = System::Drawing::Size(175, 60);
@@ -117,23 +119,6 @@ namespace StudyHub {
 			this->botoneditar->Text = L"Editar Espai";
 			this->botoneditar->UseVisualStyleBackColor = true;
 			this->botoneditar->Click += gcnew System::EventHandler(this, &MenuGestioEspais::botoneditar_Click);
-			// 
-			// botonconsultar
-			// 
-			this->botonconsultar->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->botonconsultar->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->botonconsultar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->botonconsultar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->botonconsultar->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->botonconsultar->Location = System::Drawing::Point(61, 115);
-			this->botonconsultar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->botonconsultar->Name = L"botonconsultar";
-			this->botonconsultar->Size = System::Drawing::Size(175, 60);
-			this->botonconsultar->TabIndex = 9;
-			this->botonconsultar->Text = L"Consultar Espai";
-			this->botonconsultar->UseVisualStyleBackColor = true;
-			this->botonconsultar->Click += gcnew System::EventHandler(this, &MenuGestioEspais::botonconsultar_Click);
 			// 
 			// botoneliminar
 			// 
@@ -143,7 +128,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->botoneliminar->ForeColor = System::Drawing::Color::DarkCyan;
 			this->botoneliminar->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->botoneliminar->Location = System::Drawing::Point(61, 383);
+			this->botoneliminar->Location = System::Drawing::Point(61, 364);
 			this->botoneliminar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->botoneliminar->Name = L"botoneliminar";
 			this->botoneliminar->Size = System::Drawing::Size(175, 60);
@@ -189,7 +174,6 @@ namespace StudyHub {
 			this->ClientSize = System::Drawing::Size(910, 512);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->botoneliminar);
-			this->Controls->Add(this->botonconsultar);
 			this->Controls->Add(this->botoneditar);
 			this->Controls->Add(this->botoncrear);
 			this->Controls->Add(this->label1);
@@ -210,5 +194,9 @@ namespace StudyHub {
 	private: System::Void botoneditar_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void botoneliminar_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MenuGestioEspais_Load(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e);
+	private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void selecciona(TableLayoutPanel^ table);
 };
 }
