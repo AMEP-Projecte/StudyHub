@@ -92,7 +92,6 @@ System::Void MenuPrincipal::HacerVisible() {
 }
 
 System::Void MenuPrincipal::HacerVisibleProvedor() {
-	this->ButtonMenu->Visible = false;
 	this->ButtonMaximized->Visible = false;
 
 	this->ButtonMenuEstudiant->Visible = true;
@@ -120,7 +119,6 @@ System::Void MenuPrincipal::HacerVisibleAdmin() {
 }
 
 System::Void MenuPrincipal::HacerInivisible_Load() {
-	this->ButtonMenu->Visible = true;
 	this->ButtonMaximized->Visible = false;
 
 	this->ButtonMenuEstudiant->Visible = false;
@@ -159,6 +157,7 @@ System::Void MenuPrincipal::sortir_Click(System::Object^ sender, System::EventAr
 }
 
 System::Void MenuPrincipal::MenuPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->ButtonMenu->Visible = false;
 	FormPrincipal_Load();
 	HacerInivisible_Load();
 }
@@ -228,3 +227,6 @@ System::Void MenuPrincipal::buttonGestioEstudiants_Click(System::Object^ sender,
 	// gestio estudiants de admin
 }
 
+System::Void MenuPrincipal::canviaVisibilitat_ButtonMenu(bool visibilitat) {
+	this->ButtonMenu->Visible = visibilitat;
+}

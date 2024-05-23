@@ -25,25 +25,25 @@ System::Void StudyHub::IniciSessio::button1_Click(System::Object^ sender, System
 		else {
 			Sistema^ sist = sist->getInstance();
 			String^ tipus = sist->obteTipusUsuari();
+
+			StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
+			Menu->canviaVisibilitat_ButtonMenu(true);
+		
 			if (tipus=="estudiant") {
 				StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();
-				StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
 				Menu->AbrirSubFormularioEnPanel(menuEstudiant);
 				Menu->HacerVisible();
 			}
 			else if (tipus=="administrador") {
 				StudyHub::MenuAdministrador^ menuAdmin = gcnew StudyHub::MenuAdministrador();
-				StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
 				Menu->HacerVisibleAdmin();
 				Menu->AbrirFormularioEnPanel(menuAdmin);
 			}
 			else if (tipus == "proveidor") {
 				StudyHub::MenuProvedor^ menuProv = gcnew StudyHub::MenuProvedor();
-				StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
 				Menu->HacerVisibleProvedor();
 				Menu->AbrirSubFormularioEnPanel(menuProv);
 			}
-
 		}
 	}
 }

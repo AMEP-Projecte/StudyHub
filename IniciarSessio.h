@@ -144,7 +144,6 @@ private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^
 
 private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void IniciarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void IniciarSessio_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

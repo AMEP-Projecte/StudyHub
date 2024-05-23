@@ -116,7 +116,6 @@ namespace StudyHub {
 			this->studyHyb->Size = System::Drawing::Size(269, 64);
 			this->studyHyb->TabIndex = 0;
 			this->studyHyb->Text = L"StudyHub";
-			this->studyHyb->Click += gcnew System::EventHandler(this, &MenuPrincipal::label1_Click);
 			// 
 			// panelMenu
 			// 
@@ -246,7 +245,7 @@ namespace StudyHub {
 			this->PanelLogo->Name = L"PanelLogo";
 			this->PanelLogo->Size = System::Drawing::Size(330, 108);
 			this->PanelLogo->TabIndex = 6;
-			this->PanelLogo->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelLogo_Paint);
+			// this->PanelLogo->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelLogo_Paint);
 			// 
 			// panelTitle
 			// 
@@ -337,7 +336,6 @@ namespace StudyHub {
 			this->PanelContainer->Name = L"PanelContainer";
 			this->PanelContainer->Size = System::Drawing::Size(926, 500);
 			this->PanelContainer->TabIndex = 7;
-			this->PanelContainer->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelContainer_Paint);
 			// 
 			// buttonGestioProveidors
 			// 
@@ -402,10 +400,6 @@ namespace StudyHub {
 
 		}
 #pragma endregion
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	}
 
 
 private: 
@@ -448,8 +442,6 @@ private: System::Void MenuPrincipal_Load(System::Object^ sender, System::EventAr
 
 private: System::Void buttonMenu(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void PanelContainer_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
- }
 private: System::Void ButtonCloseForm_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void ButtonMaximized_Click(System::Object^ sender, System::EventArgs^ e);
@@ -462,8 +454,6 @@ private: System::Void ButtonMenuGrups_Click(System::Object^ sender, System::Even
 
 private: System::Void panelTitle_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
 
-private: System::Void PanelLogo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
 private: System::Void buttonMenuSessions_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void buttonGestioEspais_Click(System::Object^ sender, System::EventArgs^ e);
@@ -471,5 +461,7 @@ private: System::Void buttonGestioEspais_Click(System::Object^ sender, System::E
 private: System::Void buttonGestioProveidors_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void buttonGestioEstudiants_Click(System::Object^ sender, System::EventArgs^ e);
+
+public: System::Void canviaVisibilitat_ButtonMenu(bool visibilitat);
 };
 }
