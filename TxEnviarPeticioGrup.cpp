@@ -8,8 +8,12 @@ TxEnviarPeticioGrup::TxEnviarPeticioGrup(String^ ue, String^ ng) {
 
 void TxEnviarPeticioGrup::executar() {
 	// CercadoraPertany^ cercp = gcnew CercadoraPertany(); BORRAR
+	// Comprovar que el grup existeixi
+	PassarellaGrup^ pg = CercadoraGrup::cercaPerNomGrup(_nomGrup);
+	if (pg->obteNom() == "") {
+		throw gcnew Exception("El grup al qual vols unir-te no existeix.");
+	}
 	PassarellaPertany^ p = CercadoraPertany::cercaEstudiantEnGrup (_usernameEstudiant, _nomGrup);
-	
 	if (p != nullptr) {
 		// L'estudiant ja és membre del grup o ja ha demanat unir-se a ell anteriorment
 		if (p->obteEstat() == "Pendent") {

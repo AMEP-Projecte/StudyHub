@@ -2,6 +2,8 @@
 
 #include "PassarellaPertany.h"
 #include "CercadoraPertany.h"
+#include "PassarellaGrup.h"
+#include "CercadoraGrup.h"
 #include "Sistema.h"
 
 using namespace System;
