@@ -162,6 +162,9 @@
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionarPeticionsUI.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaValoracio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
@@ -286,7 +289,9 @@
     <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
+    <ClInclude Include="TxGestionarPeticionsGrup.h" />
     <ClInclude Include="TxIniciarSessio.h" />
+    <ClInclude Include="TxObtenirPeticionsPendents.h" />
     <ClInclude Include="TxParticipacioSessio.h" />
     <ClInclude Include="TxProgramarSessioEstudi.h">
       <DeploymentContent>true</DeploymentContent>
@@ -312,6 +317,7 @@
     <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="GestionarPeticionsUI.cpp" />
     <ClCompile Include="PassarellaValoracio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
     <ClCompile Include="ConsultarSessionsUI.cpp" />
@@ -384,7 +390,9 @@
     <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
+    <ClCompile Include="TxGestionarPeticionsGrup.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
+    <ClCompile Include="TxObtenirPeticionsPendents.cpp" />
     <ClCompile Include="TxParticipacioSessio.cpp" />
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <DeploymentContent>true</DeploymentContent>
@@ -430,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarEspai.resx">
       <DependentUpon>EliminarEspai.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionarPeticionsUI.resx">
+      <DependentUpon>GestionarPeticionsUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgramarSessioEstudiUI.resx">
       <DependentUpon>ProgramarSessioEstudiUI.h</DependentUpon>

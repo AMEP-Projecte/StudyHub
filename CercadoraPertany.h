@@ -2,14 +2,17 @@
 #include "PassarellaPertany.h"
 #include <vector>
 using namespace System;
+using namespace System::Data;
 using namespace System::Collections::Generic;
 
 
- class CercadoraPertany
+ ref class CercadoraPertany
 {
 
 public:
 	List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup);
+	
+	DataTable^ obtePeticionsPendents(String^ usernameCreador);
 
 };
 

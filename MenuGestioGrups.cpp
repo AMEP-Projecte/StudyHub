@@ -6,6 +6,7 @@
 #include "ConsultarGrup.h"
 #include "EditarGrup.h"
 #include "EliminarGrupEstudi.h"
+#include "GestionarPeticionsUI.h"
 
 #include "TxCercaValoracio.h"
 #include "StarRatingControl.h"
@@ -39,6 +40,12 @@ System::Void MenuGestioGrups::elimina_Click(System::Object^ sender, System::Even
 
 System::Void MenuGestioGrups::tornar_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
+}
+
+System::Void MenuGestioGrups::buttonGestionaPeticions_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestionarPeticionsUI^ peticions = gcnew GestionarPeticionsUI();
+	MenuPrincipal^ Menu = Menu->getInstance();
+	Menu->AbrirSubFormularioEnPanel(peticions);
 }
 
 System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, System::EventArgs^ e) {
