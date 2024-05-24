@@ -81,7 +81,6 @@ namespace StudyHub {
 			this->editStudent->Size = System::Drawing::Size(491, 64);
 			this->editStudent->TabIndex = 4;
 			this->editStudent->Text = L"Editar contrasenya:";
-			this->editStudent->Click += gcnew System::EventHandler(this, &EditarProveidorUI::editStudent_Click);
 			// 
 			// newPassword
 			// 
@@ -177,7 +176,5 @@ namespace StudyHub {
 #pragma endregion
 	private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void editStudent_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }

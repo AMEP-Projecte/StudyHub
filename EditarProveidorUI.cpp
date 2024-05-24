@@ -1,4 +1,6 @@
 #include "pch.h"
+#include "MenuPrincipal.h"
+#include "MenuProvedor.h"
 #include "EditarProveidorUI.h"
 #include "TxEditarProveidor.h"
 
@@ -22,11 +24,20 @@ System::Void EditarProveidorUI::edit_Click(System::Object^ sender, System::Event
 		}
 		else {
 			MessageBox::Show("Contrasenya modificada correctament.");
-			this->Close();
+			
+			MenuPrincipal^ menu = MenuPrincipal::getInstance();
+			MenuProvedor^ provedor = gcnew MenuProvedor();
+
+			menu->canviaVisibilitat_ButtonMenu(false);
+			menu->AbrirFormularioEnPanel(provedor);
 		}
 	}
 }
 
 System::Void EditarProveidorUI::cancel_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	MenuProvedor^ provedor = gcnew MenuProvedor();
+
+	menu->canviaVisibilitat_ButtonMenu(false);
+	menu->AbrirFormularioEnPanel(provedor);
 }

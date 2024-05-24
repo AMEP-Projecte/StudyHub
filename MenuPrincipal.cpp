@@ -92,9 +92,9 @@ System::Void MenuPrincipal::HacerVisible() {
 }
 
 System::Void MenuPrincipal::HacerVisibleProvedor() {
-	this->ButtonMaximized->Visible = false;
+	this->ButtonMaximized->Visible = true;
 
-	this->ButtonMenuEstudiant->Visible = true;
+	this->ButtonMenuEstudiant->Visible = false;
 	this->ButtonMenuGrups->Visible = false;
 	this->buttonMenuSessions->Visible = false;
 
@@ -195,18 +195,9 @@ System::Void MenuPrincipal::panelTitle_Paint(System::Object^ sender, System::Win
 }
 
 System::Void MenuPrincipal::ButtonMenuEstudiant_Click(System::Object^ sender, System::EventArgs^ e) {
-	// button to Gestio Perfil Usuari
-
 	Sistema^ sistema = Sistema::getInstance();
-	if (sistema->obteTipusUsuari() == "estudiant") {
-		MenuGestioEstudiant^ gestionaPerfilEst = gcnew MenuGestioEstudiant();
-		AbrirFormularioEnPanel(gestionaPerfilEst);
-
-	}
-	else {
-		MenuGestioProveidor^ gestioPerfilPro = gcnew MenuGestioProveidor();
-		AbrirFormularioEnPanel(gestioPerfilPro);
-	}
+	MenuGestioEstudiant^ gestionaPerfilEst = gcnew MenuGestioEstudiant();
+	AbrirFormularioEnPanel(gestionaPerfilEst);
 }
 
 System::Void MenuPrincipal::buttonGestioEspais_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -27,7 +27,7 @@ System::Void StudyHub::IniciSessio::button1_Click(System::Object^ sender, System
 			String^ tipus = sist->obteTipusUsuari();
 
 			StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
-			Menu->canviaVisibilitat_ButtonMenu(true);
+			Menu->canviaVisibilitat_ButtonMenu(false);
 		
 			if (tipus=="estudiant") {
 				StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();

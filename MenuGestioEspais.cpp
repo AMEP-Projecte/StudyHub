@@ -100,8 +100,8 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
         layoutDades1->ForeColor = System::Drawing::Color::White;
         layoutDades1->Dock = System::Windows::Forms::DockStyle::Top;
         layoutDades1->RowCount = 1;
-        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 57)));
-        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
+        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 35)));
+        //layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
         layoutDades1->TabIndex = 8;
 
 
@@ -109,8 +109,9 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
         // Añadir la fila de encabezado al principio.
         Label^ columnaGrup = gcnew Label();
         columnaGrup->AutoSize = true;
-        columnaGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-            static_cast<System::Byte>(0)));
+        columnaGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12,
+            System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline,
+            System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
         columnaGrup->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaGrup->Text = L"Nom";
         columnaGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -118,8 +119,9 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
 
         Label^ columnaData = gcnew Label();
         columnaData->AutoSize = true;
-        columnaData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-            static_cast<System::Byte>(0)));
+        columnaData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12,
+            System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline,
+            System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
         columnaData->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaData->Text = L"Adreca";
         columnaData->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -127,8 +129,9 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
 
         Label^ columnaAdreca = gcnew Label();
         columnaAdreca->AutoSize = true;
-        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-            static_cast<System::Byte>(0)));
+        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, 
+            System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline,
+            System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
         columnaAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaAdreca->Text = L"Capacitat";
         columnaAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -260,10 +263,22 @@ System::Void MenuGestioEspais::selecciona(TableLayoutPanel^ table) {
 
     int labelCount = 0;
 
-    
+    // Posar la resta de files com "no seleccionades"
+    Control^ parent = table->Parent;
+    if (parent != nullptr)
+    {
+        for each (Control ^ control in parent->Controls)
+        {
+            TableLayoutPanel^ siblingTable = dynamic_cast<TableLayoutPanel^>(control);
+            if (siblingTable != nullptr && siblingTable != table)
+            {
+                siblingTable->BackColor = System::Drawing::Color::Transparent;
+            }
+        }
+    }
 
+    // Seleccionar fila
     table->BackColor = System::Drawing::Color::Black;
-
 
     for each (Control ^ control in table->Controls)
     {
@@ -283,8 +298,5 @@ System::Void MenuGestioEspais::selecciona(TableLayoutPanel^ table) {
                 break; // Stop iterating after finding three labels
         }
     }
-
-
-    // Aquí puedes hacer lo que necesites con los tres strings guardados.
 }
 

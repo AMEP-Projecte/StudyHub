@@ -431,6 +431,9 @@
     <EmbeddedResource Include="EliminarEspai.resx">
       <DependentUpon>EliminarEspai.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarEspaiUI.resx">
+      <DependentUpon>EliminarEspaiUI.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProgramarSessioEstudiUI.resx">
       <DependentUpon>ProgramarSessioEstudiUI.h</DependentUpon>
     </EmbeddedResource>
