@@ -92,42 +92,14 @@ System::Void MenuGestioEstudiantsAdmin::MenuGestioEstudiantsAdmin_Load(System::O
 
 void MenuGestioEstudiantsAdmin::OnButtonUsernameClick(System::Object^ sender, System::EventArgs^ e) {
     Button^ clickedButton = safe_cast<Button^>(sender);
-    //selectedUsername = safe_cast<String^>(clickedButton->Tag);
     selectedUsername = clickedButton->Text;
-
-
-    // Aquí podrías tener un botón de eliminación en tu interfaz de usuario
     eliminaEstudiantButton->Tag = selectedUsername; // Configura el Tag del botón de eliminación con el username
 
-    // Mostrar un mensaje opcional para confirmar la selección
-    MessageBox::Show("Has seleccionado el estudiante: " + selectedUsername);
+    MessageBox::Show("Has seleccionat al estudiant: " + selectedUsername);
 }
 
 
 System::Void MenuGestioEstudiantsAdmin::eliminaEstudiant_Click(System::Object^ sender, System::EventArgs^ e) {
-    //Button^ deleteButton = safe_cast<Button^>(sender);
-   // String^ selectedUsername = safe_cast<String^>(eliminaEstudiantButton->Tag);
-    /*
-    if (selectedUsername != nullptr) {
-        TxEsborraEstudiantAdmin txEE(selectedUsername);
-        txEE.executa();
-        MessageBox::Show("Estudiant esborrat correctament.");
-    }
-    else {
-        MessageBox::Show("Has de seleccionar un estudiant.");
-    } */
-
-    /*
-    try {
-        if (selectedUsername != "") {
-            TxEsborraEstudiantAdmin EliminaE(selectedUsername);
-            EliminaE.executa();
-        }
-    }
-    catch (Exception^ ex) {
-        MessageBox::Show("Has de seleccionar un estudiant.");
-    }
-    */
 
     try {
         //if (!String::IsNullOrEmpty(selectedUsername)) {
@@ -141,7 +113,7 @@ System::Void MenuGestioEstudiantsAdmin::eliminaEstudiant_Click(System::Object^ s
         }
     }
     catch (Exception^ ex) {
-        // MessageBox::Show("Has de seleccionar un estudiant.");
+         MessageBox::Show("Has de seleccionar un estudiant.");
     }
 
 }
