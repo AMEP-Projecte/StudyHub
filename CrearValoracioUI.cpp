@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CrearValoracioUI.h"
-// #include "TxCrearValoracio.h"
+#include "TxCrearValoracio.h"
 #include "StarRatingView.h"
 
 using namespace StudyHub;
@@ -8,8 +8,8 @@ using namespace StudyHub;
 System::Void CrearValoracioUI::ButtonEnviar_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ comentari = this->CaixaComentari->Text;
 	Int64^ val = gcnew Int64(_valoracio);
-	//TxCrearValoracio^ novaValoracio = gcnew TxCrearValoracio(_estudiant, _grup, val, comentari);
-	//novaValoracio->executar();
+	TxCrearValoracio^ novaValoracio = gcnew TxCrearValoracio(_estudiant, _grup, val, comentari);
+	novaValoracio->executar();
 	this->Close();
 }
 

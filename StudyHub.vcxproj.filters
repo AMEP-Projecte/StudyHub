@@ -377,6 +377,15 @@
     <ClInclude Include="TxProgramarSessioEstudi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TxConsultarEspaisProveidor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCrearValoracio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnirseGrupUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -635,6 +644,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarEspaisProveidor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCrearValoracio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnirseGrupUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

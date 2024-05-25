@@ -107,7 +107,6 @@ public:
         Sistema^ sis = Sistema::getInstance();
         CrearValoracioUI^ NewForm = gcnew CrearValoracioUI(rating, sis->obteUsername(), _grup);
         MenuPrincipal^ Menu = Menu->getInstance();
-        // Menu->AbrirSubFormularioEnPanelOriginal(NewForm);
         NewForm->Show();
         isRating = false;
     }

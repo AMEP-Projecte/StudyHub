@@ -274,6 +274,7 @@
     <ClInclude Include="TxCreaEstudiant.h" />
     <ClInclude Include="TxCrearNouGrupEstudi.h" />
     <ClInclude Include="TxCrearProveidor.h" />
+    <ClInclude Include="TxCrearValoracio.h" />
     <ClInclude Include="TxEditarEstudiant.h" />
     <ClInclude Include="TxEditarGrup.h" />
     <ClInclude Include="TxEditarProveidor.h" />
@@ -294,6 +295,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h" />
+    <ClInclude Include="UnirseGrupUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -373,6 +375,7 @@
     <ClCompile Include="TxCreaEstudiant.cpp" />
     <ClCompile Include="TxCrearNouGrupEstudi.cpp" />
     <ClCompile Include="TxCrearProveidor.cpp" />
+    <ClCompile Include="TxCrearValoracio.cpp" />
     <ClCompile Include="TxEditarEstudiant.cpp" />
     <ClCompile Include="TxEditarGrup.cpp" />
     <ClCompile Include="TxEditarProveidor.cpp" />
@@ -393,6 +396,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="TxTancarSessio.cpp" />
+    <ClCompile Include="UnirseGrupUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
