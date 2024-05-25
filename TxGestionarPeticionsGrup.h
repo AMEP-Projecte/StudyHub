@@ -11,13 +11,13 @@ private:
 
 public:
 	// Constructora
-	//TxGestionarPeticionsGrup(String^ ne, String^ ng, bool a);
+	TxGestionarPeticionsGrup(String^ ne, String^ ng, bool a);
 
 	// Si _acceptat == true, la columna "estat" de fila de la taula "Pertany" de
 	// la base de dades amb "estudiant" == _usernameEstudiant i "grup" == _nomGrup
 	// passa a tenir el valor "Acceptat". Altrament, aquesta fila s'elimina de la
 	// base de dades
-	//void executar();
+	void executar();
 
 };
 

@@ -377,6 +377,15 @@
     <ClInclude Include="TxProgramarSessioEstudi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GestionarPeticionsUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxObtenirPeticionsPendents.h">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxGestionarPeticionsGrup.h">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -636,6 +645,15 @@
     </ClCompile>
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GestionarPeticionsUI.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxGestionarPeticionsGrup.cpp">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxObtenirPeticionsPendents.cpp">
+      <Filter>GestioGrups\Tx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
