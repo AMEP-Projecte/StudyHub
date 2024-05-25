@@ -4,26 +4,30 @@
 
 
 using namespace System;
+
+value struct ConsultarEstudiant {
+	String^ _nom;
+	String^ _cognom;
+	String^ _nomUsuari;
+	String^ _correu;
+	String^ _idioma;
+	String^ _localitat;
+	int _numValoracions;
+};
+
 ref class TxConsultarEstudiant
 {
-	
-	
-		
 
-	
-	private:
-		String^ nomEstudiant;
-	
-	public:
-		String^ nom;
-		String^ cognom;
-		String^ nomUsuari;
-		String^ correu;
-		String^ idioma;
-		String^ localitat;
-		int numValoracions;
-		TxConsultarEstudiant(String^ nomE);
-		void executar() ;
-		
+private:
+	String^ nomEstudiant;
+	ConsultarEstudiant _resultat;
+
+public:
+
+	TxConsultarEstudiant(String^ nomE);
+	TxConsultarEstudiant();
+	void executar();
+	ConsultarEstudiant obteResultat();
+
 };
 
