@@ -45,6 +45,8 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ tornar;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: List<Grup>^ grups;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
 
 
 
@@ -67,6 +69,7 @@ namespace StudyHub {
 			this->tornar = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -79,7 +82,7 @@ namespace StudyHub {
 			this->label2->Location = System::Drawing::Point(200, 16);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(186, 37);
+			this->label2->Size = System::Drawing::Size(232, 46);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Cerca Grups";
 			// 
@@ -115,7 +118,7 @@ namespace StudyHub {
 			this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
 			this->tableLayoutPanel1->ColumnCount = 1;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				100)));
+				474)));
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
 			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
@@ -125,12 +128,25 @@ namespace StudyHub {
 			this->tableLayoutPanel1->Size = System::Drawing::Size(482, 8);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
+			// comboBox1
+			// 
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(518, 67);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(70, 21);
+			this->comboBox1->TabIndex = 20;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
+				L"Nom", L"Tematica", L"Participants", L"Valoracio"
+			});
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &CercaGrup::comboBox1_SelectedIndexChanged);
+			// 
 			// CercaGrup
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(600, 331);
+			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->tornar);
 			this->Controls->Add(this->label2);
@@ -149,11 +165,9 @@ namespace StudyHub {
 	private: System::Void tornar_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-	private: System::Void CercaGrup_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxCercarGrups^ tx = gcnew TxCercarGrups();
-		tx->executar();
-		List<Grup>^ grups = tx->obteResultat();
-		this->tableLayoutPanel1->RowCount = grups->Count+1;
+	private: System::Void carregarTaula() {
+		this->tableLayoutPanel1->Controls->Clear();
+		this->tableLayoutPanel1->RowCount = grups->Count + 1;
 		//Creacion de los titulos:
 		System::Windows::Forms::TableLayoutPanel^ panell = gcnew System::Windows::Forms::TableLayoutPanel();
 		panell->ColumnCount = 4;
@@ -184,7 +198,7 @@ namespace StudyHub {
 		Tematica->Text = "Temàtica";
 		Tematica->Anchor = System::Windows::Forms::AnchorStyles::None;
 		Tematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-		Tematica->Font = gcnew System::Drawing::Font("Arial Black",12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);
+		Tematica->Font = gcnew System::Drawing::Font("Arial Black", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);
 		Tematica->AutoSize = true;
 		panell->Controls->Add(Tematica, 1, 0);
 
@@ -233,7 +247,7 @@ namespace StudyHub {
 			label->AutoSize = true;
 			label->Tag = grups[i]._grup->obteNom();
 			panel->Controls->Add(label, 0, 0);
-			
+
 
 			System::Windows::Forms::Label^ label1 = gcnew System::Windows::Forms::Label();
 			label1->Text = grups[i]._grup->obteTematica();
@@ -264,13 +278,17 @@ namespace StudyHub {
 
 			panel->Click += gcnew System::EventHandler(this, &CercaGrup::On_Click);
 
-			this->tableLayoutPanel1->Controls->Add(panel, 0, i+1);
+			this->tableLayoutPanel1->Controls->Add(panel, 0, i + 1);
 		}
+	}
+	private: System::Void CercaGrup_Load(System::Object^ sender, System::EventArgs^ e) {
+		TxCercarGrups^ tx = gcnew TxCercarGrups();
+		tx->executar();
+		grups = tx->obteResultat();
+		carregarTaula();
 	}
 	private: System::Void On_Click(System::Object^ sender, System::EventArgs^ e) {
 		MenuPrincipal^ Menu = Menu->getInstance();
-		UnirseGrupUI^ Unirse = gcnew UnirseGrupUI(); // Aqui podrias hacer una constructora
-		// con los parametros necesarios, es decir, UnirseGrupUI(NomGrup, Estudiant(Opcional))
 		TableLayoutPanel^ clickedPanel = dynamic_cast<TableLayoutPanel^>(sender);
 		Label^ clickedLabel = dynamic_cast<Label^>(sender);
 		String^ labelInfo;
@@ -280,8 +298,30 @@ namespace StudyHub {
 		else if (clickedLabel) {
 			labelInfo = dynamic_cast<String^>(clickedLabel->Tag);
 		}
-		MessageBox::Show("Row clicked: " + labelInfo);
-		//Menu->AbrirSubFormularioEnPanelOriginal(Unirse);
+		UnirseGrupUI^ Unirse = gcnew UnirseGrupUI(labelInfo);
+		//MessageBox::Show("Row clicked: " + labelInfo);
+		Menu->AbrirSubFormularioEnPanelOriginal(Unirse);
 	}
-	};
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		ComboBox^ cb = dynamic_cast<ComboBox^>(sender);
+		if (cb->Text == "Nom") {
+			grups->Sort(gcnew Comparison<Grup>(compareNom));
+		}
+		if (cb->Text == "Tematica") {
+			grups->Sort(gcnew Comparison<Grup>(compareTema));
+		}
+		if (cb->Text == "Participants") {
+			grups->Sort(gcnew Comparison<Grup>(comparePart));
+		}
+		if (cb->Text == "Valoracio") {
+			grups->Sort(gcnew Comparison<Grup>(compareVal));
+		}
+		carregarTaula();
+	}
+
+	private: static int compareNom(Grup g1, Grup g2) {return String::Compare(g1._grup->obteNom(), g2._grup->obteNom()); }
+	private: static int compareTema(Grup g1, Grup g2) { return String::Compare(g1._grup->obteTematica(), g2._grup->obteTematica()); }
+	private: static int comparePart(Grup g1, Grup g2) { return g2._nombreParticipants.CompareTo(g1._nombreParticipants); }
+	private: static int compareVal(Grup g1, Grup g2) { return g2._valMitja.CompareTo(g1._valMitja); }
+};
 }
