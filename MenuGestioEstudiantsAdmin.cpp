@@ -16,7 +16,7 @@ System::Void MenuGestioEstudiantsAdmin::MenuGestioEstudiantsAdmin_Load(System::O
     MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
 
     DataTable^ dt = gcnew DataTable();
-    String^ sql = "SELECT username FROM estudiant ORDER BY username ASC"; // Añadir ORDER BY para ordenar alfabéticamente
+    String^ sql = "SELECT username FROM estudiant ORDER BY username ASC"; // Añadir ORDER BY para ordenar alfabeticamente A-Z
     MySqlDataAdapter^ da;
 
     try {
