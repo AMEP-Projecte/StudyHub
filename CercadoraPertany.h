@@ -14,6 +14,7 @@ public:
 	
 	DataTable^ obtePeticionsPendents(String^ usernameCreador);
 
+	static PassarellaPertany^ cercaEstudiantEnGrup(String^ usernameEstudiant, String^ nomGrup);
 };
 
 

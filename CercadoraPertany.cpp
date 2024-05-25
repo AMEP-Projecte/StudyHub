@@ -28,7 +28,7 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
             String^ estudiant = reader->GetString("estudiant");
 
             // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
-            PassarellaPertany^ passarella = gcnew PassarellaPertany(estudiant, nomGrup);
+            PassarellaPertany^ passarella = gcnew PassarellaPertany(estudiant, nomGrup, "Acceptat");
             result->Add(passarella);
         }
     }
@@ -51,7 +51,7 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
 }
 
 DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
-    List<PassarellaPertany^>^ result = gcnew List<PassarellaPertany^>();
+    // List<PassarellaPertany^>^ result = gcnew List<PassarellaPertany^>();
 
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
@@ -84,4 +84,34 @@ DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
 
     return tabla;
 
+}
+
+PassarellaPertany^ CercadoraPertany::cercaEstudiantEnGrup(String^ usernameEstudiant, String^ nomGrup) {
+    PassarellaPertany^ result = nullptr;
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    String^ sql = "SELECT * FROM pertany WHERE estudiant = '" + usernameEstudiant + "' AND grup = '" + nomGrup + "'";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    MySqlDataReader^ dataReader;
+    try {
+        // Abrimos la conexión
+        conn->Open();
+        // Ejecutamos la consulta
+        dataReader = cmd->ExecuteReader();
+        if (dataReader->Read()) {
+            // Creem una instància de PassarellaPertany y li assignem els valors recuperats de la base de dades
+            String^ estudiant = dataReader->GetString(0);
+            String^ grup = dataReader->GetString(1);
+            String^ estat = dataReader->GetString(2);
+            result = gcnew PassarellaPertany(estudiant, grup, estat);
+        }
+    }
+    catch (Exception^ ex) {
+        // Manejamos el error
+    }
+    finally {
+        // Cerramos la conexión
+        conn->Close();
+    }
+    return result; // Retornem l'objecte PassarellaUsuari
 }
