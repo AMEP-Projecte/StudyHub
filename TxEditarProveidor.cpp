@@ -19,7 +19,7 @@ void TxEditarProveidor::executar() {
 		pprov->modifica();
 	}
 	else {
-		gcnew Exception("La contrasenya no es correcta.");
+		throw gcnew Exception("La contrasenya no es correcta.");
 	}
 }
 
