@@ -6,6 +6,7 @@
 #include "ConsultarGrup.h"
 #include "EditarGrup.h"
 #include "EliminarGrupEstudi.h"
+#include "CercaGrup.h"
 
 using namespace StudyHub;
 
@@ -16,7 +17,7 @@ System::Void MenuGestioGrups::crea_Click(System::Object^ sender, System::EventAr
 }
 
 System::Void MenuGestioGrups::consulta_Click(System::Object^ sender, System::EventArgs^ e) {
-	ConsultarGrup^ consultar = gcnew ConsultarGrup();
+	CercaGrup^ consultar = gcnew CercaGrup();
 	MenuPrincipal^ Menu = Menu->getInstance();
 	Menu->AbrirSubFormularioEnPanel(consultar);
 }

@@ -103,6 +103,18 @@
     <Filter Include="GestioUsuaris\Presentacio">
       <UniqueIdentifier>{f078b4a6-c306-45ef-8fd8-9eeab1ef3a4c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GestioValoracions">
+      <UniqueIdentifier>{d6a4681b-b8af-45dd-919a-77c9177ede56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\Tx">
+      <UniqueIdentifier>{3864e8ee-a1e4-48c9-bea6-01f127cf0f19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\PassarellesCercadores">
+      <UniqueIdentifier>{865044a3-0b67-4990-a4d6-95d444eb3f3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\Presentació">
+      <UniqueIdentifier>{04fde041-f824-4924-b8db-65fd6bf6ecf3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -338,6 +350,72 @@
     <ClInclude Include="TxCrearProveidor.h">
       <Filter>GestioProveidor\Tx</Filter>
     </ClInclude>
+    <ClInclude Include="ConsultarSessionsUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EditarSessio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramarSessioEstudiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EliminarEspaiUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EsborraSessioUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CercaGrup.h">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercarGrups.h">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraValoracio.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaValoracio.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCrearValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="StarRatingControl.h">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClInclude>
+    <ClInclude Include="StarRatingView.h">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercaValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborraValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEditarSessio.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxProgramarSessioEstudi.h">
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxModificaValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearValoracioUI.h">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClInclude>
+    <ClInclude Include="UnirseGrupUI.h">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxValoracioMitjana.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraValoracioMitjana.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercaValoracioGrup.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -558,6 +636,72 @@
     </ClCompile>
     <ClCompile Include="TxCrearProveidor.cpp">
       <Filter>GestioProveidor\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="EditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramarSessioEstudiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsultarSessionsUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EliminarEspaiUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EsborraSessioUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEditarSessio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxProgramarSessioEstudi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercaGrup.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercarGrups.cpp">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraValoracio.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaValoracio.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCrearValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingControl.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingView.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercaValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborraValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxModificaValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearValoracioUI.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="UnirseGrupUI.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxValoracioMitjana.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraValoracioMitjana.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercaValoracioGrup.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
