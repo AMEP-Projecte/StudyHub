@@ -162,6 +162,7 @@
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MenuGestioEstudiantsAdmin.h" />
     <ClInclude Include="PassarellaValoracio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
@@ -284,6 +285,7 @@
     </ClInclude>
     <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
+    <ClInclude Include="TxEsborraEstudiantAdmin.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
     <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEditarEspai.h" />
@@ -315,6 +317,7 @@
     <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="MenuGestioEstudiantsAdmin.cpp" />
     <ClCompile Include="PassarellaValoracio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
     <ClCompile Include="ConsultarSessionsUI.cpp" />
@@ -385,6 +388,7 @@
     </ClCompile>
     <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
+    <ClCompile Include="TxEsborraEstudiantAdmin.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
     <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEditarEspai.cpp" />
