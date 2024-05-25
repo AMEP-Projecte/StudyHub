@@ -167,6 +167,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarellaValoracio.h" />
+    <ClInclude Include="Encriptacio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -328,6 +329,7 @@
     <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
     <ClCompile Include="PassarellaValoracio.cpp" />
+    <ClCompile Include="Encriptacio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
     <ClCompile Include="ConsultarSessionsUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />

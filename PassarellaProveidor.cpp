@@ -1,11 +1,18 @@
 #include "pch.h"
 #include "PassarellaProveidor.h"
 
-PassarellaProveidor::PassarellaProveidor(String^ username, String^ contrasenya, String^ tipus)
+PassarellaProveidor::PassarellaProveidor(String^ username, String^ contrasenya)
+{
+	_username = username;
+	GenerarContrasenya(contrasenya);
+	_tipus = "proveidor";
+}
+PassarellaProveidor::PassarellaProveidor(String^ username, String^ contrasenya, String^ salt)
 {
 	_username = username;
 	_contrasenya = contrasenya;
-	_tipus = tipus;
+	_salt = salt;
+	_tipus = "proveidor";
 }
 
 void PassarellaProveidor::insereix() {
