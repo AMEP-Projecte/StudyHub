@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "MenuPrincipal.h"
 #include "MenuGestioProveidorAdmin.h"
 #include "CrearProveidorUI.h"
@@ -47,25 +47,30 @@ System::Void MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load(System::Obj
         MissatgeNoProveidors->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         MissatgeNoProveidors->Dock = System::Windows::Forms::DockStyle::Fill;
-        MissatgeNoProveidors->Text = L"No hi ha proveïdors.";
+        MissatgeNoProveidors->Text = L"No hi ha proveÃ¯dors.";
         MissatgeNoProveidors->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
         this->tableLayoutPanel1->Controls->Add(MissatgeNoProveidors, 0, 1);
     }
     else {
-        TableLayoutPanel^ layoutDades = gcnew TableLayoutPanel();
-        layoutDades->AutoSize = true;
-        layoutDades->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-        layoutDades->ColumnCount = 2;
-        layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
-        layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
-        layoutDades->ForeColor = System::Drawing::Color::White;
-        layoutDades->Location = System::Drawing::Point(294, 127);
-        layoutDades->Name = L"layoutDades";
-        layoutDades->RowCount = files + 1;
-        layoutDades->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 57)));
-        layoutDades->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
-        layoutDades->TabIndex = 8;
+        // Crear el panel contenedor principal
+        Panel^ mainPanel = gcnew Panel();
+        mainPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+        mainPanel->Margin = System::Windows::Forms::Padding(0);
+        mainPanel->Padding = System::Windows::Forms::Padding(0);
+
+        // Crear el TableLayoutPanel para las cabeceras
+        TableLayoutPanel^ headerLayout = gcnew TableLayoutPanel();
+        headerLayout->AutoSize = true;
+        headerLayout->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
+        headerLayout->ColumnCount = 2;
+        headerLayout->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 64)));
+        headerLayout->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 36)));
+        headerLayout->RowCount = 1;
+        headerLayout->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 40)));
+        headerLayout->Dock = System::Windows::Forms::DockStyle::Top;
+        headerLayout->Margin = System::Windows::Forms::Padding(0, 20, 0, 0); // Aï¿½adir margen superior
+        headerLayout->Padding = System::Windows::Forms::Padding(0);
 
         Label^ columnaUsername = gcnew Label();
         columnaUsername->AutoSize = true;
@@ -77,14 +82,37 @@ System::Void MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load(System::Obj
 
         Label^ columnaNumEspais = gcnew Label();
         columnaNumEspais->AutoSize = true;
-        columnaNumEspais->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+        columnaNumEspais->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaNumEspais->Dock = System::Windows::Forms::DockStyle::Fill;
-        columnaNumEspais->Text = L"Número d'espais";
+        columnaNumEspais->Text = L"NÃºmero d'espais";
         columnaNumEspais->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
-        layoutDades->Controls->Add(columnaUsername, 0, 0);
-        layoutDades->Controls->Add(columnaNumEspais, 1, 0);
+        headerLayout->Controls->Add(columnaUsername, 0, 0);
+        headerLayout->Controls->Add(columnaNumEspais, 1, 0);
+
+        // Crear el Panel con scroll para los datos
+        Panel^ scrollPanel = gcnew Panel();
+        scrollPanel->AutoScroll = true;
+        scrollPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+        // scrollPanel->Margin = System::Windows::Forms::Padding(0);
+        // scrollPanel->Padding = System::Windows::Forms::Padding(0);
+
+        // Crear el TableLayoutPanel para los datos
+        TableLayoutPanel^ layoutDades = gcnew TableLayoutPanel();
+        layoutDades->AutoSize = true;
+        layoutDades->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
+        layoutDades->ColumnCount = 2;
+        layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 60.0F)));
+        layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 30.0F)));
+        layoutDades->ForeColor = System::Drawing::Color::White;
+        layoutDades->Dock = System::Windows::Forms::DockStyle::Top;
+        layoutDades->Name = L"layoutDades";
+        layoutDades->RowCount = files;
+        layoutDades->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::AutoSize)));
+        layoutDades->TabIndex = 8;
+        layoutDades->Margin = System::Windows::Forms::Padding(0);
+        layoutDades->Padding = System::Windows::Forms::Padding(0);
 
         for (int i = 0; i < files; ++i) {
             DataRow^ fila = dt->Rows[i];
@@ -108,10 +136,13 @@ System::Void MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load(System::Obj
             labelNumEspais->Text = numEspais;
             labelNumEspais->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
-            layoutDades->Controls->Add(labelUsername, 0, i + 1);
-            layoutDades->Controls->Add(labelNumEspais, 1, i + 1);
+            layoutDades->Controls->Add(labelUsername, 0, i);
+            layoutDades->Controls->Add(labelNumEspais, 1, i);
         }
 
-        this->tableLayoutPanel1->Controls->Add(layoutDades, 0, 1);
+        scrollPanel->Controls->Add(layoutDades);
+        mainPanel->Controls->Add(scrollPanel);
+        mainPanel->Controls->Add(headerLayout);
+        this->tableLayoutPanel1->Controls->Add(mainPanel, 0, 1);
     }
 }
