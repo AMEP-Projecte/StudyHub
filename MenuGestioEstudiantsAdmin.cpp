@@ -89,17 +89,6 @@ System::Void MenuGestioEstudiantsAdmin::MenuGestioEstudiantsAdmin_Load(System::O
     }
 }
 
-/*
-System::Void MenuGestioEstudiantsAdmin::OnButtonUsernameClick(System::Object^ sender, System::EventArgs^ e) {
-    Button^ clickedButton = safe_cast<Button^>(sender);
-    String^ username = safe_cast<String^>(clickedButton->Tag);
-
-    // Aquí puedes manejar la acción que deseas realizar cuando se selecciona un estudiante
-    //sMessageBox::Show("Has seleccionado el estudiante: " + username);
-
-}
-*/
-
 
 void MenuGestioEstudiantsAdmin::OnButtonUsernameClick(System::Object^ sender, System::EventArgs^ e) {
     Button^ clickedButton = safe_cast<Button^>(sender);
