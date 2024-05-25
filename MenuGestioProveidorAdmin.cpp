@@ -140,7 +140,7 @@ System::Void MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load(System::Obj
             layoutDades->Controls->Add(labelNumEspais, 1, i);
         }
 
-        scrollPanel->Controls->Add(layoutDades);
+        scrollPanel->Controls->Add(layoutDades);    //scroll para deslizar por el panel de datos
         mainPanel->Controls->Add(scrollPanel);
         mainPanel->Controls->Add(headerLayout);
         this->tableLayoutPanel1->Controls->Add(mainPanel, 0, 1);
