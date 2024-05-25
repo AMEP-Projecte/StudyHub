@@ -162,7 +162,9 @@
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MenuGestioEstudiantsAdmin.h" />
+    <ClInclude Include="MenuGestioEstudiantsAdmin.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaValoracio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
