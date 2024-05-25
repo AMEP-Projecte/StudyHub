@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "TxEditarEspai.h"
+#include "CercadoraSessio.h"
 
 TxEditarEspai::TxEditarEspai(String^ adr, int capacitat) {
 	_adr = adr;
@@ -7,15 +8,14 @@ TxEditarEspai::TxEditarEspai(String^ adr, int capacitat) {
 }
 
 void TxEditarEspai::executar() {
-	Sistema^ sistema = Sistema::getInstance();
+	List<PassarellaSessio^>^ sessionsProximes = CercadoraSessio::cercaSessionsProximesDelEspai(_adr);
 
-	CercadoraEspai ce;
-	PassarellaEspai^ espai = ce.cercaEspaiAdreca(_adr);
-
-	if (espai->obteProveidor() != sistema->obteProveidor()->obteNomUsuari()) throw gcnew Exception("No pots modificar un espai que no has creat tu.");
-	else if (espai->obteNom() != "") {
+	if (sessionsProximes->Count == 0) {
+		PassarellaEspai^ espai = gcnew PassarellaEspai();
+		espai->posarAdreca(_adr);
 		espai->posarCapacitat(_capacitat);
+
 		espai->modifica();
 	}
-	else throw gcnew Exception("No existeix aquest espai.");
+	else throw gcnew Exception("No pots modificar un espai que té sessions programades.");
 }

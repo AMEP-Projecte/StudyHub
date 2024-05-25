@@ -266,6 +266,7 @@
     </ClInclude>
     <ClInclude Include="TxCercaValoracio.h" />
     <ClInclude Include="TxConsultaEspai.h" />
+    <ClInclude Include="TxConsultarEspaisProveidor.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
     <ClInclude Include="TxConsultarProveidor.h" />
@@ -364,6 +365,7 @@
     <ClCompile Include="TancarSessio.cpp" />
     <ClCompile Include="TxCercaValoracio.cpp" />
     <ClCompile Include="TxConsultaEspai.cpp" />
+    <ClCompile Include="TxConsultarEspaisProveidor.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
     <ClCompile Include="TxConsultarProveidor.cpp" />

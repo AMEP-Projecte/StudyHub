@@ -153,8 +153,8 @@ namespace StudyHub {
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(149, 192);
-			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->numericUpDown1->Location = System::Drawing::Point(160, 192);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown1->Name = L"numericUpDown1";
 			this->numericUpDown1->Size = System::Drawing::Size(90, 20);
 			this->numericUpDown1->TabIndex = 10;
@@ -188,7 +188,7 @@ namespace StudyHub {
 			this->Controls->Add(this->label2adr);
 			this->Controls->Add(this->label1titulo);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"CrearEspaiUI";
 			this->Text = L"CrearEspaiUI";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();

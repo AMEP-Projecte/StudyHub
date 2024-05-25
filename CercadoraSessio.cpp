@@ -59,6 +59,40 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessioAdreca(String^ adreca) {
     return result;
 }
 
+List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesDelEspai(String^ adrecaEspai) {
+    List<PassarellaSessio^>^ result = gcnew List<PassarellaSessio^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    conn->Open();
+
+    String^ sql = "SELECT * FROM sessio ";
+    sql += "WHERE adreca = @adreca ";
+    sql += "AND ((data > CURDATE()) OR (data = CURDATE() and hora_inici > CURTIME()));";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@adreca", adrecaEspai);
+
+    
+    // Ejecutamos la consulta
+     MySqlDataReader^ reader = cmd->ExecuteReader();
+
+    // Leemos los resultados
+    while (reader->Read()) {
+        String^ grup = reader->GetString("grup");
+        String^ data = reader->GetDateTime("data").ToString("yyyy-MM-dd");
+        String^ horaI = reader->GetTimeSpan("hora_inici").ToString("hh\\:mm");
+        String^ horaF = reader->GetTimeSpan("hora_fi").ToString("hh\\:mm");
+        int llocs_lliures = reader->GetInt32("llocs_lliures");
+        
+        // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
+        PassarellaSessio^ passarella = gcnew PassarellaSessio(grup, data, horaI, horaF, adrecaEspai, llocs_lliures);
+        result->Add(passarella);
+    }
+   
+    conn->Close();
+    
+    return result;
+}
 
 PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^ adreca) {
     PassarellaSessio^ pp = gcnew PassarellaSessio();

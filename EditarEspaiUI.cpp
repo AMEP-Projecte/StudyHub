@@ -12,6 +12,9 @@ System::Void EditarEspaiUI::edit_Click(System::Object^ sender, System::EventArgs
 	int capacitatnova = Decimal::ToInt32(this->numericUpDown1->Value);
 	try {
 		if ( capacitatnova == 0) {
+			MessageBox::Show("La capacitat no pot ser 0.");
+		}
+		else if (capacitatnova.ToString() == _capacitat) {
 			MessageBox::Show("Modifica la capacitat, si us plau.");
 		}
 		else {

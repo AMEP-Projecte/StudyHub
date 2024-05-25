@@ -304,7 +304,7 @@ namespace StudyHub {
 		Sistema^ sist = Sistema::getInstance();
 		try {
 			if (_adreca_ != "") {
-				List<PassarellaSessio^>^ busca = CercadoraSessio::cercaSessioAdreca(_adreca_);
+				List<PassarellaSessio^>^ busca = CercadoraSessio::cercaSessionsProximesDelEspai(_adreca_);
 				if (busca->Count != 0) {
 					MessageBox::Show("Hi ha sessions programades per aquest espai, no pots eliminar en aquest moment.");
 				}

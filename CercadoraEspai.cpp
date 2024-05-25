@@ -44,6 +44,27 @@ PassarellaEspai^ CercadoraEspai::cercaEspaiAdreca(String^ Adreca) {
 
 List<PassarellaEspai^>^ CercadoraEspai::cercaEspaiProveidor(String^ proveidor) {
 	List<PassarellaEspai^>^ result = gcnew List<PassarellaEspai^>();
+
+    MySqlConnection^ conn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
+    String^ sql = "SELECT nom, adreca, capacitat FROM espai WHERE proveidor= @username";
+    MySqlCommand^ cmd = gcnew MySqlCommand();
+    cmd->Connection = conn;
+    cmd->CommandText = sql;
+    cmd->Parameters->AddWithValue("@username", proveidor);
+
+    conn->Open();
+    MySqlDataReader^ reader = cmd->ExecuteReader();
+    while (reader->Read()) {
+        String^ adreca = reader->GetString("adreca");
+        String^ nom = reader->GetString("nom");
+        //String^ capacitat = reader->GetString("capacitat");
+        int capacitat = reader->GetInt64("capacitat");
+
+        PassarellaEspai^ passarella = gcnew PassarellaEspai(adreca, nom, capacitat, proveidor);
+        result->Add(passarella);
+    }
+    conn->Close();
+
 	return result;
 }
 
