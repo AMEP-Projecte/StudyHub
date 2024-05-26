@@ -14,20 +14,17 @@ System::Void StudyHub::ParticipaSessio::cencel_Click(System::Object^ sender, Sys
 }
 
 System::Void StudyHub::ParticipaSessio::confirmar_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	;
 	Sistema^ sistema = Sistema::getInstance();
 	String^ usernameEstudiant = sistema->obteUsername();
 
-	TxParticipacioSessio^ tx = gcnew TxParticipacioSessio(usernameEstudiant, grup, data, horaInici);
+	TxParticipacioSessio^ tx = gcnew TxParticipacioSessio(usernameEstudiant, grup, data, horaInici,adreca);
 
 	try {
-		if (grup == "") {
-			MessageBox::Show("No has escollit cap sessió");
-		}
-		else{
-			tx->executar();
-			MessageBox::Show("Has confirmat la teva participació!");
-		}
+		
+		tx->executar();
+		MessageBox::Show("Has confirmat la teva participació!");
+		
 		MenuSessionsUI^ sessions = gcnew MenuSessionsUI();
 		MenuPrincipal^ menu = MenuPrincipal::getInstance();
 		menu->AbrirFormularioEnPanel(sessions);

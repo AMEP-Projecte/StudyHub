@@ -9,6 +9,7 @@
 #include "CercadoraEspai.h"
 #include "PassarellaSessio.h"
 #include "CercadoraSessio.h"
+#include "CercadoraParticipa.h"
 using namespace System::Windows::Forms;
 TxProgramarSessioEstudi::TxProgramarSessioEstudi() {
 	Sistema^ sist = Sistema::getInstance();
@@ -53,10 +54,14 @@ void TxProgramarSessioEstudi::executar()
 			
 		}
 	}
-	PassarellaSessio p(_grup, _data, _horaI, _horaF, _adreca, capacitat);
+	PassarellaSessio p(_grup, _data, _horaI, _horaF, _adreca, capacitat-1);
 	p.insereix();
-	
 
+	Sistema^ sist = Sistema::getInstance();
+	String^ username = sist->obteEstudiant()->obteNomUsuari();
+	PassarellaParticipa^ participa = gcnew PassarellaParticipa(username, _grup, _data, _horaI);
+	participa->insereix();
+	
 	
 		
 	

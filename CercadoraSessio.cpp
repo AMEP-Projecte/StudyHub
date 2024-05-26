@@ -111,8 +111,8 @@ PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^
 
     String^ horaIni = "";
     String^ horaFi = "";
-
     int llocs;
+
     try {
         conn->Open();
         dataReader = cmd->ExecuteReader();
@@ -140,41 +140,46 @@ PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^
 
 
 
-PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ grup, String^ data, String^ hora) {
-    PassarellaSessio^ pp = gcnew PassarellaSessio();
+PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, String^ hora) {
+
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-    String^ sql = "SELECT * FROM sessio WHERE grup= @grup AND data = @data AND hora = @hora ";
+    // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos
+    String^ sql = "SELECT * FROM sessio WHERE data = @data AND grup = @grup AND hora = @hora";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-    cmd->Parameters->AddWithValue("@grup", grup);
     cmd->Parameters->AddWithValue("@data", data);
+    cmd->Parameters->AddWithValue("@grup", grup);
     cmd->Parameters->AddWithValue("@hora", hora);
-    
 
-    MySqlDataReader^ dataReader;
+    MySqlDataReader^ dataReader = nullptr;
+
+
+    String^ adreca = "";
+    String^ horaFi = "";
+    int llocs;
 
     try {
         conn->Open();
         dataReader = cmd->ExecuteReader();
         if (dataReader->Read()) {
-
-            String^ adreca= dataReader->GetString(4);
-            String^ horaFi = dataReader->GetString(3);
-            int llocs = dataReader->GetInt32("llocs_lliures");
-
-            pp = gcnew PassarellaSessio(grup, data, hora, horaFi, adreca, llocs);
+         
+            adreca = dataReader["hora_inici"]->ToString();
+            horaFi = dataReader["hora_fi"]->ToString();
+            data = dataReader->GetDateTime("data").ToString("yyyy-MM-dd");
+            llocs = Convert::ToInt32(dataReader["llocs_lliures"]);
         }
     }
     catch (Exception^ ex) {
-        Console::WriteLine("An error occurred: " + ex->Message);
-        // Log the error message or handle accordingly
+        Console::WriteLine("Ocurrió un error: " + ex->Message);
+        // Registra el mensaje de error o manéjalo según sea necesario
     }
     finally {
         if (dataReader != nullptr) {
-            dataReader->Close(); // Ensure dataReader is closed
+            dataReader->Close(); // Asegúrate de que dataReader esté cerrado
         }
         conn->Close();
     }
+    PassarellaSessio^ pp = gcnew PassarellaSessio(grup, data, hora, horaFi, adreca, llocs);
     return pp;
 }
