@@ -118,6 +118,33 @@ void PassarellaSessio::modifica() {
 	sql += "and (data = '" + _data + "') ";
 	sql += "and (hora_inici = '" + _horaInici + "');";
 
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	MySqlDataReader^ dataReader;
+
+	try {
+		conn->Open();
+		dataReader = cmd->ExecuteReader();
+	}
+	catch (Exception^ ex) {
+		// Errors
+	}
+	finally {
+		conn->Close();
+	}
+}
+
+void PassarellaSessio::modificaLlocs() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+	String^ sql = "UPDATE sessio SET ";
+	sql += "llocs_lliures = '" + _llocsLliures + "' ";
+	sql += "WHERE (grup = '" + _grup + "') ";
+	sql += "and (data = '" + _data + "') ";
+	sql += "and (hora_inici = '" + _horaInici + "');";
+
+
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
 

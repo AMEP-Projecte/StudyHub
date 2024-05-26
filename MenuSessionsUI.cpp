@@ -11,14 +11,21 @@
 using namespace StudyHub;
 
 System::Void MenuSessionsUI::participaSessions_Click(System::Object^ sender, System::EventArgs^ e) {
-    ParticipaSessio^ participa = gcnew ParticipaSessio();
-    participa->grup = grupSessio;
-    participa->data = dataSessio;
-    PassarellaSessio^ sessio = CercadoraSessio::cercaHora(dataSessio, grupSessio, adrecaSessio);
-    participa->horaInici = sessio->obteHoraInici();
-    
-    MenuPrincipal^ menu = MenuPrincipal::getInstance();
-    menu->AbrirFormularioEnPanel(participa);
+    if (grupSessio == "") {
+        MessageBox::Show("Selecciona una sessió");
+       
+    }
+    else{
+        ParticipaSessio^ participa = gcnew ParticipaSessio();
+        participa->grup = grupSessio;
+        participa->data = dataSessio;
+        PassarellaSessio^ sessio = CercadoraSessio::cercaHora(dataSessio, grupSessio, adrecaSessio);
+        participa->horaInici = sessio->obteHoraInici();
+        participa->horaFi = sessio->obteHoraFi();
+        participa->adreca = adrecaSessio;
+        MenuPrincipal^ menu = MenuPrincipal::getInstance();
+        menu->AbrirFormularioEnPanel(participa);
+    }
 }
 
 System::Void MenuSessionsUI::editaSessions_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -48,7 +55,13 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
     Sistema^ sist = Sistema::getInstance();
     String^ username = sist->obteEstudiant()->obteUsername();
-    String^ sql = "SELECT grup, data, adreca, hora_inici FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data, hora_inici) NOT IN (SELECT grup, data, hora_inici FROM participa WHERE estudiant = @username);";
+
+    String^ sql = "SELECT grup, data, adreca, hora_inici " +
+        "FROM sessio " +
+        "WHERE llocs_lliures > 0 AND " +
+        "grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND " +
+        "(grup, data, hora_inici) NOT IN (SELECT grup, data, hora_inici FROM participa WHERE estudiant = @username);";
+
    
     cmd->Connection = cn;
     cmd->CommandText = sql;
@@ -302,7 +315,6 @@ System::Void MenuSessionsUI::selecciona(TableLayoutPanel^ table) {
                 break; // Stop iterating after finding three labels
         }
     }
-  
 
 
     // Aquí puedes hacer lo que necesites con los tres strings guardados.
