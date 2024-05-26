@@ -95,43 +95,50 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesDelEspai(String^ 
 }
 
 PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^ adreca) {
-    PassarellaSessio^ pp = gcnew PassarellaSessio();
+   
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-    String^ sql = "SELECT * FROM sessio WHERE Data = @data AND Hora = @hora AND Adreca = @adreca";
+    // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos
+    String^ sql = "SELECT * FROM sessio WHERE data = @data AND grup = @grup AND adreca = @adreca";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     cmd->Parameters->AddWithValue("@data", data);
-    cmd->Parameters->AddWithValue("@adreca", adreca);
     cmd->Parameters->AddWithValue("@grup", grup);
+    cmd->Parameters->AddWithValue("@adreca", adreca);
 
-    MySqlDataReader^ dataReader;
+    MySqlDataReader^ dataReader = nullptr;
 
+
+    String^ horaIni = "";
+    String^ horaFi = "";
+
+    int llocs;
     try {
         conn->Open();
         dataReader = cmd->ExecuteReader();
         if (dataReader->Read()) {
-     
-            String^ horaIni = dataReader->GetString(3);
-            String^ horaFi = dataReader->GetString(4);
-            String^ dataf = dataReader->GetDateTime("data").ToString("yyyy-MM-dd");
-            int llocs = dataReader->GetInt32("llocs_lliures");
-
-            pp = gcnew PassarellaSessio (grup, dataf, horaIni, horaFi,adreca,llocs);
+            // Suponiendo que las columnas se llaman "horaIni", "horaFi", "Data" y "llocs_lliures"
+            horaIni = dataReader["hora_inici"]->ToString();
+            horaFi = dataReader["hora_fi"]->ToString();
+            data = dataReader->GetDateTime("data").ToString("yyyy-MM-dd");
+            llocs = Convert::ToInt32(dataReader["llocs_lliures"]);
         }
     }
     catch (Exception^ ex) {
-        Console::WriteLine("An error occurred: " + ex->Message);
-        // Log the error message or handle accordingly
+        Console::WriteLine("Ocurrió un error: " + ex->Message);
+        // Registra el mensaje de error o manéjalo según sea necesario
     }
     finally {
         if (dataReader != nullptr) {
-            dataReader->Close(); // Ensure dataReader is closed
+            dataReader->Close(); // Asegúrate de que dataReader esté cerrado
         }
         conn->Close();
     }
+    PassarellaSessio^ pp = gcnew PassarellaSessio(grup, data, horaIni, horaFi, adreca, llocs);
     return pp;
 }
+
+
 
 PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ grup, String^ data, String^ hora) {
     PassarellaSessio^ pp = gcnew PassarellaSessio();

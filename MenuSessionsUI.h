@@ -29,6 +29,7 @@ namespace StudyHub {
 		String^ _grup;
 		String^ _data;
 		String^ _adreca;
+		String^ _horaInici;
 
 	protected:
 		/// <summary>
@@ -52,6 +53,7 @@ namespace StudyHub {
 	private: String^ grupSessio = "";
 	private: String^ dataSessio = "";
 	private: String^ adrecaSessio = "";
+	private: String^ horaSessio = "";
 
 
 

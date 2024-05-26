@@ -172,7 +172,7 @@ namespace StudyHub {
 			this->label1->Size = System::Drawing::Size(719, 47);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Gestionar Les Meves Sessions d\'Estudi";
-			this->label1->Click += gcnew System::EventHandler(this, &EditarSessio::label1_Click);
+			
 			// 
 			// EditarSessio
 			// 
@@ -228,7 +228,6 @@ private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
 	   private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e);
 	private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void selecciona(TableLayoutPanel^ table);
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }

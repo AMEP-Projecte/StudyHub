@@ -48,7 +48,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
     Sistema^ sist = Sistema::getInstance();
     String^ username = sist->obteEstudiant()->obteUsername();
-    String^ sql = "SELECT grup, data, adreca FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data) NOT IN (SELECT grup, data FROM participa WHERE estudiant = @username);";
+    String^ sql = "SELECT grup, data, adreca, hora_inici FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data, hora_inici) NOT IN (SELECT grup, data, hora_inici FROM participa WHERE estudiant = @username);";
    
     cmd->Connection = cn;
     cmd->CommandText = sql;
@@ -82,10 +82,12 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
         TableLayoutPanel^ layoutDades1 = gcnew TableLayoutPanel();
         layoutDades1->AutoSize = true;
         layoutDades1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-        layoutDades1->ColumnCount = 3;
-        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 27.33F)));
+        layoutDades1->ColumnCount = 4;
+        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 20.33F)));
         layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 25.33F)));
-        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 47.33F)));
+        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 30.33F)));
+        layoutDades1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 25.33F)));
+
         layoutDades1->ForeColor = System::Drawing::Color::White;
         layoutDades1->Dock = System::Windows::Forms::DockStyle::Top;
         layoutDades1->RowCount = 1;
@@ -124,6 +126,17 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
         layoutDades1->Controls->Add(columnaAdreca, 2, 0);
         tableLayoutPanel1->Controls->Add(layoutDades1, 0, 1);
 
+
+        Label^ columnaHora = gcnew Label();
+        columnaHora->AutoSize = true;
+        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+            static_cast<System::Byte>(0)));
+        columnaHora->Dock = System::Windows::Forms::DockStyle::Fill;
+        columnaHora->Text = L"Hora inici";
+        columnaHora->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+        layoutDades1->Controls->Add(columnaHora, 3, 0);
+        tableLayoutPanel1->Controls->Add(layoutDades1, 0, 1);
+
      
 
         // DADES
@@ -148,10 +161,11 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
             layoutFila->Height = 49;
             layoutFila->Width = 339;
             layoutFila->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-            layoutFila->ColumnCount = 3;
+            layoutFila->ColumnCount = 4;
+            layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 20.33F)));
             layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 28.33F)));
-            layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 28.33F)));
-            layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 43.33F)));
+            layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 33.33F)));
+            layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 19.33F)));
             layoutFila->ForeColor = System::Drawing::Color::White;
             layoutFila->Location = System::Drawing::Point(294, 127);
             layoutFila->Name = L"layoutFila";
@@ -171,10 +185,11 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
             String^ dataSessio = fecha->ToString("yyyy-MM-dd");
           
             String^ direccioSessio = fila["adreca"]->ToString();
+            String^ horaSessio = fila["hora_inici"]->ToString();
 
             Label^ labelGrup = gcnew Label();
             labelGrup->AutoSize = true;
-            labelGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            labelGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelGrup->Dock = System::Windows::Forms::DockStyle::Fill;
             labelGrup->Text = nomGrup;
@@ -183,7 +198,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
             Label^ labelData = gcnew Label();
             labelData->AutoSize = true;
-            labelData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            labelData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelData->Dock = System::Windows::Forms::DockStyle::Fill;
             labelData->Text = dataSessio;
@@ -192,16 +207,27 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
             Label^ labelAdreca = gcnew Label();
             labelAdreca->AutoSize = true;
-            labelAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            labelAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
             labelAdreca->Text = direccioSessio;
             labelAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelAdreca->Click += gcnew System::EventHandler(this, &MenuSessionsUI::labelenfila_Click); // SELECCIONAR FILA
 
+
+            Label^ labelHora = gcnew Label();
+            labelHora->AutoSize = true;
+            labelHora->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            labelHora->Dock = System::Windows::Forms::DockStyle::Fill;
+            labelHora->Text = horaSessio;
+            labelHora->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+            labelHora->Click += gcnew System::EventHandler(this, &MenuSessionsUI::labelenfila_Click); // SELECCIONAR FILA
+
             layoutFila->Controls->Add(labelGrup, 0, 0);
             layoutFila->Controls->Add(labelData, 1, 0);
             layoutFila->Controls->Add(labelAdreca, 2, 0);
+            layoutFila->Controls->Add(labelHora, 3, 0);
 
 
 
@@ -267,13 +293,16 @@ System::Void MenuSessionsUI::selecciona(TableLayoutPanel^ table) {
                 dataSessio = label->Text;
             else if (labelCount == 2)
                 adrecaSessio = label->Text;
+            else if (labelCount == 3)
+                horaSessio = label->Text;
 
             labelCount++;
 
-            if (labelCount == 3)
+            if (labelCount == 4)
                 break; // Stop iterating after finding three labels
         }
     }
+  
 
 
     // Aquí puedes hacer lo que necesites con los tres strings guardados.

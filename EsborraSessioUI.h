@@ -18,11 +18,17 @@ namespace StudyHub {
 		EsborraSessioUI(void)
 		{
 			InitializeComponent();
-			omplir();
+			
 			//
 			//TODO: Add the constructor code here
 			//
 		}
+		String^ _grup = "";
+		String^ _data = "";
+		String^ _adreca = "";
+		String^ _hora_inici = "";
+		String^ _hora_fi = "";
+		int _llocs;
 
 	protected:
 		/// <summary>
@@ -37,12 +43,15 @@ namespace StudyHub {
 		}
 	private: System::Windows::Forms::Button^ ButtonTornar;
 	protected:
-	private: System::Windows::Forms::Label^ label3;
+
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::Label^ label4;
+
+
+
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label3;
 
 	private:
 		/// <summary>
@@ -58,13 +67,12 @@ namespace StudyHub {
 		void InitializeComponent(void)
 		{
 			this->ButtonTornar = (gcnew System::Windows::Forms::Button());
-			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// ButtonTornar
@@ -73,25 +81,14 @@ namespace StudyHub {
 			this->ButtonTornar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ButtonTornar->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ButtonTornar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->ButtonTornar->Location = System::Drawing::Point(290, 305);
+			this->ButtonTornar->Location = System::Drawing::Point(49, 422);
+			this->ButtonTornar->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonTornar->Name = L"ButtonTornar";
-			this->ButtonTornar->Size = System::Drawing::Size(144, 36);
+			this->ButtonTornar->Size = System::Drawing::Size(216, 50);
 			this->ButtonTornar->TabIndex = 14;
 			this->ButtonTornar->Text = L"Tornar";
 			this->ButtonTornar->UseVisualStyleBackColor = false;
 			this->ButtonTornar->Click += gcnew System::EventHandler(this, &EsborraSessioUI::ButtonTornar_Click);
-			// 
-			// label3
-			// 
-			this->label3->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
-			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(10, 316);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(90, 22);
-			this->label3->TabIndex = 8;
-			this->label3->Text = L"Hora inici:";
 			// 
 			// button3
 			// 
@@ -99,48 +96,14 @@ namespace StudyHub {
 			this->button3->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->button3->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button3->ForeColor = System::Drawing::Color::DarkCyan;
-			this->button3->Location = System::Drawing::Point(440, 305);
+			this->button3->Location = System::Drawing::Point(649, 422);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(144, 36);
+			this->button3->Size = System::Drawing::Size(216, 50);
 			this->button3->TabIndex = 12;
 			this->button3->Text = L"Eliminar";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &EsborraSessioUI::button3_Click);
-			// 
-			// textBox1
-			// 
-			this->textBox1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->textBox1->Location = System::Drawing::Point(100, 318);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(128, 20);
-			this->textBox1->TabIndex = 9;
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->AllowDrop = true;
-			this->dataGridView1->AllowUserToOrderColumns = true;
-			this->dataGridView1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ActiveCaption;
-			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->GridColor = System::Drawing::SystemColors::ControlLightLight;
-			this->dataGridView1->Location = System::Drawing::Point(14, 86);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->ReadOnly = true;
-			this->dataGridView1->Size = System::Drawing::Size(583, 176);
-			this->dataGridView1->TabIndex = 13;
-			// 
-			// label4
-			// 
-			this->label4->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 16, System::Drawing::FontStyle::Bold));
-			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(9, 274);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(187, 30);
-			this->label4->TabIndex = 10;
-			this->label4->Text = L"Eliminar Sessio:";
 			// 
 			// label2
 			// 
@@ -148,39 +111,83 @@ namespace StudyHub {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 20, System::Drawing::FontStyle::Bold));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(168, 29);
+			this->label2->Location = System::Drawing::Point(262, 9);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(246, 36);
+			this->label2->Size = System::Drawing::Size(380, 52);
 			this->label2->TabIndex = 11;
-			this->label2->Text = L"Sessions Actuals:";
+			this->label2->Text = L"Eliminar Sessions:";
+			
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Single;
+			this->tableLayoutPanel1->ColumnCount = 1;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
+			this->tableLayoutPanel1->Controls->Add(this->label3, 0, 0);
+			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 64);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 2;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 100)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(886, 305);
+			this->tableLayoutPanel1->TabIndex = 8;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->Location = System::Drawing::Point(4, 1);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(878, 41);
+			this->label3->TabIndex = 0;
+			this->label3->Text = L"Les meves sessions";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(3, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(62, 18);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"label1";
 			// 
 			// EsborraSessioUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(607, 370);
+			this->ClientSize = System::Drawing::Size(910, 512);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->ButtonTornar);
-			this->Controls->Add(this->label3);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"EsborraSessioUI";
 			this->Text = L"EsborraSessioUI";
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->Load += gcnew System::EventHandler(this, &EsborraSessioUI::EsborraSessio_Load);
+			this->tableLayoutPanel1->ResumeLayout(false);
+			this->tableLayoutPanel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	private: void omplir();
+
 
 	private: System::Void ButtonTornar_Click(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e);
 
+	private: System::Void EsborraSessio_Load(System::Object^ sender, System::EventArgs^ e);
+    private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e);
+	private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void selecciona(TableLayoutPanel^ table);
 };
 }
