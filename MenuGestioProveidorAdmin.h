@@ -1,4 +1,6 @@
 #pragma once
+#include "TxEsborrarProveidor.h"
+#include "TxObteProveidorsAmbEspaisCreats.h"
 
 namespace StudyHub {
 
@@ -37,10 +39,10 @@ namespace StudyHub {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ editar;
 	private: System::Windows::Forms::Button^ consultar;
-	private: System::Windows::Forms::Button^ button1;
+
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 
-
+	private: String^ usernameProveidor;
 
 	private: System::Windows::Forms::Label^ label1;
 
@@ -62,7 +64,6 @@ namespace StudyHub {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->editar = (gcnew System::Windows::Forms::Button());
 			this->consultar = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
@@ -87,10 +88,10 @@ namespace StudyHub {
 			this->editar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->editar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->editar->Location = System::Drawing::Point(22, 129);
-			this->editar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->editar->Location = System::Drawing::Point(22, 189);
+			this->editar->Margin = System::Windows::Forms::Padding(2);
 			this->editar->Name = L"editar";
-			this->editar->Size = System::Drawing::Size(116, 37);
+			this->editar->Size = System::Drawing::Size(116, 47);
 			this->editar->TabIndex = 5;
 			this->editar->Text = L"Eliminar Proveidor";
 			this->editar->UseVisualStyleBackColor = true;
@@ -102,29 +103,14 @@ namespace StudyHub {
 			this->consultar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->consultar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->consultar->Location = System::Drawing::Point(22, 88);
-			this->consultar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->consultar->Location = System::Drawing::Point(22, 147);
+			this->consultar->Margin = System::Windows::Forms::Padding(2);
 			this->consultar->Name = L"consultar";
 			this->consultar->Size = System::Drawing::Size(116, 38);
 			this->consultar->TabIndex = 4;
 			this->consultar->Text = L"Crear Proveidor";
 			this->consultar->UseVisualStyleBackColor = true;
 			this->consultar->Click += gcnew System::EventHandler(this, &MenuGestioProveidorAdmin::crear_Click);
-			// 
-			// button1
-			// 
-			this->button1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::DarkCyan;
-			this->button1->Location = System::Drawing::Point(22, 170);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(116, 34);
-			this->button1->TabIndex = 6;
-			this->button1->Text = L"Tornar";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MenuGestioProveidorAdmin::tornar_Click);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -135,7 +121,7 @@ namespace StudyHub {
 			this->tableLayoutPanel1->Controls->Add(this->label1, 0, 0);
 			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
 			this->tableLayoutPanel1->Location = System::Drawing::Point(173, 88);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 2;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 37)));
@@ -155,7 +141,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(378, 37);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Informació";
+			this->label1->Text = L"Informació dels proveïdors";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MenuGestioProveidorAdmin
@@ -165,12 +151,11 @@ namespace StudyHub {
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(607, 370);
 			this->Controls->Add(this->tableLayoutPanel1);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->editar);
 			this->Controls->Add(this->consultar);
 			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MenuGestioProveidorAdmin";
 			this->Text = L"MenuGestioProveidorAdmin";
 			this->Load += gcnew System::EventHandler(this, &MenuGestioProveidorAdmin::MenuGestioProveidorAdmin_Load);
@@ -184,8 +169,12 @@ namespace StudyHub {
 	private: System::Void crear_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void eliminar_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void MenuGestioProveidorAdmin_Load(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void tornar_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
-	}
+	
+	private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e);
+	private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void selecciona(TableLayoutPanel^ table);
+	private: System::Void omplirInfoProveidors();
+
+
 };
 }

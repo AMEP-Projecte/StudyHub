@@ -11,5 +11,5 @@ public:
 	static PassarellaEspai^ cercaEspaiAdreca(String^ Adreca);
 	static List<PassarellaEspai^>^ cercaEspaiProveidor(String^ proveidor);
 
-	List<PassarellaEspai^>^ totsEspai();
+	static List<PassarellaEspai^>^ totsEspai();
 };

@@ -292,14 +292,21 @@
     <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
+    <ClInclude Include="TxEsborraValoracio.h" />
     <ClInclude Include="TxIniciarSessio.h" />
+    <ClInclude Include="TxObteEstudiantsGrupsEspais.h" />
+    <ClInclude Include="TxObteProveidorsAmbEspaisCreats.h" />
     <ClInclude Include="TxParticipacioSessio.h" />
     <ClInclude Include="TxProgramarSessioEstudi.h">
       <DeploymentContent>true</DeploymentContent>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h" />
+    <ClInclude Include="TxValoracionsEstudiant.h" />
     <ClInclude Include="UnirseGrupUI.h" />
+    <ClInclude Include="ValoracionsEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
@@ -395,14 +402,19 @@
     <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
+    <ClCompile Include="TxEsborraValoracio.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
+    <ClCompile Include="TxObteEstudiantsGrupsEspais.cpp" />
+    <ClCompile Include="TxObteProveidorsAmbEspaisCreats.cpp" />
     <ClCompile Include="TxParticipacioSessio.cpp" />
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <DeploymentContent>true</DeploymentContent>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="TxTancarSessio.cpp" />
+    <ClCompile Include="TxValoracionsEstudiant.cpp" />
     <ClCompile Include="UnirseGrupUI.cpp" />
+    <ClCompile Include="ValoracionsEstudiant.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -445,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarEspaiUI.resx">
       <DependentUpon>EliminarEspaiUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGestioEstudiantsAdmin.resx">
+      <DependentUpon>MenuGestioEstudiantsAdmin.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgramarSessioEstudiUI.resx">
       <DependentUpon>ProgramarSessioEstudiUI.h</DependentUpon>
@@ -523,6 +538,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TancarSessio.resx">
       <DependentUpon>TancarSessio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValoracionsEstudiant.resx">
+      <DependentUpon>ValoracionsEstudiant.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

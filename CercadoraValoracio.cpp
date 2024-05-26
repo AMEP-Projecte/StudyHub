@@ -34,3 +34,39 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
     }
     return pu;
 }
+
+List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracionsEstudiant(String^ usernameEstudiant) {
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    String^ sql = "SELECT * FROM valoracioGrup WHERE estudiant = '" + usernameEstudiant + "';";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    MySqlDataReader^ dataReader;
+
+    List<PassarellaValoracio^>^ result = gcnew List<PassarellaValoracio^>();
+
+    try {
+        // Abrimos la conexión
+        conn->Open();
+        // Ejecutamos la consulta
+        dataReader = cmd->ExecuteReader();
+        while (dataReader->Read()) {
+            // Creamos una instancia de PassarellaUsuari y le asignamos los valores recuperados de la base de datos
+            String^ estudiant = dataReader->GetString("estudiant");
+            String^ grup = dataReader->GetString("grup");
+            Int64^ puntuacio = dataReader->GetInt64("puntuacio");
+            String^ comentari = dataReader->GetString("comentari");
+            PassarellaValoracio^ pu = gcnew PassarellaValoracio(estudiant, grup, puntuacio, comentari);
+
+            result->Add(pu);
+        }
+    }
+    catch (Exception^ ex) {
+        // Manejamos el error
+    }
+    finally {
+        // Cerramos la conexión
+        conn->Close();
+    }
+
+    return result;
+}

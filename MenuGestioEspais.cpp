@@ -94,7 +94,7 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
         layoutDades1->ForeColor = System::Drawing::Color::White;
         layoutDades1->Dock = System::Windows::Forms::DockStyle::Top;
         layoutDades1->RowCount = 1;
-        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 35)));
+        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
         //layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
         layoutDades1->TabIndex = 8;
 

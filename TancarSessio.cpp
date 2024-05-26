@@ -4,6 +4,7 @@
 #include "IniciarSessio.h"
 #include "MenuEstudiant.h"
 #include "MenuProvedor.h"
+#include "MenuAdministrador.h"
 
 System::Void StudyHub::TancarSessio::button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	TxTancarSessio tancamentSessio;
@@ -34,5 +35,10 @@ System::Void StudyHub::TancarSessio::button2_Click(System::Object^ sender, Syste
 		MenuProvedor^ menuProvedor = gcnew MenuProvedor();
 		MenuPrincipal^ Menu = Menu->getInstance();
 		Menu->AbrirFormularioEnPanel(menuProvedor);
+	}
+	else {
+		MenuAdministrador^ menuAdmin = gcnew MenuAdministrador();
+		MenuPrincipal^ Menu = Menu->getInstance();
+		Menu->AbrirFormularioEnPanel(menuAdmin);
 	}
 }

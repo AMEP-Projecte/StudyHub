@@ -99,11 +99,11 @@ namespace StudyHub {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(200, 34);
+			this->label4->Location = System::Drawing::Point(114, 34);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(204, 42);
+			this->label4->Size = System::Drawing::Size(352, 42);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Crear Grup:";
+			this->label4->Text = L"Crear Nou Proveïdor";
 			this->label4->Click += gcnew System::EventHandler(this, &CrearProveidorUI::label4_Click);
 			// 
 			// label2
@@ -134,7 +134,7 @@ namespace StudyHub {
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label3->Location = System::Drawing::Point(85, 170);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(84, 22);
+			this->label3->Size = System::Drawing::Size(112, 22);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"Contrasenya";
 			// 
@@ -191,8 +191,8 @@ namespace StudyHub {
 		Sistema^ sist = Sistema::getInstance();
 		try {
 			if (this->textBox1->Text != "" && this->textBox2->Text != "") {
-				TxCrearProveidor CrearGrup(this->textBox1->Text, this->textBox2->Text);
-				CrearGrup.executar();
+				TxCrearProveidor CrearProveidor(this->textBox1->Text, this->textBox2->Text);
+				CrearProveidor.executar();
 				this->Close();
 			}
 			else {

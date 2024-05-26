@@ -151,6 +151,7 @@ namespace StudyHub {
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 2;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 35)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 59)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(384, 238);
 			this->tableLayoutPanel1->TabIndex = 8;
 			// 
