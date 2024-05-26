@@ -10,7 +10,22 @@
 using namespace MySql::Data::MySqlClient;
 using namespace StudyHub;
 
+Control^ MenuGestioEstudiantsAdmin::GetControlFromTable(TableLayoutPanel^ table, int column, int row)
+{
+    for each (Control ^ control in table->Controls)
+    {
+        if (table->GetColumn(control) == column && table->GetRow(control) == row)
+        {
+            return control;
+        }
+    }
+    return nullptr; // Retorna nullptr si no se encuentra el control
+}
+
 System::Void MenuGestioEstudiantsAdmin::omplir() {
+    Control^ control = GetControlFromTable(tableLayoutPanel1, 0, 1);
+    if (control != nullptr)  tableLayoutPanel1->Controls->Remove(control);
+
     TxObteEstudiantsGrupsEspais^ tx = gcnew TxObteEstudiantsGrupsEspais("estudiants");
     tx->executar();
     ConsultaEstudiantsGrupsEspais^ totsEstudiants = tx->obteResultat();
@@ -55,8 +70,8 @@ System::Void MenuGestioEstudiantsAdmin::omplir() {
                 layoutFila->AutoSize = true;
                 layoutFila->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
                 layoutFila->ColumnCount = 2;
-                layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 70)));
-                layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 30)));
+                layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 75)));
+                layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 25)));
                 layoutFila->ForeColor = System::Drawing::Color::White;
                 layoutFila->Dock = System::Windows::Forms::DockStyle::Top;
                 layoutFila->Name = L"layoutFila";
@@ -104,15 +119,18 @@ System::Void MenuGestioEstudiantsAdmin::MenuGestioEstudiantsAdmin_Load(System::O
 }
 
 System::Void MenuGestioEstudiantsAdmin::eliminaEstudiant_Click(System::Object^ sender, System::EventArgs^ e) {
-        if (selectedUsername != "") {
+    if (selectedUsername != "") {
             TxEsborraEstudiantAdmin^ EliminaE = gcnew TxEsborraEstudiantAdmin(selectedUsername);
             EliminaE->executa();
             MessageBox::Show("Estudiant esborrat correctament.");
+
+            selectedUsername = "";
+            
             omplir();
-        }
-        else {
-            MessageBox::Show("Has de seleccionar un estudiant.");
-        }
+    }
+    else {
+        MessageBox::Show("Has de seleccionar un estudiant.");
+    }
 }
 
 System::Void MenuGestioEstudiantsAdmin::labelenfila_Click(Object^ sender, EventArgs^ e)
@@ -177,9 +195,10 @@ System::Void MenuGestioEstudiantsAdmin::selecciona(TableLayoutPanel^ table) {
 }
 
 System::Void MenuGestioEstudiantsAdmin::buttonValoracions_Click(System::Object^ sender, System::EventArgs^ e) {
-    userValoracions = "1"; // PROBA
-
-    if (userValoracions == "0") {
+    if (userValoracions == "") {
+        MessageBox::Show("Has de seleccionar un estudiant.");
+    }
+    else if (userValoracions == "0") {
         MessageBox::Show("No hi han valoracions a veure d'aquest estudiant.");
     }
     else {

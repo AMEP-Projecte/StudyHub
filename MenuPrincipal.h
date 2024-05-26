@@ -375,6 +375,7 @@ namespace StudyHub {
 			this->buttonGestioEstudiants->Text = L"Gestio Estudiants";
 			this->buttonGestioEstudiants->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->buttonGestioEstudiants->UseVisualStyleBackColor = true;
+			this->buttonGestioEstudiants->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonGestioEstudiants_Click);
 			// 
 			// MenuPrincipal
 			// 

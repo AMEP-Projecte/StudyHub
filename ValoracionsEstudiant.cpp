@@ -3,6 +3,8 @@
 #include "TxValoracionsEstudiant.h"
 #include "TxEsborraValoracio.h"
 #include "StarRatingView.h"
+#include "MenuPrincipal.h"
+#include "MenuGestioEstudiantsAdmin.h"
 
 using namespace StudyHub;
 
@@ -13,7 +15,7 @@ System::Void ValoracionsEstudiant::omplir() {
 
     Panel^ scrollPanel = gcnew Panel();
     scrollPanel->AutoScroll = true;
-    scrollPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+    scrollPanel->AutoSize = true;
     scrollPanel->Margin = System::Windows::Forms::Padding(0);
     scrollPanel->Padding = System::Windows::Forms::Padding(0);
 
@@ -35,16 +37,16 @@ System::Void ValoracionsEstudiant::omplir() {
     for (int i = 0; i < files; ++i) {
         TableLayoutPanel^ layoutFila = gcnew TableLayoutPanel();
         layoutFila->AutoSize = true;
+        // layoutFila->Dock = DockStyle::Fill;
         layoutFila->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
         layoutFila->ColumnCount = 3;
-        layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 25)));
-        layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 25)));
-        layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+        layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute, 110)));
+        layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute, 190)));
+        layoutFila->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute, 185)));
         layoutFila->ForeColor = System::Drawing::Color::White;
-        layoutFila->Dock = System::Windows::Forms::DockStyle::Fill;
         layoutFila->Name = L"layoutFila";
-        layoutFila->RowCount = files; // Número de filas para los datos
-        layoutFila->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
+        layoutFila->RowCount = 1; 
+        layoutFila->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 30)));
         layoutFila->TabIndex = 8;
         layoutFila->Margin = System::Windows::Forms::Padding(0);
         layoutFila->Padding = System::Windows::Forms::Padding(0);
@@ -66,7 +68,7 @@ System::Void ValoracionsEstudiant::omplir() {
 
         Label^ labelComentari = gcnew Label();
         labelComentari->AutoSize = true;
-        labelComentari->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+        labelComentari->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         labelComentari->Dock = System::Windows::Forms::DockStyle::Fill;
         labelComentari->Text = valoracions->comentari[i];
@@ -85,50 +87,7 @@ System::Void ValoracionsEstudiant::omplir() {
 }
 
 System::Void ValoracionsEstudiant::ValoracionsEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
-    /*
-    TableLayoutPanel^ layoutDades = gcnew TableLayoutPanel();
-    layoutDades->AutoSize = true;
-    layoutDades->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-    layoutDades->ColumnCount = 3;
-    layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 100)));
-    layoutDades->ForeColor = System::Drawing::Color::White;
-    layoutDades->Name = L"layoutDades";
-    layoutDades->RowCount = 1; // Número de filas para los datos
-    layoutDades->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
-    layoutDades->TabIndex = 8;
-    layoutDades->Margin = System::Windows::Forms::Padding(0);
-    layoutDades->Padding = System::Windows::Forms::Padding(0);
-
-    Label^ labelGrup = gcnew Label();
-    labelGrup->AutoSize = true;
-    labelGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
-        static_cast<System::Byte>(0)));
-    labelGrup->Dock = System::Windows::Forms::DockStyle::Fill;
-    labelGrup->Text = "Grup";
-    labelGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-    layoutDades->Controls->Add(labelGrup, 0, 0);
-
-    Label^ labelVal = gcnew Label();
-    labelVal->AutoSize = true;
-    labelVal->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
-        static_cast<System::Byte>(0)));
-    labelVal->Dock = System::Windows::Forms::DockStyle::Fill;
-    labelVal->Text = "Puntuació";
-    labelVal->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-    layoutDades->Controls->Add(labelGrup, 1, 0);
-
-    Label^ labelComentari = gcnew Label();
-    labelComentari->AutoSize = true;
-    labelComentari->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
-        static_cast<System::Byte>(0)));
-    labelComentari->Dock = System::Windows::Forms::DockStyle::Fill;
-    labelComentari->Text = "Comentari";
-    labelComentari->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-    layoutDades->Controls->Add(labelGrup, 2, 0);
-
-    this->tableLayoutPanel1->Controls->Add(layoutDades, 0, 0);
-    */
-
+    labelUsuari->Text = usernameEstudiant;
     omplir();
 }
 
@@ -197,5 +156,9 @@ System::Void ValoracionsEstudiant::buttonElimina_Click(System::Object^ sender, S
     else {
         TxEsborraValoracio^ tx = gcnew TxEsborraValoracio(usernameEstudiant, grupValorat);
         tx->executar();
+
+        MenuPrincipal^ menu = MenuPrincipal::getInstance();
+        MenuGestioEstudiantsAdmin^ gestioEstudiants = gcnew MenuGestioEstudiantsAdmin();
+        menu->AbrirFormularioEnPanel(gestioEstudiants);
     }
 }

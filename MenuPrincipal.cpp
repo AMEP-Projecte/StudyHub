@@ -16,6 +16,7 @@
 // usuari Admin
 #include "MenuAdministrador.h"
 #include "MenuGestioProveidorAdmin.h"
+#include "MenuGestioEstudiantsAdmin.h"
 
 using namespace StudyHub;
 
@@ -215,7 +216,11 @@ System::Void MenuPrincipal::buttonGestioProveidors_Click(System::Object^ sender,
 }
 
 System::Void MenuPrincipal::buttonGestioEstudiants_Click(System::Object^ sender, System::EventArgs^ e) {
-	// gestio estudiants de admin
+	this->ButtonMenu->Visible = true;
+	this->buttonGestioEstudiants->Visible = false;
+
+	MenuGestioEstudiantsAdmin^ gestioEstudiants = gcnew MenuGestioEstudiantsAdmin();
+	AbrirFormularioEnPanel(gestioEstudiants);
 }
 
 System::Void MenuPrincipal::canviaVisibilitat_ButtonMenu(bool visibilitat) {

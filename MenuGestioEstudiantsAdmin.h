@@ -53,8 +53,8 @@ namespace StudyHub {
 	private: System::Windows::Forms::Label^ labelvaloracions;
 	private: System::Windows::Forms::Label^ labelusername;
 
-		   System::String^ selectedUsername; // Variable miembro para almacenar el username seleccionado
-		   System::String^ userValoracions;
+		   System::String^ selectedUsername = ""; // Variable miembro para almacenar el username seleccionado
+		   System::String^ userValoracions = "";
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -192,7 +192,6 @@ namespace StudyHub {
 			this->Name = L"MenuGestioEstudiantsAdmin";
 			this->Text = L"MenuGestioEstudiantsAdmin";
 			this->Load += gcnew System::EventHandler(this, &MenuGestioEstudiantsAdmin::MenuGestioEstudiantsAdmin_Load);
-			this->Click += gcnew System::EventHandler(this, &MenuGestioEstudiantsAdmin::eliminaEstudiant_Click);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
@@ -207,6 +206,7 @@ namespace StudyHub {
 	private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void selecciona(TableLayoutPanel^ table);
 
+	private: Control^ GetControlFromTable(TableLayoutPanel^ table, int column, int row);
 	private: System::Void omplir();
 
 	private: System::Void buttonValoracions_Click(System::Object^ sender, System::EventArgs^ e);

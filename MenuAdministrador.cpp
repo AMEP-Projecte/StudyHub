@@ -45,7 +45,7 @@ System::Void MenuAdministrador::tancaSessio_Click(System::Object^ sender, System
 	menu->AbrirFormularioEnPanel(tanca);
 }
 
-System::Void MenuAdministrador::gestionaGrups_Click(System::Object^ sender, System::EventArgs^ e) {
+System::Void MenuAdministrador::gestionaGrups_Click(System::Object^ sender, System::EventArgs^ e) { // Gestio Estudiants en realitat
 	MenuGestioEstudiantsAdmin^ gestionaEtudiants = gcnew MenuGestioEstudiantsAdmin();
 	MenuPrincipal^ menu = menu->getInstance();
 

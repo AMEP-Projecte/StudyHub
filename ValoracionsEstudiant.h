@@ -30,6 +30,7 @@ namespace StudyHub {
 	private: System::Windows::Forms::Label^ labelheadergrup;
 	private: System::Windows::Forms::Label^ labelheadercomentari;
 	private: System::Windows::Forms::Label^ labelheadervaloracio;
+	private: System::Windows::Forms::Label^ labelUsuari;
 
 
 	public: String^ usernameEstudiant;
@@ -63,9 +64,10 @@ namespace StudyHub {
 			this->buttonElimina = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->labelheadergrup = (gcnew System::Windows::Forms::Label());
-			this->labelheadervaloracio = (gcnew System::Windows::Forms::Label());
 			this->labelheadercomentari = (gcnew System::Windows::Forms::Label());
+			this->labelheadervaloracio = (gcnew System::Windows::Forms::Label());
+			this->labelheadergrup = (gcnew System::Windows::Forms::Label());
+			this->labelUsuari = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
 			this->SuspendLayout();
@@ -76,7 +78,7 @@ namespace StudyHub {
 			this->titol->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 21, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->titol->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->titol->Location = System::Drawing::Point(27, 28);
+			this->titol->Location = System::Drawing::Point(61, 28);
 			this->titol->Name = L"titol";
 			this->titol->Size = System::Drawing::Size(333, 37);
 			this->titol->TabIndex = 0;
@@ -115,13 +117,14 @@ namespace StudyHub {
 			// 
 			// tableLayoutPanel2
 			// 
+			this->tableLayoutPanel2->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
 			this->tableLayoutPanel2->ColumnCount = 3;
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				53.5545F)));
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				46.4455F)));
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				276)));
+				110)));
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				190)));
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
+				183)));
 			this->tableLayoutPanel2->Controls->Add(this->labelheadercomentari, 2, 0);
 			this->tableLayoutPanel2->Controls->Add(this->labelheadervaloracio, 1, 0);
 			this->tableLayoutPanel2->Controls->Add(this->labelheadergrup, 0, 0);
@@ -132,19 +135,19 @@ namespace StudyHub {
 			this->tableLayoutPanel2->Size = System::Drawing::Size(488, 26);
 			this->tableLayoutPanel2->TabIndex = 0;
 			// 
-			// labelheadergrup
+			// labelheadercomentari
 			// 
-			this->labelheadergrup->AutoSize = true;
-			this->labelheadergrup->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->labelheadergrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+			this->labelheadercomentari->AutoSize = true;
+			this->labelheadercomentari->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->labelheadercomentari->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelheadergrup->ForeColor = System::Drawing::Color::White;
-			this->labelheadergrup->Location = System::Drawing::Point(3, 0);
-			this->labelheadergrup->Name = L"labelheadergrup";
-			this->labelheadergrup->Size = System::Drawing::Size(107, 26);
-			this->labelheadergrup->TabIndex = 0;
-			this->labelheadergrup->Text = L"Grup";
-			this->labelheadergrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelheadercomentari->ForeColor = System::Drawing::Color::White;
+			this->labelheadercomentari->Location = System::Drawing::Point(309, 2);
+			this->labelheadercomentari->Name = L"labelheadercomentari";
+			this->labelheadercomentari->Size = System::Drawing::Size(176, 22);
+			this->labelheadercomentari->TabIndex = 2;
+			this->labelheadercomentari->Text = L"Comentari";
+			this->labelheadercomentari->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelheadervaloracio
 			// 
@@ -153,26 +156,38 @@ namespace StudyHub {
 			this->labelheadervaloracio->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->labelheadervaloracio->ForeColor = System::Drawing::Color::White;
-			this->labelheadervaloracio->Location = System::Drawing::Point(116, 0);
+			this->labelheadervaloracio->Location = System::Drawing::Point(117, 2);
 			this->labelheadervaloracio->Name = L"labelheadervaloracio";
-			this->labelheadervaloracio->Size = System::Drawing::Size(92, 26);
+			this->labelheadervaloracio->Size = System::Drawing::Size(184, 22);
 			this->labelheadervaloracio->TabIndex = 1;
 			this->labelheadervaloracio->Text = L"Valoració";
 			this->labelheadervaloracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
-			// labelheadercomentari
+			// labelheadergrup
 			// 
-			this->labelheadercomentari->AutoSize = true;
-			this->labelheadercomentari->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->labelheadercomentari->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+			this->labelheadergrup->AutoSize = true;
+			this->labelheadergrup->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->labelheadergrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->labelheadercomentari->ForeColor = System::Drawing::Color::White;
-			this->labelheadercomentari->Location = System::Drawing::Point(214, 0);
-			this->labelheadercomentari->Name = L"labelheadercomentari";
-			this->labelheadercomentari->Size = System::Drawing::Size(271, 26);
-			this->labelheadercomentari->TabIndex = 2;
-			this->labelheadercomentari->Text = L"Comentari";
-			this->labelheadercomentari->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->labelheadergrup->ForeColor = System::Drawing::Color::White;
+			this->labelheadergrup->Location = System::Drawing::Point(5, 2);
+			this->labelheadergrup->Name = L"labelheadergrup";
+			this->labelheadergrup->Size = System::Drawing::Size(104, 22);
+			this->labelheadergrup->TabIndex = 0;
+			this->labelheadergrup->Text = L"Grup";
+			this->labelheadergrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// labelUsuari
+			// 
+			this->labelUsuari->AutoSize = true;
+			this->labelUsuari->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 21, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelUsuari->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->labelUsuari->Location = System::Drawing::Point(390, 28);
+			this->labelUsuari->Name = L"labelUsuari";
+			this->labelUsuari->Size = System::Drawing::Size(103, 37);
+			this->labelUsuari->TabIndex = 3;
+			this->labelUsuari->Text = L"usuari";
 			// 
 			// ValoracionsEstudiant
 			// 
@@ -180,6 +195,7 @@ namespace StudyHub {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(593, 332);
+			this->Controls->Add(this->labelUsuari);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->buttonElimina);
 			this->Controls->Add(this->titol);
