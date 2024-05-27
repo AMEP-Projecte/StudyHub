@@ -323,8 +323,6 @@
     <ClInclude Include="UnirseGrupUI.h" />
     <ClInclude Include="ValoracionsEstudiant.h">
     <ClInclude Include="TxValoracioMitjana.h" />
-      <FileType>CppForm</FileType>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
