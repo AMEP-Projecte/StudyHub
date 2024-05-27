@@ -182,7 +182,7 @@ namespace StudyHub {
 			// 
 			// ButtonMenuAdmin
 			// 
-			this->ButtonMenuAdmin->Dock = System::Windows::Forms::DockStyle::Top;
+			/*this->ButtonMenuAdmin->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ButtonMenuAdmin->FlatAppearance->BorderSize = 0;
 			this->ButtonMenuAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonMenuAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
@@ -197,11 +197,11 @@ namespace StudyHub {
 			this->ButtonMenuAdmin->TabIndex = 11;
 			this->ButtonMenuAdmin->Text = L"      Menú Administrador";
 			this->ButtonMenuAdmin->UseVisualStyleBackColor = true;
-			this->ButtonMenuAdmin->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuAdmin_Click);
+			this->ButtonMenuAdmin->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuAdmin_Click);*/
 			// 
 			// ButtonMenuProveidors
 			// 
-			this->ButtonMenuProveidors->Dock = System::Windows::Forms::DockStyle::Top;
+			/*this->ButtonMenuProveidors->Dock = System::Windows::Forms::DockStyle::Top;
 			this->ButtonMenuProveidors->FlatAppearance->BorderSize = 0;
 			this->ButtonMenuProveidors->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonMenuProveidors->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
@@ -217,7 +217,7 @@ namespace StudyHub {
 			this->ButtonMenuProveidors->Text = L" Menú Proveidors";
 			this->ButtonMenuProveidors->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenuProveidors->UseVisualStyleBackColor = true;
-			this->ButtonMenuProveidors->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuProveidors_Click);
+			this->ButtonMenuProveidors->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuProveidors_Click);*/
 			// 
 			// ButtonMenuGrups
 			// 
