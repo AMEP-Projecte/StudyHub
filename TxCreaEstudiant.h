@@ -1,16 +1,10 @@
 #pragma once
 using namespace System;
+#include "PassarellaEstudiant.h"
 ref class TxCreaEstudiant
 {
 	private:
-        String^ _username;
-        String^ _contrasenya;
-        String^ _correuElectronic;
-        String^ _nom;
-        String^ _cognoms;
-        String^ _idioma;
-        String^ _localitat;
-        int _numValoracions;
+        PassarellaEstudiant^ pe;
 
     public:
         TxCreaEstudiant(String^ username, String^ contrasenya, String^ correuElectronic,

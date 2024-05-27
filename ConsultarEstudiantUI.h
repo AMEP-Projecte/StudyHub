@@ -1,5 +1,6 @@
 #pragma once
 #include"TxConsultarEstudiant.h"
+
 namespace StudyHub {
 
 	using namespace System;
@@ -50,7 +51,6 @@ namespace StudyHub {
 	private: System::Windows::Forms::Label^ localitatLabel;
 	private: System::Windows::Forms::Label^ valoracionsLabel;
 	private: System::Windows::Forms::Button^ TancarButton;
-
 
 
 	protected:

@@ -17,7 +17,7 @@ private:
 public:
     // Constructor
     PassarellaEstudiant(String^ username, String^ contrasenya,  String^ correuElectronic, String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions);
-
+    PassarellaEstudiant(String^ username, String^ contrasenya, String^ salt, String^ correuElectronic, String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions);
     // Getters y setters
     void posaUsername(String^ username);
     String^ obteUsername();

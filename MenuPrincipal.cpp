@@ -1,12 +1,21 @@
 #include "pch.h"
-#include "MenuAdministrador.h"
-#include "MenuProvedor.h"
+#include "MenuPrincipal.h"
 #include "IniciarSessio.h"
 #include "CrearEstudiant.h"
-#include "MenuEstudiant.h"
-#include "MenuSessionsUI.h"
-#include "MenuPrincipal.h"
 
+// usuari Estudiant
+#include "MenuEstudiant.h"
+#include "MenuGestioGrups.h"
+#include "MenuSessionsUI.h"
+
+// usuari Proveidor
+#include "MenuProvedor.h"
+#include "MenuGestioProveidor.h"
+#include "MenuGestioEspais.h"
+
+// usuari Admin
+#include "MenuAdministrador.h"
+#include "MenuGestioProveidorAdmin.h"
 
 using namespace StudyHub;
 
@@ -16,8 +25,28 @@ System::Void MenuPrincipal::FormPrincipal_Load() {
 }
 
 System::Void  MenuPrincipal::buttonMenu(System::Object^ sender, System::EventArgs^ e) {
-	IniciarSessio^ NewForm = gcnew IniciarSessio();
-	AbrirFormularioEnPanel(NewForm);
+	Sistema^ sistema = Sistema::getInstance();
+	
+	if (sistema->obteEstatSessio()) {
+		String^ tipusUsuari = sistema->obteTipusUsuari();
+
+		if (tipusUsuari == "estudiant") {
+			MenuEstudiant^ menuEst = gcnew MenuEstudiant();
+			AbrirFormularioEnPanel(menuEst);
+		}
+		else if (tipusUsuari == "proveidor") {
+			MenuProvedor^ menuPro = gcnew MenuProvedor();
+			AbrirFormularioEnPanel(menuPro);
+		}
+		else {
+			MenuAdministrador^ menuAdm = gcnew MenuAdministrador();
+			AbrirFormularioEnPanel(menuAdm);
+		}
+	}
+	else {
+		IniciarSessio^ NewForm = gcnew IniciarSessio();
+		AbrirFormularioEnPanel(NewForm);
+	}
 }
 
 MenuPrincipal^ MenuPrincipal::getInstance() {
@@ -48,41 +77,75 @@ System::Void MenuPrincipal::AbrirSubFormularioEnPanel(Form^ formHijo) {
 	formHijo->BringToFront();
 }
 
+System::Void MenuPrincipal::AbrirSubFormularioEnPanelOriginal(Form^ formHijo) {
+	formHijo->TopLevel = false;
+	formHijo->ControlBox = false;
+	formHijo->StartPosition = FormStartPosition::Manual; // Establece la posición manualmente
+
+	// Calcula la posición centrada dentro del panel
+	int posX = (PanelContainer->Width - formHijo->Width) / 2;
+	int posY = (PanelContainer->Height - formHijo->Height) / 2;
+	formHijo->Location = System::Drawing::Point(posX, posY);
+
+	PanelContainer->Controls->Add(formHijo);
+	formHijo->Show();
+	formHijo->BringToFront();
+}
+
 System::Void MenuPrincipal::HacerVisible() {
+	this->ButtonMenu->Visible = false;
+	this->ButtonMaximized->Visible = false;
+
 	this->ButtonMenuEstudiant->Visible = true;
 	this->ButtonMenuGrups->Visible = true;
 	this->buttonMenuSessions->Visible = true;
-	this->ButtonMenu->Visible = false;
-	this->ButtonMenuProveidors->Visible = false;
-	this->ButtonMenuAdmin->Visible = false;
+
+	this->buttonGestioEspais->Visible = false;
+
+	this->buttonGestioProveidors->Visible = false;
+	this->buttonGestioEstudiants->Visible = false;
 }
 
 System::Void MenuPrincipal::HacerVisibleProvedor() {
-	this->ButtonMenuProveidors->Visible = true;
-	this->ButtonMenuAdmin->Visible = false;
-	this->ButtonMenuEstudiant->Visible = false;
-	this->ButtonMenuGrups->Visible = false;
 	this->ButtonMenu->Visible = false;
+	this->ButtonMaximized->Visible = false;
+
+	this->ButtonMenuEstudiant->Visible = true;
+	this->ButtonMenuGrups->Visible = false;
 	this->buttonMenuSessions->Visible = false;
+
+	this->buttonGestioEspais->Visible = true;
+
+	this->buttonGestioProveidors->Visible = false;
+	this->buttonGestioEstudiants->Visible = false;
 }
 
 System::Void MenuPrincipal::HacerVisibleAdmin() {
-	this->ButtonMenuProveidors->Visible = false;
-	this->ButtonMenuAdmin->Visible = true;
+	this->ButtonMenu->Visible = false;
+	this->ButtonMaximized->Visible = false;
+
 	this->ButtonMenuEstudiant->Visible = false;
 	this->ButtonMenuGrups->Visible = false;
-	this->ButtonMenu->Visible = false;
 	this->buttonMenuSessions->Visible = false;
+
+	this->buttonGestioEspais->Visible = false;
+
+	this->buttonGestioProveidors->Visible = true;
+	this->buttonGestioEstudiants->Visible = true;
 }
 
 System::Void MenuPrincipal::HacerInivisible_Load() {
 	this->ButtonMenu->Visible = true;
+	this->ButtonMaximized->Visible = false;
+
 	this->ButtonMenuEstudiant->Visible = false;
 	this->ButtonMenuGrups->Visible = false;
-	this->ButtonMenuAdmin->Visible = false;
-	this->ButtonMenuProveidors->Visible = false;
-	this->ButtonMaximized->Visible = false;
 	this->buttonMenuSessions->Visible = false;
+
+	this->buttonGestioEspais->Visible = false;
+
+	this->buttonGestioProveidors->Visible = false;
+	this->buttonGestioEstudiants->Visible = false;
 }
 
 System::Void MenuPrincipal::MenuPrincipal_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -132,26 +195,8 @@ System::Void MenuPrincipal::ButtonCloseForm_Click(System::Object^ sender, System
 	this->Close();
 }
 
-System::Void MenuPrincipal::ButtonMenuEstudiant_Click(System::Object^ sender, System::EventArgs^ e) {
-	MenuEstudiant^ NewForm = gcnew MenuEstudiant();
-	// Abrir el formulario en el PanelContainer
-	AbrirFormularioEnPanel(NewForm);
-}
-
 System::Void MenuPrincipal::ButtonMenuGrups_Click(System::Object^ sender, System::EventArgs^ e) {
 	MenuGestioGrups^ NewForm = gcnew MenuGestioGrups();
-	// Abrir el formulario en el PanelContainer
-	AbrirFormularioEnPanel(NewForm);
-}
-
-System::Void MenuPrincipal::ButtonMenuProveidors_Click(System::Object^ sender, System::EventArgs^ e) {
-	MenuProvedor^ NewForm = gcnew MenuProvedor();
-	// Abrir el formulario en el PanelContainer
-	AbrirFormularioEnPanel(NewForm);
-}
-
-System::Void MenuPrincipal::ButtonMenuAdmin_Click(System::Object^ sender, System::EventArgs^ e) {
-	MenuAdministrador^ NewForm = gcnew MenuAdministrador();
 	// Abrir el formulario en el PanelContainer
 	AbrirFormularioEnPanel(NewForm);
 }
@@ -164,3 +209,37 @@ System::Void MenuPrincipal::buttonMenuSessions_Click(System::Object^ sender, Sys
 
 System::Void MenuPrincipal::panelTitle_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
+
+System::Void MenuPrincipal::ButtonMenuEstudiant_Click(System::Object^ sender, System::EventArgs^ e) {
+	// button to Gestio Perfil Usuari
+
+	Sistema^ sistema = Sistema::getInstance();
+	if (sistema->obteTipusUsuari() == "estudiant") {
+		MenuGestioEstudiant^ gestionaPerfilEst = gcnew MenuGestioEstudiant();
+		AbrirFormularioEnPanel(gestionaPerfilEst);
+
+	}
+	else {
+		MenuGestioProveidor^ gestioPerfilPro = gcnew MenuGestioProveidor();
+		AbrirFormularioEnPanel(gestioPerfilPro);
+	}
+}
+
+System::Void MenuPrincipal::buttonGestioEspais_Click(System::Object^ sender, System::EventArgs^ e) {
+	MenuGestioEspais^ gestionaEspais = gcnew MenuGestioEspais();
+	AbrirFormularioEnPanel(gestionaEspais);
+
+	this->ButtonMenu->Visible = true;
+}
+
+System::Void MenuPrincipal::buttonGestioProveidors_Click(System::Object^ sender, System::EventArgs^ e) {
+	MenuGestioProveidorAdmin^ gestionaProveidors = gcnew MenuGestioProveidorAdmin();
+	AbrirFormularioEnPanel(gestionaProveidors);
+
+	this->ButtonMenu->Visible = true;
+}
+
+System::Void MenuPrincipal::buttonGestioEstudiants_Click(System::Object^ sender, System::EventArgs^ e) {
+	// gestio estudiants de admin
+}
+

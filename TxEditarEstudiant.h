@@ -12,12 +12,13 @@ private:
 	String^ _cognoms;
 	String^ _idioma;
 	String^ _localitat;
-	String^ _contrasenya;
+	String^ _contrasenyaNova;
+	String^ _contrasenyaAntiga;
 
 public:
 
 	// Constructora
-	TxEditarEstudiant(String^ n, String^ cn, String^ i, String^ l, String^ c);
+	TxEditarEstudiant(String^ nom, String^ cognom, String^ idioma, String^ localitat, String^ contrasenyaNova, String^ contrasenyaAntiga);
 
 	void executar();
 };

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "TxParticipacioSessio.h"
+#include "CercadoraSessio.h"
 
 TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h) {
 	_estudiant = n;
@@ -9,23 +10,18 @@ TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, Stri
 }
 
 void TxParticipacioSessio::executar() {
-	List<PassarellaParticipa^>^participa = CercadoraParticipa::cercaParticipaEstudiant(_estudiant);
-	String^ res = "";
-
-	//buscar si l'estudiant esta dins el grup/sessio
-	for each (PassarellaParticipa ^ participes in participa) {
-		if (participes->obteGrup() == _grup) res = _grup;
 		
-	}
 
-	//si no està l'afegim a participa
-	if (res == "") {
+	
 		PassarellaParticipa^ NouParticipa = gcnew PassarellaParticipa(_estudiant,_grup, _data,_horaInici);
 		NouParticipa->insereix();
-
-	}
-	else {
-		throw gcnew Exception("Ja estàs en aquesta sessió.");
 		
-	}
+
+		//modifica els llocs lliures de la sessio
+		PassarellaSessio^ modify = CercadoraSessio::cercaAdreca(_grup, _data, _horaInici);
+		int llocs = modify->obteLlocsLliures();
+		llocs -= 1;
+		modify->posaLlocs(llocs);
+		
+	
 }

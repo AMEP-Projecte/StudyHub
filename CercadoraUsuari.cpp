@@ -20,7 +20,8 @@ PassarellaUsuari^ CercadoraUsuari::cercaUsuari(String^ username) {
             String^ username = dataReader->GetString(0);
             String^ pass = dataReader->GetString(1);
             String^ tipus = dataReader->GetString(2);
-            pu = gcnew PassarellaUsuari(username, pass, tipus);
+            String^ salt = dataReader->GetString(3);
+            pu = gcnew PassarellaUsuari(username, pass, tipus, salt);
         }
     }
     catch (Exception^ ex) {

@@ -51,10 +51,14 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ ButtonMaximized;
 	private: System::Windows::Forms::Button^ ButtonMenuEstudiant;
 	private: System::Windows::Forms::Button^ ButtonMenuGrups;
-	private: System::Windows::Forms::Button^ ButtonMenuAdmin;
-	private: System::Windows::Forms::Button^ ButtonMenuProveidors;
+
+
 	private: System::Windows::Forms::Button^ buttonMenuSessions;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Button^ buttonGestioEspais;
+	private: System::Windows::Forms::Button^ buttonGestioEstudiants;
+	private: System::Windows::Forms::Button^ buttonGestioProveidors;
+
 
 
 
@@ -82,9 +86,8 @@ namespace StudyHub {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MenuPrincipal::typeid));
 			this->studyHyb = (gcnew System::Windows::Forms::Label());
 			this->panelMenu = (gcnew System::Windows::Forms::Panel());
+			this->buttonGestioEspais = (gcnew System::Windows::Forms::Button());
 			this->buttonMenuSessions = (gcnew System::Windows::Forms::Button());
-			this->ButtonMenuAdmin = (gcnew System::Windows::Forms::Button());
-			this->ButtonMenuProveidors = (gcnew System::Windows::Forms::Button());
 			this->ButtonMenuGrups = (gcnew System::Windows::Forms::Button());
 			this->ButtonMenuEstudiant = (gcnew System::Windows::Forms::Button());
 			this->ButtonMenu = (gcnew System::Windows::Forms::Button());
@@ -96,6 +99,8 @@ namespace StudyHub {
 			this->ButtonCloseForm = (gcnew System::Windows::Forms::Button());
 			this->LabelTitle = (gcnew System::Windows::Forms::Label());
 			this->PanelContainer = (gcnew System::Windows::Forms::Panel());
+			this->buttonGestioProveidors = (gcnew System::Windows::Forms::Button());
+			this->buttonGestioEstudiants = (gcnew System::Windows::Forms::Button());
 			this->panelMenu->SuspendLayout();
 			this->PanelLogo->SuspendLayout();
 			this->panelTitle->SuspendLayout();
@@ -120,9 +125,10 @@ namespace StudyHub {
 			// panelMenu
 			// 
 			this->panelMenu->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->panelMenu->Controls->Add(this->buttonGestioEstudiants);
+			this->panelMenu->Controls->Add(this->buttonGestioProveidors);
+			this->panelMenu->Controls->Add(this->buttonGestioEspais);
 			this->panelMenu->Controls->Add(this->buttonMenuSessions);
-			this->panelMenu->Controls->Add(this->ButtonMenuAdmin);
-			this->panelMenu->Controls->Add(this->ButtonMenuProveidors);
 			this->panelMenu->Controls->Add(this->ButtonMenuGrups);
 			this->panelMenu->Controls->Add(this->ButtonMenuEstudiant);
 			this->panelMenu->Controls->Add(this->ButtonMenu);
@@ -133,6 +139,26 @@ namespace StudyHub {
 			this->panelMenu->Name = L"panelMenu";
 			this->panelMenu->Size = System::Drawing::Size(293, 486);
 			this->panelMenu->TabIndex = 5;
+			// 
+			// buttonGestioEspais
+			// 
+			this->buttonGestioEspais->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonGestioEspais->FlatAppearance->BorderSize = 0;
+			this->buttonGestioEspais->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonGestioEspais->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
+			this->buttonGestioEspais->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->buttonGestioEspais->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonGestioEspais.Image")));
+			this->buttonGestioEspais->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonGestioEspais->Location = System::Drawing::Point(0, 500);
+			this->buttonGestioEspais->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->buttonGestioEspais->Name = L"buttonGestioEspais";
+			this->buttonGestioEspais->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
+			this->buttonGestioEspais->Size = System::Drawing::Size(330, 98);
+			this->buttonGestioEspais->TabIndex = 13;
+			this->buttonGestioEspais->Text = L"Gestio Espais";
+			this->buttonGestioEspais->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonGestioEspais->UseVisualStyleBackColor = true;
+			this->buttonGestioEspais->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonGestioEspais_Click);
 			// 
 			// buttonMenuSessions
 			// 
@@ -149,7 +175,7 @@ namespace StudyHub {
 			this->buttonMenuSessions->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
 			this->buttonMenuSessions->Size = System::Drawing::Size(293, 79);
 			this->buttonMenuSessions->TabIndex = 12;
-			this->buttonMenuSessions->Text = L" Menu Sessions";
+			this->buttonMenuSessions->Text = L"Gestio Sessions";
 			this->buttonMenuSessions->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->buttonMenuSessions->UseVisualStyleBackColor = true;
 			this->buttonMenuSessions->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonMenuSessions_Click);
@@ -367,6 +393,45 @@ namespace StudyHub {
 			this->PanelContainer->TabIndex = 7;
 			this->PanelContainer->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelContainer_Paint);
 			// 
+			// buttonGestioProveidors
+			// 
+			this->buttonGestioProveidors->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonGestioProveidors->FlatAppearance->BorderSize = 0;
+			this->buttonGestioProveidors->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonGestioProveidors->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
+			this->buttonGestioProveidors->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->buttonGestioProveidors->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonGestioProveidors.Image")));
+			this->buttonGestioProveidors->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonGestioProveidors->Location = System::Drawing::Point(0, 598);
+			this->buttonGestioProveidors->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->buttonGestioProveidors->Name = L"buttonGestioProveidors";
+			this->buttonGestioProveidors->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
+			this->buttonGestioProveidors->Size = System::Drawing::Size(330, 98);
+			this->buttonGestioProveidors->TabIndex = 14;
+			this->buttonGestioProveidors->Text = L"Gestio Proveidors";
+			this->buttonGestioProveidors->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonGestioProveidors->UseVisualStyleBackColor = true;
+			this->buttonGestioProveidors->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonGestioProveidors_Click);
+			// 
+			// buttonGestioEstudiants
+			// 
+			this->buttonGestioEstudiants->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonGestioEstudiants->FlatAppearance->BorderSize = 0;
+			this->buttonGestioEstudiants->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonGestioEstudiants->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
+			this->buttonGestioEstudiants->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->buttonGestioEstudiants->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonGestioEstudiants.Image")));
+			this->buttonGestioEstudiants->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonGestioEstudiants->Location = System::Drawing::Point(0, 696);
+			this->buttonGestioEstudiants->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->buttonGestioEstudiants->Name = L"buttonGestioEstudiants";
+			this->buttonGestioEstudiants->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
+			this->buttonGestioEstudiants->Size = System::Drawing::Size(330, 98);
+			this->buttonGestioEstudiants->TabIndex = 15;
+			this->buttonGestioEstudiants->Text = L"Gestio Estudiants";
+			this->buttonGestioEstudiants->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonGestioEstudiants->UseVisualStyleBackColor = true;
+			// 
 			// MenuPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -411,6 +476,8 @@ public: System::Void AbrirFormularioEnPanel(Form^ formHijo);
 
 // Abrir SubMenu:
 public: System::Void AbrirSubFormularioEnPanel(Form^ formHijo);
+// Abrir SubMenu Sin Aplicar Cambios:
+public: System::Void AbrirSubFormularioEnPanelOriginal(Form^ formHijo);
 
 //Hacer Visible (Para Estudiantes):
 public: System::Void HacerVisible();
@@ -453,13 +520,14 @@ private: System::Void ButtonMenuGrups_Click(System::Object^ sender, System::Even
 
 private: System::Void panelTitle_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e);
 
-private: System::Void ButtonMenuProveidors_Click(System::Object^ sender, System::EventArgs^ e);
-
-private: System::Void ButtonMenuAdmin_Click(System::Object^ sender, System::EventArgs^ e);
-
 private: System::Void PanelLogo_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void buttonMenuSessions_Click(System::Object^ sender, System::EventArgs^ e);
 
+private: System::Void buttonGestioEspais_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void buttonGestioProveidors_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void buttonGestioEstudiants_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
