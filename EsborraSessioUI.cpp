@@ -32,7 +32,7 @@ System::Void EsborraSessioUI::button3_Click(System::Object^ sender, System::Even
        
     }
     else {
-        System::Windows::Forms::MessageBox::Show("i us plau, seleccioni la sessió a eliminar.");
+        System::Windows::Forms::MessageBox::Show("Si us plau, seleccioni la sessió a eliminar.");
     }
     
 }

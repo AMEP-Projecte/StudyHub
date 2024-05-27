@@ -25,5 +25,6 @@ public:
 	String^ obteHoraInici();
 
 	void insereix();
+	void esborra();
 };
 

@@ -65,3 +65,25 @@ void PassarellaParticipa::insereix() {
 		conn->Close();
 	}
 }
+
+void PassarellaParticipa::esborra() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+	String^ sql = "DELETE FROM participa WHERE grup=@g and data=@d and hora_inici=@hi and estudiant=@e";
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+
+	cmd->Parameters->AddWithValue("@g", _grup);
+	cmd->Parameters->AddWithValue("@d", _data);
+	cmd->Parameters->AddWithValue("@hi", _horaInici);
+	cmd->Parameters->AddWithValue("@e", _estudiant);
+	
+	try {
+		conn->Open();
+		cmd->ExecuteNonQuery();
+	}
+	catch (Exception^ ex) {
+		//Errors
+	}
+}
