@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "ProgramarSessioEstudiUI.h"
 #include "TxProgramarSessioEstudi.h"
+
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
@@ -32,6 +33,9 @@ System::Void StudyHub::ProgamarSessioEstudiUI::buttonOK_Click(System::Object^ se
 		catch (Exception^ ex) {
 			MessageBox::Show(ex->Message);
 		}
+		MenuSessionsUI^ sessio = gcnew MenuSessionsUI();
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->AbrirFormularioEnPanel(sessio);
 
 	}
 	

@@ -2,6 +2,7 @@
 #include "PassarellaPertany.h"
 #include <vector>
 using namespace System;
+using namespace System::Data;
 using namespace System::Collections::Generic;
 
 
@@ -10,6 +11,8 @@ using namespace System::Collections::Generic;
 
 public:
 	List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup);
+	
+	DataTable^ obtePeticionsPendents(String^ usernameCreador);
 
 	static PassarellaPertany^ cercaEstudiantEnGrup(String^ usernameEstudiant, String^ nomGrup);
 };

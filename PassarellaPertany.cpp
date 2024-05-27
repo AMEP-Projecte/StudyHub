@@ -31,7 +31,9 @@ void PassarellaPertany::posaEstudiant(String^ estudiant) {
 void PassarellaPertany::posaGrup(String^ grup) {
 	_grup = grup;
 }
-
+void PassarellaPertany::posaEstat(String^ estat) {
+	_estat = estat;
+}
 void PassarellaPertany::insereix() {
 	bool totcorrecte = true;
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
@@ -51,6 +53,57 @@ void PassarellaPertany::insereix() {
 		/*if (totcorrecte) {
 			MessageBox::Show("Grup Creat Correctament.");
 		}*/
+		conn->Close();
+	}
+}
+
+void PassarellaPertany::modifica() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+	String^ sql = "UPDATE pertany SET estudiant = @estudiant, grup = @grup, estat = @estat WHERE estudiant = @usernameEstudiant AND grup = @nomGrup";
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+
+	cmd->Parameters->AddWithValue("@estudiant", _estudiant);
+	cmd->Parameters->AddWithValue("@grup", _grup);
+	cmd->Parameters->AddWithValue("@estat", _estat);
+	cmd->Parameters->AddWithValue("@usernameEstudiant", _estudiant);
+	cmd->Parameters->AddWithValue("@nomGrup", _grup);
+
+
+	try {
+		conn->Open();
+		cmd->ExecuteNonQuery();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+	finally {
+		conn->Close();
+	}
+}
+
+void PassarellaPertany::elimina() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+	String^ sql = "DELETE FROM pertany WHERE estudiant = @usernameEstudiant AND grup = @nomGrup;";
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	cmd->Parameters->AddWithValue("@usernameEstudiant", _estudiant);
+	cmd->Parameters->AddWithValue("@nomGrup", _grup);
+	MySqlDataReader^ dataReader;
+	try {
+		// obrim la connexio
+		conn->Open();
+		// executem la comanda (cmd) que s'ha creat abans del try
+		cmd->ExecuteNonQuery();
+	}
+	catch (MySqlException^ ex) {
+		MessageBox::Show(ex->Message);
+	}
+	finally {
+		// si tot va be es tanca la connexio
 		conn->Close();
 	}
 }

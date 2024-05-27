@@ -50,6 +50,42 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
     return result;
 }
 
+DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
+    // List<PassarellaPertany^>^ result = gcnew List<PassarellaPertany^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "SELECT estudiant, grup FROM pertany WHERE estat = 'Pendent' AND grup IN (SELECT nom FROM grup WHERE creador = @usernameCreador);";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@usernameCreador", usernameCreador);
+
+    MySqlDataReader^ reader = nullptr;
+    DataTable^ tabla = gcnew DataTable();
+
+    try {
+        // Abrimos la conexión
+        conn->Open();
+
+        // Ejecutamos la consulta
+        MySqlDataAdapter^ data = gcnew MySqlDataAdapter(cmd);
+        data->Fill(tabla);
+        
+    }
+    catch (Exception^ ex) {
+        // Manejo de errores
+        // Por ejemplo, puedes mostrar un mensaje de error
+        Console::WriteLine("Error: " + ex->Message);
+    }
+    finally {
+        // Cerramos la conexión
+        conn->Close();
+    }
+
+    return tabla;
+
+}
+
 PassarellaPertany^ CercadoraPertany::cercaEstudiantEnGrup(String^ usernameEstudiant, String^ nomGrup) {
     PassarellaPertany^ result = nullptr;
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";

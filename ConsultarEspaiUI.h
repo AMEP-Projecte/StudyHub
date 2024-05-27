@@ -1,5 +1,6 @@
 #pragma once
-
+#include "MenuPrincipal.h"
+#include "MenuGestioEspais.h"
 namespace StudyHub {
 
 	using namespace System;
@@ -8,6 +9,7 @@ namespace StudyHub {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 
 	/// <summary>
 	/// Resumen de ConsultarEspaiUI

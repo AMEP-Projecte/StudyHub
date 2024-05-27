@@ -38,6 +38,7 @@ void PassarellaSessio::posaLlocs(int llocs) {
 	_llocsLliures = llocs;
 }
 
+
 String^ PassarellaSessio::obteGrup() {
 	return _grup;
 }
@@ -54,7 +55,7 @@ String^ PassarellaSessio::obteAdreca() {
 	return _adreca;
 }
 int PassarellaSessio::obteLlocsLliures() {
-	return _llocsLliures;
+    return _llocsLliures;
 }
 
 void PassarellaSessio::insereix()
@@ -131,6 +132,7 @@ void PassarellaSessio::modifica() {
 		conn->Close();
 	}
 }
+
 void PassarellaSessio::esborra() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);

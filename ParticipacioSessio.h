@@ -23,9 +23,10 @@ namespace StudyHub {
 			//TODO: agregar c�digo de constructor aqu�
 			//
 		}
-		String^ grup;
-		String^ data;
-		String^ horaInici;
+		String^ grup="";
+		String^ data="";
+		String^ horaInici="";
+
 
 	protected:
 		/// <summary>

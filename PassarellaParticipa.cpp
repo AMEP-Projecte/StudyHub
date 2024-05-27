@@ -28,6 +28,7 @@ void PassarellaParticipa::posaHoraInici(String^ hora) {
 	_horaInici = hora;
 }
 
+
 String^ PassarellaParticipa::obteEstudiant() {
 	return _estudiant;
 }

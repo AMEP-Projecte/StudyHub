@@ -166,6 +166,7 @@
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="GestionarPeticionsUI.h" />
     <ClInclude Include="PassarellaValoracio.h" />
     <ClInclude Include="Encriptacio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
@@ -296,8 +297,10 @@
     <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxEsborraValoracio.h" />
+    <ClInclude Include="TxGestionarPeticionsGrup.h" />
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxModificaValoracio.h" />
+    <ClInclude Include="TxObtenirPeticionsPendents.h" />
     <ClInclude Include="TxParticipacioSessio.h" />
     <ClInclude Include="TxProgramarSessioEstudi.h">
       <DeploymentContent>true</DeploymentContent>
@@ -329,6 +332,7 @@
     <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="GestionarPeticionsUI.cpp" />
     <ClCompile Include="PassarellaValoracio.cpp" />
     <ClCompile Include="Encriptacio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
@@ -407,8 +411,10 @@
     <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxEsborraValoracio.cpp" />
+    <ClCompile Include="TxGestionarPeticionsGrup.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
     <ClCompile Include="TxModificaValoracio.cpp" />
+    <ClCompile Include="TxObtenirPeticionsPendents.cpp" />
     <ClCompile Include="TxParticipacioSessio.cpp" />
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <DeploymentContent>true</DeploymentContent>

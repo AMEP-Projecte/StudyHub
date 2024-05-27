@@ -21,6 +21,7 @@ public:
 	void posaHoraFi(String^ hora);
 	void posaAdreca(String^ adreca);
 	void posaLlocs(int llocs);
+	
 
 	String^ obteGrup();
 	String^ obteData();
@@ -31,6 +32,6 @@ public:
 		
 	void insereix();
 	void modifica();
-  void esborra();
+	void esborra();
 };
 

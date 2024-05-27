@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "TxProgramarSessioEstudi.h"
+#include "MenuSessionsUI.h"
+#include "MenuPrincipal.h"
 namespace StudyHub {
 
 	using namespace System;

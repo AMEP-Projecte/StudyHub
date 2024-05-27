@@ -3,6 +3,7 @@
 #include "TxConsultaEspai.h"
 
 
+
 using namespace StudyHub;
 using namespace System::Windows::Forms;
 
@@ -27,5 +28,7 @@ System::Void ConsultarEspaiUI::botonetconsultar_Click(System::Object^ sender, Sy
 }
 
 	System::Void ConsultarEspaiUI::tornar_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+		MenuGestioEspais^ espai = gcnew MenuGestioEspais();
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->AbrirFormularioEnPanel(espai);
 	}

@@ -19,6 +19,7 @@ System::Void StudyHub::ConsultarSessionsUI::participa_Click(System::Object^ send
 		participa->grup = grupSessio;
 		participa->data = dataSessio;
 		participa->horaInici = horaIniciSessio;
+		
 
 		MenuPrincipal^ menu = MenuPrincipal::getInstance();
 		menu->AbrirFormularioEnPanel(participa);
