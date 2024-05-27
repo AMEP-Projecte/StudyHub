@@ -322,6 +322,8 @@
     <ClInclude Include="TxValoracionsEstudiant.h" />
     <ClInclude Include="UnirseGrupUI.h" />
     <ClInclude Include="ValoracionsEstudiant.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="TxValoracioMitjana.h" />
   </ItemGroup>
   <ItemGroup>
