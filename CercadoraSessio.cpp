@@ -189,7 +189,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesNoConfirmadesDelE
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     conn->Open();
 
-    String^ sql = "SELECT grup, data, adreca, hora_inici " +
+    String^ sql = "SELECT * " +
         "FROM sessio " +
         "WHERE llocs_lliures > 0 AND " +
         "grup IN (SELECT grup FROM pertany WHERE estudiant = @username AND estat = 'Acceptat') AND " +
