@@ -95,7 +95,7 @@ namespace StudyHub {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ButtonIniciarSessio->ForeColor = System::Drawing::Color::DarkCyan;
 			this->ButtonIniciarSessio->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->ButtonIniciarSessio->Location = System::Drawing::Point(617, 107);
+			this->ButtonIniciarSessio->Location = System::Drawing::Point(617, 136);
 			this->ButtonIniciarSessio->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
 			this->ButtonIniciarSessio->Size = System::Drawing::Size(136, 49);
@@ -110,7 +110,7 @@ namespace StudyHub {
 			this->registrar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->registrar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->registrar->Location = System::Drawing::Point(617, 160);
+			this->registrar->Location = System::Drawing::Point(617, 189);
 			this->registrar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->registrar->Name = L"registrar";
 			this->registrar->Size = System::Drawing::Size(136, 50);
@@ -125,7 +125,7 @@ namespace StudyHub {
 			this->sortir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->sortir->ForeColor = System::Drawing::Color::DarkCyan;
-			this->sortir->Location = System::Drawing::Point(617, 214);
+			this->sortir->Location = System::Drawing::Point(617, 243);
 			this->sortir->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->sortir->Name = L"sortir";
 			this->sortir->Size = System::Drawing::Size(136, 46);

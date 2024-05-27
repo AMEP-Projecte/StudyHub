@@ -9,7 +9,7 @@ TxCercarGrups::TxCercarGrups(){}
 void TxCercarGrups::executar() {
 	resultat = gcnew List <Grup>();
 	CercadoraGrup cg;
-	List<PassarellaGrup^>^ grups = cg.cercaTotsGrups();
+	List<PassarellaGrup^>^ grups = cg.totsGrups();
 
 	for (int i = 0; i < grups->Count; i++) {
 		Grup g;

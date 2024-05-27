@@ -20,19 +20,18 @@ System::Void EditarProveidorUI::edit_Click(System::Object^ sender, System::Event
 		TxEditarProveidor^ txEdit = gcnew TxEditarProveidor(ca,  cn);
 		try {
 			txEdit->executar();
-		}
-		else {
 			MessageBox::Show("Contrasenya modificada correctament.");
-			
+
 			MenuPrincipal^ menu = MenuPrincipal::getInstance();
 			MenuProvedor^ provedor = gcnew MenuProvedor();
 
 			menu->canviaVisibilitat_ButtonMenu(false);
 			menu->AbrirFormularioEnPanel(provedor);
 		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 		this->Close();
-		
-		
 	}
 }
 

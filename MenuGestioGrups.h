@@ -258,7 +258,7 @@ private: System::Void MenuGestioGrups_Load(System::Object^ sender, System::Event
 
 // private: System::Void selecciona(TableLayoutPanel^ table); // seleccionar fila
 
-private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e); // clicar algun label dins de la fila
+	private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e) {} // clicar algun label dins de la fila
 private: System::Void buttonGestionaPeticions_Click(System::Object^ sender, System::EventArgs^ e);
 };
 

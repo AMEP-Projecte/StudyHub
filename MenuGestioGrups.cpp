@@ -43,10 +43,6 @@ System::Void MenuGestioGrups::elimina_Click(System::Object^ sender, System::Even
 	Menu->AbrirSubFormularioEnPanel(eliminar);
 }
 
-System::Void MenuGestioGrups::tornar_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-
 System::Void MenuGestioGrups::buttonGestionaPeticions_Click(System::Object^ sender, System::EventArgs^ e) {
 	GestionarPeticionsUI^ peticions = gcnew GestionarPeticionsUI();
 	MenuPrincipal^ Menu = Menu->getInstance();

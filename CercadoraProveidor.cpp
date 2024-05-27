@@ -32,7 +32,7 @@ PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
     }
     return pp;
 }
-*/
+
 
 List<PassarellaProveidor^>^ CercadoraProveidor::totsProveidors() {
     PassarellaProveidor^ pp = nullptr;

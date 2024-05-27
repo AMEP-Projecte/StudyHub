@@ -54,10 +54,10 @@ namespace StudyHub {
 
 
 	private: System::Windows::Forms::Button^ buttonMenuSessions;
-	//private: System::Windows::Forms::PictureBox^ pictureBox1;
-	private: System::Windows::Forms::Button^ buttonGestioEspais;
-	private: System::Windows::Forms::Button^ buttonGestioEstudiants;
-	private: System::Windows::Forms::Button^ buttonGestioProveidors;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	public: System::Windows::Forms::Button^ buttonGestioEspais;
+	public: System::Windows::Forms::Button^ buttonGestioEstudiants;
+	public: System::Windows::Forms::Button^ buttonGestioProveidors;
 
 
 
