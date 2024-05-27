@@ -10,7 +10,7 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-    String^ sql = "SELECT estudiant FROM pertany WHERE grup = @nomGrup";
+    String^ sql = "SELECT estudiant FROM pertany WHERE grup = @nomGrup AND estat = 'Acceptat';";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     cmd->Parameters->AddWithValue("@nomGrup", nomGrup);
 

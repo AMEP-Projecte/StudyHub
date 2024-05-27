@@ -80,11 +80,12 @@ namespace StudyHub {
 			this->ButtonTornar->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->ButtonTornar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ButtonTornar->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ButtonTornar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->ButtonTornar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->ButtonTornar->Location = System::Drawing::Point(49, 422);
-			this->ButtonTornar->Margin = System::Windows::Forms::Padding(4);
+			this->ButtonTornar->Location = System::Drawing::Point(69, 305);
 			this->ButtonTornar->Name = L"ButtonTornar";
-			this->ButtonTornar->Size = System::Drawing::Size(216, 50);
+			this->ButtonTornar->Size = System::Drawing::Size(144, 36);
 			this->ButtonTornar->TabIndex = 14;
 			this->ButtonTornar->Text = L"Tornar";
 			this->ButtonTornar->UseVisualStyleBackColor = false;
@@ -95,11 +96,12 @@ namespace StudyHub {
 			this->button3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->button3->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->button3->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::DarkCyan;
-			this->button3->Location = System::Drawing::Point(649, 422);
-			this->button3->Margin = System::Windows::Forms::Padding(4);
+			this->button3->Location = System::Drawing::Point(398, 305);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(216, 50);
+			this->button3->Size = System::Drawing::Size(144, 36);
 			this->button3->TabIndex = 12;
 			this->button3->Text = L"Eliminar";
 			this->button3->UseVisualStyleBackColor = false;
@@ -111,13 +113,11 @@ namespace StudyHub {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 20, System::Drawing::FontStyle::Bold));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(262, 9);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(183, 33);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(380, 52);
+			this->label2->Size = System::Drawing::Size(257, 36);
 			this->label2->TabIndex = 11;
 			this->label2->Text = L"Eliminar Sessions:";
-			
 			// 
 			// tableLayoutPanel1
 			// 
@@ -126,12 +126,13 @@ namespace StudyHub {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
 			this->tableLayoutPanel1->Controls->Add(this->label3, 0, 0);
 			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
-			this->tableLayoutPanel1->Location = System::Drawing::Point(12, 64);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(32, 80);
+			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 2;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 41)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 100)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(886, 305);
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 30)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 72)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(539, 220);
 			this->tableLayoutPanel1->TabIndex = 8;
 			// 
 			// label3
@@ -141,9 +142,10 @@ namespace StudyHub {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(4, 1);
+			this->label3->Location = System::Drawing::Point(3, 1);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(878, 41);
+			this->label3->Size = System::Drawing::Size(533, 30);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"Les meves sessions";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -159,16 +161,15 @@ namespace StudyHub {
 			// 
 			// EsborraSessioUI
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(910, 512);
+			this->ClientSize = System::Drawing::Size(607, 370);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->ButtonTornar);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"EsborraSessioUI";
 			this->Text = L"EsborraSessioUI";
 			this->Load += gcnew System::EventHandler(this, &EsborraSessioUI::EsborraSessio_Load);

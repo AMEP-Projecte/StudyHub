@@ -7,6 +7,7 @@
 #include "EsborraSessioUI.h"
 #include "ProgramarSessioEstudiUI.h"
 #include "ParticipacioSessio.h"
+#include "TxGestionaSessions.h"
 
 using namespace StudyHub;
 
@@ -48,29 +49,13 @@ System::Void MenuSessionsUI::programaSessio_Click(System::Object^ sender, System
 
 
 System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System::EventArgs^ e) {
-    MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
-    MySqlCommand^ cmd = gcnew MySqlCommand();
-    MySqlDataAdapter^ da = gcnew MySqlDataAdapter();
-    DataTable^ dt = gcnew DataTable();
+    Sistema^ sistema = Sistema::getInstance();
 
-    Sistema^ sist = Sistema::getInstance();
-    String^ username = sist->obteEstudiant()->obteUsername();
+    TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "no confirmades");
+    tx->executar();
+    ConsultaSessio^ sessions = tx->obteResultat();
 
-    String^ sql = "SELECT grup, data, adreca, hora_inici " +
-        "FROM sessio " +
-        "WHERE llocs_lliures > 0 AND " +
-        "grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND " +
-        "(grup, data, hora_inici) NOT IN (SELECT grup, data, hora_inici FROM participa WHERE estudiant = @username);";
-
-   
-    cmd->Connection = cn;
-    cmd->CommandText = sql;
-    cmd->Parameters->AddWithValue("@username", username);
-    da->SelectCommand = cmd;
-
-    da->Fill(dt);
-
-    int rowsCount = dt->Rows->Count;
+    int rowsCount = sessions->grup->Count;
     if (rowsCount == 0) {
         Label^ noSessionsLabel = gcnew Label();
         noSessionsLabel->AutoSize = true;
@@ -104,7 +89,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
         layoutDades1->ForeColor = System::Drawing::Color::White;
         layoutDades1->Dock = System::Windows::Forms::DockStyle::Top;
         layoutDades1->RowCount = 1;
-        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 57)));
+        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 35))); // canviat
         layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
         layoutDades1->TabIndex = 8;
        
@@ -113,7 +98,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
         // Añadir la fila de encabezado al principio.
         Label^ columnaGrup = gcnew Label();
         columnaGrup->AutoSize = true;
-        columnaGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+        columnaGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaGrup->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaGrup->Text = L"Grup";
@@ -122,7 +107,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
         Label^ columnaData = gcnew Label();
         columnaData->AutoSize = true;
-        columnaData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+        columnaData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaData->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaData->Text = L"Data";
@@ -131,7 +116,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
         Label^ columnaAdreca = gcnew Label();
         columnaAdreca->AutoSize = true;
-        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaAdreca->Text = L"Adreca";
@@ -142,7 +127,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
 
         Label^ columnaHora = gcnew Label();
         columnaHora->AutoSize = true;
-        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaHora->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaHora->Text = L"Hora inici";
@@ -185,27 +170,14 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
             layoutFila->Click += gcnew System::EventHandler(this, &MenuSessionsUI::fila_Click); // SELECCIONAR FILA
             layoutFila->RowCount = 1;
             layoutFila->RowStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 20.0F)));
-         
-
             layoutFila->TabIndex = 8;
-
-            DataRow^ fila = dt->Rows[i];
-
-            String^ nomGrup = fila["grup"]->ToString();
-            DateTime^ fecha = Convert::ToDateTime(fila["data"]);
-
-            // Formatear la fecha a "yyyy-MM-dd"
-            String^ dataSessio = fecha->ToString("yyyy-MM-dd");
-          
-            String^ direccioSessio = fila["adreca"]->ToString();
-            String^ horaSessio = fila["hora_inici"]->ToString();
 
             Label^ labelGrup = gcnew Label();
             labelGrup->AutoSize = true;
             labelGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelGrup->Dock = System::Windows::Forms::DockStyle::Fill;
-            labelGrup->Text = nomGrup;
+            labelGrup->Text = sessions->grup[i];
             labelGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelGrup->Click += gcnew System::EventHandler(this, &MenuSessionsUI::labelenfila_Click); // SELECCIONAR FILA
 
@@ -214,7 +186,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
             labelData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelData->Dock = System::Windows::Forms::DockStyle::Fill;
-            labelData->Text = dataSessio;
+            labelData->Text = sessions->data[i];
             labelData->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelData->Click += gcnew System::EventHandler(this, &MenuSessionsUI::labelenfila_Click); // SELECCIONAR FILA
 
@@ -223,7 +195,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
             labelAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
-            labelAdreca->Text = direccioSessio;
+            labelAdreca->Text = sessions->adreca[i];
             labelAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelAdreca->Click += gcnew System::EventHandler(this, &MenuSessionsUI::labelenfila_Click); // SELECCIONAR FILA
 
@@ -233,7 +205,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
             labelHora->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelHora->Dock = System::Windows::Forms::DockStyle::Fill;
-            labelHora->Text = horaSessio;
+            labelHora->Text = sessions->horaInici[i];
             labelHora->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelHora->Click += gcnew System::EventHandler(this, &MenuSessionsUI::labelenfila_Click); // SELECCIONAR FILA
 

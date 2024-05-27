@@ -293,6 +293,8 @@
     <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxEsborraValoracio.h" />
+    <ClInclude Include="TxGestionaSessions.h" />
+    <ClInclude Include="TxGrupsEstudiant.h" />
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxObteEstudiantsGrupsEspais.h" />
     <ClInclude Include="TxObteProveidorsAmbEspaisCreats.h" />
@@ -403,6 +405,8 @@
     <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxEsborraValoracio.cpp" />
+    <ClCompile Include="TxGestionaSessions.cpp" />
+    <ClCompile Include="TxGrupsEstudiant.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
     <ClCompile Include="TxObteEstudiantsGrupsEspais.cpp" />
     <ClCompile Include="TxObteProveidorsAmbEspaisCreats.cpp" />

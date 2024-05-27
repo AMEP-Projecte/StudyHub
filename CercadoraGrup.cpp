@@ -124,3 +124,46 @@ List<PassarellaGrup^>^ CercadoraGrup::totsGrups() {
 
     return result;
 }
+
+List<PassarellaGrup^>^ CercadoraGrup::cercaGrupsPerEstudiant(String^ estudiant) {
+    List<PassarellaGrup^>^ result = gcnew List<PassarellaGrup^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "SELECT * FROM grup WHERE nom IN (SELECT grup FROM pertany WHERE estudiant = @username AND estat = 'Acceptat');";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@username", estudiant);
+
+    MySqlDataReader^ reader = nullptr;
+
+    try {
+        // Abrimos la conexión
+        conn->Open();
+
+        // Ejecutamos la consulta
+        reader = cmd->ExecuteReader();
+
+        // Leemos los resultados
+        while (reader->Read()) {
+            String^ nom = reader->GetString("nom");
+            String^ tematica = reader->GetString("tematica");
+            String^ creador = reader->GetString("creador");
+            // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
+            PassarellaGrup^ passarella = gcnew PassarellaGrup(nom, tematica, creador);
+            result->Add(passarella);
+        }
+    }
+
+    finally {
+        // Cerramos el lector
+        if (reader != nullptr) {
+            reader->Close();
+        }
+
+        // Cerramos la conexión
+        conn->Close();
+    }
+
+    return result;
+}

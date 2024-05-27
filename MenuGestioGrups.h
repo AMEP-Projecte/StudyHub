@@ -45,6 +45,7 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ buttonGestionaPeticions;
 	private: System::Windows::Forms::TableLayoutPanel^ layoutPanel;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ buttonCercaGrups;
 
 	// LAYOUT FILA
 	// private: System::Windows::Forms::TableLayoutPanel^ layoutFila;
@@ -77,6 +78,7 @@ namespace StudyHub {
 			this->buttonGestionaPeticions = (gcnew System::Windows::Forms::Button());
 			this->layoutPanel = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->buttonCercaGrups = (gcnew System::Windows::Forms::Button());
 			this->layoutPanel->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -86,7 +88,7 @@ namespace StudyHub {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->label2->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->label2->Location = System::Drawing::Point(99, 39);
+			this->label2->Location = System::Drawing::Point(91, 24);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(418, 42);
@@ -99,10 +101,10 @@ namespace StudyHub {
 			this->elimina->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->elimina->ForeColor = System::Drawing::Color::DarkCyan;
-			this->elimina->Location = System::Drawing::Point(46, 240);
-			this->elimina->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->elimina->Location = System::Drawing::Point(24, 186);
+			this->elimina->Margin = System::Windows::Forms::Padding(2);
 			this->elimina->Name = L"elimina";
-			this->elimina->Size = System::Drawing::Size(131, 34);
+			this->elimina->Size = System::Drawing::Size(114, 29);
 			this->elimina->TabIndex = 3;
 			this->elimina->Text = L"Eliminar Grup";
 			this->elimina->UseVisualStyleBackColor = true;
@@ -114,10 +116,10 @@ namespace StudyHub {
 			this->edita->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->edita->ForeColor = System::Drawing::Color::DarkCyan;
-			this->edita->Location = System::Drawing::Point(46, 195);
-			this->edita->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->edita->Location = System::Drawing::Point(24, 153);
+			this->edita->Margin = System::Windows::Forms::Padding(2);
 			this->edita->Name = L"edita";
-			this->edita->Size = System::Drawing::Size(131, 34);
+			this->edita->Size = System::Drawing::Size(114, 29);
 			this->edita->TabIndex = 4;
 			this->edita->Text = L"Editar Grup";
 			this->edita->UseVisualStyleBackColor = true;
@@ -129,10 +131,10 @@ namespace StudyHub {
 			this->consulta->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->consulta->ForeColor = System::Drawing::Color::DarkCyan;
-			this->consulta->Location = System::Drawing::Point(46, 149);
-			this->consulta->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->consulta->Location = System::Drawing::Point(24, 122);
+			this->consulta->Margin = System::Windows::Forms::Padding(2);
 			this->consulta->Name = L"consulta";
-			this->consulta->Size = System::Drawing::Size(131, 36);
+			this->consulta->Size = System::Drawing::Size(114, 27);
 			this->consulta->TabIndex = 5;
 			this->consulta->Text = L"Consultar Grup";
 			this->consulta->UseVisualStyleBackColor = true;
@@ -146,10 +148,10 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->crea->ForeColor = System::Drawing::Color::DarkCyan;
 			this->crea->ImageAlign = System::Drawing::ContentAlignment::BottomCenter;
-			this->crea->Location = System::Drawing::Point(46, 101);
-			this->crea->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->crea->Location = System::Drawing::Point(24, 93);
+			this->crea->Margin = System::Windows::Forms::Padding(2);
 			this->crea->Name = L"crea";
-			this->crea->Size = System::Drawing::Size(131, 37);
+			this->crea->Size = System::Drawing::Size(114, 25);
 			this->crea->TabIndex = 6;
 			this->crea->Text = L"Crear Grup";
 			this->crea->UseVisualStyleBackColor = true;
@@ -161,10 +163,10 @@ namespace StudyHub {
 			this->buttonGestionaPeticions->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->buttonGestionaPeticions->ForeColor = System::Drawing::Color::DarkCyan;
-			this->buttonGestionaPeticions->Location = System::Drawing::Point(46, 286);
-			this->buttonGestionaPeticions->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->buttonGestionaPeticions->Location = System::Drawing::Point(24, 229);
+			this->buttonGestionaPeticions->Margin = System::Windows::Forms::Padding(2);
 			this->buttonGestionaPeticions->Name = L"buttonGestionaPeticions";
-			this->buttonGestionaPeticions->Size = System::Drawing::Size(131, 34);
+			this->buttonGestionaPeticions->Size = System::Drawing::Size(114, 44);
 			this->buttonGestionaPeticions->TabIndex = 7;
 			this->buttonGestionaPeticions->Text = L"Gestionar Peticions";
 			this->buttonGestionaPeticions->UseVisualStyleBackColor = true;
@@ -177,13 +179,13 @@ namespace StudyHub {
 			this->layoutPanel->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
 			this->layoutPanel->Controls->Add(this->label1, 0, 0);
 			this->layoutPanel->ForeColor = System::Drawing::Color::White;
-			this->layoutPanel->Location = System::Drawing::Point(196, 83);
-			this->layoutPanel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->layoutPanel->Location = System::Drawing::Point(160, 68);
+			this->layoutPanel->Margin = System::Windows::Forms::Padding(2);
 			this->layoutPanel->Name = L"layoutPanel";
 			this->layoutPanel->RowCount = 2;
 			this->layoutPanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 37)));
 			this->layoutPanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
-			this->layoutPanel->Size = System::Drawing::Size(384, 238);
+			this->layoutPanel->Size = System::Drawing::Size(395, 228);
 			this->layoutPanel->TabIndex = 8;
 			// 
 			// label1
@@ -196,10 +198,24 @@ namespace StudyHub {
 			this->label1->Location = System::Drawing::Point(3, 1);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(378, 37);
+			this->label1->Size = System::Drawing::Size(389, 37);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Els meus grups";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// buttonCercaGrups
+			// 
+			this->buttonCercaGrups->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->buttonCercaGrups->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonCercaGrups->ForeColor = System::Drawing::Color::DarkCyan;
+			this->buttonCercaGrups->Location = System::Drawing::Point(24, 277);
+			this->buttonCercaGrups->Margin = System::Windows::Forms::Padding(2);
+			this->buttonCercaGrups->Name = L"buttonCercaGrups";
+			this->buttonCercaGrups->Size = System::Drawing::Size(114, 44);
+			this->buttonCercaGrups->TabIndex = 9;
+			this->buttonCercaGrups->Text = L"Cerca Grups";
+			this->buttonCercaGrups->UseVisualStyleBackColor = true;
 			// 
 			// MenuGestioGrups
 			// 
@@ -207,6 +223,7 @@ namespace StudyHub {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(607, 370);
+			this->Controls->Add(this->buttonCercaGrups);
 			this->Controls->Add(this->layoutPanel);
 			this->Controls->Add(this->buttonGestionaPeticions);
 			this->Controls->Add(this->crea);
@@ -215,7 +232,7 @@ namespace StudyHub {
 			this->Controls->Add(this->elimina);
 			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"MenuGestioGrups";
 			this->Text = L"MenuGestioGrups";
 			this->Load += gcnew System::EventHandler(this, &MenuGestioGrups::MenuGestioGrups_Load);
@@ -226,7 +243,6 @@ namespace StudyHub {
 
 		}
 #pragma endregion
-private: System::Void tornar_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void elimina_Click(System::Object^ sender, System::EventArgs^ e);
 
@@ -238,11 +254,11 @@ private: System::Void crea_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void MenuGestioGrups_Load(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e); // clicar fila
+// private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e); // clicar fila
 
-private: System::Void selecciona(TableLayoutPanel^ table); // seleccionar fila
+// private: System::Void selecciona(TableLayoutPanel^ table); // seleccionar fila
 
-private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e); // clicar algun label dins de la fila
+// private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e); // clicar algun label dins de la fila
 };
 
 

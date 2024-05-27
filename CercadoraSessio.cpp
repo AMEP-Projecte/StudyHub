@@ -138,8 +138,6 @@ PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^
     return pp;
 }
 
-
-
 PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, String^ hora) {
 
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
@@ -182,4 +180,75 @@ PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, Strin
     }
     PassarellaSessio^ pp = gcnew PassarellaSessio(grup, data, hora, horaFi, adreca, llocs);
     return pp;
+}
+
+List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesNoConfirmadesDelEstudiant(String^ estudiant) {
+    List<PassarellaSessio^>^ result = gcnew List<PassarellaSessio^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    conn->Open();
+
+    String^ sql = "SELECT grup, data, adreca, hora_inici " +
+        "FROM sessio " +
+        "WHERE llocs_lliures > 0 AND " +
+        "grup IN (SELECT grup FROM pertany WHERE estudiant = @username AND estat = 'Acceptat') AND " +
+        "(grup, data, hora_inici) NOT IN (SELECT grup, data, hora_inici FROM participa WHERE estudiant = @username);";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@username", estudiant);
+
+
+    // Ejecutamos la consulta
+    MySqlDataReader^ reader = cmd->ExecuteReader();
+
+    // Leemos los resultados
+    while (reader->Read()) {
+        String^ grup = reader->GetString("grup");
+        String^ data = reader->GetDateTime("data").ToString("yyyy-MM-dd");
+        String^ horaI = reader->GetTimeSpan("hora_inici").ToString("hh\\:mm");
+        String^ horaF = reader->GetTimeSpan("hora_fi").ToString("hh\\:mm");
+        int llocs_lliures = reader->GetInt32("llocs_lliures");
+
+        // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
+        PassarellaSessio^ passarella = gcnew PassarellaSessio(grup, data, horaI, horaF, estudiant, llocs_lliures);
+        result->Add(passarella);
+    }
+
+    conn->Close();
+
+    return result;
+}
+
+List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesConfirmadesDelEstudiant(String^ estudiant) {
+    List<PassarellaSessio^>^ result = gcnew List<PassarellaSessio^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    conn->Open();
+
+    String^ sql = "SELECT * FROM sessio " +
+        "WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data) IN (SELECT grup, data FROM participa WHERE estudiant = @username);";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@username", estudiant);
+
+
+    // Ejecutamos la consulta
+    MySqlDataReader^ reader = cmd->ExecuteReader();
+
+    // Leemos los resultados
+    while (reader->Read()) {
+        String^ grup = reader->GetString("grup");
+        String^ data = reader->GetDateTime("data").ToString("yyyy-MM-dd");
+        String^ horaI = reader->GetTimeSpan("hora_inici").ToString("hh\\:mm");
+        String^ horaF = reader->GetTimeSpan("hora_fi").ToString("hh\\:mm");
+        int llocs_lliures = reader->GetInt32("llocs_lliures");
+
+        // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
+        PassarellaSessio^ passarella = gcnew PassarellaSessio(grup, data, horaI, horaF, estudiant, llocs_lliures);
+        result->Add(passarella);
+    }
+
+    conn->Close();
+
+    return result;
 }

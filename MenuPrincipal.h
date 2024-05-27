@@ -50,7 +50,7 @@ namespace StudyHub {
 
 	private: System::Windows::Forms::Button^ ButtonMaximized;
 	private: System::Windows::Forms::Button^ ButtonMenuEstudiant;
-	private: System::Windows::Forms::Button^ ButtonMenuGrups;
+	public: System::Windows::Forms::Button^ ButtonMenuGrups;
 
 
 	private: System::Windows::Forms::Button^ buttonMenuSessions;

@@ -13,5 +13,6 @@ public:
 	List<PassarellaGrup^>^ cercaPerCreador(String^ NomCreador);
 
 	static List<PassarellaGrup^>^ totsGrups();
+	static List<PassarellaGrup^>^ cercaGrupsPerEstudiant(String^ estudiant);
 };
 
