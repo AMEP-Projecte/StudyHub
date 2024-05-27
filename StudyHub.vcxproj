@@ -131,6 +131,10 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CercadoraValoracioMitjana.h" />
+    <ClInclude Include="CercaGrup.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CercadoraAdmin.h" />
     <ClInclude Include="CercadoraEspai.h" />
     <ClInclude Include="CercadoraEstudiant.h" />
@@ -165,7 +169,12 @@
     <ClInclude Include="MenuGestioEstudiantsAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+
+    <ClInclude Include="GestionarPeticionsUI.h" >
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaValoracio.h" />
+    <ClInclude Include="Encriptacio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -267,7 +276,9 @@
     <ClInclude Include="TancarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="TxCercarGrups.h" />
     <ClInclude Include="TxCercaValoracio.h" />
+    <ClInclude Include="TxCercaValoracioGrup.h" />
     <ClInclude Include="TxConsultaEspai.h" />
     <ClInclude Include="TxConsultarEspaisProveidor.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
@@ -288,6 +299,7 @@
     <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
     <ClInclude Include="TxEsborraEstudiantAdmin.h" />
+    <ClInclude Include="TxEnviarPeticioGrup.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
     <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEditarEspai.h" />
@@ -298,6 +310,9 @@
     <ClInclude Include="TxIniciarSessio.h" />
     <ClInclude Include="TxObteEstudiantsGrupsEspais.h" />
     <ClInclude Include="TxObteProveidorsAmbEspaisCreats.h" />
+    <ClInclude Include="TxGestionarPeticionsGrup.h" />
+    <ClInclude Include="TxModificaValoracio.h" />
+    <ClInclude Include="TxObtenirPeticionsPendents.h" />
     <ClInclude Include="TxParticipacioSessio.h" />
     <ClInclude Include="TxProgramarSessioEstudi.h">
       <DeploymentContent>true</DeploymentContent>
@@ -307,11 +322,14 @@
     <ClInclude Include="TxValoracionsEstudiant.h" />
     <ClInclude Include="UnirseGrupUI.h" />
     <ClInclude Include="ValoracionsEstudiant.h">
+    <ClInclude Include="TxValoracioMitjana.h" />
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="CercadoraValoracioMitjana.cpp" />
+    <ClCompile Include="CercaGrup.cpp" />
     <ClCompile Include="CercadoraAdmin.cpp" />
     <ClCompile Include="CercadoraEspai.cpp" />
     <ClCompile Include="CercadoraEstudiant.cpp" />
@@ -329,7 +347,9 @@
     <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
     <ClCompile Include="MenuGestioEstudiantsAdmin.cpp" />
+    <ClCompile Include="GestionarPeticionsUI.cpp" />
     <ClCompile Include="PassarellaValoracio.cpp" />
+    <ClCompile Include="Encriptacio.cpp" />
     <ClCompile Include="ProgramarSessioEstudiUI.cpp" />
     <ClCompile Include="ConsultarSessionsUI.cpp" />
     <ClCompile Include="CppCLR_WinFormsProject.cpp" />
@@ -379,7 +399,9 @@
     <ClCompile Include="StarRatingControl.cpp" />
     <ClCompile Include="StarRatingView.cpp" />
     <ClCompile Include="TancarSessio.cpp" />
+    <ClCompile Include="TxCercarGrups.cpp" />
     <ClCompile Include="TxCercaValoracio.cpp" />
+    <ClCompile Include="TxCercaValoracioGrup.cpp" />
     <ClCompile Include="TxConsultaEspai.cpp" />
     <ClCompile Include="TxConsultarEspaisProveidor.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
@@ -400,6 +422,7 @@
     <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
     <ClCompile Include="TxEsborraEstudiantAdmin.cpp" />
+    <ClCompile Include="TxEnviarPeticioGrup.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
     <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEditarEspai.cpp" />
@@ -410,6 +433,9 @@
     <ClCompile Include="TxIniciarSessio.cpp" />
     <ClCompile Include="TxObteEstudiantsGrupsEspais.cpp" />
     <ClCompile Include="TxObteProveidorsAmbEspaisCreats.cpp" />
+    <ClCompile Include="TxGestionarPeticionsGrup.cpp" />
+    <ClCompile Include="TxModificaValoracio.cpp" />
+    <ClCompile Include="TxObtenirPeticionsPendents.cpp" />
     <ClCompile Include="TxParticipacioSessio.cpp" />
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <DeploymentContent>true</DeploymentContent>
@@ -419,6 +445,7 @@
     <ClCompile Include="TxValoracionsEstudiant.cpp" />
     <ClCompile Include="UnirseGrupUI.cpp" />
     <ClCompile Include="ValoracionsEstudiant.cpp" />
+    <ClCompile Include="TxValoracioMitjana.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -437,6 +464,9 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CercaGrup.resx">
+      <DependentUpon>CercaGrup.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultarEspaiUI.resx">
       <DependentUpon>ConsultarEspaiUI.h</DependentUpon>
     </EmbeddedResource>
@@ -452,12 +482,14 @@
     <EmbeddedResource Include="ConsultarSessionsUI.resx">
       <DependentUpon>ConsultarSessionsUI.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrearValoracioUI.resx" />
+    <EmbeddedResource Include="CrearValoracioUI.resx">
+      <DependentUpon>CrearValoracioUI.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditarSessio.resx">
       <DependentUpon>EditarSessio.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarEspai.resx">
-      <DependentUpon>EliminarEspai.h</DependentUpon>
+    <EmbeddedResource Include="IniciarSessio.resx">
+      <DependentUpon>IniciarSessio.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarEspaiUI.resx">
       <DependentUpon>EliminarEspaiUI.h</DependentUpon>
@@ -545,6 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ValoracionsEstudiant.resx">
       <DependentUpon>ValoracionsEstudiant.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnirseGrupUI.resx">
+      <DependentUpon>UnirseGrupUI.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

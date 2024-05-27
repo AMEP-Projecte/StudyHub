@@ -91,7 +91,7 @@ namespace StudyHub {
 			this->label2->Location = System::Drawing::Point(91, 24);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(418, 42);
+			this->label2->Size = System::Drawing::Size(526, 52);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Gestionar Grups d\'Estudi";
 			// 
@@ -170,6 +170,7 @@ namespace StudyHub {
 			this->buttonGestionaPeticions->TabIndex = 7;
 			this->buttonGestionaPeticions->Text = L"Gestionar Peticions";
 			this->buttonGestionaPeticions->UseVisualStyleBackColor = true;
+			this->buttonGestionaPeticions->Click += gcnew System::EventHandler(this, &MenuGestioGrups::buttonGestionaPeticions_Click);
 			// 
 			// layoutPanel
 			// 
@@ -183,7 +184,7 @@ namespace StudyHub {
 			this->layoutPanel->Margin = System::Windows::Forms::Padding(2);
 			this->layoutPanel->Name = L"layoutPanel";
 			this->layoutPanel->RowCount = 2;
-			this->layoutPanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 37)));
+			this->layoutPanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
 			this->layoutPanel->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
 			this->layoutPanel->Size = System::Drawing::Size(395, 228);
 			this->layoutPanel->TabIndex = 8;
@@ -195,8 +196,7 @@ namespace StudyHub {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(3, 1);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(4, 1);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(389, 37);
 			this->label1->TabIndex = 0;
@@ -219,7 +219,7 @@ namespace StudyHub {
 			// 
 			// MenuGestioGrups
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(607, 370);
@@ -258,7 +258,8 @@ private: System::Void MenuGestioGrups_Load(System::Object^ sender, System::Event
 
 // private: System::Void selecciona(TableLayoutPanel^ table); // seleccionar fila
 
-// private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e); // clicar algun label dins de la fila
+private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e); // clicar algun label dins de la fila
+private: System::Void buttonGestionaPeticions_Click(System::Object^ sender, System::EventArgs^ e);
 };
 
 

@@ -53,7 +53,7 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ nomCreador)
     MySqlDataReader^ reader = nullptr;
 
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
 
         // Ejecutamos la consulta
@@ -76,7 +76,7 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ nomCreador)
             reader->Close();
         }
 
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
 
@@ -95,7 +95,7 @@ List<PassarellaGrup^>^ CercadoraGrup::totsGrups() {
     MySqlDataReader^ reader = nullptr;
 
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
 
         // Ejecutamos la consulta
@@ -118,7 +118,7 @@ List<PassarellaGrup^>^ CercadoraGrup::totsGrups() {
             reader->Close();
         }
 
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
 
@@ -138,7 +138,7 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaGrupsPerEstudiant(String^ estudiant) 
     MySqlDataReader^ reader = nullptr;
 
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
 
         // Ejecutamos la consulta
@@ -161,7 +161,7 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaGrupsPerEstudiant(String^ estudiant) 
             reader->Close();
         }
 
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
 

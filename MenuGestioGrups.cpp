@@ -6,7 +6,8 @@
 #include "ConsultarGrup.h"
 #include "EditarGrup.h"
 #include "EliminarGrupEstudi.h"
-
+#include "CercaGrup.h"
+#include "GestionarPeticionsUI.h"
 #include "TxCercaValoracio.h"
 #include "StarRatingControl.h"
 #include "StarRatingView.h"
@@ -22,7 +23,7 @@ System::Void MenuGestioGrups::crea_Click(System::Object^ sender, System::EventAr
 }
 
 System::Void MenuGestioGrups::consulta_Click(System::Object^ sender, System::EventArgs^ e) {
-	ConsultarGrup^ consultar = gcnew ConsultarGrup();
+	CercaGrup^ consultar = gcnew CercaGrup();
 	MenuPrincipal^ Menu = Menu->getInstance();
 	Menu->ButtonMenuGrups->Visible = true;
 	Menu->AbrirSubFormularioEnPanel(consultar);
@@ -41,6 +42,17 @@ System::Void MenuGestioGrups::elimina_Click(System::Object^ sender, System::Even
 	Menu->ButtonMenuGrups->Visible = true;
 	Menu->AbrirSubFormularioEnPanel(eliminar);
 }
+
+System::Void MenuGestioGrups::tornar_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+
+System::Void MenuGestioGrups::buttonGestionaPeticions_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestionarPeticionsUI^ peticions = gcnew GestionarPeticionsUI();
+	MenuPrincipal^ Menu = Menu->getInstance();
+	Menu->AbrirSubFormularioEnPanel(peticions);
+}
+
 
 System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, System::EventArgs^ e) {
 	MenuPrincipal^ menu = MenuPrincipal::getInstance();
@@ -64,7 +76,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		this->layoutPanel->Controls->Add(MissatgeNoGrups, 0, 1);
 	}
 	else {
-		// CAPÇELERA DE LES COLUMNES
+		// CAPÃ‡ELERA DE LES COLUMNES
 		this->layoutPanel->RowCount = 3;
 
 		TableLayoutPanel^ layoutTitols = gcnew TableLayoutPanel();
@@ -98,7 +110,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		columnaTematica->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		columnaTematica->Dock = System::Windows::Forms::DockStyle::Fill;
-		columnaTematica->Text = L"Temàtica";
+		columnaTematica->Text = L"TemÃ tica";
 		columnaTematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		layoutTitols->Controls->Add(columnaTematica, 1, 0);
 		
@@ -107,7 +119,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		columnaValoracio->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		columnaValoracio->Dock = System::Windows::Forms::DockStyle::Fill;
-		columnaValoracio->Text = L"Valoració";
+		columnaValoracio->Text = L"ValoraciÃ³";
 		columnaValoracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;		
 		layoutTitols->Controls->Add(columnaValoracio, 2, 0);
 
@@ -204,7 +216,7 @@ System::Void MenuGestioGrups::labelenfila_Click(Object^ sender, EventArgs^ e)
 		TableLayoutPanel^ table = dynamic_cast<TableLayoutPanel^>(label->Parent);
 		if (table != nullptr)
 		{
-			// Llamar a la función para procesar los labels dentro del panel
+			// Llamar a la funciÃ³n para procesar los labels dentro del panel
 			selecciona(table);
 		}
 	}
@@ -215,7 +227,7 @@ System::Void MenuGestioGrups::fila_Click(System::Object^ sender, System::EventAr
 	TableLayoutPanel^ table = dynamic_cast<TableLayoutPanel^>(sender);
 	if (table != nullptr)
 	{
-		// Llamar a la función para procesar los labels dentro del panel
+		// Llamar a la funciÃ³n para procesar los labels dentro del panel
 		selecciona(table);
 	}
 }

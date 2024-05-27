@@ -20,7 +20,7 @@ PassarellaValoracio^ TxCercaValoracio::executar() {
 		p = buscador->cercaValoracio(_estudiant, _grup);
 		if (p == nullptr) {
 			//System::Windows::Forms::MessageBox::Show("No existeix valoració.");
-			// De momento no hace falta mostrar error
+			//DE MOMENTO NO HACE FALTA MOSTRAR MENSAJE DE ERROR.
 		}
 	}
 	return p;

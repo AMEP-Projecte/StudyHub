@@ -12,7 +12,7 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     MySqlDataReader^ dataReader;
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
         // Ejecutamos la consulta
         dataReader = cmd->ExecuteReader();
@@ -29,7 +29,7 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
     return pu;
@@ -43,9 +43,8 @@ List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracionsEstudiant(String
     MySqlDataReader^ dataReader;
 
     List<PassarellaValoracio^>^ result = gcnew List<PassarellaValoracio^>();
-
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
         // Ejecutamos la consulta
         dataReader = cmd->ExecuteReader();
@@ -64,7 +63,54 @@ List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracionsEstudiant(String
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexi髇
+              // Cerramos la conexi贸n
+        conn->Close();
+    }
+
+    return result;
+}
+
+List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracioGrup(String^ grup) {
+    List<PassarellaValoracio^>^ result = gcnew List<PassarellaValoracio^>();
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "SELECT * FROM valoracioGrup WHERE grup = @nomGrup";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@nomGrup", grup);
+
+    MySqlDataReader^ reader = nullptr;
+
+
+    try {
+        // Abrimos la conexi贸n
+        conn->Open();
+        // Ejecutamos la consulta
+        reader = cmd->ExecuteReader();
+
+        // Leemos los resultados
+        while (reader->Read()) {
+            String^ estudiant = reader->GetString("estudiant");
+            String^ comenetari = reader->GetString("comentari");
+            Int64^ puntuacio = reader->GetInt64("puntuacio");
+
+            // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
+            PassarellaValoracio^ passarella = gcnew PassarellaValoracio(estudiant, grup, puntuacio, comenetari);
+            result->Add(passarella);
+        }
+    }
+    catch (Exception^ ex) {
+        // Manejo de errores
+        // Por ejemplo, puedes mostrar un mensaje de error
+        Console::WriteLine("Error: " + ex->Message);
+    }
+    finally {
+        // Cerramos el lector
+        if (reader != nullptr) {
+            reader->Close();
+        }
+        // Cerramos la conexi贸n
         conn->Close();
     }
 

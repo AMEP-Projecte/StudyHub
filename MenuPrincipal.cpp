@@ -78,6 +78,21 @@ System::Void MenuPrincipal::AbrirSubFormularioEnPanel(Form^ formHijo) {
 	formHijo->BringToFront();
 }
 
+System::Void MenuPrincipal::AbrirSubFormularioEnPanelOriginal(Form^ formHijo) {
+	formHijo->TopLevel = false;
+	formHijo->ControlBox = false;
+	formHijo->StartPosition = FormStartPosition::Manual; // Establece la posición manualmente
+
+	// Calcula la posición centrada dentro del panel
+	int posX = (PanelContainer->Width - formHijo->Width) / 2;
+	int posY = (PanelContainer->Height - formHijo->Height) / 2;
+	formHijo->Location = System::Drawing::Point(posX, posY);
+
+	PanelContainer->Controls->Add(formHijo);
+	formHijo->Show();
+	formHijo->BringToFront();
+}
+
 System::Void MenuPrincipal::HacerVisible() {
 	this->ButtonMenu->Visible = false;
 	this->ButtonMaximized->Visible = false;

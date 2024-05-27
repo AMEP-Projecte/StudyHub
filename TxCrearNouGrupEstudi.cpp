@@ -17,7 +17,7 @@ void TxCrearNouGrupEstudi::executa(){
 		PassarellaGrup^ NouGrup = gcnew PassarellaGrup(_nomGrup, _tematica, _estudiant);
 		NouGrup->insereix();
 
-		PassarellaPertany^ Pertany = gcnew PassarellaPertany(_estudiant, _nomGrup);
+		PassarellaPertany^ Pertany = gcnew PassarellaPertany(_estudiant, _nomGrup, "Acceptat");
 		Pertany->insereix();
 	} else {
 		throw gcnew Exception("Ja existeix un grup amb aquest nom.");

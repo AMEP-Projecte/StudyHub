@@ -1,5 +1,8 @@
 #include "pch.h"
 #include "TxEsborraValoracio.h"
+#include "PassarellaValoracio.h"
+#include "CercadoraValoracio.h"
+
 using namespace System;
 
 TxEsborraValoracio::TxEsborraValoracio(String^ u, String^ g) {

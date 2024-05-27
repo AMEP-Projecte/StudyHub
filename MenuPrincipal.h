@@ -54,9 +54,11 @@ namespace StudyHub {
 
 
 	private: System::Windows::Forms::Button^ buttonMenuSessions;
-	public: System::Windows::Forms::Button^ buttonGestioEspais;
-	public: System::Windows::Forms::Button^ buttonGestioEstudiants;
-	public: System::Windows::Forms::Button^ buttonGestioProveidors;
+	//private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Button^ buttonGestioEspais;
+	private: System::Windows::Forms::Button^ buttonGestioEstudiants;
+	private: System::Windows::Forms::Button^ buttonGestioProveidors;
+
 
 
 
@@ -91,6 +93,7 @@ namespace StudyHub {
 			this->ButtonMenu = (gcnew System::Windows::Forms::Button());
 			this->PanelLogo = (gcnew System::Windows::Forms::Panel());
 			this->panelTitle = (gcnew System::Windows::Forms::Panel());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->ButtonMinimized = (gcnew System::Windows::Forms::Button());
 			this->ButtonMaximized = (gcnew System::Windows::Forms::Button());
 			this->ButtonCloseForm = (gcnew System::Windows::Forms::Button());
@@ -101,6 +104,7 @@ namespace StudyHub {
 			this->panelMenu->SuspendLayout();
 			this->PanelLogo->SuspendLayout();
 			this->panelTitle->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// studyHyb
@@ -111,9 +115,9 @@ namespace StudyHub {
 			this->studyHyb->AutoSize = true;
 			this->studyHyb->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->studyHyb->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->studyHyb->Location = System::Drawing::Point(16, 20);
+			this->studyHyb->Location = System::Drawing::Point(15, 16);
 			this->studyHyb->Name = L"studyHyb";
-			this->studyHyb->Size = System::Drawing::Size(269, 64);
+			this->studyHyb->Size = System::Drawing::Size(225, 52);
 			this->studyHyb->TabIndex = 0;
 			this->studyHyb->Text = L"StudyHub";
 			// 
@@ -130,9 +134,9 @@ namespace StudyHub {
 			this->panelMenu->Controls->Add(this->PanelLogo);
 			this->panelMenu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
-			this->panelMenu->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->panelMenu->Margin = System::Windows::Forms::Padding(4);
 			this->panelMenu->Name = L"panelMenu";
-			this->panelMenu->Size = System::Drawing::Size(330, 608);
+			this->panelMenu->Size = System::Drawing::Size(293, 486);
 			this->panelMenu->TabIndex = 5;
 			// 
 			// buttonGestioEspais
@@ -164,16 +168,55 @@ namespace StudyHub {
 			this->buttonMenuSessions->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->buttonMenuSessions->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonMenuSessions.Image")));
 			this->buttonMenuSessions->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonMenuSessions->Location = System::Drawing::Point(0, 402);
-			this->buttonMenuSessions->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->buttonMenuSessions->Location = System::Drawing::Point(0, 481);
+			this->buttonMenuSessions->Margin = System::Windows::Forms::Padding(4);
 			this->buttonMenuSessions->Name = L"buttonMenuSessions";
 			this->buttonMenuSessions->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
-			this->buttonMenuSessions->Size = System::Drawing::Size(330, 98);
+			this->buttonMenuSessions->Size = System::Drawing::Size(293, 79);
 			this->buttonMenuSessions->TabIndex = 12;
 			this->buttonMenuSessions->Text = L"Gestio Sessions";
 			this->buttonMenuSessions->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->buttonMenuSessions->UseVisualStyleBackColor = true;
 			this->buttonMenuSessions->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonMenuSessions_Click);
+			// 
+			// ButtonMenuAdmin
+			// 
+			/*this->ButtonMenuAdmin->Dock = System::Windows::Forms::DockStyle::Top;
+			this->ButtonMenuAdmin->FlatAppearance->BorderSize = 0;
+			this->ButtonMenuAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ButtonMenuAdmin->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
+			this->ButtonMenuAdmin->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ButtonMenuAdmin->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuAdmin.Image")));
+			this->ButtonMenuAdmin->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->ButtonMenuAdmin->Location = System::Drawing::Point(0, 402);
+			this->ButtonMenuAdmin->Margin = System::Windows::Forms::Padding(4);
+			this->ButtonMenuAdmin->Name = L"ButtonMenuAdmin";
+			this->ButtonMenuAdmin->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
+			this->ButtonMenuAdmin->Size = System::Drawing::Size(293, 79);
+			this->ButtonMenuAdmin->TabIndex = 11;
+			this->ButtonMenuAdmin->Text = L"      Menú Administrador";
+			this->ButtonMenuAdmin->UseVisualStyleBackColor = true;
+			this->ButtonMenuAdmin->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuAdmin_Click);*/
+			// 
+			// ButtonMenuProveidors
+			// 
+			/*this->ButtonMenuProveidors->Dock = System::Windows::Forms::DockStyle::Top;
+			this->ButtonMenuProveidors->FlatAppearance->BorderSize = 0;
+			this->ButtonMenuProveidors->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ButtonMenuProveidors->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold));
+			this->ButtonMenuProveidors->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->ButtonMenuProveidors->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuProveidors.Image")));
+			this->ButtonMenuProveidors->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->ButtonMenuProveidors->Location = System::Drawing::Point(0, 323);
+			this->ButtonMenuProveidors->Margin = System::Windows::Forms::Padding(4);
+			this->ButtonMenuProveidors->Name = L"ButtonMenuProveidors";
+			this->ButtonMenuProveidors->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
+			this->ButtonMenuProveidors->Size = System::Drawing::Size(293, 79);
+			this->ButtonMenuProveidors->TabIndex = 10;
+			this->ButtonMenuProveidors->Text = L" Menú Proveidors";
+			this->ButtonMenuProveidors->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->ButtonMenuProveidors->UseVisualStyleBackColor = true;
+			this->ButtonMenuProveidors->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuProveidors_Click);*/
 			// 
 			// ButtonMenuGrups
 			// 
@@ -184,13 +227,13 @@ namespace StudyHub {
 			this->ButtonMenuGrups->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ButtonMenuGrups->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuGrups.Image")));
 			this->ButtonMenuGrups->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->ButtonMenuGrups->Location = System::Drawing::Point(0, 304);
-			this->ButtonMenuGrups->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->ButtonMenuGrups->Location = System::Drawing::Point(0, 244);
+			this->ButtonMenuGrups->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenuGrups->Name = L"ButtonMenuGrups";
 			this->ButtonMenuGrups->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
-			this->ButtonMenuGrups->Size = System::Drawing::Size(330, 98);
+			this->ButtonMenuGrups->Size = System::Drawing::Size(293, 79);
 			this->ButtonMenuGrups->TabIndex = 9;
-			this->ButtonMenuGrups->Text = L"Gestio Grups";
+			this->ButtonMenuGrups->Text = L" Menú Grups";
 			this->ButtonMenuGrups->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenuGrups->UseVisualStyleBackColor = true;
 			this->ButtonMenuGrups->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuGrups_Click);
@@ -204,13 +247,13 @@ namespace StudyHub {
 			this->ButtonMenuEstudiant->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ButtonMenuEstudiant->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenuEstudiant.Image")));
 			this->ButtonMenuEstudiant->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->ButtonMenuEstudiant->Location = System::Drawing::Point(0, 206);
-			this->ButtonMenuEstudiant->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->ButtonMenuEstudiant->Location = System::Drawing::Point(0, 165);
+			this->ButtonMenuEstudiant->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenuEstudiant->Name = L"ButtonMenuEstudiant";
 			this->ButtonMenuEstudiant->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
-			this->ButtonMenuEstudiant->Size = System::Drawing::Size(330, 98);
+			this->ButtonMenuEstudiant->Size = System::Drawing::Size(293, 79);
 			this->ButtonMenuEstudiant->TabIndex = 8;
-			this->ButtonMenuEstudiant->Text = L"Gestio Perfil";
+			this->ButtonMenuEstudiant->Text = L" Menú Estudiant";
 			this->ButtonMenuEstudiant->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenuEstudiant->UseVisualStyleBackColor = true;
 			this->ButtonMenuEstudiant->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMenuEstudiant_Click);
@@ -224,13 +267,13 @@ namespace StudyHub {
 			this->ButtonMenu->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ButtonMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMenu.Image")));
 			this->ButtonMenu->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->ButtonMenu->Location = System::Drawing::Point(0, 108);
-			this->ButtonMenu->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->ButtonMenu->Location = System::Drawing::Point(0, 86);
+			this->ButtonMenu->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMenu->Name = L"ButtonMenu";
 			this->ButtonMenu->Padding = System::Windows::Forms::Padding(4, 0, 0, 0);
-			this->ButtonMenu->Size = System::Drawing::Size(330, 98);
+			this->ButtonMenu->Size = System::Drawing::Size(293, 79);
 			this->ButtonMenu->TabIndex = 7;
-			this->ButtonMenu->Text = L" Menu Principal";
+			this->ButtonMenu->Text = L" Menú Principal";
 			this->ButtonMenu->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
 			this->ButtonMenu->UseVisualStyleBackColor = true;
 			this->ButtonMenu->Click += gcnew System::EventHandler(this, &MenuPrincipal::buttonMenu);
@@ -241,26 +284,37 @@ namespace StudyHub {
 			this->PanelLogo->Controls->Add(this->studyHyb);
 			this->PanelLogo->Dock = System::Windows::Forms::DockStyle::Top;
 			this->PanelLogo->Location = System::Drawing::Point(0, 0);
-			this->PanelLogo->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->PanelLogo->Margin = System::Windows::Forms::Padding(4);
 			this->PanelLogo->Name = L"PanelLogo";
-			this->PanelLogo->Size = System::Drawing::Size(330, 108);
+			this->PanelLogo->Size = System::Drawing::Size(293, 86);
 			this->PanelLogo->TabIndex = 6;
 			// this->PanelLogo->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::PanelLogo_Paint);
 			// 
 			// panelTitle
 			// 
 			this->panelTitle->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
+			this->panelTitle->Controls->Add(this->pictureBox1);
 			this->panelTitle->Controls->Add(this->ButtonMinimized);
 			this->panelTitle->Controls->Add(this->ButtonMaximized);
 			this->panelTitle->Controls->Add(this->ButtonCloseForm);
 			this->panelTitle->Controls->Add(this->LabelTitle);
 			this->panelTitle->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panelTitle->Location = System::Drawing::Point(330, 0);
-			this->panelTitle->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->panelTitle->Location = System::Drawing::Point(293, 0);
+			this->panelTitle->Margin = System::Windows::Forms::Padding(4);
 			this->panelTitle->Name = L"panelTitle";
-			this->panelTitle->Size = System::Drawing::Size(926, 108);
+			this->panelTitle->Size = System::Drawing::Size(823, 86);
 			this->panelTitle->TabIndex = 6;
 			this->panelTitle->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MenuPrincipal::panelTitle_Paint);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(0, 18);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(77, 68);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 4;
+			this->pictureBox1->TabStop = false;
 			// 
 			// ButtonMinimized
 			// 
@@ -270,10 +324,10 @@ namespace StudyHub {
 			this->ButtonMinimized->FlatAppearance->BorderSize = 0;
 			this->ButtonMinimized->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonMinimized->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMinimized.Image")));
-			this->ButtonMinimized->Location = System::Drawing::Point(719, 0);
-			this->ButtonMinimized->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->ButtonMinimized->Location = System::Drawing::Point(640, 0);
+			this->ButtonMinimized->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMinimized->Name = L"ButtonMinimized";
-			this->ButtonMinimized->Size = System::Drawing::Size(69, 108);
+			this->ButtonMinimized->Size = System::Drawing::Size(61, 86);
 			this->ButtonMinimized->TabIndex = 3;
 			this->ButtonMinimized->UseVisualStyleBackColor = false;
 			this->ButtonMinimized->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMinimized_Click);
@@ -286,10 +340,10 @@ namespace StudyHub {
 			this->ButtonMaximized->FlatAppearance->BorderSize = 0;
 			this->ButtonMaximized->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonMaximized->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonMaximized.Image")));
-			this->ButtonMaximized->Location = System::Drawing::Point(788, 0);
-			this->ButtonMaximized->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->ButtonMaximized->Location = System::Drawing::Point(701, 0);
+			this->ButtonMaximized->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonMaximized->Name = L"ButtonMaximized";
-			this->ButtonMaximized->Size = System::Drawing::Size(69, 108);
+			this->ButtonMaximized->Size = System::Drawing::Size(61, 86);
 			this->ButtonMaximized->TabIndex = 2;
 			this->ButtonMaximized->UseVisualStyleBackColor = false;
 			this->ButtonMaximized->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonMaximized_Click);
@@ -302,10 +356,10 @@ namespace StudyHub {
 			this->ButtonCloseForm->FlatAppearance->BorderSize = 0;
 			this->ButtonCloseForm->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->ButtonCloseForm->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"ButtonCloseForm.Image")));
-			this->ButtonCloseForm->Location = System::Drawing::Point(857, 0);
-			this->ButtonCloseForm->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->ButtonCloseForm->Location = System::Drawing::Point(762, 0);
+			this->ButtonCloseForm->Margin = System::Windows::Forms::Padding(4);
 			this->ButtonCloseForm->Name = L"ButtonCloseForm";
-			this->ButtonCloseForm->Size = System::Drawing::Size(69, 108);
+			this->ButtonCloseForm->Size = System::Drawing::Size(61, 86);
 			this->ButtonCloseForm->TabIndex = 1;
 			this->ButtonCloseForm->UseVisualStyleBackColor = false;
 			this->ButtonCloseForm->Click += gcnew System::EventHandler(this, &MenuPrincipal::ButtonCloseForm_Click);
@@ -318,12 +372,12 @@ namespace StudyHub {
 			this->LabelTitle->AutoSize = true;
 			this->LabelTitle->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 26, System::Drawing::FontStyle::Bold));
 			this->LabelTitle->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->LabelTitle->Location = System::Drawing::Point(354, 15);
+			this->LabelTitle->Location = System::Drawing::Point(315, 12);
 			this->LabelTitle->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->LabelTitle->Name = L"LabelTitle";
-			this->LabelTitle->Size = System::Drawing::Size(197, 69);
+			this->LabelTitle->Size = System::Drawing::Size(166, 58);
 			this->LabelTitle->TabIndex = 0;
-			this->LabelTitle->Text = L"MENU";
+			this->LabelTitle->Text = L"MENÚ";
 			this->LabelTitle->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// PanelContainer
@@ -331,10 +385,10 @@ namespace StudyHub {
 			this->PanelContainer->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->PanelContainer->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->PanelContainer->ForeColor = System::Drawing::Color::Black;
-			this->PanelContainer->Location = System::Drawing::Point(330, 108);
-			this->PanelContainer->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->PanelContainer->Location = System::Drawing::Point(293, 86);
+			this->PanelContainer->Margin = System::Windows::Forms::Padding(4);
 			this->PanelContainer->Name = L"PanelContainer";
-			this->PanelContainer->Size = System::Drawing::Size(926, 500);
+			this->PanelContainer->Size = System::Drawing::Size(823, 400);
 			this->PanelContainer->TabIndex = 7;
 			// 
 			// buttonGestioProveidors
@@ -379,15 +433,16 @@ namespace StudyHub {
 			// 
 			// MenuPrincipal
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::GradientActiveCaption;
-			this->ClientSize = System::Drawing::Size(1256, 608);
+			this->ClientSize = System::Drawing::Size(1116, 486);
 			this->Controls->Add(this->PanelContainer);
 			this->Controls->Add(this->panelTitle);
 			this->Controls->Add(this->panelMenu);
 			this->ForeColor = System::Drawing::SystemColors::GradientActiveCaption;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"MenuPrincipal";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MenuPrincipal";
@@ -397,6 +452,7 @@ namespace StudyHub {
 			this->PanelLogo->PerformLayout();
 			this->panelTitle->ResumeLayout(false);
 			this->panelTitle->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -415,6 +471,8 @@ public: System::Void AbrirFormularioEnPanel(Form^ formHijo);
 
 // Abrir SubMenu:
 public: System::Void AbrirSubFormularioEnPanel(Form^ formHijo);
+// Abrir SubMenu Sin Aplicar Cambios:
+public: System::Void AbrirSubFormularioEnPanelOriginal(Form^ formHijo);
 
 //Hacer Visible (Para Estudiantes):
 public: System::Void HacerVisible();

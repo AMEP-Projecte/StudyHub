@@ -25,6 +25,15 @@
     <Filter Include="GestioGrups\PasarellaCercadora">
       <UniqueIdentifier>{2bd7e96e-afcf-4fbc-b511-53c5014bdedb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GestioUsuaris">
+      <UniqueIdentifier>{c7ec3133-ff2c-4ee4-9d90-c15a80497729}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioUsuaris\PassarellesCercadores">
+      <UniqueIdentifier>{5822e92b-359a-4ab3-8a6d-c0f45129bf48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioUsuaris\Tx">
+      <UniqueIdentifier>{284e4326-5ed5-4268-93b3-d05c752b7e66}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Menus">
       <UniqueIdentifier>{9387af62-3271-41b9-9106-009077455988}</UniqueIdentifier>
     </Filter>
@@ -91,17 +100,20 @@
     <Filter Include="GestioProveidor\Tx">
       <UniqueIdentifier>{d9ad9ac1-141c-416b-92cc-97f4448258be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GestioSessio\Tx\GestioUsuaris">
-      <UniqueIdentifier>{c7ec3133-ff2c-4ee4-9d90-c15a80497729}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GestioSessio\Tx\GestioUsuaris\PassarellesCercadores">
-      <UniqueIdentifier>{5822e92b-359a-4ab3-8a6d-c0f45129bf48}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GestioSessio\Tx\GestioUsuaris\Tx">
-      <UniqueIdentifier>{284e4326-5ed5-4268-93b3-d05c752b7e66}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GestioSessio\Tx\GestioUsuaris\Presentacio">
+    <Filter Include="GestioUsuaris\Presentacio">
       <UniqueIdentifier>{f078b4a6-c306-45ef-8fd8-9eeab1ef3a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions">
+      <UniqueIdentifier>{d6a4681b-b8af-45dd-919a-77c9177ede56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\Tx">
+      <UniqueIdentifier>{3864e8ee-a1e4-48c9-bea6-01f127cf0f19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\PassarellesCercadores">
+      <UniqueIdentifier>{865044a3-0b67-4990-a4d6-95d444eb3f3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GestioValoracions\Presentació">
+      <UniqueIdentifier>{04fde041-f824-4924-b8db-65fd6bf6ecf3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -168,28 +180,28 @@
       <Filter>GestioGrups\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxIniciarSessio.h">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
+      <Filter>GestioUsuaris\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
+      <Filter>GestioUsuaris\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxEsborraUsuari.h">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
+      <Filter>GestioUsuaris\Tx</Filter>
     </ClInclude>
     <ClInclude Include="CrearNouGrupEstudi.h">
       <Filter>GestioGrups\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="CercadoraUsuari.h">
-      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
     </ClInclude>
     <ClInclude Include="PassarellaUsuari.h">
-      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
     </ClInclude>
     <ClInclude Include="IniciSessio.h">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioUsuaris\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="TancarSessio.h">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioUsuaris\Presentacio</Filter>
     </ClInclude>
     <ClInclude Include="MenuEstudiant.h">
       <Filter>Menus</Filter>
@@ -338,19 +350,10 @@
     <ClInclude Include="TxCrearProveidor.h">
       <Filter>GestioProveidor\Tx</Filter>
     </ClInclude>
-    <ClInclude Include="CercadoraValoracio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ConsultarSessionsUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CrearValoracioUI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EditarSessio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PassarellaValoracio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProgramarSessioEstudiUI.h">
@@ -362,20 +365,56 @@
     <ClInclude Include="EsborraSessioUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CercaGrup.h">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercarGrups.h">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraValoracio.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
+    <ClInclude Include="PassarellaValoracio.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCrearValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
     <ClInclude Include="StarRatingControl.h">
-      <Filter>Header Files</Filter>
+      <Filter>GestioValoracions\Presentació</Filter>
     </ClInclude>
     <ClInclude Include="StarRatingView.h">
-      <Filter>Header Files</Filter>
+      <Filter>GestioValoracions\Presentació</Filter>
     </ClInclude>
     <ClInclude Include="TxCercaValoracio.h">
-      <Filter>Header Files</Filter>
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborraValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxEditarSessio.h">
-      <Filter>Header Files</Filter>
+      <Filter>GestioSessio\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxProgramarSessioEstudi.h">
-      <Filter>Header Files</Filter>
+      <Filter>GestioSessio\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="TxModificaValoracio.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CrearValoracioUI.h">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClInclude>
+    <ClInclude Include="UnirseGrupUI.h">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClInclude>
+    <ClInclude Include="TxValoracioMitjana.h">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClInclude>
+    <ClInclude Include="CercadoraValoracioMitjana.h">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEnviarPeticioGrup.h">
+      <Filter>GestioGrups\Tx</Filter>
     </ClInclude>
     <ClInclude Include="TxConsultarEspaisProveidor.h">
       <Filter>Header Files</Filter>
@@ -455,19 +494,19 @@
       <Filter>GestioGrups\Tx</Filter>
     </ClCompile>
     <ClCompile Include="TxIniciarSessio.cpp">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
+      <Filter>GestioUsuaris\Tx</Filter>
     </ClCompile>
     <ClCompile Include="TxTancarSessio.cpp">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
+      <Filter>GestioUsuaris\Tx</Filter>
     </ClCompile>
     <ClCompile Include="TxEsborraUsuari.cpp">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Tx</Filter>
+      <Filter>GestioUsuaris\Tx</Filter>
     </ClCompile>
     <ClCompile Include="CercadoraUsuari.cpp">
-      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
     </ClCompile>
     <ClCompile Include="PassarellaUsuari.cpp">
-      <Filter>GestioSessio\Tx\GestioUsuaris\PassarellesCercadores</Filter>
+      <Filter>GestioUsuaris\PassarellesCercadores</Filter>
     </ClCompile>
     <ClCompile Include="PassarellaEstudiant.cpp">
       <Filter>GestioEstudiants\PassarellaCercadora</Filter>
@@ -485,10 +524,10 @@
       <Filter>Menus</Filter>
     </ClCompile>
     <ClCompile Include="IniciSessio.cpp">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioUsuaris\Presentacio</Filter>
     </ClCompile>
     <ClCompile Include="TancarSessio.cpp">
-      <Filter>GestioSessio\Tx\GestioUsuaris\Presentacio</Filter>
+      <Filter>GestioUsuaris\Presentacio</Filter>
     </ClCompile>
     <ClCompile Include="Sistema.cpp">
       <Filter>Sistema</Filter>
@@ -613,16 +652,7 @@
     <ClCompile Include="TxCrearProveidor.cpp">
       <Filter>GestioProveidor\Tx</Filter>
     </ClCompile>
-    <ClCompile Include="CercadoraValoracio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CrearValoracioUI.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="EditarSessio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PassarellaValoracio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProgramarSessioEstudiUI.cpp">
@@ -637,20 +667,53 @@
     <ClCompile Include="EsborraSessioUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StarRatingControl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="StarRatingView.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TxCercaValoracio.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TxEditarSessio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TxProgramarSessioEstudi.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CercaGrup.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercarGrups.cpp">
+      <Filter>GestioGrups\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraValoracio.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="PassarellaValoracio.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCrearValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingControl.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="StarRatingView.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercaValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborraValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="TxModificaValoracio.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CrearValoracioUI.cpp">
+      <Filter>GestioValoracions\Presentació</Filter>
+    </ClCompile>
+    <ClCompile Include="UnirseGrupUI.cpp">
+      <Filter>GestioGrups\Presentacio</Filter>
+    </ClCompile>
+    <ClCompile Include="TxValoracioMitjana.cpp">
+      <Filter>GestioValoracions\Tx</Filter>
+    </ClCompile>
+    <ClCompile Include="CercadoraValoracioMitjana.cpp">
+      <Filter>GestioValoracions\PassarellesCercadores</Filter>
     </ClCompile>
     <ClCompile Include="TxConsultarEspaisProveidor.cpp">
       <Filter>Source Files</Filter>
@@ -675,10 +738,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CrearValoracioUI.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>

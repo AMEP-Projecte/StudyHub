@@ -212,6 +212,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		if (this->textBox1->Text != "" && this->textBox2->Text != "") {
 			TxCrearNouGrupEstudi CrearGrup(this->textBox1->Text, this->textBox2->Text, sist->obteEstudiant()->obteUsername());
 			CrearGrup.executa();
+			MessageBox::Show("Grup Creat Correctament.");
 			this->Close();
 		}
 		else {

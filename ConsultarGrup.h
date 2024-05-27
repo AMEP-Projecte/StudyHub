@@ -1,5 +1,8 @@
 #pragma once
 #include "TxConsultarGrup.h"
+#include "TxCercaValoracio.h"
+#include "StarRatingControl.h"
+#include "StarRatingView.h"
 
 namespace StudyHub {
 
@@ -22,6 +25,8 @@ namespace StudyHub {
 			//
 			//TODO: agregar c�digo de constructor aqu�
 			//
+			carregarValoracio();
+			Valorar();
 		}
 
 	protected:
@@ -47,6 +52,8 @@ namespace StudyHub {
 	private: System::Windows::Forms::Button^ consulta;
 	private: System::Windows::Forms::Label^ labelTematica;
 	private: System::Windows::Forms::Label^ labelParticipants;
+	private: System::Windows::Forms::FlowLayoutPanel^ panelEstrellas;
+	private: System::Windows::Forms::FlowLayoutPanel^ PanelValorar;
 
 
 
@@ -64,7 +71,7 @@ namespace StudyHub {
 		/// <summary>
 		/// Variable del dise�ador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -82,6 +89,8 @@ namespace StudyHub {
 			this->consulta = (gcnew System::Windows::Forms::Button());
 			this->labelTematica = (gcnew System::Windows::Forms::Label());
 			this->labelParticipants = (gcnew System::Windows::Forms::Label());
+			this->panelEstrellas = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->PanelValorar = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->SuspendLayout();
 			// 
 			// label2
@@ -127,9 +136,9 @@ namespace StudyHub {
 			this->theme->Location = System::Drawing::Point(105, 188);
 			this->theme->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->theme->Name = L"theme";
-			this->theme->Size = System::Drawing::Size(79, 20);
+			this->theme->Size = System::Drawing::Size(78, 20);
 			this->theme->TabIndex = 4;
-			this->theme->Text = L"Tem\u00e0tica:";
+			this->theme->Text = L"Temàtica:";
 			// 
 			// participants
 			// 
@@ -148,7 +157,7 @@ namespace StudyHub {
 			this->cencel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cencel->ForeColor = System::Drawing::Color::DarkCyan;
-			this->cencel->Location = System::Drawing::Point(108, 260);
+			this->cencel->Location = System::Drawing::Point(108, 281);
 			this->cencel->Margin = System::Windows::Forms::Padding(2);
 			this->cencel->Name = L"cencel";
 			this->cencel->Size = System::Drawing::Size(130, 35);
@@ -162,7 +171,7 @@ namespace StudyHub {
 			this->consulta->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->consulta->ForeColor = System::Drawing::Color::DarkCyan;
-			this->consulta->Location = System::Drawing::Point(373, 260);
+			this->consulta->Location = System::Drawing::Point(373, 281);
 			this->consulta->Margin = System::Windows::Forms::Padding(2);
 			this->consulta->Name = L"consulta";
 			this->consulta->Size = System::Drawing::Size(130, 35);
@@ -197,12 +206,30 @@ namespace StudyHub {
 			this->labelParticipants->TabIndex = 9;
 			this->labelParticipants->Text = L"-";
 			// 
+			// panelEstrellas
+			// 
+			this->panelEstrellas->Location = System::Drawing::Point(108, 245);
+			this->panelEstrellas->Name = L"panelEstrellas";
+			this->panelEstrellas->Size = System::Drawing::Size(197, 31);
+			this->panelEstrellas->AutoSize = true;
+			this->panelEstrellas->TabIndex = 10;
+			// 
+			// PanelValorar
+			// 
+			this->PanelValorar->Location = System::Drawing::Point(312, 245);
+			this->PanelValorar->Name = L"PanelValorar";
+			this->panelEstrellas->AutoSize = true;
+			this->PanelValorar->Size = System::Drawing::Size(182, 31);
+			this->PanelValorar->TabIndex = 11;
+			// 
 			// ConsultarGrup
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(607, 370);
+			this->Controls->Add(this->PanelValorar);
+			this->Controls->Add(this->panelEstrellas);
 			this->Controls->Add(this->labelParticipants);
 			this->Controls->Add(this->labelTematica);
 			this->Controls->Add(this->consulta);
@@ -226,31 +253,44 @@ namespace StudyHub {
 	}
 	private: System::Void ConsultarGrup_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void cencel_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void cencel_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
 
-private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ e) {
-	String^ nom = this->nomGrup->Text;
+	private: System::Void consulta_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ nom = this->nomGrup->Text;
 
-	try {
-		if (nom == "") {
-			MessageBox::Show("Posa un nom de grup, si us plau.");
+		try {
+			if (nom == "") {
+				MessageBox::Show("Posa un nom de grup, si us plau.");
+			}
+			else {
+				TxConsultaGrup^ tx = gcnew TxConsultaGrup(nom);
+				tx->executar();
+
+				ConsultaGrup consulta = tx->obteResultat();
+				labelTematica->Text = consulta._tematica;
+				labelParticipants->Text = consulta._nombreParticipants;
+			}
 		}
-		else {
-			TxConsultaGrup^ tx = gcnew TxConsultaGrup(nom);
-			tx->executar();
-
-			ConsultaGrup consulta = tx->obteResultat();
-			labelTematica->Text = consulta._tematica;
-			labelParticipants->Text = consulta._nombreParticipants;
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
 		}
 	}
-	catch (Exception^ ex) {
-		MessageBox::Show(ex->Message);
+	private: System::Void Valorar() {
+		StarRatingControl^ starRatingControl = gcnew StarRatingControl("ho");
+		this->PanelValorar->Controls->Add(starRatingControl);
 	}
-}
-};
+
+	private: System::Void carregarValoracio() {
+		TxCercaValoracio^ Cerca = gcnew TxCercaValoracio("saa", "ho");
+		PassarellaValoracio^ p = Cerca->executar();
+		Int64^ prueba = p->obteValoracio();
+		float floatValue = static_cast<float>(*prueba);
+		StarRatingView^ starRatingControl = gcnew StarRatingView(floatValue);
+		this->panelEstrellas->Controls->Add(starRatingControl);
+	}
+	};
 }
