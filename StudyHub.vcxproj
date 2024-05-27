@@ -290,6 +290,7 @@
     </ClInclude>
     <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
+    <ClInclude Include="TxEnviarPeticioGrup.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
     <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEditarEspai.h" />
@@ -400,6 +401,7 @@
     </ClCompile>
     <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
+    <ClCompile Include="TxEnviarPeticioGrup.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
     <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEditarEspai.cpp" />
