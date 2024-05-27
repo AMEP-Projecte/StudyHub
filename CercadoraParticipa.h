@@ -11,5 +11,6 @@ public:
 	//List<PassarellaParticipa^>^ cercaParticipaGrup(String^ nom);
 
 	static List<PassarellaParticipa^>^ cercaParticipaEstudiant(String^ nom);
+	static PassarellaParticipa^ CercadoraParticipa::cercaParticipa(String^ data, String^ grup, String^ hora, String^ estudiant);
 };
 

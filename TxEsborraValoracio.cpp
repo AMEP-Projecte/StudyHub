@@ -5,27 +5,18 @@
 
 using namespace System;
 
-TxEsborraValoracio::TxEsborraValoracio(String^ estudiant, String^ grup, Int64^ valoracio, String^ comentari) {
-	_estudiant = estudiant;
-	_grup = grup;
-	_valoracio = valoracio;
-	_comentari = comentari;
+TxEsborraValoracio::TxEsborraValoracio(String^ u, String^ g) {
+	username = u;
+	grup = g;
 }
 
 void TxEsborraValoracio::executar() {
-	PassarellaValoracio^ p = nullptr;
-	if ((_estudiant == "") || (_grup = "")) {
-		System::Windows::Forms::MessageBox::Show("Camps sense omplir.");
-	}
-	else {
-		CercadoraValoracio^ buscador = gcnew CercadoraValoracio();
-		p = buscador->cercaValoracio(_estudiant, _grup);
-		if (p == nullptr) {
-			System::Windows::Forms::MessageBox::Show("No existeix valoració.");
-		}
-		else {
-			p->esborra();
-			System::Windows::Forms::MessageBox::Show("Valoració eliminada.");
-		}
-	}
+	Int64 p = 0;
+	PassarellaValoracio^ valoracio = gcnew PassarellaValoracio(username, grup, p, "");
+	valoracio->esborra();
+
+	PassarellaEstudiant^ estudiant = CercadoraEstudiant::cercaEstudiantPerNom(username);
+	int numValoracionsActual = estudiant->obteNumValoracions() - 1;
+	estudiant->posaNumValoracions(numValoracionsActual);
+	estudiant->modifica();
 }

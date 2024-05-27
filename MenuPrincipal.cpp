@@ -16,6 +16,7 @@
 // usuari Admin
 #include "MenuAdministrador.h"
 #include "MenuGestioProveidorAdmin.h"
+#include "MenuGestioEstudiantsAdmin.h"
 
 using namespace StudyHub;
 
@@ -107,10 +108,9 @@ System::Void MenuPrincipal::HacerVisible() {
 }
 
 System::Void MenuPrincipal::HacerVisibleProvedor() {
-	this->ButtonMenu->Visible = false;
-	this->ButtonMaximized->Visible = false;
+	this->ButtonMaximized->Visible = true;
 
-	this->ButtonMenuEstudiant->Visible = true;
+	this->ButtonMenuEstudiant->Visible = false;
 	this->ButtonMenuGrups->Visible = false;
 	this->buttonMenuSessions->Visible = false;
 
@@ -135,7 +135,6 @@ System::Void MenuPrincipal::HacerVisibleAdmin() {
 }
 
 System::Void MenuPrincipal::HacerInivisible_Load() {
-	this->ButtonMenu->Visible = true;
 	this->ButtonMaximized->Visible = false;
 
 	this->ButtonMenuEstudiant->Visible = false;
@@ -174,6 +173,7 @@ System::Void MenuPrincipal::sortir_Click(System::Object^ sender, System::EventAr
 }
 
 System::Void MenuPrincipal::MenuPrincipal_Load(System::Object^ sender, System::EventArgs^ e) {
+	this->ButtonMenu->Visible = false;
 	FormPrincipal_Load();
 	HacerInivisible_Load();
 }
@@ -211,18 +211,9 @@ System::Void MenuPrincipal::panelTitle_Paint(System::Object^ sender, System::Win
 }
 
 System::Void MenuPrincipal::ButtonMenuEstudiant_Click(System::Object^ sender, System::EventArgs^ e) {
-	// button to Gestio Perfil Usuari
-
 	Sistema^ sistema = Sistema::getInstance();
-	if (sistema->obteTipusUsuari() == "estudiant") {
-		MenuGestioEstudiant^ gestionaPerfilEst = gcnew MenuGestioEstudiant();
-		AbrirFormularioEnPanel(gestionaPerfilEst);
-
-	}
-	else {
-		MenuGestioProveidor^ gestioPerfilPro = gcnew MenuGestioProveidor();
-		AbrirFormularioEnPanel(gestioPerfilPro);
-	}
+	MenuGestioEstudiant^ gestionaPerfilEst = gcnew MenuGestioEstudiant();
+	AbrirFormularioEnPanel(gestionaPerfilEst);
 }
 
 System::Void MenuPrincipal::buttonGestioEspais_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -240,6 +231,13 @@ System::Void MenuPrincipal::buttonGestioProveidors_Click(System::Object^ sender,
 }
 
 System::Void MenuPrincipal::buttonGestioEstudiants_Click(System::Object^ sender, System::EventArgs^ e) {
-	// gestio estudiants de admin
+	this->ButtonMenu->Visible = true;
+	this->buttonGestioEstudiants->Visible = false;
+
+	MenuGestioEstudiantsAdmin^ gestioEstudiants = gcnew MenuGestioEstudiantsAdmin();
+	AbrirFormularioEnPanel(gestioEstudiants);
 }
 
+System::Void MenuPrincipal::canviaVisibilitat_ButtonMenu(bool visibilitat) {
+	this->ButtonMenu->Visible = visibilitat;
+}

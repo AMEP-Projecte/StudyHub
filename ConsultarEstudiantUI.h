@@ -300,23 +300,20 @@ namespace StudyHub {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ConsultarEstudiantUI_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultarEstudiant tx("");
-		//try
-		//{
-			tx.executar();
-			nomLabel->Text = tx.nom;
-			cognomLabel->Text = tx.cognom;
-			nomUsuariLabel->Text = tx.nomUsuari;
-			correuLabel->Text = tx.correu;
-			idiomaLabel->Text = tx.idioma;
-			localitatLabel->Text = tx.localitat;
-			valoracionsLabel->Text = tx.numValoracions.ToString();
-		/* }
-		catch (Exception^ e)
-		{
-			
-
-		}*/
+		TxConsultarEstudiant^ txCE = gcnew TxConsultarEstudiant();
+		try {
+			txCE->executar();
+			nomLabel->Text = txCE->obteResultat()._nom;
+			cognomLabel->Text = txCE->obteResultat()._cognom;
+			nomUsuariLabel->Text = txCE->obteResultat()._nomUsuari;
+			correuLabel->Text = txCE->obteResultat()._correu;
+			idiomaLabel->Text = txCE->obteResultat()._idioma;
+			localitatLabel->Text = txCE->obteResultat()._localitat;
+			valoracionsLabel->Text = txCE->obteResultat()._numValoracions.ToString();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 		
 	}
 private: System::Void cognomLabel_Click(System::Object^ sender, System::EventArgs^ e) {

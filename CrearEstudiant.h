@@ -1,5 +1,8 @@
 ﻿#pragma once
 #include "TxCreaEstudiant.h"
+#include "MenuPrincipal.h"
+#include "IniciarSessio.h"
+
 namespace StudyHub {
 
 	using namespace System;
@@ -309,13 +312,25 @@ namespace StudyHub {
 #pragma endregion
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (contrasenyaBox->Text == contrasenyaBox->Text) {
+	if (nomusuariBox->Text == "") {
+		MessageBox::Show("Has d'omplir el camp de Nom d'Usuari.");
+	}
+	else if (contrasenyaBox->Text == "") {
+		MessageBox::Show("Has d'omplir el camp de Contrasenya.");
+	}
+	else if (contrasenyaBox->Text == repeteixContrasenyaBox->Text) {
 		TxCreaEstudiant tx(nomusuariBox->Text, contrasenyaBox->Text, correuBox->Text, nomBox->Text,
 			CognomsBox->Text, idiomaPreferitBox->Text, LocalitatBox->Text, 0);
 		tx.executa();
 	}
-	this->Close();
+	else {
+		MessageBox::Show("Les contrasenyes no són les mateixes.");
+	}
+	IniciarSessio^ iniciar = gcnew IniciarSessio();
 
+	MenuPrincipal^ menu = gcnew MenuPrincipal();
+	menu->canviaVisibilitat_ButtonMenu(false);
+	menu->AbrirFormularioEnPanel(iniciar);
 }
 private: System::Void NomLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 }

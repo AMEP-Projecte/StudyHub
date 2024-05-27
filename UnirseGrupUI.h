@@ -129,8 +129,8 @@ namespace StudyHub {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(67, 16);
 			this->label4->TabIndex = 15;
-			this->label4->Text = L"Temàtica:";
-			// 
+			this->label4->Text = L"TemÃ tica:";
+      //
 			// label5
 			// 
 			this->label5->AutoSize = true;
@@ -264,7 +264,7 @@ namespace StudyHub {
 		panell->Controls->Add(Comentari, 1, 0);
 
 		System::Windows::Forms::Label^ Valoracio = gcnew System::Windows::Forms::Label();
-		Valoracio->Text = "Valoració";
+		Valoracio->Text = "ValoraciÃ³";
 		Valoracio->Anchor = System::Windows::Forms::AnchorStyles::None;
 		Valoracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		Valoracio->Font = gcnew System::Drawing::Font("Arial Black", 10, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);

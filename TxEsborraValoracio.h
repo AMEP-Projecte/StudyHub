@@ -1,17 +1,16 @@
 #pragma once
-
 using namespace System;
+#include "PassarellaValoracio.h"
+#include "CercadoraEstudiant.h"
 
 ref class TxEsborraValoracio
 {
 private:
-	String^ _estudiant;
-	String^ _grup;
-	Int64^ _valoracio;
-	String^ _comentari;
+	String^ username;
+	String^ grup;
+	
 public:
-	TxEsborraValoracio(String^ estudiant, String^ grup, Int64^ valoracio, String^ comentari); // constructora
-
+	TxEsborraValoracio(String^ u, String^ g);
 	void executar();
 };
 

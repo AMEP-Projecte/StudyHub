@@ -32,3 +32,34 @@ PassarellaProveidor^ CercadoraProveidor::cercaProveidor(String^ username) {
     }
     return pp;
 }
+*/
+
+List<PassarellaProveidor^>^ CercadoraProveidor::totsProveidors() {
+    PassarellaProveidor^ pp = nullptr;
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    String^ sql = "SELECT * FROM proveidor";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    MySqlDataReader^ dataReader;
+
+    List<PassarellaProveidor^>^ result = gcnew List<PassarellaProveidor^>();
+    try {
+        conn->Open();
+        dataReader = cmd->ExecuteReader();
+        while (dataReader->Read()) {
+            // Creamos una instancia de PassarellaEstudiant y le asignamos los valores recuperados de la base de datos
+            String^ username = dataReader->GetString("username");
+            PassarellaProveidor^ pe = gcnew PassarellaProveidor(username, "", "proveidor");
+
+            result->Add(pe);
+        }
+    }
+    catch (Exception^ ex) {
+        MessageBox::Show(ex->Message);
+    }
+    finally {
+        // Cerramos la conexi�n
+        conn->Close();
+    }
+    return result;
+}

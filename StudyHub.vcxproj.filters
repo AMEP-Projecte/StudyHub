@@ -416,6 +416,21 @@
     <ClInclude Include="TxEnviarPeticioGrup.h">
       <Filter>GestioGrups\Tx</Filter>
     </ClInclude>
+    <ClInclude Include="TxConsultarEspaisProveidor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCrearValoracio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UnirseGrupUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuGestioEstudiantsAdmin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxEsborraEstudiantAdmin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -699,6 +714,21 @@
     </ClCompile>
     <ClCompile Include="CercadoraValoracioMitjana.cpp">
       <Filter>GestioValoracions\PassarellesCercadores</Filter>
+    </ClCompile>
+    <ClCompile Include="TxConsultarEspaisProveidor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCrearValoracio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnirseGrupUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuGestioEstudiantsAdmin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEsborraEstudiantAdmin.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

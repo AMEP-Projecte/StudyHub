@@ -137,12 +137,12 @@ namespace StudyHub {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(84, 22);
 			this->label3->TabIndex = 0;
-			this->label3->Text = L"Tem\u00e0tica";
+			this->label3->Text = L"Temàtica";
 			// 
 			// textBox2
 			// 
 			this->textBox2->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->textBox2->Location = System::Drawing::Point(246, 184);
+			this->textBox2->Location = System::Drawing::Point(246, 208);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(230, 20);
 			this->textBox2->TabIndex = 1;
@@ -151,6 +151,8 @@ namespace StudyHub {
 			// 
 			this->button3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->button3->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::DarkCyan;
 			this->button3->Location = System::Drawing::Point(332, 279);
 			this->button3->Name = L"button3";
@@ -164,12 +166,14 @@ namespace StudyHub {
 			// 
 			this->button1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::DarkCyan;
 			this->button1->Location = System::Drawing::Point(130, 279);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(144, 39);
 			this->button1->TabIndex = 7;
-			this->button1->Text = L"Cancel·lar";
+			this->button1->Text = L"Tornar";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &CrearNouGrupEstudi::button1_Click);
 			// 

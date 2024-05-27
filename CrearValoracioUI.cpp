@@ -3,6 +3,9 @@
 #include "TxCrearValoracio.h"
 #include "StarRatingView.h"
 
+#include "MenuPrincipal.h"
+#include "MenuGestioGrups.h"
+
 using namespace StudyHub;
 
 System::Void CrearValoracioUI::ButtonEnviar_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -10,6 +13,10 @@ System::Void CrearValoracioUI::ButtonEnviar_Click(System::Object^ sender, System
 	Int64^ val = gcnew Int64(_valoracio);
 	TxCrearValoracio^ novaValoracio = gcnew TxCrearValoracio(_estudiant, _grup, val, comentari);
 	novaValoracio->executar();
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	MenuGestioGrups^ gestioGrups = gcnew MenuGestioGrups();
+	menu->AbrirFormularioEnPanel(gestioGrups);
+
 	this->Close();
 }
 

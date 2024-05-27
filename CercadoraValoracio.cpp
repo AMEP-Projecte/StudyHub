@@ -12,7 +12,7 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     MySqlDataReader^ dataReader;
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
         // Ejecutamos la consulta
         dataReader = cmd->ExecuteReader();
@@ -29,10 +29,45 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
     return pu;
+}
+
+List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracionsEstudiant(String^ usernameEstudiant) {
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    String^ sql = "SELECT * FROM valoracioGrup WHERE estudiant = '" + usernameEstudiant + "';";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    MySqlDataReader^ dataReader;
+
+    List<PassarellaValoracio^>^ result = gcnew List<PassarellaValoracio^>();
+    try {
+        // Abrimos la conexi贸n
+        conn->Open();
+        // Ejecutamos la consulta
+        dataReader = cmd->ExecuteReader();
+        while (dataReader->Read()) {
+            // Creamos una instancia de PassarellaUsuari y le asignamos los valores recuperados de la base de datos
+            String^ estudiant = dataReader->GetString("estudiant");
+            String^ grup = dataReader->GetString("grup");
+            Int64^ puntuacio = dataReader->GetInt64("puntuacio");
+            String^ comentari = dataReader->GetString("comentari");
+            PassarellaValoracio^ pu = gcnew PassarellaValoracio(estudiant, grup, puntuacio, comentari);
+
+            result->Add(pu);
+        }
+    }
+    catch (Exception^ ex) {
+        // Manejamos el error
+    }
+    finally {
+              // Cerramos la conexi贸n
+        conn->Close();
+    }
+
+    return result;
 }
 
 List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracioGrup(String^ grup) {
@@ -47,10 +82,10 @@ List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracioGrup(String^ grup)
 
     MySqlDataReader^ reader = nullptr;
 
-    try {
-        // Abrimos la conexi髇
-        conn->Open();
 
+    try {
+        // Abrimos la conexi贸n
+        conn->Open();
         // Ejecutamos la consulta
         reader = cmd->ExecuteReader();
 
@@ -75,8 +110,7 @@ List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracioGrup(String^ grup)
         if (reader != nullptr) {
             reader->Close();
         }
-
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
 

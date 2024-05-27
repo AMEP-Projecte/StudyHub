@@ -106,7 +106,7 @@ namespace StudyHub {
 			this->theme->Name = L"theme";
 			this->theme->Size = System::Drawing::Size(84, 22);
 			this->theme->TabIndex = 3;
-			this->theme->Text = L"Tem\u00e0tica";
+			this->theme->Text = L"Temàtica";
 			// 
 			// edit
 			// 
@@ -114,7 +114,7 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->edit->ForeColor = System::Drawing::Color::DarkCyan;
 			this->edit->Location = System::Drawing::Point(368, 260);
-			this->edit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->edit->Margin = System::Windows::Forms::Padding(2);
 			this->edit->Name = L"edit";
 			this->edit->Size = System::Drawing::Size(108, 35);
 			this->edit->TabIndex = 5;
@@ -126,7 +126,7 @@ namespace StudyHub {
 			// 
 			this->textName->BackColor = System::Drawing::SystemColors::Window;
 			this->textName->Location = System::Drawing::Point(246, 133);
-			this->textName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textName->Margin = System::Windows::Forms::Padding(2);
 			this->textName->Name = L"textName";
 			this->textName->Size = System::Drawing::Size(203, 20);
 			this->textName->TabIndex = 6;
@@ -135,7 +135,7 @@ namespace StudyHub {
 			// textTheme
 			// 
 			this->textTheme->Location = System::Drawing::Point(246, 184);
-			this->textTheme->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textTheme->Margin = System::Windows::Forms::Padding(2);
 			this->textTheme->Name = L"textTheme";
 			this->textTheme->Size = System::Drawing::Size(203, 20);
 			this->textTheme->TabIndex = 7;
@@ -146,11 +146,11 @@ namespace StudyHub {
 				static_cast<System::Byte>(0)));
 			this->cancel->ForeColor = System::Drawing::Color::DarkCyan;
 			this->cancel->Location = System::Drawing::Point(125, 260);
-			this->cancel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->cancel->Margin = System::Windows::Forms::Padding(2);
 			this->cancel->Name = L"cancel";
 			this->cancel->Size = System::Drawing::Size(108, 35);
 			this->cancel->TabIndex = 8;
-			this->cancel->Text = L"Cancel·lar";
+			this->cancel->Text = L"Tornar";
 			this->cancel->UseVisualStyleBackColor = true;
 			this->cancel->Click += gcnew System::EventHandler(this, &EditarGrup::cancel_Click_1);
 			// 
@@ -168,7 +168,7 @@ namespace StudyHub {
 			this->Controls->Add(this->name);
 			this->Controls->Add(this->editGroup);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"EditarGrup";
 			this->Text = L"EditarGrup";
 			this->Load += gcnew System::EventHandler(this, &EditarGrup::EditarGrup_Load);

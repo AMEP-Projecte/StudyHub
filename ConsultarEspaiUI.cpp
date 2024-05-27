@@ -2,8 +2,6 @@
 #include "ConsultarEspaiUI.h"
 #include "TxConsultaEspai.h"
 
-
-
 using namespace StudyHub;
 using namespace System::Windows::Forms;
 

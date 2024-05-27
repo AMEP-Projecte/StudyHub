@@ -63,3 +63,48 @@ List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaEstudiant(String^ 
 
 
 
+PassarellaParticipa^ CercadoraParticipa::cercaParticipa(String^ data, String^ grup, String^ hora, String^ estudiant) {
+
+
+
+    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos
+    String^ sql = "SELECT * FROM participa WHERE data = @data AND grup = @grup AND estudiant = @estudiant AND hora_inici=@hora ";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@data", data);
+    cmd->Parameters->AddWithValue("@grup", grup);
+    cmd->Parameters->AddWithValue("@estudiant", estudiant);
+    cmd->Parameters->AddWithValue("@hora", hora);
+    
+
+    MySqlDataReader^ dataReader = nullptr;
+
+
+    String^ horaIni = "";
+    
+
+    try {
+        conn->Open();
+        dataReader = cmd->ExecuteReader();
+        if (dataReader->Read()) {
+            // Suponiendo que las columnas se llaman "horaIni", "horaFi", "Data" y "llocs_lliures"
+            horaIni = dataReader["hora_inici"]->ToString();
+            data = dataReader->GetDateTime("data").ToString("yyyy-MM-dd");
+        
+        }
+    }
+    catch (Exception^ ex) {
+        Console::WriteLine("Ocurrió un error: " + ex->Message);
+        // Registra el mensaje de error o manéjalo según sea necesario
+    }
+    finally {
+        if (dataReader != nullptr) {
+            dataReader->Close(); // Asegúrate de que dataReader esté cerrado
+        }
+        conn->Close();
+    }
+    PassarellaParticipa^ pp = gcnew PassarellaParticipa(estudiant,grup, data, horaIni);
+    return pp;
+}

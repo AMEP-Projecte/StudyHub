@@ -143,10 +143,9 @@ namespace StudyHub {
 			this->button3->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->button3->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button3->ForeColor = System::Drawing::Color::DarkCyan;
-			this->button3->Location = System::Drawing::Point(533, 392);
-			this->button3->Margin = System::Windows::Forms::Padding(4);
+			this->button3->Location = System::Drawing::Point(355, 283);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(216, 50);
+			this->button3->Size = System::Drawing::Size(144, 36);
 			this->button3->TabIndex = 6;
 			this->button3->Text = L"SI";
 			this->button3->UseVisualStyleBackColor = false;
@@ -158,13 +157,11 @@ namespace StudyHub {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(292, 189);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(195, 136);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(75, 30);
+			this->label3->Size = System::Drawing::Size(52, 22);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"Nom:";
-
 			// 
 			// label2
 			// 
@@ -172,13 +169,11 @@ namespace StudyHub {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 20, System::Drawing::FontStyle::Bold));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(289, 42);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(193, 30);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(303, 52);
+			this->label2->Size = System::Drawing::Size(204, 36);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"Eliminar Espai";
-
 			// 
 			// ButtonTornar
 			// 
@@ -186,10 +181,9 @@ namespace StudyHub {
 			this->ButtonTornar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->ButtonTornar->BackColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->ButtonTornar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->ButtonTornar->Location = System::Drawing::Point(101, 392);
-			this->ButtonTornar->Margin = System::Windows::Forms::Padding(4);
+			this->ButtonTornar->Location = System::Drawing::Point(67, 283);
 			this->ButtonTornar->Name = L"ButtonTornar";
-			this->ButtonTornar->Size = System::Drawing::Size(216, 50);
+			this->ButtonTornar->Size = System::Drawing::Size(144, 36);
 			this->ButtonTornar->TabIndex = 7;
 			this->ButtonTornar->Text = L"Tornar";
 			this->ButtonTornar->UseVisualStyleBackColor = false;
@@ -201,13 +195,11 @@ namespace StudyHub {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(501, 189);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(334, 136);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(63, 30);
+			this->label1->Size = System::Drawing::Size(58, 22);
 			this->label1->TabIndex = 8;
 			this->label1->Text = L"label1";
-
 			// 
 			// label4
 			// 
@@ -215,26 +207,23 @@ namespace StudyHub {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(292, 253);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(195, 183);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(101, 30);
+			this->label4->Size = System::Drawing::Size(72, 22);
 			this->label4->TabIndex = 9;
 			this->label4->Text = L"Adreca:";
-
+			// 
 			// label5
 			// 
 			this->label5->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label5->Location = System::Drawing::Point(501, 253);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(334, 183);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(105, 30);
+			this->label5->Size = System::Drawing::Size(58, 22);
 			this->label5->TabIndex = 10;
 			this->label5->Text = L"label5";
-
 			// 
 			// label6
 			// 
@@ -242,13 +231,11 @@ namespace StudyHub {
 			this->label6->AutoSize = true;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label6->Location = System::Drawing::Point(292, 318);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(195, 230);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(121, 30);
+			this->label6->Size = System::Drawing::Size(86, 22);
 			this->label6->TabIndex = 11;
 			this->label6->Text = L"Capacitat";
-
 			// 
 			// label7
 			// 
@@ -256,13 +243,11 @@ namespace StudyHub {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->label7->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label7->Location = System::Drawing::Point(501, 318);
-			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label7->Location = System::Drawing::Point(334, 230);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(129, 30);
+			this->label7->Size = System::Drawing::Size(58, 22);
 			this->label7->TabIndex = 12;
 			this->label7->Text = L"label7";
-
 			// 
 			// label8
 			// 
@@ -271,20 +256,20 @@ namespace StudyHub {
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label8->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label8->Location = System::Drawing::Point(157, 122);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(62, 77);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(592, 40);
+			this->label8->Size = System::Drawing::Size(445, 29);
 			this->label8->TabIndex = 13;
-			this->label8->Text = L"Segur vols eliminar l\'espai seguent\?";
+			this->label8->Text = L"Segur que vols eliminar l\'espai seguent\?";
+			// this->label8->Click += gcnew System::EventHandler(this, &EliminarEspai::label8_Click);
 			// 
 			// EliminarEspai
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(910, 512);
+			this->ClientSize = System::Drawing::Size(607, 370);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
@@ -297,7 +282,6 @@ namespace StudyHub {
 			this->Controls->Add(this->label2);
 			this->ForeColor = System::Drawing::Color::Black;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"EliminarEspai";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"StudyHub";
@@ -320,7 +304,7 @@ namespace StudyHub {
 		Sistema^ sist = Sistema::getInstance();
 		try {
 			if (_adreca_ != "") {
-				List<PassarellaSessio^>^ busca = CercadoraSessio::cercaSessioAdreca(_adreca_);
+				List<PassarellaSessio^>^ busca = CercadoraSessio::cercaSessionsProximesDelEspai(_adreca_);
 				if (busca->Count != 0) {
 					MessageBox::Show("Hi ha sessions programades per aquest espai, no pots eliminar en aquest moment.");
 				}
@@ -355,5 +339,5 @@ namespace StudyHub {
 	}
 	private: System::Void ButtonTornar_Click(System::Object^ sender, System::EventArgs^ e);
 		
-	};
+};
 }

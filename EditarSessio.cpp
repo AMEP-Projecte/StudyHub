@@ -2,6 +2,7 @@
 #include "EditarSessio.h"
 #include "MenuPrincipal.h"
 #include "MenuSessionsUI.h"
+#include "TxGestionaSessions.h"
 
 System::Void StudyHub::EditarSessio::buttonTornar_Click(System::Object^ sender, System::EventArgs^ e) {
 	MenuSessionsUI^ menuGestioSessions = gcnew MenuSessionsUI();
@@ -41,24 +42,13 @@ System::Void StudyHub::EditarSessio::buttonEditar_Click(System::Object^ sender, 
 
 
 System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
+    Sistema^ sistema = Sistema::getInstance();
 
+    TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "no confirmades");
+    tx->executar();
+    ConsultaSessio^ sessions = tx->obteResultat();
 
-        MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
-        MySqlCommand^ cmd = gcnew MySqlCommand();
-        MySqlDataAdapter^ da = gcnew MySqlDataAdapter();
-        DataTable^ dt = gcnew DataTable();
-
-        Sistema^ sist = Sistema::getInstance();
-        String^ username = sist->obteEstudiant()->obteUsername();
-        String^ sql = "SELECT grup,data,hora_inici, hora_fi,adreca,llocs_lliures FROM sessio WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data) IN (SELECT grup, data FROM participa WHERE estudiant = @username);";
-        cmd->Connection = cn;
-        cmd->CommandText = sql;
-        cmd->Parameters->AddWithValue("@username", username);
-        da->SelectCommand = cmd;
-
-        da->Fill(dt);
-
-        int rowsCount = dt->Rows->Count;
+        int rowsCount = sessions->grup->Count;
         if (rowsCount == 0) {
             Label^ noSessionsLabel = gcnew Label();
             noSessionsLabel->AutoSize = true;
@@ -198,29 +188,14 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
                 layoutFila->Click += gcnew System::EventHandler(this, &EditarSessio::fila_Click); // SELECCIONAR FILA
                 layoutFila->RowCount = 1;
                 layoutFila->RowStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 20.0F)));
-
-
                 layoutFila->TabIndex = 8;
-
-                DataRow^ fila = dt->Rows[i];
-
-                String^ nomGrup = fila["grup"]->ToString();
-
-                DateTime^ fecha = Convert::ToDateTime(fila["data"]);
-                // Formatear la fecha a "yyyy-MM-dd"
-                String^ dataSessio = fecha->ToString("yyyy-MM-dd");
-
-                String^ direccioSessio = fila["adreca"]->ToString();
-                String^ horaInici = fila["hora_inici"]->ToString();
-                String^ horaFi= fila["hora_fi"]->ToString();
-                String^ llocs= fila["llocs_lliures"]->ToString();
 
                 Label^ labelGrup = gcnew Label();
                 labelGrup->AutoSize = true;
                 labelGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                     static_cast<System::Byte>(0)));
                 labelGrup->Dock = System::Windows::Forms::DockStyle::Fill;
-                labelGrup->Text = nomGrup;
+                labelGrup->Text = sessions->grup[i];
                 labelGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
                 labelGrup->Click += gcnew System::EventHandler(this, &EditarSessio::labelenfila_Click); // SELECCIONAR FILA
 
@@ -229,7 +204,7 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
                 labelData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                     static_cast<System::Byte>(0)));
                 labelData->Dock = System::Windows::Forms::DockStyle::Fill;
-                labelData->Text = dataSessio;
+                labelData->Text = sessions->data[i];
                 labelData->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
                 labelData->Click += gcnew System::EventHandler(this, &EditarSessio::labelenfila_Click); // SELECCIONAR FILA
 
@@ -238,7 +213,7 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
                 labelAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                     static_cast<System::Byte>(0)));
                 labelAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
-                labelAdreca->Text = direccioSessio;
+                labelAdreca->Text = sessions->adreca[i];
                 labelAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
                 labelAdreca->Click += gcnew System::EventHandler(this, &EditarSessio::labelenfila_Click); // SELECCIONAR FILA
 
@@ -248,7 +223,7 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
                 labelHoraI->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                     static_cast<System::Byte>(0)));
                 labelHoraI->Dock = System::Windows::Forms::DockStyle::Fill;
-                labelHoraI->Text = horaInici;
+                labelHoraI->Text = sessions->horaInici[i];
                 labelHoraI->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
                 labelHoraI->Click += gcnew System::EventHandler(this, &EditarSessio::labelenfila_Click);
 
@@ -257,7 +232,7 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
                 labelHoraF->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                     static_cast<System::Byte>(0)));
                 labelHoraF->Dock = System::Windows::Forms::DockStyle::Fill;
-                labelHoraF->Text = horaFi;
+                labelHoraF->Text = sessions->horaFi[i];
                 labelHoraF->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
                 labelHoraF->Click += gcnew System::EventHandler(this, &EditarSessio::labelenfila_Click);
 
@@ -267,7 +242,7 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
                 labelHoraI->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                     static_cast<System::Byte>(0)));
                 labelLlocs->Dock = System::Windows::Forms::DockStyle::Fill;
-                labelLlocs->Text = llocs;
+                labelLlocs->Text = sessions->llocsLliures[i];
                 labelLlocs->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
                 labelLlocs->Click += gcnew System::EventHandler(this, &EditarSessio::labelenfila_Click);
 

@@ -37,13 +37,13 @@ public:
         // Inicializar la lista de estrellas
         stars = gcnew List<PictureBox^>();
 
-        // Configurar eventos del rat髇 para las estrellas
+        // Configurar eventos del rat贸n para las estrellas
         for (int i = 0; i < STAR_COUNT; i++)
         {
             PictureBox^ star = gcnew PictureBox();
             star->SizeMode = PictureBoxSizeMode::StretchImage;
             star->Size = System::Drawing::Size(STAR_SIZE, STAR_SIZE);
-            star->Image = Image::FromFile("estrella_vacia.png"); // Ruta de la imagen de estrella vac韆
+            star->Image = Image::FromFile("estrella_vacia.png"); // Ruta de la imagen de estrella vac铆a
             star->Tag = i + 1; // Valor de la estrella
             star->MouseEnter += gcnew EventHandler(this, &StarRatingControl::Star_MouseEnter);
             star->MouseClick += gcnew MouseEventHandler(this, &StarRatingControl::Star_MouseClick);
@@ -67,13 +67,13 @@ public:
         // Inicializar la lista de estrellas
         stars = gcnew List<PictureBox^>();
 
-        // Configurar eventos del rat髇 para las estrellas
+        // Configurar eventos del rat贸n para las estrellas
         for (int i = 0; i < STAR_COUNT; i++)
         {
             PictureBox^ star = gcnew PictureBox();
             star->SizeMode = PictureBoxSizeMode::StretchImage;
             star->Size = System::Drawing::Size(STAR_SIZE, STAR_SIZE);
-            star->Image = Image::FromFile("estrella_vacia.png"); // Ruta de la imagen de estrella vac韆
+            star->Image = Image::FromFile("estrella_vacia.png"); // Ruta de la imagen de estrella vac铆a
             star->Tag = i + 1; // Valor de la estrella
             star->MouseEnter += gcnew EventHandler(this, &StarRatingControl::Star_MouseEnter);
             star->MouseClick += gcnew MouseEventHandler(this, &StarRatingControl::Star_MouseClick);
@@ -85,7 +85,7 @@ public:
         UpdateStars();
     }
 
-    // Evento al mover el rat髇 sobre una estrella
+    // Evento al mover el rat贸n sobre una estrella
     void Star_MouseEnter(Object^ sender, EventArgs^ e)
     {
         PictureBox^ star = safe_cast<PictureBox^>(sender);
@@ -108,11 +108,11 @@ public:
         CrearValoracioUI^ NewForm = gcnew CrearValoracioUI(rating, sis->obteUsername(), _grup);
         MenuPrincipal^ Menu = Menu->getInstance();
         Menu->AbrirSubFormularioEnPanelOriginal(NewForm);
-        //NewForm->Show();
-        //isRating = false;
+        NewForm->Show();
+        isRating = false;
     }
 
-    // Evento al salir del 醨ea de una estrella
+    // Evento al salir del 谩rea de una estrella
     void Star_MouseLeave(Object^ sender, EventArgs^ e)
     {
         if (!isRating)
@@ -122,7 +122,7 @@ public:
         }
     }
 
-    // Actualizar la visualizaci髇 de las estrellas
+    // Actualizar la visualizaci贸n de las estrellas
     void UpdateStars()
     {
         for each (PictureBox ^ star in stars)
@@ -134,7 +134,7 @@ public:
             }
             else
             {
-                star->Image = Image::FromFile("estrella_vacia.png"); // Ruta de la imagen de estrella vac韆
+                star->Image = Image::FromFile("estrella_vacia.png"); // Ruta de la imagen de estrella vac铆a
             }
         }
     }

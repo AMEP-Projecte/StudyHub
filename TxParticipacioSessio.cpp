@@ -2,26 +2,22 @@
 #include "TxParticipacioSessio.h"
 #include "CercadoraSessio.h"
 
-TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h) {
+TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h, String^ a) {
 	_estudiant = n;
 	_grup = g;
 	_data = d;
 	_horaInici = h;
+	_adreca = a;
 }
 
 void TxParticipacioSessio::executar() {
-		
-
 	
 		PassarellaParticipa^ NouParticipa = gcnew PassarellaParticipa(_estudiant,_grup, _data,_horaInici);
 		NouParticipa->insereix();
-		
 
-		//modifica els llocs lliures de la sessio
-		PassarellaSessio^ modify = CercadoraSessio::cercaAdreca(_grup, _data, _horaInici);
-		int llocs = modify->obteLlocsLliures();
-		llocs -= 1;
+		PassarellaSessio^ modify = CercadoraSessio::cercaHora( _data, _grup,_adreca);
+		int llocs = modify->obteLlocsLliures() - 1;
 		modify->posaLlocs(llocs);
-		
+		modify->modificaLlocs();
 	
 }

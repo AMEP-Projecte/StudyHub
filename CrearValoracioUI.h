@@ -225,7 +225,7 @@ namespace StudyHub {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Location = System::Drawing::Point(261, 13);
 			this->Name = L"CrearValoracioUI";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"CrearValoracioUI";
 			this->ResumeLayout(false);
 			this->PerformLayout();

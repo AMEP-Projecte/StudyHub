@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "PassarellaSessio.h"
-#include "PassarellaParticipa.h"
-#include "CercadoraParticipa.h"
+
 
 using namespace MySql::Data::MySqlClient;
 using namespace System;
@@ -118,6 +117,33 @@ void PassarellaSessio::modifica() {
 	sql += "and (data = '" + _data + "') ";
 	sql += "and (hora_inici = '" + _horaInici + "');";
 
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	MySqlDataReader^ dataReader;
+
+	try {
+		conn->Open();
+		dataReader = cmd->ExecuteReader();
+	}
+	catch (Exception^ ex) {
+		// Errors
+	}
+	finally {
+		conn->Close();
+	}
+}
+
+void PassarellaSessio::modificaLlocs() {
+	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+	String^ sql = "UPDATE sessio SET ";
+	sql += "llocs_lliures = '" + _llocsLliures + "' ";
+	sql += "WHERE (grup = '" + _grup + "') ";
+	sql += "and (data = '" + _data + "') ";
+	sql += "and (hora_inici = '" + _horaInici + "');";
+
+
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
 
@@ -137,15 +163,14 @@ void PassarellaSessio::esborra() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-	String^ sql = "DELETE FROM sessio WHERE grup=@g and data=@d and hora_inici=@hi and hora_fi=@hf and adreca=@a";
+	String^ sql = "DELETE FROM sessio WHERE grup=@g and data=@d and hora_inici=@hi ";
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 
 	cmd->Parameters->AddWithValue("@g", _grup);
 	cmd->Parameters->AddWithValue("@d", _data);
 	cmd->Parameters->AddWithValue("@hi", _horaInici);
-	cmd->Parameters->AddWithValue("@hf", _horaFi);
-	cmd->Parameters->AddWithValue("@a", _adreca);
+	
 
 	try {
 		conn->Open();

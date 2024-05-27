@@ -5,6 +5,7 @@
 #include "ConsultarEspaiUI.h"
 #include "EditarEspaiUI.h"
 #include "EliminarEspaiUI.h"
+#include "TxConsultarEspaisProveidor.h"
 
 using namespace StudyHub;
 
@@ -53,23 +54,16 @@ System::Void MenuGestioEspais::botoneliminar_Click(System::Object^ sender, Syste
 }
 
 System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, System::EventArgs^ e) {
-    MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
-    MySqlCommand^ cmd = gcnew MySqlCommand();
-    MySqlDataAdapter^ da = gcnew MySqlDataAdapter();
-    DataTable^ dt = gcnew DataTable();
-
     Sistema^ sist = Sistema::getInstance();
     String^ username = sist->obteProveidor()->obteNomUsuari();
-    String^ sql = "SELECT nom, adreca, capacitat FROM espai WHERE proveidor= @username";
-    cmd->Connection = cn;
-    cmd->CommandText = sql;
-    cmd->Parameters->AddWithValue("@username", username);
-    da->SelectCommand = cmd;
 
-    da->Fill(dt);
+    TxConsultarEspaisProveidor^ consultarEspais = gcnew TxConsultarEspaisProveidor(username);
+    consultarEspais->executar();
+    List<PassarellaEspai^>^ espais = consultarEspais->obteResultat();
+    
 
-    int rowsCount = dt->Rows->Count;
-    if (rowsCount == 0) {
+    int numEspais = espais->Count;
+    if (numEspais == 0) {
         Label^ noSessionsLabel = gcnew Label();
         noSessionsLabel->AutoSize = true;
         noSessionsLabel->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -100,8 +94,8 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
         layoutDades1->ForeColor = System::Drawing::Color::White;
         layoutDades1->Dock = System::Windows::Forms::DockStyle::Top;
         layoutDades1->RowCount = 1;
-        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 57)));
-        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
+        layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+        //layoutDades1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
         layoutDades1->TabIndex = 8;
 
 
@@ -109,8 +103,9 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
         // Añadir la fila de encabezado al principio.
         Label^ columnaGrup = gcnew Label();
         columnaGrup->AutoSize = true;
-        columnaGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-            static_cast<System::Byte>(0)));
+        columnaGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12,
+            System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline,
+            System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
         columnaGrup->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaGrup->Text = L"Nom";
         columnaGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -118,8 +113,9 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
 
         Label^ columnaData = gcnew Label();
         columnaData->AutoSize = true;
-        columnaData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-            static_cast<System::Byte>(0)));
+        columnaData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12,
+            System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline,
+            System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
         columnaData->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaData->Text = L"Adreca";
         columnaData->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -127,8 +123,9 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
 
         Label^ columnaAdreca = gcnew Label();
         columnaAdreca->AutoSize = true;
-        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-            static_cast<System::Byte>(0)));
+        columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, 
+            System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline,
+            System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
         columnaAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
         columnaAdreca->Text = L"Capacitat";
         columnaAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -147,14 +144,14 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
         layoutDades->ForeColor = System::Drawing::Color::White;
         layoutDades->Location = System::Drawing::Point(294, 127);
         layoutDades->Name = L"layoutDades";
-        layoutDades->RowCount = rowsCount;
+        layoutDades->RowCount = numEspais;
         layoutDades->TabIndex = 8;
 
 
 
 
         // Añadir las filas de datos al TableLayoutPanel.
-        for (int i = 0; i < rowsCount; ++i) {
+        for (int i = 0; i < numEspais; ++i) {
             TableLayoutPanel^ layoutFila = gcnew TableLayoutPanel();
             layoutFila->Height = 49;
             layoutFila->Width = 339;
@@ -173,20 +170,17 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
 
             layoutFila->TabIndex = 8;
 
-            DataRow^ fila = dt->Rows[i];
 
-            String^ nomGrup = fila["nom"]->ToString();
-       
-            String^ dataSessio = fila["adreca"]->ToString();
-
-            String^ direccioSessio = fila["capacitat"]->ToString();
+            String^ nomEspai = espais[i]->obteNom();
+            String^ adrecaEspai = espais[i]->obteAdreca();
+            String^ capacitatEspai = espais[i]->obteCapacitat().ToString();
 
             Label^ labelGrup = gcnew Label();
             labelGrup->AutoSize = true;
             labelGrup->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelGrup->Dock = System::Windows::Forms::DockStyle::Fill;
-            labelGrup->Text = nomGrup;
+            labelGrup->Text = nomEspai;
             labelGrup->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelGrup->Click += gcnew System::EventHandler(this, &MenuGestioEspais::labelenfila_Click); // SELECCIONAR FILA
 
@@ -195,7 +189,7 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
             labelData->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelData->Dock = System::Windows::Forms::DockStyle::Fill;
-            labelData->Text = dataSessio;
+            labelData->Text = adrecaEspai;
             labelData->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelData->Click += gcnew System::EventHandler(this, &MenuGestioEspais::labelenfila_Click); // SELECCIONAR FILA
 
@@ -204,7 +198,7 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
             labelAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             labelAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
-            labelAdreca->Text = direccioSessio;
+            labelAdreca->Text = capacitatEspai;
             labelAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             labelAdreca->Click += gcnew System::EventHandler(this, &MenuGestioEspais::labelenfila_Click); // SELECCIONAR FILA
 
@@ -260,10 +254,22 @@ System::Void MenuGestioEspais::selecciona(TableLayoutPanel^ table) {
 
     int labelCount = 0;
 
-    
+    // Posar la resta de files com "no seleccionades"
+    Control^ parent = table->Parent;
+    if (parent != nullptr)
+    {
+        for each (Control ^ control in parent->Controls)
+        {
+            TableLayoutPanel^ siblingTable = dynamic_cast<TableLayoutPanel^>(control);
+            if (siblingTable != nullptr && siblingTable != table)
+            {
+                siblingTable->BackColor = System::Drawing::Color::Transparent;
+            }
+        }
+    }
 
+    // Seleccionar fila
     table->BackColor = System::Drawing::Color::Black;
-
 
     for each (Control ^ control in table->Controls)
     {
@@ -283,8 +289,5 @@ System::Void MenuGestioEspais::selecciona(TableLayoutPanel^ table) {
                 break; // Stop iterating after finding three labels
         }
     }
-
-
-    // Aquí puedes hacer lo que necesites con los tres strings guardados.
 }
 

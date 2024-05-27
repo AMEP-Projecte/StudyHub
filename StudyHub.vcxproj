@@ -166,7 +166,13 @@
     <ClInclude Include="EditarSessio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="GestionarPeticionsUI.h" />
+    <ClInclude Include="MenuGestioEstudiantsAdmin.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+
+    <ClInclude Include="GestionarPeticionsUI.h" >
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="PassarellaValoracio.h" />
     <ClInclude Include="Encriptacio.h" />
     <ClInclude Include="ProgramarSessioEstudiUI.h">
@@ -274,6 +280,7 @@
     <ClInclude Include="TxCercaValoracio.h" />
     <ClInclude Include="TxCercaValoracioGrup.h" />
     <ClInclude Include="TxConsultaEspai.h" />
+    <ClInclude Include="TxConsultarEspaisProveidor.h" />
     <ClInclude Include="TxConsultarEstudiant.h" />
     <ClInclude Include="TxConsultarGrup.h" />
     <ClInclude Include="TxConsultarProveidor.h" />
@@ -291,14 +298,19 @@
     </ClInclude>
     <ClInclude Include="TxEliminarEspai.h" />
     <ClInclude Include="TxEliminarGrup.h" />
+    <ClInclude Include="TxEsborraEstudiantAdmin.h" />
     <ClInclude Include="TxEnviarPeticioGrup.h" />
     <ClInclude Include="TxEsborrarProveidor.h" />
     <ClInclude Include="TxEsborrarSessio.h" />
     <ClInclude Include="TxEditarEspai.h" />
     <ClInclude Include="TxEsborraUsuari.h" />
     <ClInclude Include="TxEsborraValoracio.h" />
-    <ClInclude Include="TxGestionarPeticionsGrup.h" />
+    <ClInclude Include="TxGestionaSessions.h" />
+    <ClInclude Include="TxGrupsEstudiant.h" />
     <ClInclude Include="TxIniciarSessio.h" />
+    <ClInclude Include="TxObteEstudiantsGrupsEspais.h" />
+    <ClInclude Include="TxObteProveidorsAmbEspaisCreats.h" />
+    <ClInclude Include="TxGestionarPeticionsGrup.h" />
     <ClInclude Include="TxModificaValoracio.h" />
     <ClInclude Include="TxObtenirPeticionsPendents.h" />
     <ClInclude Include="TxParticipacioSessio.h" />
@@ -307,8 +319,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h" />
+    <ClInclude Include="TxValoracionsEstudiant.h" />
+    <ClInclude Include="UnirseGrupUI.h" />
+    <ClInclude Include="ValoracionsEstudiant.h">
     <ClInclude Include="TxValoracioMitjana.h" />
-    <ClInclude Include="UnirseGrupUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -332,6 +346,7 @@
     <ClCompile Include="ConsultarProveidorUI.cpp" />
     <ClCompile Include="CrearValoracioUI.cpp" />
     <ClCompile Include="EditarSessio.cpp" />
+    <ClCompile Include="MenuGestioEstudiantsAdmin.cpp" />
     <ClCompile Include="GestionarPeticionsUI.cpp" />
     <ClCompile Include="PassarellaValoracio.cpp" />
     <ClCompile Include="Encriptacio.cpp" />
@@ -388,6 +403,7 @@
     <ClCompile Include="TxCercaValoracio.cpp" />
     <ClCompile Include="TxCercaValoracioGrup.cpp" />
     <ClCompile Include="TxConsultaEspai.cpp" />
+    <ClCompile Include="TxConsultarEspaisProveidor.cpp" />
     <ClCompile Include="TxConsultarEstudiant.cpp" />
     <ClCompile Include="TxConsultarGrup.cpp" />
     <ClCompile Include="TxConsultarProveidor.cpp" />
@@ -405,14 +421,19 @@
     </ClCompile>
     <ClCompile Include="TxEliminarEspai.cpp" />
     <ClCompile Include="TxEliminarGrup.cpp" />
+    <ClCompile Include="TxEsborraEstudiantAdmin.cpp" />
     <ClCompile Include="TxEnviarPeticioGrup.cpp" />
     <ClCompile Include="TxEsborrarProveidor.cpp" />
     <ClCompile Include="TxEsborrarSessio.cpp" />
     <ClCompile Include="TxEditarEspai.cpp" />
     <ClCompile Include="TxEsborraUsuari.cpp" />
     <ClCompile Include="TxEsborraValoracio.cpp" />
-    <ClCompile Include="TxGestionarPeticionsGrup.cpp" />
+    <ClCompile Include="TxGestionaSessions.cpp" />
+    <ClCompile Include="TxGrupsEstudiant.cpp" />
     <ClCompile Include="TxIniciarSessio.cpp" />
+    <ClCompile Include="TxObteEstudiantsGrupsEspais.cpp" />
+    <ClCompile Include="TxObteProveidorsAmbEspaisCreats.cpp" />
+    <ClCompile Include="TxGestionarPeticionsGrup.cpp" />
     <ClCompile Include="TxModificaValoracio.cpp" />
     <ClCompile Include="TxObtenirPeticionsPendents.cpp" />
     <ClCompile Include="TxParticipacioSessio.cpp" />
@@ -421,8 +442,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="TxTancarSessio.cpp" />
-    <ClCompile Include="TxValoracioMitjana.cpp" />
+    <ClCompile Include="TxValoracionsEstudiant.cpp" />
     <ClCompile Include="UnirseGrupUI.cpp" />
+    <ClCompile Include="ValoracionsEstudiant.cpp" />
+    <ClCompile Include="TxValoracioMitjana.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -467,6 +490,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSessio.resx">
       <DependentUpon>IniciarSessio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarEspaiUI.resx">
+      <DependentUpon>EliminarEspaiUI.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuGestioEstudiantsAdmin.resx">
+      <DependentUpon>MenuGestioEstudiantsAdmin.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgramarSessioEstudiUI.resx">
       <DependentUpon>ProgramarSessioEstudiUI.h</DependentUpon>
@@ -545,6 +574,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TancarSessio.resx">
       <DependentUpon>TancarSessio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValoracionsEstudiant.resx">
+      <DependentUpon>ValoracionsEstudiant.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnirseGrupUI.resx">
       <DependentUpon>UnirseGrupUI.h</DependentUpon>

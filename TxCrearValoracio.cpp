@@ -2,6 +2,7 @@
 #include "TxCrearValoracio.h"
 #include "PassarellaValoracio.h"
 #include "CercadoraValoracio.h"
+#include "CercadoraEstudiant.h"
 
 using namespace System;
 
@@ -22,6 +23,10 @@ void TxCrearValoracio::executar() {
 		if(p==nullptr){
 			PassarellaValoracio^ NovaValoracio = gcnew PassarellaValoracio(_estudiant, _grup, _valoracio, _comentari);
 			NovaValoracio->insereix();
+			PassarellaEstudiant^ estudiant = CercadoraEstudiant::cercaEstudiantPerNom(_estudiant);
+			estudiant->posaNumValoracions(estudiant->obteNumValoracions() + 1);
+			estudiant->modifica();
+
 		}
 		else {
 			System::Windows::Forms::MessageBox::Show("Ya tens una valoracio en aquest grup.");

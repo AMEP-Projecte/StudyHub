@@ -10,14 +10,14 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
     String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-    String^ sql = "SELECT estudiant FROM pertany WHERE grup = @nomGrup and estat = 'Acceptat'";
+    String^ sql = "SELECT estudiant FROM pertany WHERE grup = @nomGrup AND estat = 'Acceptat';";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     cmd->Parameters->AddWithValue("@nomGrup", nomGrup);
 
     MySqlDataReader^ reader = nullptr;
 
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
 
         // Ejecutamos la consulta
@@ -43,7 +43,7 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
             reader->Close();
         }
 
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
 
@@ -64,7 +64,7 @@ DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
     DataTable^ tabla = gcnew DataTable();
 
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
 
         // Ejecutamos la consulta
@@ -78,7 +78,7 @@ DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
         Console::WriteLine("Error: " + ex->Message);
     }
     finally {
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
 
@@ -94,12 +94,12 @@ PassarellaPertany^ CercadoraPertany::cercaEstudiantEnGrup(String^ usernameEstudi
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     MySqlDataReader^ dataReader;
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
         // Ejecutamos la consulta
         dataReader = cmd->ExecuteReader();
         if (dataReader->Read()) {
-            // Creem una inst鄋cia de PassarellaPertany y li assignem els valors recuperats de la base de dades
+            // Creem una inst脿ncia de PassarellaPertany y li assignem els valors recuperats de la base de dades
             String^ estudiant = dataReader->GetString(0);
             String^ grup = dataReader->GetString(1);
             String^ estat = dataReader->GetString(2);
@@ -110,7 +110,7 @@ PassarellaPertany^ CercadoraPertany::cercaEstudiantEnGrup(String^ usernameEstudi
         // Manejamos el error
     }
     finally {
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
     return result; // Retornem l'objecte PassarellaUsuari
