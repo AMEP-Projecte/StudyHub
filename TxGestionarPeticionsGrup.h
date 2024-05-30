@@ -1,5 +1,7 @@
 #pragma once
 #include "CercadoraPertany.h"
+#include "Sistema.h"
+#include "CercadoraGrup.h"
 
 
 ref class TxGestionarPeticionsGrup
