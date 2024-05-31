@@ -431,6 +431,39 @@
     <ClInclude Include="TxEsborraEstudiantAdmin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GestionarPeticionsUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Encriptacio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxCercaValoracioGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxGestionaSessions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxGrupsEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxObteEstudiantsGrupsEspais.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxObteProveidorsAmbEspaisCreats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxGestionarPeticionsGrup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxObtenirPeticionsPendents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TxValoracionsEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ValoracionsEstudiant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinFormsProject.cpp">
@@ -730,6 +763,42 @@
     <ClCompile Include="TxEsborraEstudiantAdmin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GestionarPeticionsUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Encriptacio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxCercaValoracioGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxEnviarPeticioGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxGestionaSessions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxGrupsEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxObteEstudiantsGrupsEspais.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxObteProveidorsAmbEspaisCreats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxGestionarPeticionsGrup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxObtenirPeticionsPendents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TxValoracionsEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ValoracionsEstudiant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico">
@@ -738,5 +807,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="connection.txt" />
   </ItemGroup>
 </Project>

@@ -15,7 +15,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessioAdreca(String^ adreca) {
 
     List<PassarellaSessio^>^ result = gcnew List<PassarellaSessio^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT * FROM sessio WHERE adreca = @adreca";
@@ -63,7 +63,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessioAdreca(String^ adreca) {
 List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesDelEspai(String^ adrecaEspai) {
     List<PassarellaSessio^>^ result = gcnew List<PassarellaSessio^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     conn->Open();
 
@@ -98,7 +98,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesDelEspai(String^ 
 
 PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^ adreca) {
    
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos
@@ -144,7 +144,7 @@ PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^
 
 PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, String^ hora) {
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos
@@ -190,7 +190,7 @@ PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, Strin
 List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesNoConfirmadesDelEstudiant(String^ estudiant) {
     List<PassarellaSessio^>^ result = gcnew List<PassarellaSessio^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     conn->Open();
 
@@ -228,7 +228,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesNoConfirmadesDelE
 List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesConfirmadesDelEstudiant(String^ estudiant) {
     List<PassarellaSessio^>^ result = gcnew List<PassarellaSessio^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     conn->Open();
 

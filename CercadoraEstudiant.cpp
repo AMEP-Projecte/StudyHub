@@ -1,11 +1,12 @@
 #include "pch.h"
 #include "CercadoraEstudiant.h"
 #include "CercadoraUsuari.h"
+#include "Sistema.h"
 using namespace System::Windows::Forms;
 
 PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) {
     PassarellaEstudiant^ pe = nullptr; // Inicializamos el puntero a nullptr
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM estudiant WHERE username = '" + username + "'";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -42,7 +43,7 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) 
 }
 PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerCorreu(String^ correu) {
     PassarellaEstudiant^ pe = nullptr; // Inicializamos el puntero a nullptr
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM estudiant WHERE correu_electronic = '" + correu + "'";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -80,7 +81,7 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerCorreu(String^ correu)
 
 List<PassarellaEstudiant^>^ CercadoraEstudiant::totsEstudiants() {
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM estudiant";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);

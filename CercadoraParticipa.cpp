@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CercadoraParticipa.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System::Data;
 using namespace System::Windows::Forms;
@@ -15,7 +15,7 @@ List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaSessio(String^ nom
 List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaEstudiant(String^ nom) {
     List<PassarellaParticipa^>^ result = gcnew List<PassarellaParticipa^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT * FROM participa WHERE estudiant = @nomestudiant";
@@ -69,7 +69,7 @@ PassarellaParticipa^ CercadoraParticipa::cercaParticipa(String^ data, String^ gr
 
 
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos

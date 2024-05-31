@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "PassarellaProveidor.h"
-
+#include "Sistema.h"
 PassarellaProveidor::PassarellaProveidor(String^ username, String^ contrasenya)
 {
 	_username = username;
@@ -17,7 +17,7 @@ PassarellaProveidor::PassarellaProveidor(String^ username, String^ contrasenya, 
 
 void PassarellaProveidor::insereix() {
 	PassarellaUsuari::insereix();
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "INSERT INTO proveidor (username) VALUES ('" + _username + "')";

@@ -1,5 +1,6 @@
 #include"pch.h"
 #include "PassarellaEstudiant.h"
+#include "Sistema.h"
 
 using namespace MySql::Data::MySqlClient;
 PassarellaEstudiant::PassarellaEstudiant(String^ username,String^ contrasenya, String^ correuElectronic, String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions)
@@ -104,7 +105,7 @@ void PassarellaEstudiant::insereix()
 {
     
     PassarellaUsuari::insereix();
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "INSERT INTO estudiant(username, correu_electronic, nom, cognoms, idioma, localitat, numValoracions) VALUES('"
@@ -133,7 +134,7 @@ void PassarellaEstudiant::insereix()
 void PassarellaEstudiant::modifica()
 {
     PassarellaUsuari::modifica();
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "UPDATE estudiant SET correu_electronic = @correuElectronic, nom = @nom, cognoms = @cognoms, idioma = @idioma, localitat = @localitat, numValoracions = @numValoracions WHERE username = @username";

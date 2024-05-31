@@ -1,12 +1,12 @@
 #include "pch.h"
 #include "CercadoraValoracio.h"
-
+#include "Sistema.h"
 using namespace System;
 using namespace MySql::Data::MySqlClient;
 
 PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, String^ grup) {
     PassarellaValoracio^ pu = nullptr; // Inicializamos el puntero a nullptr
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM valoracioGrup WHERE estudiant = '" + estudiant + "' AND grup = '" + grup + "';";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -36,7 +36,7 @@ PassarellaValoracio^ CercadoraValoracio::cercaValoracio(String^ estudiant, Strin
 }
 
 List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracionsEstudiant(String^ usernameEstudiant) {
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM valoracioGrup WHERE estudiant = '" + usernameEstudiant + "';";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -73,7 +73,7 @@ List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracionsEstudiant(String
 List<PassarellaValoracio^>^ CercadoraValoracio::cercaValoracioGrup(String^ grup) {
     List<PassarellaValoracio^>^ result = gcnew List<PassarellaValoracio^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT * FROM valoracioGrup WHERE grup = @nomGrup";

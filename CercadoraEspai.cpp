@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CercadoraEspai.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
@@ -8,7 +8,7 @@ using namespace System::Collections::Generic;
 using namespace std;
 
 PassarellaEspai^ CercadoraEspai::cercaEspaiAdreca(String^ Adreca) {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = String::Format("SELECT * FROM espai WHERE adreca = '{0}';", Adreca);
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -45,7 +45,7 @@ PassarellaEspai^ CercadoraEspai::cercaEspaiAdreca(String^ Adreca) {
 List<PassarellaEspai^>^ CercadoraEspai::cercaEspaiProveidor(String^ proveidor) {
 	List<PassarellaEspai^>^ result = gcnew List<PassarellaEspai^>();
 
-    MySqlConnection^ conn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
+    MySqlConnection^ conn = gcnew MySqlConnection(" Sistema::getInstance()->obteCadenaDeConnexio();");
     String^ sql = "SELECT nom, adreca, capacitat FROM espai WHERE proveidor= @username";
     MySqlCommand^ cmd = gcnew MySqlCommand();
     cmd->Connection = conn;
@@ -72,7 +72,7 @@ List<PassarellaEspai^>^ CercadoraEspai::totsEspai()
 {
     List<PassarellaEspai^>^ result = gcnew List<PassarellaEspai^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT * FROM espai";

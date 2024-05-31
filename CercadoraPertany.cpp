@@ -1,13 +1,13 @@
 #include "pch.h"
 #include "CercadoraPertany.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System::Data;
 using namespace System::Windows::Forms;
 List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
     List<PassarellaPertany^>^ result = gcnew List<PassarellaPertany^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT estudiant FROM pertany WHERE grup = @nomGrup AND estat = 'Acceptat';";
@@ -53,7 +53,7 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
 DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
     // List<PassarellaPertany^>^ result = gcnew List<PassarellaPertany^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT estudiant, grup FROM pertany WHERE estat = 'Pendent' AND grup IN (SELECT nom FROM grup WHERE creador = @usernameCreador);";
@@ -88,7 +88,7 @@ DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
 
 PassarellaPertany^ CercadoraPertany::cercaEstudiantEnGrup(String^ usernameEstudiant, String^ nomGrup) {
     PassarellaPertany^ result = nullptr;
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM pertany WHERE estudiant = '" + usernameEstudiant + "' AND grup = '" + nomGrup + "'";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);

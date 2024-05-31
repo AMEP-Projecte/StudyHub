@@ -1,13 +1,13 @@
 #include "pch.h"
 #include "CercadoraValoracioMitjana.h"
-
+#include "Sistema.h"
 using namespace System::Windows::Forms; 
 using namespace MySql::Data::MySqlClient;
 
 float CercadoraValoracioMitjana::cercaValoracioMitjana(String^ grup) {
     float result = 0.0;
     // Define tu conexión a la base de datos
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ connection = gcnew MySqlConnection(connectionString);
 
     try

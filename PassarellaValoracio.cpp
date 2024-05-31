@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "PassarellaValoracio.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
@@ -65,7 +65,7 @@ String^ PassarellaValoracio::obteGrup() {
 
 void PassarellaValoracio::insereix() {
 	bool totcorrecte = true;
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = "INSERT INTO valoracioGrup(estudiant, grup, puntuacio, comentari) VALUES('" + _estudiant + "', '" + _grup + "', '" + _puntuacio + "', '" +  _comentari + "')";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -94,7 +94,7 @@ void PassarellaValoracio::insereix() {
 }
 void PassarellaValoracio::modifica() {
 	bool totcorrecte = true;
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = "UPDATE valoracioGrup SET puntuacio=@puntuacio, comentari=@comentari WHERE estudiant=@estudiant AND grup=@grup";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -128,7 +128,7 @@ void PassarellaValoracio::modifica() {
 }
 void PassarellaValoracio::esborra() {
 	bool totcorrecte = true;
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = "DELETE FROM valoracioGrup WHERE estudiant=@estudiant AND grup=@grup";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);

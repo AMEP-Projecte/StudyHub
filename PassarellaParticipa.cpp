@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "PassarellaParticipa.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
@@ -61,7 +61,7 @@ int PassarellaParticipa::obteId() {
 
 void PassarellaParticipa::insereix() {
 
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	// String^ sql = "INSERT INTO participa(estudiant, grup,data,hora_inici) VALUES('" + _estudiant + "', '" + _grup + "', '" + _data + "', '" + _horaInici + "')";
 	String^ sql = "INSERT INTO participa(estudiant, id) VALUES(@estudiant, @id)";
@@ -86,7 +86,7 @@ void PassarellaParticipa::insereix() {
 }
 
 void PassarellaParticipa::esborra() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	// String^ sql = "DELETE FROM participa WHERE grup=@g and data=@d and hora_inici=@hi and estudiant=@e";

@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "PassarellaSessio.h"
-
+#include "Sistema.h"
 
 using namespace MySql::Data::MySqlClient;
 using namespace System;
@@ -63,7 +63,7 @@ int PassarellaSessio::obteId() {
 
 void PassarellaSessio::insereix()
     {
-        String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+        String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
         MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
         bool totcorrecte = true;
 
@@ -112,7 +112,7 @@ void PassarellaSessio::insereix()
     }
 
 void PassarellaSessio::modifica() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "UPDATE sessio SET ";
@@ -138,7 +138,7 @@ void PassarellaSessio::modifica() {
 }
 
 void PassarellaSessio::modificaLlocs() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "UPDATE sessio SET ";
@@ -164,7 +164,7 @@ void PassarellaSessio::modificaLlocs() {
 }
 
 void PassarellaSessio::esborra() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "DELETE FROM sessio WHERE grup=@g and data=@d and hora_inici=@hi ";

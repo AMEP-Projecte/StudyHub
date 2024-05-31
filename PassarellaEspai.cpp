@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "PassarellaEspai.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
@@ -49,7 +49,7 @@ String^ PassarellaEspai::obteProveidor() {
 
 void PassarellaEspai::insereix() {
 	bool totperfe = true;
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = String::Format("INSERT INTO espai VALUES ('{0}', '{1}', '{2}', '{3}');", _adreca, _nom, _capacitat, _userProveidor);
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -73,7 +73,7 @@ void PassarellaEspai::insereix() {
 
 
 void PassarellaEspai::modifica() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = "UPDATE espai SET ";
 	sql += "capacitat = '" + _capacitat + "' ";
@@ -96,7 +96,7 @@ void PassarellaEspai::modifica() {
 }
 
 void PassarellaEspai::esborra() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "DELETE FROM espai WHERE adreca=@a";

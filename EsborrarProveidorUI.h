@@ -71,7 +71,7 @@ namespace StudyHub {
 		// Post: Hem creat una Data Table amb l'inforamació dels grups creats per l'usuari actual 
 		void omplir() {
 			Sistema^ sist = Sistema::getInstance();
-			MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
+			MySqlConnection^ cn = gcnew MySqlConnection(" Sistema::getInstance()->obteCadenaDeConnexio();");
 			DataTable^ dt = gcnew DataTable();
 			String^ sql = String::Format("SELECT * FROM proveidor;");
 			MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);

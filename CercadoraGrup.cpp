@@ -10,7 +10,7 @@ using namespace System::Collections::Generic;
 using namespace std;
 
 PassarellaGrup^ CercadoraGrup::cercaPerNomGrup(String^ NomGrup) {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = String::Format("SELECT * FROM grup WHERE nom = '{0}';", NomGrup);
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -43,7 +43,7 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ nomCreador)
 {
     List<PassarellaGrup^>^ result = gcnew List<PassarellaGrup^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT * FROM grup WHERE creador = @nomCreador";
@@ -86,7 +86,7 @@ List<PassarellaGrup^>^ CercadoraGrup::cercaPerCreador(String^ nomCreador)
 List<PassarellaGrup^>^ CercadoraGrup::totsGrups() {
     List<PassarellaGrup^>^ result = gcnew List<PassarellaGrup^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT * FROM grup;";
@@ -128,7 +128,7 @@ List<PassarellaGrup^>^ CercadoraGrup::totsGrups() {
 List<PassarellaGrup^>^ CercadoraGrup::cercaGrupsPerEstudiant(String^ estudiant) {
     List<PassarellaGrup^>^ result = gcnew List<PassarellaGrup^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "SELECT * FROM grup WHERE nom IN (SELECT grup FROM pertany WHERE estudiant = @username AND estat = 'Acceptat');";

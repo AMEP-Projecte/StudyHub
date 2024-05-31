@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "Sistema.h"
-
+#include <fstream>
+#include <string>
+using namespace System::IO;
+using namespace System::Windows::Forms;
 bool Sistema::obteEstatSessio() {
 	return _sessioIniciada;
 }
@@ -23,6 +26,20 @@ String^ Sistema::obteContrasenya() {
 
 String^ Sistema::obteTipusUsuari() {
 	return _tipusUsuari;
+}
+
+String^ Sistema::obteCadenaDeConnexio()
+{
+	String^ connectionString = nullptr;
+	try {
+		StreamReader^ sr = gcnew StreamReader("connection.txt");
+		connectionString = sr->ReadLine();
+		sr->Close();
+	}
+	catch (Exception^ e) {
+		MessageBox::Show("Error: " + e);
+	}
+	return connectionString;
 }
 
 PassarellaEstudiant^ Sistema::obteEstudiant() {

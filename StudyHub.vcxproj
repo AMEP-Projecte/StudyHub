@@ -169,8 +169,7 @@
     <ClInclude Include="MenuGestioEstudiantsAdmin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-
-    <ClInclude Include="GestionarPeticionsUI.h" >
+    <ClInclude Include="GestionarPeticionsUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="PassarellaValoracio.h" />
@@ -581,6 +580,9 @@
     <EmbeddedResource Include="UnirseGrupUI.resx">
       <DependentUpon>UnirseGrupUI.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="connection.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
