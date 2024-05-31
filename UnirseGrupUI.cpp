@@ -7,11 +7,10 @@ using namespace System::Windows::Forms;
 
 System::Void UnirseGrupUI::ButtonUnirse_Click(System::Object^ sender, System::EventArgs^ e) {
 	Sistema^ sist = Sistema::getInstance();
-	TxEnviarPeticioGrup^ txPeticio = gcnew TxEnviarPeticioGrup(sist->obteEstudiant()->obteNomUsuari(), "Matepros");
-	// En comptes de "Matepros", s'hauria d'agafar el text que conté el label al costat de "Grup:"
+	TxEnviarPeticioGrup^ txPeticio = gcnew TxEnviarPeticioGrup(sist->obteEstudiant()->obteNomUsuari(), grup);
 	try {
 		txPeticio->executar();
-		MessageBox::Show("Petició d'unió enviada correctament.\nFormaràs part del grup quan el seu creador accepti\nla teva petició.");
+		MessageBox::Show(L"Petici\u00F3 d'uni\u00F3 enviada correctament.\nFormar\u00E0s part del grup quan el seu creador accepti\nla teva petici\u00F3.");
 	}
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
