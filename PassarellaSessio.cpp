@@ -86,11 +86,11 @@ void PassarellaSessio::insereix()
 
             conn->Open();
             cmd->ExecuteNonQuery();
-            MessageBox::Show("Sesión creada correctamente.");
+            MessageBox::Show("Sessi\u00F3 creada correctament.");
         }
         catch (MySqlException^ ex) {
             if (ex->Number == 1062) {
-                MessageBox::Show("Ya hay una sesion creada para este grupo en esta fecha.");
+                MessageBox::Show("Ja hi ha una sessi\u00F3 creada per aquest grup en aquesta data.");
             }
             else {
                 MessageBox::Show(ex->Message);
@@ -99,7 +99,7 @@ void PassarellaSessio::insereix()
         }
         catch (Exception^ ex) {
             if (ex->Message->Contains("check") ){
-                MessageBox::Show("Error de check: La hora de inicio debe ser menor que la hora de fin.");
+                MessageBox::Show("Error de check: L'hora d'inici ha de ser menor que l'hora de fi.");
             }
             else {
                 MessageBox::Show(ex->Message);

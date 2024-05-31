@@ -18,7 +18,7 @@ System::Void MenuGestioProveidorAdmin::eliminar_Click(System::Object^ sender, Sy
             String^ aux = usernameProveidor;
             TxEsborrarProveidor^ ep = gcnew TxEsborrarProveidor(aux);
             ep->executar();
-            MessageBox::Show("Proveïdor esborrat correctament.");
+            MessageBox::Show("Prove\u00efdor esborrat correctament.");
 
         }
         catch (Exception^ ex) {
@@ -27,7 +27,7 @@ System::Void MenuGestioProveidorAdmin::eliminar_Click(System::Object^ sender, Sy
         }
     }
     else {
-        MessageBox::Show("Selecciona un proveidor a eliminar.");
+        MessageBox::Show("Selecciona un prove\u00efdor a eliminar.");
     }
 }
 
@@ -48,7 +48,7 @@ System::Void MenuGestioProveidorAdmin::omplirInfoProveidors() {
         MissatgeNoProveidors->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         MissatgeNoProveidors->Dock = System::Windows::Forms::DockStyle::Fill;
-        MissatgeNoProveidors->Text = L"No hi ha proveïdors.";
+        MissatgeNoProveidors->Text = L"No hi ha prove\u00efdors.";
         MissatgeNoProveidors->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
         this->tableLayoutPanel1->Controls->Add(MissatgeNoProveidors, 0, 1);
@@ -86,7 +86,7 @@ System::Void MenuGestioProveidorAdmin::omplirInfoProveidors() {
         columnaNumEspais->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 9, System::Drawing::FontStyle::Bold | FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaNumEspais->Dock = System::Windows::Forms::DockStyle::Fill;
-        columnaNumEspais->Text = L"Número d'espais";
+        columnaNumEspais->Text = L"N\u00famero d'espais";
         columnaNumEspais->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
         headerLayout->Controls->Add(columnaUsername, 0, 0);

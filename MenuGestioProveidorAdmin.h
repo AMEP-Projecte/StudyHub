@@ -80,7 +80,7 @@ namespace StudyHub {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(311, 37);
 			this->label2->TabIndex = 2;
-			this->label2->Text = L"Gestionar Proveïdors";
+			this->label2->Text = L"Gestionar Prove\u00efdors";
 			// 
 			// editar
 			// 
@@ -93,7 +93,7 @@ namespace StudyHub {
 			this->editar->Name = L"editar";
 			this->editar->Size = System::Drawing::Size(116, 47);
 			this->editar->TabIndex = 5;
-			this->editar->Text = L"Eliminar Proveidor";
+			this->editar->Text = L"Eliminar Prove\u00efdor";
 			this->editar->UseVisualStyleBackColor = true;
 			this->editar->Click += gcnew System::EventHandler(this, &MenuGestioProveidorAdmin::eliminar_Click);
 			// 
@@ -108,7 +108,7 @@ namespace StudyHub {
 			this->consultar->Name = L"consultar";
 			this->consultar->Size = System::Drawing::Size(116, 38);
 			this->consultar->TabIndex = 4;
-			this->consultar->Text = L"Crear Proveidor";
+			this->consultar->Text = L"Crear Prove\u00efdor";
 			this->consultar->UseVisualStyleBackColor = true;
 			this->consultar->Click += gcnew System::EventHandler(this, &MenuGestioProveidorAdmin::crear_Click);
 			// 
@@ -141,7 +141,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(378, 37);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Informació dels proveïdors";
+			this->label1->Text = L"Informaci\u00F3 dels prove\u00efdors";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MenuGestioProveidorAdmin

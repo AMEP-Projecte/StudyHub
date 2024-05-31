@@ -38,7 +38,7 @@ System::Void GestionarPeticionsUI::buttonAcceptar_Click(System::Object^ sender, 
 			String^ grup = this->textBoxGrup->Text;
 			TxGestionarPeticionsGrup txGestioPeticions(username, grup, true);
 			txGestioPeticions.executar();
-			String^ missatge = "Has acceptat la sol·licitud d'accés de l'estudiant\n" + username + " al grup " + grup + ".";
+			String^ missatge = "Has acceptat la sol·licitud d'acc\u00e9s de l'estudiant\n" + username + " al grup " + grup + ".";
 			MessageBox::Show(missatge);
 			actualitzarTaula();
 		}
@@ -47,7 +47,7 @@ System::Void GestionarPeticionsUI::buttonAcceptar_Click(System::Object^ sender, 
 		}
 	}
 	else {
-		MessageBox::Show("Per acceptar una petició d'accés, has d'omplir els dos camps.");
+		MessageBox::Show("Per acceptar una petici\u00F3 d'acc\u00e9s, has d'omplir els dos camps.");
 	}
 }
 
@@ -58,7 +58,7 @@ System::Void GestionarPeticionsUI::buttonRebutjar_Click(System::Object^ sender, 
 			String^ grup = this->textBoxGrup->Text;
 			TxGestionarPeticionsGrup txGestioPeticions(username, grup, false);
 			txGestioPeticions.executar();
-			String^ missatge = "Has rebutjat la sol·licitud d'accés de l'estudiant\n" + username + " al grup " + grup + ".";
+			String^ missatge = "Has rebutjat la sol·licitud d'acc\u00e9s de l'estudiant\n" + username + " al grup " + grup + ".";
 			MessageBox::Show(missatge);
 			actualitzarTaula();
 		}
@@ -67,7 +67,7 @@ System::Void GestionarPeticionsUI::buttonRebutjar_Click(System::Object^ sender, 
 		}
 	}
 	else {
-		MessageBox::Show("Per rebutjar una petició d'accés, has d'omplir els dos camps.");
+		MessageBox::Show("Per rebutjar una petici\u00F3 d'acc\u00e9s, has d'omplir els dos camps.");
 	}
 }
 

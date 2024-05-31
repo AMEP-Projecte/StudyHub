@@ -79,7 +79,7 @@ namespace StudyHub {
 			this->tancaSessio->Name = L"tancaSessio";
 			this->tancaSessio->Size = System::Drawing::Size(153, 48);
 			this->tancaSessio->TabIndex = 12;
-			this->tancaSessio->Text = L"Tancar Sessió";
+			this->tancaSessio->Text = L"Tancar Sessi\u00F3";
 			this->tancaSessio->UseVisualStyleBackColor = true;
 			this->tancaSessio->Click += gcnew System::EventHandler(this, &MenuProvedor::tancaSessio_Click);
 			// 
@@ -107,7 +107,7 @@ namespace StudyHub {
 			this->menuProveidor->Name = L"menuProveidor";
 			this->menuProveidor->Size = System::Drawing::Size(280, 42);
 			this->menuProveidor->TabIndex = 9;
-			this->menuProveidor->Text = L"Menú Proveïdor";
+			this->menuProveidor->Text = L"Men\u00Fa Prove\u00efdor";
 			this->menuProveidor->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// labelNom
@@ -136,7 +136,7 @@ namespace StudyHub {
 			this->labelUsername->Name = L"labelUsername";
 			this->labelUsername->Size = System::Drawing::Size(91, 22);
 			this->labelUsername->TabIndex = 14;
-			this->labelUsername->Text = L"proveidor";
+			this->labelUsername->Text = L"prove\u00efdor";
 			// 
 			// editar
 			// 

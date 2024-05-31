@@ -219,7 +219,7 @@ namespace StudyHub {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(101, 30);
 			this->label4->TabIndex = 9;
-			this->label4->Text = L"Adreca:";
+			this->label4->Text = L"Adre\u00e7a:";
 		
 			// label5
 			// 
@@ -275,7 +275,7 @@ namespace StudyHub {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(592, 40);
 			this->label8->TabIndex = 13;
-			this->label8->Text = L"Segur vols eliminar l\'espai seguent\?";
+			this->label8->Text = L"Segur vols eliminar l\'espai seg\u00Fcent\?";
 			// 
 			// EliminarEspai
 			// 

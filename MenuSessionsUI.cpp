@@ -13,7 +13,7 @@ using namespace StudyHub;
 
 System::Void MenuSessionsUI::participaSessions_Click(System::Object^ sender, System::EventArgs^ e) {
     if (grupSessio == "") {
-        MessageBox::Show("Selecciona una sessió");
+        MessageBox::Show("Selecciona una sessi\u00F3");
        
     }
     else{
@@ -124,7 +124,7 @@ System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System:
         columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
-        columnaAdreca->Text = L"Adreca";
+        columnaAdreca->Text = L"Adre\u00e7a";
         columnaAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
         layoutDades1->Controls->Add(columnaAdreca, 2, 0);
         tableLayoutPanel1->Controls->Add(layoutDades1, 0, 1);

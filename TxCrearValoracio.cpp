@@ -29,7 +29,7 @@ void TxCrearValoracio::executar() {
 
 		}
 		else {
-			System::Windows::Forms::MessageBox::Show("Ya tens una valoracio en aquest grup.");
+			System::Windows::Forms::MessageBox::Show("Ja tens una valoraci\u00F3 en aquest grup.");
 		}
 	}
 }

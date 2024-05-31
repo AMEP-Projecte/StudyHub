@@ -85,7 +85,7 @@ namespace StudyHub {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(578, 52);
 			this->label2->TabIndex = 2;
-			this->label2->Text = L"Gestionar Peticions d\'Accés";
+			this->label2->Text = L"Gestionar Peticions d\'Acc\u00e9s";
 			// 
 			// dataGridViewPeticions
 			// 
@@ -161,7 +161,7 @@ namespace StudyHub {
 			this->buttonAcceptar->Name = L"buttonAcceptar";
 			this->buttonAcceptar->Size = System::Drawing::Size(151, 39);
 			this->buttonAcceptar->TabIndex = 8;
-			this->buttonAcceptar->Text = L"Acceptar petició";
+			this->buttonAcceptar->Text = L"Acceptar petici\u00F3";
 			this->buttonAcceptar->UseVisualStyleBackColor = true;
 			this->buttonAcceptar->Click += gcnew System::EventHandler(this, &GestionarPeticionsUI::buttonAcceptar_Click);
 			// 
@@ -174,7 +174,7 @@ namespace StudyHub {
 			this->buttonRebutjar->Name = L"buttonRebutjar";
 			this->buttonRebutjar->Size = System::Drawing::Size(151, 39);
 			this->buttonRebutjar->TabIndex = 9;
-			this->buttonRebutjar->Text = L"Rebutjar petició";
+			this->buttonRebutjar->Text = L"Rebutjar petici\u00F3";
 			this->buttonRebutjar->UseVisualStyleBackColor = true;
 			this->buttonRebutjar->Click += gcnew System::EventHandler(this, &GestionarPeticionsUI::buttonRebutjar_Click);
 			// 

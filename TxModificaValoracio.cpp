@@ -21,11 +21,11 @@ void TxModificaValoracio::executar() {
 		CercadoraValoracio^ buscador = gcnew CercadoraValoracio();
 		p = buscador->cercaValoracio(_estudiant, _grup);
 		if (p == nullptr) {
-			System::Windows::Forms::MessageBox::Show("No existeix valoració.");
+			System::Windows::Forms::MessageBox::Show("No existeix valoraci\u00F3.");
 		}
 		else {
 			p->esborra();
-			System::Windows::Forms::MessageBox::Show("Valoració eliminada.");
+			System::Windows::Forms::MessageBox::Show("Valoraci\u00F3 eliminada.");
 		}
 	}
 }

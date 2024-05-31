@@ -141,7 +141,7 @@ namespace StudyHub {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(170, 18);
 			this->label4->TabIndex = 4;
-			this->label4->Text = L"Correu Electronic:";
+			this->label4->Text = L"Correu Electr\u00F2nic:";
 			// 
 			// label5
 			// 
@@ -174,7 +174,7 @@ namespace StudyHub {
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(215, 18);
 			this->label7->TabIndex = 7;
-			this->label7->Text = L"Numero de Valoracions: ";
+			this->label7->Text = L"N\u00Famero de Valoracions: ";
 			// 
 			// nomLabel
 			// 

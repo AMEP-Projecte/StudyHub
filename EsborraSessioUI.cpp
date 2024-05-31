@@ -114,7 +114,7 @@ System::Void EsborraSessioUI::EsborraSessio_Load(System::Object^ sender, System:
         columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
             static_cast<System::Byte>(0)));
         columnaAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
-        columnaAdreca->Text = L"Adreça";
+        columnaAdreca->Text = L"Adre\u00e7a";
         columnaAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
         layoutDades1->Controls->Add(columnaAdreca, 2, 0);
 

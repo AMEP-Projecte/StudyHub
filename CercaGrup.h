@@ -193,7 +193,7 @@ namespace StudyHub {
 		panell->Controls->Add(NomGrup, 0, 0);
 
 		System::Windows::Forms::Label^ Tematica = gcnew System::Windows::Forms::Label();
-		Tematica->Text = "Temàtica";
+		Tematica->Text = "Tem\u00e0tica";
 		Tematica->Anchor = System::Windows::Forms::AnchorStyles::None;
 		Tematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		Tematica->Font = gcnew System::Drawing::Font("Arial Black", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);
@@ -209,7 +209,7 @@ namespace StudyHub {
 		panell->Controls->Add(Participants, 2, 0);
 
 		System::Windows::Forms::Label^ Valoracio = gcnew System::Windows::Forms::Label();
-		Valoracio->Text = "Valoració";
+		Valoracio->Text = "Valoraci\u00F3";
 		Valoracio->Anchor = System::Windows::Forms::AnchorStyles::None;
 		Valoracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		Valoracio->Font = gcnew System::Drawing::Font("Arial Black", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline);

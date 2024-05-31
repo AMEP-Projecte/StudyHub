@@ -96,7 +96,7 @@ namespace StudyHub {
 			this->label2adr->Name = L"label2adr";
 			this->label2adr->Size = System::Drawing::Size(67, 22);
 			this->label2adr->TabIndex = 4;
-			this->label2adr->Text = L"Adreça";
+			this->label2adr->Text = L"Adre\u00e7a";
 			// 
 			// label3nom
 			// 

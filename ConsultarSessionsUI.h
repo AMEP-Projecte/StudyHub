@@ -94,7 +94,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(382, 36);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Proximes Sessions d\'Estudi";
+			this->label1->Text = L"Pr\u00F2ximes Sessions d\'Estudi";
 			// 
 			// dataGridView1
 			// 

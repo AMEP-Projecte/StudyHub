@@ -104,7 +104,7 @@ namespace StudyHub {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(659, 64);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Vols participar a la sessió\?";
+			this->label2->Text = L"Vols participar a la sessi\u00F3\?";
 			// 
 			// horasessio
 			// 
@@ -137,7 +137,7 @@ namespace StudyHub {
 			this->confirmar->Name = L"confirmar";
 			this->confirmar->Size = System::Drawing::Size(195, 48);
 			this->confirmar->TabIndex = 7;
-			this->confirmar->Text = L"Sí";
+			this->confirmar->Text = L"S\u00ed";
 			this->confirmar->UseVisualStyleBackColor = true;
 			this->confirmar->Click += gcnew System::EventHandler(this, &ParticipaSessio::confirmar_Click);
 			// 

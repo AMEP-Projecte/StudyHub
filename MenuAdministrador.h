@@ -84,7 +84,7 @@ namespace StudyHub {
 			this->tancaSessio->Name = L"tancaSessio";
 			this->tancaSessio->Size = System::Drawing::Size(153, 48);
 			this->tancaSessio->TabIndex = 8;
-			this->tancaSessio->Text = L"Tancar Sessió";
+			this->tancaSessio->Text = L"Tancar Sessi\u00F3";
 			this->tancaSessio->UseVisualStyleBackColor = true;
 			this->tancaSessio->Click += gcnew System::EventHandler(this, &MenuAdministrador::tancaSessio_Click);
 			// 
@@ -112,7 +112,7 @@ namespace StudyHub {
 			this->gestionaPerfil->Name = L"gestionaPerfil";
 			this->gestionaPerfil->Size = System::Drawing::Size(153, 51);
 			this->gestionaPerfil->TabIndex = 6;
-			this->gestionaPerfil->Text = L"Gestionar Proveïdors";
+			this->gestionaPerfil->Text = L"Gestionar Prove\u00efdors";
 			this->gestionaPerfil->UseVisualStyleBackColor = true;
 			this->gestionaPerfil->Click += gcnew System::EventHandler(this, &MenuAdministrador::gestionaPerfil_Click);
 			// 
@@ -127,7 +127,7 @@ namespace StudyHub {
 			this->menuEstudiantt->Name = L"menuEstudiantt";
 			this->menuEstudiantt->Size = System::Drawing::Size(354, 42);
 			this->menuEstudiantt->TabIndex = 5;
-			this->menuEstudiantt->Text = L"Menú Administrador";
+			this->menuEstudiantt->Text = L"Men\u00fa Administrador";
 			this->menuEstudiantt->TextAlign = System::Drawing::ContentAlignment::TopCenter;
 			// 
 			// tableLayoutPanel1
@@ -205,7 +205,7 @@ namespace StudyHub {
 			this->labelEspais->Name = L"labelEspais";
 			this->labelEspais->Size = System::Drawing::Size(178, 62);
 			this->labelEspais->TabIndex = 4;
-			this->labelEspais->Text = L"Número d\'espais:";
+			this->labelEspais->Text = L"N\u00famero d\'espais:";
 			this->labelEspais->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelGrups
@@ -233,7 +233,7 @@ namespace StudyHub {
 			this->labelEstudiants->Name = L"labelEstudiants";
 			this->labelEstudiants->Size = System::Drawing::Size(178, 61);
 			this->labelEstudiants->TabIndex = 0;
-			this->labelEstudiants->Text = L"Número d\'estudiants:";
+			this->labelEstudiants->Text = L"N\u00famero d\'estudiants:";
 			this->labelEstudiants->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MenuAdministrador

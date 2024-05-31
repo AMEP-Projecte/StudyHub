@@ -160,7 +160,7 @@ namespace StudyHub {
 			this->labelheadervaloracio->Name = L"labelheadervaloracio";
 			this->labelheadervaloracio->Size = System::Drawing::Size(184, 22);
 			this->labelheadervaloracio->TabIndex = 1;
-			this->labelheadervaloracio->Text = L"Valoració";
+			this->labelheadervaloracio->Text = L"Valoraci\u00F3";
 			this->labelheadervaloracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// labelheadergrup

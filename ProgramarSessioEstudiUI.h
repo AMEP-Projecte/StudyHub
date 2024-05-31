@@ -133,7 +133,7 @@ namespace StudyHub {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(439, 42);
 			this->label2->TabIndex = 1;
-			this->label2->Text = L"Programar Sessio d\'Estudi";
+			this->label2->Text = L"Programar Sessi\u00F3 d\'Estudi";
 			this->label2->Click += gcnew System::EventHandler(this, &ProgamarSessioEstudiUI::label2_Click);
 			// 
 			// label3
@@ -182,7 +182,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(67, 22);
 			this->label1->TabIndex = 4;
-			this->label1->Text = L"Adreca";
+			this->label1->Text = L"Adre\u00e7a";
 			this->label1->Click += gcnew System::EventHandler(this, &ProgamarSessioEstudiUI::label1_Click);
 			// 
 			// direccioLabel

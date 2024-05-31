@@ -147,7 +147,7 @@ namespace StudyHub {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(144, 36);
 			this->button3->TabIndex = 6;
-			this->button3->Text = L"SI";
+			this->button3->Text = L"S\u00ed";
 			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &EliminarEspai::button3_Click);
 			// 
@@ -211,7 +211,7 @@ namespace StudyHub {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(72, 22);
 			this->label4->TabIndex = 9;
-			this->label4->Text = L"Adreca:";
+			this->label4->Text = L"Adre\u00e7a:";
 			// 
 			// label5
 			// 
@@ -260,7 +260,7 @@ namespace StudyHub {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(445, 29);
 			this->label8->TabIndex = 13;
-			this->label8->Text = L"Segur que vols eliminar l\'espai seguent\?";
+			this->label8->Text = L"Segur que vols eliminar l\'espai seg\u00Fcent\?";
 			// this->label8->Click += gcnew System::EventHandler(this, &EliminarEspai::label8_Click);
 			// 
 			// EliminarEspai

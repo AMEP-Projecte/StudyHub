@@ -73,7 +73,7 @@ namespace StudyHub {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(369, 56);
 			this->label2->TabIndex = 2;
-			this->label2->Text = L"Perfil  Proveïdor";
+			this->label2->Text = L"Perfil  Prove\u00efdor";
 			// 
 			// editar
 			// 
@@ -114,7 +114,7 @@ namespace StudyHub {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(133, 31);
 			this->label3->TabIndex = 7;
-			this->label3->Text = L"proveidor";
+			this->label3->Text = L"prove\u00efdor";
 			// 
 			// MenuGestioProveidor
 			// 

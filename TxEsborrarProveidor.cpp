@@ -25,5 +25,5 @@ void TxEsborrarProveidor::executar() {
 		u->posaNomUsuari(_username);
 		u->esborra();
 	}
-	else throw gcnew Exception("No es pot eliminar aquest proveïdor ja que ha creat espais on hi ha sessions programades.");
+	else throw gcnew Exception("No es pot eliminar aquest prove\u00efdor ja que ha creat espais on hi ha sessions programades.");
 }

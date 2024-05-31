@@ -21,7 +21,7 @@ System::Void StudyHub::IniciSessio::button1_Click(System::Object^ sender, System
 		tx = gcnew TxIniciarSessio(username, contrasenya);
 		bool err = tx->executar();
 		if (err) {
-			MessageBox::Show("Error amb l'inici de sessio");
+			MessageBox::Show("Error amb l'inici de sessi\u00F3");
 		}
 		else {
 			Sistema^ sist = sist->getInstance();

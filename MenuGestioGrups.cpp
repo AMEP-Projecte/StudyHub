@@ -111,7 +111,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		columnaTematica->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		columnaTematica->Dock = System::Windows::Forms::DockStyle::Fill;
-		columnaTematica->Text = L"Temàtica";
+		columnaTematica->Text = L"Tem\u00e0tica";
 		columnaTematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 		layoutTitols->Controls->Add(columnaTematica, 1, 0);
 		
@@ -120,7 +120,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		columnaValoracio->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 			static_cast<System::Byte>(0)));
 		columnaValoracio->Dock = System::Windows::Forms::DockStyle::Fill;
-		columnaValoracio->Text = L"Valoració";
+		columnaValoracio->Text = L"Valoraci\u00F3";
 		columnaValoracio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;		
 		layoutTitols->Controls->Add(columnaValoracio, 2, 0);
 

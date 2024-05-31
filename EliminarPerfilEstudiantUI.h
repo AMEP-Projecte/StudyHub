@@ -108,7 +108,7 @@ namespace StudyHub {
 			this->infoeliminarcompte2->Name = L"infoeliminarcompte2";
 			this->infoeliminarcompte2->Size = System::Drawing::Size(513, 17);
 			this->infoeliminarcompte2->TabIndex = 2;
-			this->infoeliminarcompte2->Text = L"Això tancarà la teva sessió immediatament i no podràs tornar a iniciar-la de nou."
+			this->infoeliminarcompte2->Text = L"Aix\u00F2 tancar\u00e0 la teva sessi\u00F3 immediatament i no podr\u00e0s tornar a iniciar-la de nou."
 				L"";
 			// 
 			// etiquetacontrasenya

@@ -137,7 +137,7 @@ namespace StudyHub {
 			this->programaSessio->Name = L"programaSessio";
 			this->programaSessio->Size = System::Drawing::Size(166, 74);
 			this->programaSessio->TabIndex = 13;
-			this->programaSessio->Text = L"Programar Sessió";
+			this->programaSessio->Text = L"Programar Sessi\u00F3";
 			this->programaSessio->UseVisualStyleBackColor = true;
 			this->programaSessio->Click += gcnew System::EventHandler(this, &MenuSessionsUI::programaSessio_Click);
 			// 
@@ -151,7 +151,7 @@ namespace StudyHub {
 			this->esborraSessio->Name = L"esborraSessio";
 			this->esborraSessio->Size = System::Drawing::Size(166, 68);
 			this->esborraSessio->TabIndex = 14;
-			this->esborraSessio->Text = L"Esborrar Sessió";
+			this->esborraSessio->Text = L"Esborrar Sessi\u00F3";
 			this->esborraSessio->UseVisualStyleBackColor = true;
 			this->esborraSessio->Click += gcnew System::EventHandler(this, &MenuSessionsUI::esborraSessio_Click);
 			// 

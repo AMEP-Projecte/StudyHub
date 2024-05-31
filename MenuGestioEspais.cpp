@@ -117,7 +117,7 @@ System::Void MenuGestioEspais::MenuGestioEspais_Load(System::Object^ sender, Sys
             System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline,
             System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
         columnaData->Dock = System::Windows::Forms::DockStyle::Fill;
-        columnaData->Text = L"Adreca";
+        columnaData->Text = L"Adre\u00e7a";
         columnaData->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
         layoutDades1->Controls->Add(columnaData, 1, 0);
 

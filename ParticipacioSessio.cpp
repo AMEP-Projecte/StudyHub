@@ -24,7 +24,7 @@ System::Void StudyHub::ParticipaSessio::confirmar_Click(System::Object^ sender, 
 	try {
 		
 		tx->executar();
-		MessageBox::Show("Has confirmat la teva participació!");
+		MessageBox::Show("Has confirmat la teva participaci\u00F3!");
 		
 		MenuSessionsUI^ sessions = gcnew MenuSessionsUI();
 		MenuPrincipal^ menu = MenuPrincipal::getInstance();

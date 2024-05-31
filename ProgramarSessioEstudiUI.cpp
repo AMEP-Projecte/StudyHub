@@ -13,7 +13,7 @@ using namespace System::Drawing;
 System::Void StudyHub::ProgamarSessioEstudiUI::buttonOK_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (espaiComboBox->SelectedItem == nullptr || espaiComboBox->SelectedItem->ToString() == "") {
-		MessageBox::Show("Selecciona una adreca per continuar.");
+		MessageBox::Show("Selecciona una adre\u00e7a per continuar.");
 	}
 	else if (grupComboBox->SelectedItem == nullptr || grupComboBox->SelectedItem->ToString() == "") {
 		MessageBox::Show("Selecciona un grup per continuar.");
@@ -51,12 +51,12 @@ System::Void StudyHub::ProgamarSessioEstudiUI::SessionButtob_Click(System::Objec
 			s += "Data: " + sessio->obteData() + " Hora Inici: " + sessio->obteHoraInici() + " Hora Fi: " + sessio->obteHoraFi() + "\n";
 		}
 		if (s == "") {
-			MessageBox::Show("Encara no hi han sessions creades per aquesta adreca.");
+			MessageBox::Show("Encara no hi han sessions creades per aquesta adre\u00e7a.");
 		}
 		else MessageBox::Show(s);
 	}
 	else {
 		// No se ha seleccionado ninguna adreca
-		MessageBox::Show("Escull una adreca");
+		MessageBox::Show("Escull una adre\u00e7a");
 	}
 }

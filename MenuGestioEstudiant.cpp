@@ -95,7 +95,7 @@ System::Void MenuGestioEstudiant::MenuGestioEstudiant_Load(System::Object^ sende
             columnaPuntuacio->AutoSize = true;
             columnaPuntuacio->Font = gcnew System::Drawing::Font(L"Microsoft YaHei UI", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0));
             columnaPuntuacio->Dock = System::Windows::Forms::DockStyle::Fill;
-            columnaPuntuacio->Text = L"Puntuació";
+            columnaPuntuacio->Text = L"Puntuaci\u00F3";
             columnaPuntuacio->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 
             Label^ columnaComentari = gcnew Label();

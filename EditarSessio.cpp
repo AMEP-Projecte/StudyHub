@@ -13,7 +13,7 @@ System::Void StudyHub::EditarSessio::buttonTornar_Click(System::Object^ sender, 
 System::Void StudyHub::EditarSessio::buttonEditar_Click(System::Object^ sender, System::EventArgs^ e) {
 
     if (_grup == "") {
-        MessageBox::Show("Selecciona una sessio per editar.");
+        MessageBox::Show("Selecciona una sessi\u00F3 per editar.");
     }
     else {
         TxEditarSessio^ tx = gcnew TxEditarSessio(_grup, _data, _hora_inici, _hora_fi);
@@ -26,7 +26,7 @@ System::Void StudyHub::EditarSessio::buttonEditar_Click(System::Object^ sender, 
 
             try {
                 tx->executar();
-                MessageBox::Show("Hora de fi de sessio modificada correctament.");
+                MessageBox::Show("Hora de fi de sessi\u00F3 modificada correctament.");
                 MenuSessionsUI^ menuGestioSessions = gcnew MenuSessionsUI();
                 MenuPrincipal^ menu = MenuPrincipal::getInstance();
                 menu->AbrirFormularioEnPanel(menuGestioSessions);
@@ -117,7 +117,7 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
             columnaAdreca->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             columnaAdreca->Dock = System::Windows::Forms::DockStyle::Fill;
-            columnaAdreca->Text = L"Adreça";
+            columnaAdreca->Text = L"Adre\u00e7a";
             columnaAdreca->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
             layoutDades1->Controls->Add(columnaAdreca, 2, 0);
 

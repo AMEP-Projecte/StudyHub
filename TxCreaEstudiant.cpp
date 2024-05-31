@@ -16,6 +16,6 @@ void TxCreaEstudiant::executa()
     catch (Exception^ ex) {
         // Manejar la excepción aquí
         // Por ejemplo, mostrar un mensaje de error o realizar algún registro de errores
-        Console::WriteLine("Error al ejecutar TxCreaEstudiant: " + ex->Message);
+        Console::WriteLine("Error al executar TxCreaEstudiant: " + ex->Message);
     }
 }

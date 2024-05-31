@@ -133,7 +133,7 @@ namespace StudyHub {
 			this->tornar->Name = L"tornar";
 			this->tornar->Size = System::Drawing::Size(180, 58);
 			this->tornar->TabIndex = 5;
-			this->tornar->Text = L"Tancar Sessio";
+			this->tornar->Text = L"Tancar Sessi\u00F3";
 			this->tornar->UseVisualStyleBackColor = true;
 			this->tornar->Click += gcnew System::EventHandler(this, &MenuGestioEstudiant::tornar_Click);
 			// 

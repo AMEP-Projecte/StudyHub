@@ -127,7 +127,7 @@ namespace StudyHub {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(131, 20);
 			this->label3->TabIndex = 2;
-			this->label3->Text = L"Correu Electrònic";
+			this->label3->Text = L"Correu Electr\u00F2nic";
 			this->label3->Click += gcnew System::EventHandler(this, &CrearEstudiant::label3_Click);
 			// 
 			// label4
@@ -324,7 +324,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		tx.executa();
 	}
 	else {
-		MessageBox::Show("Les contrasenyes no són les mateixes.");
+		MessageBox::Show("Les contrasenyes no s\u00F3n les mateixes.");
 	}
 	IniciarSessio^ iniciar = gcnew IniciarSessio();
 

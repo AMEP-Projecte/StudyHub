@@ -100,7 +100,7 @@ namespace StudyHub {
 			this->adreca->Name = L"adreca";
 			this->adreca->Size = System::Drawing::Size(67, 22);
 			this->adreca->TabIndex = 3;
-			this->adreca->Text = L"Adreça";
+			this->adreca->Text = L"Adre\u00e7a";
 			// 
 			// capacitat
 			// 

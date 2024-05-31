@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #include "TxCrearProveidor.h"
 #include "Sistema.h"
 
@@ -103,7 +103,7 @@ namespace StudyHub {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(352, 42);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Crear Nou Proveïdor";
+			this->label4->Text = L"Crear Nou Prove\u00efdor";
 			this->label4->Click += gcnew System::EventHandler(this, &CrearProveidorUI::label4_Click);
 			// 
 			// label2
@@ -155,7 +155,7 @@ namespace StudyHub {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(144, 39);
 			this->button3->TabIndex = 6;
-			this->button3->Text = L"CREAR PROVEIDOR";
+			this->button3->Text = L"CREAR PROVE\u00cfDOR";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &CrearProveidorUI::button3_Click);
 			// 
