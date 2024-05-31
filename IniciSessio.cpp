@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "IniciSessio.h"
-#include "MenuEstudiant.h"
+// #include "MenuEstudiant.h"
+#include "MenuGestioEstudiant.h"
 #include "MenuPrincipal.h"
 #include "Sistema.h"
 #include "MenuAdministrador.h"
@@ -30,9 +31,11 @@ System::Void StudyHub::IniciSessio::button1_Click(System::Object^ sender, System
 			Menu->canviaVisibilitat_ButtonMenu(false);
 		
 			if (tipus=="estudiant") {
-				StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();
+				StudyHub::MenuGestioEstudiant^ menuEstudiant = gcnew StudyHub::MenuGestioEstudiant();
+				MenuPrincipal^ menu = MenuPrincipal::getInstance();
+				menu->ButtonMenuEstudiant->Visible = false;
 				Menu->AbrirSubFormularioEnPanel(menuEstudiant);
-				Menu->HacerVisible();
+				// Menu->HacerVisible();
 			}
 			else if (tipus=="administrador") {
 				StudyHub::MenuAdministrador^ menuAdmin = gcnew StudyHub::MenuAdministrador();

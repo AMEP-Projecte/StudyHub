@@ -38,6 +38,11 @@ System::Void EsborraSessioUI::button3_Click(System::Object^ sender, System::Even
     
 }
 System::Void EsborraSessioUI::EsborraSessio_Load(System::Object^ sender, System::EventArgs^ e) {
+    MenuPrincipal^ menu = MenuPrincipal::getInstance();
+    menu->ButtonMenuEstudiant->Visible = true;
+    menu->ButtonMenuGrups->Visible = true;
+    menu->buttonMenuSessions->Visible = true;
+
     Sistema^ sistema = Sistema::getInstance();
 
     TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "no confirmades");

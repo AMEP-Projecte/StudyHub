@@ -1,5 +1,6 @@
 #pragma once
 #include "TxEditarEstudiant.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -314,6 +315,11 @@ private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e)
 	this->Close();
 }
 private: System::Void EditarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = true;
+	menu->ButtonMenuGrups->Visible = true;
+	menu->buttonMenuSessions->Visible = true;
+
 	Sistema^ sistema = Sistema::getInstance();
 
 	nom = sistema->obteEstudiant()->obteNom();

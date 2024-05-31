@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "TxParticipacioSessio.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -257,6 +258,11 @@ namespace StudyHub {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void Participa_Load(System::Object^ sender, System::EventArgs^ e) {
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->ButtonMenuEstudiant->Visible = true;
+		menu->ButtonMenuGrups->Visible = true;
+		menu->buttonMenuSessions->Visible = true;
+
 		label1->Text = grup;
 		label3->Text = data;
 		label4->Text = horaInici;

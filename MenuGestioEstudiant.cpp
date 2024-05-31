@@ -37,6 +37,11 @@ System::Void MenuGestioEstudiant::consulta_Click(System::Object^ sender, System:
 }
 
 System::Void MenuGestioEstudiant::MenuGestioEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
+    MenuPrincipal^ menu = MenuPrincipal::getInstance();
+    menu->ButtonMenuEstudiant->Visible = false;
+    menu->ButtonMenuGrups->Visible = true;
+    menu->buttonMenuSessions->Visible = true;
+
     Sistema^ sistema = Sistema::getInstance();
 
     TxValoracionsEstudiant^ tx = gcnew TxValoracionsEstudiant(sistema->obteUsername());

@@ -280,6 +280,11 @@ namespace StudyHub {
 		}
 	}
 	private: System::Void CercaGrup_Load(System::Object^ sender, System::EventArgs^ e) {
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->ButtonMenuEstudiant->Visible = true;
+		menu->ButtonMenuGrups->Visible = true;
+		menu->buttonMenuSessions->Visible = true;
+
 		TxCercarGrups^ tx = gcnew TxCercarGrups();
 		tx->executar();
 		grups = tx->obteResultat();

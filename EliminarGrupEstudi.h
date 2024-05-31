@@ -1,6 +1,7 @@
 #pragma once
 #include "TxEliminarGrup.h"
 #include "Sistema.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -269,6 +270,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void EliminarGrupEstudi_Load(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = true;
+	menu->ButtonMenuGrups->Visible = true;
+	menu->buttonMenuSessions->Visible = true;
 }
 private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 }

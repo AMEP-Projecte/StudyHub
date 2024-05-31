@@ -320,6 +320,10 @@ namespace StudyHub {
 	private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ConsultarGrup_Load(System::Object^ sender, System::EventArgs^ e) {
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->ButtonMenuEstudiant->Visible = true;
+		menu->ButtonMenuGrups->Visible = true;
+		menu->buttonMenuSessions->Visible = true;
 	}
 	private: System::Void cencel_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

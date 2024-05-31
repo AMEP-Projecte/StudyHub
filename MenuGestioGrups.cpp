@@ -16,6 +16,9 @@
 using namespace StudyHub;
 
 System::Void MenuGestioGrups::crea_Click(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuGrups->Visible = true;
+
 	CrearNouGrupEstudi^ Crear = gcnew CrearNouGrupEstudi();
 	MenuPrincipal^ Menu = Menu->getInstance();
 	Menu->ButtonMenuGrups->Visible = true;
@@ -52,7 +55,9 @@ System::Void MenuGestioGrups::buttonGestionaPeticions_Click(System::Object^ send
 
 System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, System::EventArgs^ e) {
 	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = true;
 	menu->ButtonMenuGrups->Visible = false;
+	menu->buttonMenuSessions->Visible = true;
 
 	Sistema^ sistema = Sistema::getInstance();
 	TxGrupsEstudiant^ tx = gcnew TxGrupsEstudiant(sistema->obteUsername());

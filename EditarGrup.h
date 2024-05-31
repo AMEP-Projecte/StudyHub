@@ -1,5 +1,6 @@
 #pragma once
 #include "TxEditarGrup.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -178,6 +179,10 @@ namespace StudyHub {
 		}
 #pragma endregion
 	private: System::Void EditarGrup_Load(System::Object^ sender, System::EventArgs^ e) {
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->ButtonMenuEstudiant->Visible = true;
+		menu->ButtonMenuGrups->Visible = true;
+		menu->buttonMenuSessions->Visible = true;
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

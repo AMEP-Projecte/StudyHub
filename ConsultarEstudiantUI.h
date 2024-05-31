@@ -1,5 +1,6 @@
 #pragma once
 #include"TxConsultarEstudiant.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -300,6 +301,11 @@ namespace StudyHub {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ConsultarEstudiantUI_Load(System::Object^ sender, System::EventArgs^ e) {
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->ButtonMenuEstudiant->Visible = true;
+		menu->ButtonMenuGrups->Visible = true;
+		menu->buttonMenuSessions->Visible = true;
+
 		TxConsultarEstudiant^ txCE = gcnew TxConsultarEstudiant();
 		try {
 			txCE->executar();

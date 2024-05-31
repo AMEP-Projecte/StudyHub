@@ -49,6 +49,11 @@ System::Void MenuSessionsUI::programaSessio_Click(System::Object^ sender, System
 
 
 System::Void MenuSessionsUI::MenuSessionsUI_Load(System::Object^ sender, System::EventArgs^ e) {
+    MenuPrincipal^ menu = MenuPrincipal::getInstance();
+    menu->ButtonMenuEstudiant->Visible = true;
+    menu->ButtonMenuGrups->Visible = true;
+    menu->buttonMenuSessions->Visible = false;
+
     Sistema^ sistema = Sistema::getInstance();
 
     TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "no confirmades");

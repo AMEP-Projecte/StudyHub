@@ -2,7 +2,8 @@
 #include "TancarSessio.h"
 #include "MenuPrincipal.h"
 #include "IniciarSessio.h"
-#include "MenuEstudiant.h"
+// #include "MenuEstudiant.h"
+#include "MenuGestioEstudiant.h"
 #include "MenuProvedor.h"
 #include "MenuAdministrador.h"
 
@@ -27,7 +28,7 @@ System::Void StudyHub::TancarSessio::button2_Click(System::Object^ sender, Syste
 	String^ tipusUsuari = sist->obteTipusUsuari();
 
 	if (tipusUsuari == "estudiant") {
-		MenuEstudiant^ menuEstudiant = gcnew MenuEstudiant();
+		MenuGestioEstudiant^ menuEstudiant = gcnew MenuGestioEstudiant();
 		MenuPrincipal^ Menu = Menu->getInstance();
 		Menu->AbrirFormularioEnPanel(menuEstudiant);
 	}

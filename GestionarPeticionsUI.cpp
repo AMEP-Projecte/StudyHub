@@ -3,6 +3,7 @@
 #include "Sistema.h"
 #include "TxObtenirPeticionsPendents.h"
 #include "TxGestionarPeticionsGrup.h"
+#include "MenuPrincipal.h"
 
 using namespace StudyHub;
 
@@ -17,6 +18,9 @@ System::Void GestionarPeticionsUI::actualitzarTaula() {
 
 
 System::Void GestionarPeticionsUI::GestionarPeticionsUI_Load(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = true;
+
 	actualitzarTaula();
 }
 

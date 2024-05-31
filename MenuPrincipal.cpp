@@ -33,6 +33,7 @@ System::Void  MenuPrincipal::buttonMenu(System::Object^ sender, System::EventArg
 
 		if (tipusUsuari == "estudiant") {
 			MenuEstudiant^ menuEst = gcnew MenuEstudiant();
+			this->ButtonMenu->Visible = false;
 			AbrirFormularioEnPanel(menuEst);
 		}
 		else if (tipusUsuari == "proveidor") {
@@ -94,8 +95,8 @@ System::Void MenuPrincipal::AbrirSubFormularioEnPanelOriginal(Form^ formHijo) {
 }
 
 System::Void MenuPrincipal::HacerVisible() {
-	this->ButtonMenu->Visible = false;
-	this->ButtonMaximized->Visible = false;
+	this->ButtonMenu->Visible = true;
+	this->ButtonMaximized->Visible = true;
 
 	this->ButtonMenuEstudiant->Visible = true;
 	this->ButtonMenuGrups->Visible = true;
