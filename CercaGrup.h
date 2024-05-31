@@ -79,10 +79,10 @@ namespace StudyHub {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 21, System::Drawing::FontStyle::Bold));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(200, 16);
+			this->label2->Location = System::Drawing::Point(203, 16);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(232, 46);
+			this->label2->Size = System::Drawing::Size(186, 37);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Cerca Grups";
 			// 
@@ -92,10 +92,10 @@ namespace StudyHub {
 			this->tornar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->tornar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->tornar->Location = System::Drawing::Point(515, 284);
-			this->tornar->Margin = System::Windows::Forms::Padding(2);
+			this->tornar->Location = System::Drawing::Point(19, 28);
+			this->tornar->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->tornar->Name = L"tornar";
-			this->tornar->Size = System::Drawing::Size(70, 36);
+			this->tornar->Size = System::Drawing::Size(74, 27);
 			this->tornar->TabIndex = 5;
 			this->tornar->Text = L"Tornar";
 			this->tornar->UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@ namespace StudyHub {
 			this->panel1->AutoScroll = true;
 			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 			this->panel1->Controls->Add(this->tableLayoutPanel1);
-			this->panel1->Location = System::Drawing::Point(24, 65);
+			this->panel1->Location = System::Drawing::Point(17, 65);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(486, 254);
+			this->panel1->Size = System::Drawing::Size(578, 254);
 			this->panel1->TabIndex = 0;
 			// 
 			// tableLayoutPanel1
@@ -118,26 +118,24 @@ namespace StudyHub {
 			this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
 			this->tableLayoutPanel1->ColumnCount = 1;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
-				474)));
+				559)));
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
 			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->Padding = System::Windows::Forms::Padding(3);
+			this->tableLayoutPanel1->Padding = System::Windows::Forms::Padding(3, 3, 3, 3);
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 40)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(482, 8);
+			this->tableLayoutPanel1->Size = System::Drawing::Size(574, 8);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(518, 67);
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) { L"Nom", L"Tematica", L"Participants", L"Valoracio" });
+			this->comboBox1->Location = System::Drawing::Point(525, 38);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(70, 21);
 			this->comboBox1->TabIndex = 20;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"Nom", L"Tematica", L"Participants", L"Valoracio"
-			});
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &CercaGrup::comboBox1_SelectedIndexChanged);
 			// 
 			// CercaGrup
@@ -145,13 +143,13 @@ namespace StudyHub {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(600, 331);
+			this->ClientSize = System::Drawing::Size(607, 331);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->tornar);
 			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"CercaGrup";
 			this->Text = L"CercaGrup";
 			this->Load += gcnew System::EventHandler(this, &CercaGrup::CercaGrup_Load);

@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "CercadoraUsuari.h"
+using namespace System::Windows::Forms;
 
 
 using namespace MySql::Data::MySqlClient;
@@ -20,11 +21,20 @@ PassarellaUsuari^ CercadoraUsuari::cercaUsuari(String^ username) {
             String^ username = dataReader->GetString(0);
             String^ pass = dataReader->GetString(1);
             String^ tipus = dataReader->GetString(2);
-            String^ salt = dataReader->GetString(3);
+
+            String^ salt;
+            if (dataReader->IsDBNull(3)) {
+                salt = "";
+            }
+            else {
+                salt = dataReader->GetString(3);
+            }
+          
             pu = gcnew PassarellaUsuari(username, pass, tipus, salt);
         }
     }
     catch (Exception^ ex) {
+        MessageBox::Show(ex->Message);
         // Manejamos el error
     }
     finally {

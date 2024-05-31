@@ -8,16 +8,23 @@ using namespace System::Collections::Generic;
 using namespace std;
 
 PassarellaParticipa::PassarellaParticipa(){}
+/*
 PassarellaParticipa::PassarellaParticipa(String^ estudiant, String^ grup, String^ data, String^ horaInici) {
 	_estudiant = estudiant;
 	_grup = grup;
 	_data = data;
 	_horaInici = horaInici;
 }
+*/
+PassarellaParticipa::PassarellaParticipa(String^ estudiant, int id) {
+	_estudiant = estudiant;
+	_id = id;
+}
 
 void PassarellaParticipa::posaEstudiant(String^ estudiant) {
 	_estudiant = estudiant;
 }
+/*
 void PassarellaParticipa::posaGrup(String^ grup) {
 	_grup = grup;
 }
@@ -27,11 +34,16 @@ void PassarellaParticipa::posaData(String^ data) {
 void PassarellaParticipa::posaHoraInici(String^ hora) {
 	_horaInici = hora;
 }
+*/
+void PassarellaParticipa::posaId(int id) {
+	_id = id;
+}
 
 
 String^ PassarellaParticipa::obteEstudiant() {
 	return _estudiant;
 }
+/*
 String^ PassarellaParticipa::obteGrup() {
 	return _grup;
 }
@@ -41,14 +53,21 @@ String^ PassarellaParticipa::obteData() {
 String^ PassarellaParticipa::obteHoraInici() {
 	return _horaInici;
 }
+*/
+int PassarellaParticipa::obteId() {
+	return _id;
+}
 
 
 void PassarellaParticipa::insereix() {
 
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
-	String^ sql = "INSERT INTO participa(estudiant, grup,data,hora_inici) VALUES('" + _estudiant + "', '" + _grup + "', '" + _data + "', '" + _horaInici + "')";
+	// String^ sql = "INSERT INTO participa(estudiant, grup,data,hora_inici) VALUES('" + _estudiant + "', '" + _grup + "', '" + _data + "', '" + _horaInici + "')";
+	String^ sql = "INSERT INTO participa(estudiant, id) VALUES(@estudiant, @id)";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	cmd->Parameters->AddWithValue("@estudiant", _estudiant);
+	cmd->Parameters->AddWithValue("@id", _id);
 
 	try {
 		// obrim la connexio
@@ -70,14 +89,16 @@ void PassarellaParticipa::esborra() {
 	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-	String^ sql = "DELETE FROM participa WHERE grup=@g and data=@d and hora_inici=@hi and estudiant=@e";
+	// String^ sql = "DELETE FROM participa WHERE grup=@g and data=@d and hora_inici=@hi and estudiant=@e";
+	String^ sql = "DELETE FROM participa WHERE id=@id and estudiant=@e";
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 
-	cmd->Parameters->AddWithValue("@g", _grup);
-	cmd->Parameters->AddWithValue("@d", _data);
-	cmd->Parameters->AddWithValue("@hi", _horaInici);
+	// cmd->Parameters->AddWithValue("@g", _grup);
+	// cmd->Parameters->AddWithValue("@d", _data);
+	// cmd->Parameters->AddWithValue("@hi", _horaInici);
 	cmd->Parameters->AddWithValue("@e", _estudiant);
+	cmd->Parameters->AddWithValue("@id", _id);
 	
 	try {
 		conn->Open();

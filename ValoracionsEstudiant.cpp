@@ -156,6 +156,7 @@ System::Void ValoracionsEstudiant::buttonElimina_Click(System::Object^ sender, S
     else {
         TxEsborraValoracio^ tx = gcnew TxEsborraValoracio(usernameEstudiant, grupValorat);
         tx->executar();
+        MessageBox::Show("Valoració esborrada correctament.");
 
         MenuPrincipal^ menu = MenuPrincipal::getInstance();
         MenuGestioEstudiantsAdmin^ gestioEstudiants = gcnew MenuGestioEstudiantsAdmin();

@@ -10,10 +10,11 @@ private:
 	String^ _horaFi;
 	String^ _adreca;
 	int _llocsLliures;
+	int _id;
 
 public:
 	PassarellaSessio();
-	PassarellaSessio(String^ grup, String^ data, String^ horaInici, String^ horaFi,	String^ adreca, int llocs);
+	PassarellaSessio(int id, String^ grup, String^ data, String^ horaInici, String^ horaFi,	String^ adreca, int llocs);
 
 	void posaGrup(String^ grup);
 	void posaData(String^ data);
@@ -29,6 +30,7 @@ public:
 	String^ obteHoraFi();
 	String^ obteAdreca();
 	int obteLlocsLliures();
+	int obteId();
 		
 	void insereix();
 	void modifica();

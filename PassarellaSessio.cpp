@@ -9,7 +9,8 @@ using namespace System::Collections::Generic;
 using namespace std;
 
 PassarellaSessio::PassarellaSessio(){}
-PassarellaSessio::PassarellaSessio(String^ grup, String^ data, String^ horaInici, String^ horaFi, String^ adreca, int llocs) {
+PassarellaSessio::PassarellaSessio(int id, String^ grup, String^ data, String^ horaInici, String^ horaFi, String^ adreca, int llocs) {
+	_id = id;
 	_grup = grup;
 	_data = data;
 	_horaInici = horaInici;
@@ -56,6 +57,9 @@ String^ PassarellaSessio::obteAdreca() {
 int PassarellaSessio::obteLlocsLliures() {
     return _llocsLliures;
 }
+int PassarellaSessio::obteId() {
+	return _id;
+}
 
 void PassarellaSessio::insereix()
     {
@@ -63,7 +67,7 @@ void PassarellaSessio::insereix()
         MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
         bool totcorrecte = true;
 
-        String^ sql = "INSERT INTO sessio (grup, data, hora_inici, hora_fi, adreca, llocs_lliures) VALUES (@grup, @data, @horaInici, @horaFi, @adreca, @llocsLliures)";
+        String^ sql = "INSERT INTO sessio (NULL, grup, data, hora_inici, hora_fi, adreca, llocs_lliures) VALUES (@grup, @data, @horaInici, @horaFi, @adreca, @llocsLliures)";
         MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
        
         // Agregar parámetros

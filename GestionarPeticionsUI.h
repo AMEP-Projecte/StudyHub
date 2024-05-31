@@ -104,6 +104,7 @@ namespace StudyHub {
 			this->dataGridViewPeticions->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->dataGridViewPeticions->RowHeadersWidth = 51;
 			this->dataGridViewPeticions->RowHeadersWidthSizeMode = System::Windows::Forms::DataGridViewRowHeadersWidthSizeMode::DisableResizing;
+			this->dataGridViewPeticions->RowHeadersVisible = false;
 			this->dataGridViewPeticions->RowTemplate->Height = 24;
 			this->dataGridViewPeticions->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dataGridViewPeticions->ShowEditingIcon = false;

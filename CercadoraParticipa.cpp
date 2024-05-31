@@ -33,13 +33,14 @@ List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaEstudiant(String^ 
 
         // Leemos los resultados
         while (reader->Read()) {
-            String^ grup= reader->GetString("grup");
-            String^ data = reader->GetString("data");
-            String^ hora = reader->GetString("hora");
-
+            // String^ grup= reader->GetString("grup");
+            // String^ data = reader->GetString("data");
+            // String^ hora = reader->GetString("hora");
+            int id = reader->GetInt32("id_sessio");
 
             // Creamos un nuevo objeto PassarellaPartany y lo agregamos al resultado
-            PassarellaParticipa^ passarella = gcnew PassarellaParticipa(nom,grup,data,hora);
+            // PassarellaParticipa^ passarella = gcnew PassarellaParticipa(nom,grup,data,hora);
+            PassarellaParticipa^ passarella = gcnew PassarellaParticipa(nom, id);
             result->Add(passarella);
         }
     }
@@ -62,8 +63,9 @@ List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaEstudiant(String^ 
 }
 
 
+/*
 
-PassarellaParticipa^ CercadoraParticipa::cercaParticipa(String^ data, String^ grup, String^ hora, String^ estudiant) {
+PassarellaParticipa^ CercadoraParticipa::cercaParticipa(String^ data, String^ grup, String^ hora, String^ estudiant, int id) {
 
 
 
@@ -71,12 +73,15 @@ PassarellaParticipa^ CercadoraParticipa::cercaParticipa(String^ data, String^ gr
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos
-    String^ sql = "SELECT * FROM participa WHERE data = @data AND grup = @grup AND estudiant = @estudiant AND hora_inici=@hora ";
+    // String^ sql = "SELECT * FROM participa WHERE data = @data AND grup = @grup AND estudiant = @estudiant AND hora_inici=@hora ";
+    String^ sql = "SELECT * FROM participa WHERE id_sessio = @id AND estudiant = @estudiant ";
+
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
-    cmd->Parameters->AddWithValue("@data", data);
-    cmd->Parameters->AddWithValue("@grup", grup);
+    // cmd->Parameters->AddWithValue("@data", data);
+    // cmd->Parameters->AddWithValue("@grup", grup);
     cmd->Parameters->AddWithValue("@estudiant", estudiant);
-    cmd->Parameters->AddWithValue("@hora", hora);
+    // cmd->Parameters->AddWithValue("@hora", hora);
+    cmd->Parameters->AddWithValue("@id", id);
     
 
     MySqlDataReader^ dataReader = nullptr;
@@ -108,3 +113,4 @@ PassarellaParticipa^ CercadoraParticipa::cercaParticipa(String^ data, String^ gr
     PassarellaParticipa^ pp = gcnew PassarellaParticipa(estudiant,grup, data, horaIni);
     return pp;
 }
+*/

@@ -24,7 +24,7 @@ namespace StudyHub {
 		}
 	private: System::Windows::Forms::Label^ titol;
 	private: System::Windows::Forms::Button^ buttonElimina;
-	private: String^ grupValorat; // Variable que guarda una Primary Key de la valoració
+	private: String^ grupValorat = ""; // Variable que guarda una Primary Key de la valoració
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 	private: System::Windows::Forms::Label^ labelheadergrup;

@@ -88,20 +88,18 @@ namespace StudyHub {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(83, 269);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(39, 406);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(135, 22);
+			this->label2->Size = System::Drawing::Size(175, 31);
 			this->label2->TabIndex = 7;
-			this->label2->Text = L"canviar hora fi :";
+			this->label2->Text = L"nova hora fi :";
 			this->label2->Click += gcnew System::EventHandler(this, &EditarSessio::label2_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(230, 271);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox1->Location = System::Drawing::Point(246, 411);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(247, 20);
+			this->textBox1->Size = System::Drawing::Size(317, 26);
 			this->textBox1->TabIndex = 8;
 			// 
 			// buttonEditar
@@ -112,9 +110,10 @@ namespace StudyHub {
 			this->buttonEditar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonEditar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->buttonEditar->Location = System::Drawing::Point(468, 305);
+			this->buttonEditar->Location = System::Drawing::Point(584, 400);
+			this->buttonEditar->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonEditar->Name = L"buttonEditar";
-			this->buttonEditar->Size = System::Drawing::Size(105, 39);
+			this->buttonEditar->Size = System::Drawing::Size(131, 44);
 			this->buttonEditar->TabIndex = 7;
 			this->buttonEditar->Text = L"Canviar";
 			this->buttonEditar->UseVisualStyleBackColor = false;
@@ -128,9 +127,10 @@ namespace StudyHub {
 			this->buttonTornar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonTornar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->buttonTornar->Location = System::Drawing::Point(30, 305);
+			this->buttonTornar->Location = System::Drawing::Point(735, 400);
+			this->buttonTornar->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonTornar->Name = L"buttonTornar";
-			this->buttonTornar->Size = System::Drawing::Size(107, 39);
+			this->buttonTornar->Size = System::Drawing::Size(124, 44);
 			this->buttonTornar->TabIndex = 7;
 			this->buttonTornar->Text = L"Tornar";
 			this->buttonTornar->UseVisualStyleBackColor = false;
@@ -143,13 +143,12 @@ namespace StudyHub {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
 			this->tableLayoutPanel1->Controls->Add(this->label3, 0, 0);
 			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
-			this->tableLayoutPanel1->Location = System::Drawing::Point(30, 46);
-			this->tableLayoutPanel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(45, 71);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 2;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 30)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 72)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(543, 220);
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 111)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(814, 302);
 			this->tableLayoutPanel1->TabIndex = 8;
 			// 
 			// label3
@@ -159,10 +158,9 @@ namespace StudyHub {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::White;
-			this->label3->Location = System::Drawing::Point(3, 1);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label3->Location = System::Drawing::Point(4, 1);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(537, 30);
+			this->label3->Size = System::Drawing::Size(806, 46);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"Les meves sessions";
 			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -173,20 +171,19 @@ namespace StudyHub {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(64, 6);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(96, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(478, 31);
+			this->label1->Size = System::Drawing::Size(719, 47);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Gestionar Les Meves Sessions d\'Estudi";
 			// 
 			// EditarSessio
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(607, 370);
+			this->ClientSize = System::Drawing::Size(886, 509);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->buttonTornar);
 			this->Controls->Add(this->buttonEditar);
@@ -195,7 +192,6 @@ namespace StudyHub {
 			this->Controls->Add(this->label1);
 			this->ForeColor = System::Drawing::Color::Black;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"EditarSessio";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"StudyHub";

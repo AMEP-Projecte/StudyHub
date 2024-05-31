@@ -46,12 +46,12 @@ System::Void MenuAdministrador::tancaSessio_Click(System::Object^ sender, System
 }
 
 System::Void MenuAdministrador::gestionaGrups_Click(System::Object^ sender, System::EventArgs^ e) { // Gestio Estudiants en realitat
-	MenuGestioEstudiantsAdmin^ gestionaEtudiants = gcnew MenuGestioEstudiantsAdmin();
+	MenuGestioEstudiantsAdmin^ gestionaEstudiants = gcnew MenuGestioEstudiantsAdmin();
 	MenuPrincipal^ menu = menu->getInstance();
 
 	menu->canviaVisibilitat_ButtonMenu(true);
 	menu->buttonGestioEstudiants->Visible = false;
 	menu->buttonGestioProveidors->Visible = true;
 
-	menu->AbrirFormularioEnPanel(gestionaEtudiants);
+	menu->AbrirFormularioEnPanel(gestionaEstudiants);
 }

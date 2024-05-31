@@ -20,7 +20,8 @@ System::Void EsborraSessioUI::ButtonTornar_Click(System::Object^ sender, System:
 System::Void EsborraSessioUI::button3_Click(System::Object^ sender, System::EventArgs^ e) {
     if (_grup != "") {
        
-        PassarellaSessio^ esborraSessio = gcnew PassarellaSessio(_grup, _data, _hora_inici, _hora_fi, _adreca, _llocs);
+        // PassarellaSessio^ esborraSessio = gcnew PassarellaSessio(_grup, _data, _hora_inici, _hora_fi, _adreca, _llocs);
+        PassarellaSessio^ esborraSessio = CercadoraSessio::cercaAdreca(_grup, _data, _hora_inici);
         TxEsborrarSessio^ esborra = gcnew TxEsborrarSessio(esborraSessio);
         esborra->executar();
                    

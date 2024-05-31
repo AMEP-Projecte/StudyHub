@@ -10,7 +10,6 @@ System::Void StudyHub::EditarSessio::buttonTornar_Click(System::Object^ sender, 
 	menu->AbrirFormularioEnPanel(menuGestioSessions);
 }
 
-
 System::Void StudyHub::EditarSessio::buttonEditar_Click(System::Object^ sender, System::EventArgs^ e) {
 
     if (_grup == "") {

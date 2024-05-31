@@ -54,12 +54,13 @@ void TxProgramarSessioEstudi::executar()
 			
 		}
 	}
-	PassarellaSessio p(_grup, _data, _horaI, _horaF, _adreca, capacitat-1);
+	PassarellaSessio p(0, _grup, _data, _horaI, _horaF, _adreca, capacitat - 1);
 	p.insereix();
 
 	Sistema^ sist = Sistema::getInstance();
 	String^ username = sist->obteEstudiant()->obteNomUsuari();
-	PassarellaParticipa^ participa = gcnew PassarellaParticipa(username, _grup, _data, _horaI);
+	PassarellaSessio^ sessioCreada = CercadoraSessio::cercaAdreca(_grup, _data, _horaI);
+	PassarellaParticipa^ participa = gcnew PassarellaParticipa(username, sessioCreada->obteId());
 	participa->insereix();
 	
 	

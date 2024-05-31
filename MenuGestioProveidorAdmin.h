@@ -42,7 +42,7 @@ namespace StudyHub {
 
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 
-	private: String^ usernameProveidor;
+	private: String^ usernameProveidor = "";
 
 	private: System::Windows::Forms::Label^ label1;
 

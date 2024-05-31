@@ -12,9 +12,10 @@ private:
 	String^ _data;
 	String^ _horaInici;
 	String^ _adreca;
+	int _id;
 
 public:
-	TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h, String^ a); // Constructora
+	TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h, String^ a, int id); // Constructora
 	void executar();
 
 };

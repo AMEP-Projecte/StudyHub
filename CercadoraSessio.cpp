@@ -33,6 +33,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessioAdreca(String^ adreca) {
 
         // Leemos los resultados
         while (reader->Read()) {
+            int id = reader->GetInt32("id");
             String^ grup = reader->GetString("grup");
             String^ data = reader->GetDateTime("data").ToString("yyyy-MM-dd");
             String^ horaI = reader->GetTimeSpan("hora_inici").ToString("hh\\:mm");
@@ -41,7 +42,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessioAdreca(String^ adreca) {
 
 
             // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
-            PassarellaSessio^ passarella = gcnew PassarellaSessio(grup, data, horaI, horaF, adreca, llocs_lliures);
+            PassarellaSessio^ passarella = gcnew PassarellaSessio(id, grup, data, horaI, horaF, adreca, llocs_lliures);
             result->Add(passarella);
         }
     }
@@ -78,6 +79,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesDelEspai(String^ 
 
     // Leemos los resultados
     while (reader->Read()) {
+        int id = reader->GetInt32("id");
         String^ grup = reader->GetString("grup");
         String^ data = reader->GetDateTime("data").ToString("yyyy-MM-dd");
         String^ horaI = reader->GetTimeSpan("hora_inici").ToString("hh\\:mm");
@@ -85,7 +87,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesDelEspai(String^ 
         int llocs_lliures = reader->GetInt32("llocs_lliures");
         
         // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
-        PassarellaSessio^ passarella = gcnew PassarellaSessio(grup, data, horaI, horaF, adrecaEspai, llocs_lliures);
+        PassarellaSessio^ passarella = gcnew PassarellaSessio(id, grup, data, horaI, horaF, adrecaEspai, llocs_lliures);
         result->Add(passarella);
     }
    
@@ -112,11 +114,13 @@ PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^
     String^ horaIni = "";
     String^ horaFi = "";
     int llocs;
+    int id;
 
     try {
         conn->Open();
         dataReader = cmd->ExecuteReader();
         if (dataReader->Read()) {
+            id = dataReader->GetInt32("id");
             // Suponiendo que las columnas se llaman "horaIni", "horaFi", "Data" y "llocs_lliures"
             horaIni = dataReader["hora_inici"]->ToString();
             horaFi = dataReader["hora_fi"]->ToString();
@@ -134,7 +138,7 @@ PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^
         }
         conn->Close();
     }
-    PassarellaSessio^ pp = gcnew PassarellaSessio(grup, data, horaIni, horaFi, adreca, llocs);
+    PassarellaSessio^ pp = gcnew PassarellaSessio(id, grup, data, horaIni, horaFi, adreca, llocs);
     return pp;
 }
 
@@ -144,7 +148,7 @@ PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, Strin
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     // Suponiendo que el nombre de la tabla y los nombres de las columnas son correctos
-    String^ sql = "SELECT * FROM sessio WHERE data = @data AND grup = @grup AND hora = @hora";
+    String^ sql = "SELECT * FROM sessio WHERE data = @data AND grup = @grup AND hora_inici = @hora";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     cmd->Parameters->AddWithValue("@data", data);
     cmd->Parameters->AddWithValue("@grup", grup);
@@ -156,12 +160,13 @@ PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, Strin
     String^ adreca = "";
     String^ horaFi = "";
     int llocs;
+    int id;
 
     try {
         conn->Open();
         dataReader = cmd->ExecuteReader();
         if (dataReader->Read()) {
-         
+            id = Convert::ToInt32(dataReader["id"]);
             adreca = dataReader["hora_inici"]->ToString();
             horaFi = dataReader["hora_fi"]->ToString();
             data = dataReader->GetDateTime("data").ToString("yyyy-MM-dd");
@@ -178,7 +183,7 @@ PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, Strin
         }
         conn->Close();
     }
-    PassarellaSessio^ pp = gcnew PassarellaSessio(grup, data, hora, horaFi, adreca, llocs);
+    PassarellaSessio^ pp = gcnew PassarellaSessio(id, grup, data, hora, horaFi, adreca, llocs);
     return pp;
 }
 
@@ -203,6 +208,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesNoConfirmadesDelE
 
     // Leemos los resultados
     while (reader->Read()) {
+        int id = reader->GetInt32("id");
         String^ grup = reader->GetString("grup");
         String^ data = reader->GetDateTime("data").ToString("yyyy-MM-dd");
         String^ horaI = reader->GetTimeSpan("hora_inici").ToString("hh\\:mm");
@@ -210,7 +216,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesNoConfirmadesDelE
         int llocs_lliures = reader->GetInt32("llocs_lliures");
 
         // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
-        PassarellaSessio^ passarella = gcnew PassarellaSessio(grup, data, horaI, horaF, estudiant, llocs_lliures);
+        PassarellaSessio^ passarella = gcnew PassarellaSessio(id, grup, data, horaI, horaF, estudiant, llocs_lliures);
         result->Add(passarella);
     }
 
@@ -237,6 +243,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesConfirmadesDelEst
 
     // Leemos los resultados
     while (reader->Read()) {
+        int id = reader->GetInt32("id");
         String^ grup = reader->GetString("grup");
         String^ data = reader->GetDateTime("data").ToString("yyyy-MM-dd");
         String^ horaI = reader->GetTimeSpan("hora_inici").ToString("hh\\:mm");
@@ -244,7 +251,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesConfirmadesDelEst
         int llocs_lliures = reader->GetInt32("llocs_lliures");
 
         // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
-        PassarellaSessio^ passarella = gcnew PassarellaSessio(grup, data, horaI, horaF, estudiant, llocs_lliures);
+        PassarellaSessio^ passarella = gcnew PassarellaSessio(id, grup, data, horaI, horaF, estudiant, llocs_lliures);
         result->Add(passarella);
     }
 
