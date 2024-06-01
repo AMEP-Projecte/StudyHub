@@ -129,7 +129,7 @@ namespace StudyHub {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(67, 16);
 			this->label4->TabIndex = 15;
-			this->label4->Text = L"Temàtica:";
+			this->label4->Text = L"Tem\u00e0tica:";
       //
 			// label5
 			// 
@@ -140,7 +140,7 @@ namespace StudyHub {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(68, 16);
 			this->label5->TabIndex = 16;
-			this->label5->Text = L"Valoracio:";
+			this->label5->Text = L"Valoraci\u00F3:";
 			this->label5->Click += gcnew System::EventHandler(this, &UnirseGrupUI::label5_Click);
 			// 
 			// panel1

@@ -270,9 +270,11 @@ namespace StudyHub {
 			System::Windows::Forms::FlowLayoutPanel^ panelEstrellas = gcnew System::Windows::Forms::FlowLayoutPanel();
 			StarRatingView^ starRatingControl = gcnew StarRatingView(grups[i]._valMitja);
 			panelEstrellas->Controls->Add(starRatingControl);
-			//panelEstrellas->Size = System::Drawing::Size(197, 20);
 			panelEstrellas->AutoSize = true;
 			panel->Controls->Add(panelEstrellas, 3, 0);
+			int x = (panel->GetColumnWidths()[3] - panelEstrellas->Width) / 2;
+			int y = (panel->GetRowHeights()[0] - panelEstrellas->Height) / 2;
+			panelEstrellas->Margin = System::Windows::Forms::Padding(x, y, 0, 0);
 
 			panel->Click += gcnew System::EventHandler(this, &CercaGrup::On_Click);
 
