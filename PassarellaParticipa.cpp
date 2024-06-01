@@ -64,7 +64,7 @@ void PassarellaParticipa::insereix() {
 	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	// String^ sql = "INSERT INTO participa(estudiant, grup,data,hora_inici) VALUES('" + _estudiant + "', '" + _grup + "', '" + _data + "', '" + _horaInici + "')";
-	String^ sql = "INSERT INTO participa(estudiant, id) VALUES(@estudiant, @id)";
+	String^ sql = "INSERT INTO participa(estudiant, id_sessio) VALUES(@estudiant, @id)";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	cmd->Parameters->AddWithValue("@estudiant", _estudiant);
 	cmd->Parameters->AddWithValue("@id", _id);
@@ -90,7 +90,7 @@ void PassarellaParticipa::esborra() {
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	// String^ sql = "DELETE FROM participa WHERE grup=@g and data=@d and hora_inici=@hi and estudiant=@e";
-	String^ sql = "DELETE FROM participa WHERE id=@id and estudiant=@e";
+	String^ sql = "DELETE FROM participa WHERE id_sessio=@id and estudiant=@e";
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 
