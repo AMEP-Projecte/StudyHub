@@ -67,7 +67,7 @@ void PassarellaSessio::insereix()
         MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
         bool totcorrecte = true;
 
-        String^ sql = "INSERT INTO sessio (NULL, grup, data, hora_inici, hora_fi, adreca, llocs_lliures) VALUES (@grup, @data, @horaInici, @horaFi, @adreca, @llocsLliures)";
+        String^ sql = "INSERT INTO sessio (id, grup, data, hora_inici, hora_fi, adreca, llocs_lliures) VALUES (NULL, @grup, @data, @horaInici, @horaFi, @adreca, @llocsLliures)";
         MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
        
         // Agregar parámetros
