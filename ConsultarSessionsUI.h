@@ -63,7 +63,7 @@ namespace StudyHub {
 			Sistema^ sist = Sistema::getInstance();
 			String^ username = sist->obteEstudiant()->obteUsername();
 
-			MySqlConnection^ cn = gcnew MySqlConnection(" Sistema::getInstance()->obteCadenaDeConnexio();");
+			MySqlConnection^ cn = gcnew MySqlConnection(Sistema::getInstance()->obteCadenaDeConnexio());
 
 			DataTable^ dt = gcnew DataTable();
 			String^ sql = "SELECT * FROM sessio ";
