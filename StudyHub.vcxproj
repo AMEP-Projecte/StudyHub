@@ -319,7 +319,9 @@
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h" />
     <ClInclude Include="TxValoracionsEstudiant.h" />
-    <ClInclude Include="UnirseGrupUI.h" />
+    <ClInclude Include="UnirseGrupUI.h" >
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ValoracionsEstudiant.h">
       <FileType>CppForm</FileType>
     </ClInclude>
