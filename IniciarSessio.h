@@ -40,7 +40,7 @@ namespace StudyHub {
 	protected:
 
 	private: System::Windows::Forms::Button^ registrar;
-	private: System::Windows::Forms::Button^ sortir;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
@@ -65,7 +65,6 @@ namespace StudyHub {
 			this->textBenvinguda = (gcnew System::Windows::Forms::Label());
 			this->ButtonIniciarSessio = (gcnew System::Windows::Forms::Button());
 			this->registrar = (gcnew System::Windows::Forms::Button());
-			this->sortir = (gcnew System::Windows::Forms::Button());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -81,10 +80,10 @@ namespace StudyHub {
 			this->textBenvinguda->AutoSize = true;
 			this->textBenvinguda->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->textBenvinguda->ForeColor = System::Drawing::SystemColors::HighlightText;
-			this->textBenvinguda->Location = System::Drawing::Point(161, 33);
+			this->textBenvinguda->Location = System::Drawing::Point(143, 29);
 			this->textBenvinguda->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->textBenvinguda->Name = L"textBenvinguda";
-			this->textBenvinguda->Size = System::Drawing::Size(590, 64);
+			this->textBenvinguda->Size = System::Drawing::Size(493, 52);
 			this->textBenvinguda->TabIndex = 9;
 			this->textBenvinguda->Text = L"Benvingut a StudyHub!";
 			// 
@@ -95,10 +94,10 @@ namespace StudyHub {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->ButtonIniciarSessio->ForeColor = System::Drawing::Color::DarkCyan;
 			this->ButtonIniciarSessio->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->ButtonIniciarSessio->Location = System::Drawing::Point(694, 153);
+			this->ButtonIniciarSessio->Location = System::Drawing::Point(617, 136);
 			this->ButtonIniciarSessio->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
-			this->ButtonIniciarSessio->Size = System::Drawing::Size(153, 55);
+			this->ButtonIniciarSessio->Size = System::Drawing::Size(136, 49);
 			this->ButtonIniciarSessio->TabIndex = 6;
 			this->ButtonIniciarSessio->Text = L"Iniciar Sessió";
 			this->ButtonIniciarSessio->UseVisualStyleBackColor = true;
@@ -110,36 +109,21 @@ namespace StudyHub {
 			this->registrar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->registrar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->registrar->Location = System::Drawing::Point(694, 213);
+			this->registrar->Location = System::Drawing::Point(617, 189);
 			this->registrar->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->registrar->Name = L"registrar";
-			this->registrar->Size = System::Drawing::Size(153, 56);
+			this->registrar->Size = System::Drawing::Size(136, 50);
 			this->registrar->TabIndex = 7;
 			this->registrar->Text = L"Registrar-se";
 			this->registrar->UseVisualStyleBackColor = true;
 			this->registrar->Click += gcnew System::EventHandler(this, &IniciarSessio::registrar_Click);
 			// 
-			// sortir
-			// 
-			this->sortir->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->sortir->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->sortir->ForeColor = System::Drawing::Color::DarkCyan;
-			this->sortir->Location = System::Drawing::Point(694, 273);
-			this->sortir->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->sortir->Name = L"sortir";
-			this->sortir->Size = System::Drawing::Size(153, 52);
-			this->sortir->TabIndex = 8;
-			this->sortir->Text = L"Sortir";
-			this->sortir->UseVisualStyleBackColor = true;
-			this->sortir->Click += gcnew System::EventHandler(this, &IniciarSessio::sortir_Click);
-			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(45, 83);
+			this->pictureBox1->Location = System::Drawing::Point(-9, 29);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(578, 368);
+			this->pictureBox1->Size = System::Drawing::Size(566, 442);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox1->TabIndex = 10;
 			this->pictureBox1->TabStop = false;
@@ -148,18 +132,18 @@ namespace StudyHub {
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic))));
-			this->label1->Location = System::Drawing::Point(237, 71);
+			this->label1->Location = System::Drawing::Point(201, 70);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(172, 23);
+			this->label1->Size = System::Drawing::Size(146, 20);
 			this->label1->TabIndex = 11;
 			this->label1->Text = L"La unió fa la força.";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(570, 83);
+			this->label2->Location = System::Drawing::Point(563, 81);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(341, 18);
+			this->label2->Size = System::Drawing::Size(220, 16);
 			this->label2->TabIndex = 12;
 			this->label2->Text = L"Uneix-te a la comunitat gratuïtament!";
 			this->label2->Click += gcnew System::EventHandler(this, &IniciarSessio::label2_Click);
@@ -167,36 +151,36 @@ namespace StudyHub {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(677, 334);
+			this->label3->Location = System::Drawing::Point(600, 327);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(170, 18);
+			this->label3->Size = System::Drawing::Size(108, 16);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L"Atenció al usuari:";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(652, 370);
+			this->label4->Location = System::Drawing::Point(600, 359);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(197, 18);
+			this->label4->Size = System::Drawing::Size(160, 16);
 			this->label4->TabIndex = 14;
 			this->label4->Text = L"Studyhub@studyhub.com";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(691, 352);
+			this->label5->Location = System::Drawing::Point(600, 343);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(125, 18);
+			this->label5->Size = System::Drawing::Size(94, 16);
 			this->label5->TabIndex = 15;
 			this->label5->Text = L"+34 632758914";
 			// 
 			// IniciarSessio
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 18);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(910, 512);
+			this->ClientSize = System::Drawing::Size(809, 455);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
@@ -205,7 +189,6 @@ namespace StudyHub {
 			this->Controls->Add(this->textBenvinguda);
 			this->Controls->Add(this->ButtonIniciarSessio);
 			this->Controls->Add(this->registrar);
-			this->Controls->Add(this->sortir);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(4);
@@ -221,8 +204,6 @@ namespace StudyHub {
 private: System::Void ButtonIniciarSessio_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void registrar_Click(System::Object^ sender, System::EventArgs^ e);
-
-private: System::Void sortir_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void IniciarSessio_Load(System::Object^ sender, System::EventArgs^ e);
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
