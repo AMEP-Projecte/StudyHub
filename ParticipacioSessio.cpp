@@ -18,7 +18,7 @@ System::Void StudyHub::ParticipaSessio::confirmar_Click(System::Object^ sender, 
 	Sistema^ sistema = Sistema::getInstance();
 	String^ usernameEstudiant = sistema->obteUsername();
 
-	PassarellaSessio^ sessio = CercadoraSessio::cercaAdreca(grup, data, horaInici);
+	PassarellaSessio^ sessio = CercadoraSessio::cercaAdreca(data, grup, horaInici);
 	TxParticipacioSessio^ tx = gcnew TxParticipacioSessio(usernameEstudiant, grup, data, horaInici,adreca, sessio->obteId());
 
 	try {
