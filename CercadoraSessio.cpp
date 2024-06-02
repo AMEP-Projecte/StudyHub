@@ -229,7 +229,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesNoConfirmadesDelE
         "FROM sessio " +
         "WHERE llocs_lliures > 0 AND " +
         "grup IN (SELECT grup FROM pertany WHERE estudiant = @username AND estat = 'Acceptat') AND " +
-        "(grup, data, hora_inici) NOT IN (SELECT grup, data, hora_inici FROM participa WHERE estudiant = @username);";
+        "id NOT IN (SELECT id_sessio FROM participa WHERE estudiant = @username);";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     cmd->Parameters->AddWithValue("@username", estudiant);
 
