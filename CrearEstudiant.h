@@ -324,17 +324,19 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		TxCreaEstudiant tx(nomusuariBox->Text, contrasenyaBox->Text, correuBox->Text, nomBox->Text,
 			CognomsBox->Text, idiomaPreferitBox->Text, LocalitatBox->Text, 0);
 		tx.executa();
+
+		MenuGestioEstudiant^ menuEstudiant = gcnew MenuGestioEstudiant();
+
+		TxIniciarSessio^ txIS = gcnew TxIniciarSessio(nomusuariBox->Text, contrasenyaBox->Text);
+		txIS->executar();
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->canviaVisibilitat_ButtonMenu(false);
+		menu->AbrirFormularioEnPanel(menuEstudiant);
 	}
 	else {
 		MessageBox::Show("Les contrasenyes no s\u00F3n les mateixes.");
 	}
-	MenuGestioEstudiant^ menuEstudiant = gcnew MenuGestioEstudiant();
-
-	TxIniciarSessio^ txIS = gcnew TxIniciarSessio(nomusuariBox->Text, contrasenyaBox->Text);
-	txIS->executar();
-	MenuPrincipal^ menu = MenuPrincipal::getInstance();
-	menu->canviaVisibilitat_ButtonMenu(false);
-	menu->AbrirFormularioEnPanel(menuEstudiant);
+	
 }
 private: System::Void NomLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
