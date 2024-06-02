@@ -90,7 +90,8 @@ void PassarellaSessio::insereix()
         }
         catch (MySqlException^ ex) {
             if (ex->Number == 1062) {
-                MessageBox::Show("Ja hi ha una sessi\u00F3 creada per aquest grup en aquesta data.");
+				throw gcnew Exception("Ja hi ha una sessi\u00F3 creada per aquest grup en aquesta data.");
+                // MessageBox::Show("Ja hi ha una sessi\u00F3 creada per aquest grup en aquesta data.");
             }
             else {
                 MessageBox::Show(ex->Message);
@@ -99,7 +100,8 @@ void PassarellaSessio::insereix()
         }
         catch (Exception^ ex) {
             if (ex->Message->Contains("check") ){
-                MessageBox::Show("Error de check: L'hora d'inici ha de ser menor que l'hora de fi.");
+				throw gcnew Exception("Error de check: L'hora d'inici ha de ser menor que l'hora de fi.");
+                // MessageBox::Show("Error de check: L'hora d'inici ha de ser menor que l'hora de fi.");
             }
             else {
                 MessageBox::Show(ex->Message);

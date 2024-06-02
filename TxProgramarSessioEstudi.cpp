@@ -58,6 +58,7 @@ void TxProgramarSessioEstudi::executar()
 			
 		}
 	}
+
 	PassarellaSessio p("", _grup, _data, _horaI, _horaF, _adreca, capacitat - 1);
 	p.insereix();
 
