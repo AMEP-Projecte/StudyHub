@@ -117,8 +117,9 @@ System::Void MenuGestioProveidorAdmin::omplirInfoProveidors() {
 
         for (int i = 0; i < files; ++i) {
             String^ usernameProveidor = totsProveidors->proveidors[i]->obteNomUsuari();
-            ConsultaEspaisDelProveidor espaisDelProveidor = totsProveidors->espais[i];
-            String^ numEspais = (espaisDelProveidor.espais->Count).ToString();
+            ConsultaEspaisDelProveidor^ espaisDelProveidor = totsProveidors->espais[i];
+            int count = espaisDelProveidor->espais->Count;
+            String^ numEspais = (count).ToString();
 
             TableLayoutPanel^ layoutFila = gcnew TableLayoutPanel();
             layoutFila->AutoSize = true;
