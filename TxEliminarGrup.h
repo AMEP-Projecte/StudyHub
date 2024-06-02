@@ -1,5 +1,6 @@
 #pragma once
 #include "CercadoraGrup.h"
+#include "TxCercarGrups.h"
 
 using namespace System;
 
@@ -10,6 +11,8 @@ ref class TxEliminarGrup {
 
 	public:
 		TxEliminarGrup(String^ NomGrup, String^ Estudiant);
+
+		List<Grup>^ obteGrupsEstudiant(String^ est);
 
 		void executar();
 };

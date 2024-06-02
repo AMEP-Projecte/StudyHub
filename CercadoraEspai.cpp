@@ -45,7 +45,7 @@ PassarellaEspai^ CercadoraEspai::cercaEspaiAdreca(String^ Adreca) {
 List<PassarellaEspai^>^ CercadoraEspai::cercaEspaiProveidor(String^ proveidor) {
 	List<PassarellaEspai^>^ result = gcnew List<PassarellaEspai^>();
 
-    MySqlConnection^ conn = gcnew MySqlConnection(" Sistema::getInstance()->obteCadenaDeConnexio();");
+    MySqlConnection^ conn = gcnew MySqlConnection(Sistema::getInstance()->obteCadenaDeConnexio());
     String^ sql = "SELECT nom, adreca, capacitat FROM espai WHERE proveidor= @username";
     MySqlCommand^ cmd = gcnew MySqlCommand();
     cmd->Connection = conn;

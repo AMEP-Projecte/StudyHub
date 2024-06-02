@@ -116,7 +116,7 @@ namespace StudyHub {
 		// Post: Hem creat una Data Table amb l'inforamaci� dels espais creats 
 		void omplir() {
 			Sistema^ sist = Sistema::getInstance();
-			MySqlConnection^ cn = gcnew MySqlConnection(" Sistema::getInstance()->obteCadenaDeConnexio();");
+			MySqlConnection^ cn = gcnew MySqlConnection(Sistema::getInstance()->obteCadenaDeConnexio());
 			DataTable^ dt = gcnew DataTable();
 			String^ sql = String::Format("SELECT * FROM grup WHERE creador = '{0}';", sist->obteProveidor()->obteNomUsuari());
 			MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);
