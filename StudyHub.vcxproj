@@ -319,7 +319,7 @@
     </ClInclude>
     <ClInclude Include="TxTancarSessio.h" />
     <ClInclude Include="TxValoracionsEstudiant.h" />
-    <ClInclude Include="UnirseGrupUI.h" >
+    <ClInclude Include="UnirseGrupUI.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ValoracionsEstudiant.h">
@@ -488,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarSessio.resx">
       <DependentUpon>EditarSessio.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionarPeticionsUI.resx">
+      <DependentUpon>GestionarPeticionsUI.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSessio.resx">
       <DependentUpon>IniciarSessio.h</DependentUpon>
