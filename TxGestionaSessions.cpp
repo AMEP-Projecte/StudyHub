@@ -9,6 +9,7 @@ TxGestionaSessions::TxGestionaSessions(String^ e, String^ t) {
 void TxGestionaSessions::executar() {
 	resultat = gcnew ConsultaSessio();
 
+	resultat->id = gcnew List<String^>();
 	resultat->grup = gcnew List<String^>();
 	resultat->data = gcnew List<String^>();
 	resultat->adreca = gcnew List<String^>();
@@ -22,6 +23,7 @@ void TxGestionaSessions::executar() {
 		int numSessions = sessions->Count;
 
 		for (int i = 0; i < numSessions; ++i) {
+			resultat->id->Add(sessions[i]->obteId());
 			resultat->grup->Add(sessions[i]->obteGrup());
 			resultat->data->Add(sessions[i]->obteData());
 			resultat->adreca->Add(sessions[i]->obteAdreca());
@@ -35,6 +37,7 @@ void TxGestionaSessions::executar() {
 		int numSessions = sessions->Count;
 
 		for (int i = 0; i < numSessions; ++i) {
+			resultat->id->Add(sessions[i]->obteId());
 			resultat->grup->Add(sessions[i]->obteGrup());
 			resultat->data->Add(sessions[i]->obteData());
 			resultat->adreca->Add(sessions[i]->obteAdreca());

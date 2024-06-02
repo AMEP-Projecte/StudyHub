@@ -5,6 +5,7 @@ using namespace System;
 using namespace System::Collections::Generic;
 
 value struct ConsultaSessio {
+	List<String^>^ id;
 	List<String^>^ grup;
 	List<String^>^ data;
 	List<String^>^ horaInici;

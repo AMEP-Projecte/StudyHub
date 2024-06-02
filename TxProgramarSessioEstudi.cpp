@@ -11,6 +11,10 @@
 #include "CercadoraSessio.h"
 #include "CercadoraParticipa.h"
 using namespace System::Windows::Forms;
+
+#include <iostream>
+using namespace std;
+
 TxProgramarSessioEstudi::TxProgramarSessioEstudi() {
 	Sistema^ sist = Sistema::getInstance();
 	String^ username = sist->obteEstudiant()->obteNomUsuari();
@@ -54,13 +58,16 @@ void TxProgramarSessioEstudi::executar()
 			
 		}
 	}
-	PassarellaSessio p(0, _grup, _data, _horaI, _horaF, _adreca, capacitat - 1);
+	PassarellaSessio p("", _grup, _data, _horaI, _horaF, _adreca, capacitat - 1);
 	p.insereix();
 
 	Sistema^ sist = Sistema::getInstance();
 	String^ username = sist->obteEstudiant()->obteNomUsuari();
-	PassarellaSessio^ sessioCreada = CercadoraSessio::cercaAdreca(_grup, _data, _horaI);
+	PassarellaSessio^ sessioCreada = CercadoraSessio::cercaAdreca(_data, _grup, _horaI);
+	// cout << "id de la sessio " << sessioCreada->obteId() << endl;
+
 	PassarellaParticipa^ participa = gcnew PassarellaParticipa(username, sessioCreada->obteId());
+	// PassarellaParticipa^ participa = gcnew PassarellaParticipa(username, 9);
 	participa->insereix();
 	
 	

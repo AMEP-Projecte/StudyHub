@@ -2,7 +2,7 @@
 #include "TxParticipacioSessio.h"
 #include "CercadoraSessio.h"
 
-TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h, String^ a, int id) {
+TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h, String^ a, String^ id) {
 	_estudiant = n;
 	_grup = g;
 	_data = d;

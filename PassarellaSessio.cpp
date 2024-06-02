@@ -9,7 +9,7 @@ using namespace System::Collections::Generic;
 using namespace std;
 
 PassarellaSessio::PassarellaSessio(){}
-PassarellaSessio::PassarellaSessio(int id, String^ grup, String^ data, String^ horaInici, String^ horaFi, String^ adreca, int llocs) {
+PassarellaSessio::PassarellaSessio(String^ id, String^ grup, String^ data, String^ horaInici, String^ horaFi, String^ adreca, int llocs) {
 	_id = id;
 	_grup = grup;
 	_data = data;
@@ -57,7 +57,7 @@ String^ PassarellaSessio::obteAdreca() {
 int PassarellaSessio::obteLlocsLliures() {
     return _llocsLliures;
 }
-int PassarellaSessio::obteId() {
+String^ PassarellaSessio::obteId() {
 	return _id;
 }
 

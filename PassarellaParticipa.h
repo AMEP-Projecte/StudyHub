@@ -9,24 +9,25 @@ private:
 	// String^ _grup;
 	// String^ _data;
 	// String^ _horaInici;
-	int _id;
+	// int _id;
+	String^ _id;
 
 public:
 	PassarellaParticipa();
 	// PassarellaParticipa(String^ estudiant, String^ grup, String^ data, String^ horaInici);
-	PassarellaParticipa(String^ estudiant, int id);
+	PassarellaParticipa(String^ estudiant, String^ id);
 
 	void posaEstudiant(String^ estudiant);
 	// void posaGrup(String^ grup);
 	// void posaData(String^ data);
 	// void posaHoraInici(String^ hora);
-	void posaId(int id);
+	void posaId(String^ id);
 
 	String^ obteEstudiant();
 	// String^ obteGrup();
 	// String^ obteData();
 	// String^ obteHoraInici();
-	int obteId();
+	String^ obteId();
 
 	void insereix();
 	void esborra();

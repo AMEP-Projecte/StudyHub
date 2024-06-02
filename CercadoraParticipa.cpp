@@ -36,8 +36,8 @@ List<PassarellaParticipa^>^ CercadoraParticipa::cercaParticipaEstudiant(String^ 
             // String^ grup= reader->GetString("grup");
             // String^ data = reader->GetString("data");
             // String^ hora = reader->GetString("hora");
-            int id = reader->GetInt32("id_sessio");
-
+            // int id = reader->GetInt32("id_sessio");
+            String^ id = reader->GetString("id_sessio");
             // Creamos un nuevo objeto PassarellaPartany y lo agregamos al resultado
             // PassarellaParticipa^ passarella = gcnew PassarellaParticipa(nom,grup,data,hora);
             PassarellaParticipa^ passarella = gcnew PassarellaParticipa(nom, id);

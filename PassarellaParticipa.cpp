@@ -16,7 +16,7 @@ PassarellaParticipa::PassarellaParticipa(String^ estudiant, String^ grup, String
 	_horaInici = horaInici;
 }
 */
-PassarellaParticipa::PassarellaParticipa(String^ estudiant, int id) {
+PassarellaParticipa::PassarellaParticipa(String^ estudiant, String^ id) {
 	_estudiant = estudiant;
 	_id = id;
 }
@@ -35,7 +35,7 @@ void PassarellaParticipa::posaHoraInici(String^ hora) {
 	_horaInici = hora;
 }
 */
-void PassarellaParticipa::posaId(int id) {
+void PassarellaParticipa::posaId(String^ id) {
 	_id = id;
 }
 
@@ -54,7 +54,7 @@ String^ PassarellaParticipa::obteHoraInici() {
 	return _horaInici;
 }
 */
-int PassarellaParticipa::obteId() {
+String^ PassarellaParticipa::obteId() {
 	return _id;
 }
 
@@ -67,7 +67,11 @@ void PassarellaParticipa::insereix() {
 	String^ sql = "INSERT INTO participa(estudiant, id_sessio) VALUES(@estudiant, @id)";
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	cmd->Parameters->AddWithValue("@estudiant", _estudiant);
-	cmd->Parameters->AddWithValue("@id", _id);
+
+	String^ msg = "El id es:" + _id + "...";
+	MessageBox::Show(msg);
+	__int32 i = System::Int32::Parse(_id);
+	cmd->Parameters->AddWithValue("@id", i);
 
 	try {
 		// obrim la connexio
