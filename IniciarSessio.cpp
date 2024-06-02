@@ -20,11 +20,6 @@ System::Void IniciarSessio::registrar_Click(System::Object^ sender, System::Even
 	Menu->AbrirSubFormularioEnPanel(registraEstudiant);
 }
 
-System::Void IniciarSessio::sortir_Click(System::Object^ sender, System::EventArgs^ e) {
-	MenuPrincipal^ Menu = Menu->getInstance();
-	Menu->Close();
-}
-
 System::Void IniciarSessio::IniciarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
 	MenuPrincipal^ Menu = Menu->getInstance();
 	Menu->canviaVisibilitat_ButtonMenu(false);
