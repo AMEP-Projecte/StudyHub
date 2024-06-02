@@ -1,9 +1,12 @@
 #include "pch.h"
 #include "CercadoraEstudiant.h"
 #include "CercadoraUsuari.h"
+#include "Sistema.h"
+using namespace System::Windows::Forms;
+
 PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) {
     PassarellaEstudiant^ pe = nullptr; // Inicializamos el puntero a nullptr
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM estudiant WHERE username = '" + username + "'";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -24,7 +27,8 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) 
             int numValoracions = dataReader->GetInt32(6);
             CercadoraUsuari cu;
             String^ contrasenya = cu.cercaUsuari(username)->obteContrasenya();
-            pe = gcnew PassarellaEstudiant(username,contrasenya, correu, nom, cognoms, idioma, localitat, numValoracions);
+            String^ salt = cu.cercaUsuari(username)->obteSalt();
+            pe = gcnew PassarellaEstudiant(username,contrasenya, salt, correu, nom, cognoms, idioma, localitat, numValoracions);
             
         }
     }
@@ -39,7 +43,7 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerNom(String^ username) 
 }
 PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerCorreu(String^ correu) {
     PassarellaEstudiant^ pe = nullptr; // Inicializamos el puntero a nullptr
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM estudiant WHERE correu_electronic = '" + correu + "'";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -60,7 +64,8 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerCorreu(String^ correu)
             int numValoracions = dataReader->GetInt32(6);
             CercadoraUsuari cu;
             String^ contrasenya = cu.cercaUsuari(username)->obteContrasenya();
-            pe = gcnew PassarellaEstudiant(username, contrasenya, correu, nom, cognoms, idioma, localitat, numValoracions);
+            String^ salt = cu.cercaUsuari(username)->obteSalt();
+            pe = gcnew PassarellaEstudiant(username, contrasenya, salt, correu, nom, cognoms, idioma, localitat, numValoracions);
 
         }
     }
@@ -72,4 +77,45 @@ PassarellaEstudiant^ CercadoraEstudiant::cercaEstudiantPerCorreu(String^ correu)
         conn->Close();
     }
     return pe; // Devolvemos el objeto PassarellaEstudiant
+}
+
+List<PassarellaEstudiant^>^ CercadoraEstudiant::totsEstudiants() {
+
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio(); // TODO-> posar variable connectionString global
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    String^ sql = "SELECT * FROM estudiant";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    MySqlDataReader^ dataReader = nullptr;
+
+    List<PassarellaEstudiant^>^ result = gcnew List<PassarellaEstudiant^>();
+    try {
+        // Abrimos la conexión
+        conn->Open();
+        // Ejecutamos la consulta
+        dataReader = cmd->ExecuteReader();
+        while (dataReader->Read()) {
+            // Creamos una instancia de PassarellaEstudiant y le asignamos los valores recuperados de la base de datos
+            String^ username = dataReader->GetString("username");
+            String^ correu = dataReader->GetString("correu_electronic");
+            String^ nom = dataReader->GetString("nom");
+            String^ cognoms = dataReader->GetString("cognoms");
+            String^ idioma = dataReader->GetString("idioma");
+            String^ localitat = dataReader->GetString("localitat");
+            int numValoracions = dataReader->GetInt32("numValoracions");
+            CercadoraUsuari cu;
+            String^ contrasenya = cu.cercaUsuari(username)->obteContrasenya();
+            PassarellaEstudiant^ pe = gcnew PassarellaEstudiant(username, contrasenya, correu, nom, cognoms, idioma, localitat, numValoracions);
+
+            result->Add(pe);
+        }
+    }
+    catch (Exception^ ex) {
+        MessageBox::Show(ex->Message);
+    }
+    finally {
+        // Cerramos la conexión
+        conn->Close();
+    }
+
+    return result; // Devolvemos el objeto PassarellaEstudiant
 }

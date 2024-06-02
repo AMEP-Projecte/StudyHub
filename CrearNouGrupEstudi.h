@@ -1,6 +1,7 @@
 #pragma once
 #include "TxCrearNouGrupEstudi.h"
 #include "Sistema.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -142,7 +143,7 @@ namespace StudyHub {
 			// textBox2
 			// 
 			this->textBox2->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->textBox2->Location = System::Drawing::Point(246, 184);
+			this->textBox2->Location = System::Drawing::Point(246, 208);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(230, 20);
 			this->textBox2->TabIndex = 1;
@@ -151,6 +152,8 @@ namespace StudyHub {
 			// 
 			this->button3->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->button3->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::DarkCyan;
 			this->button3->Location = System::Drawing::Point(332, 279);
 			this->button3->Name = L"button3";
@@ -164,12 +167,14 @@ namespace StudyHub {
 			// 
 			this->button1->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->button1->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::DarkCyan;
 			this->button1->Location = System::Drawing::Point(130, 279);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(144, 39);
 			this->button1->TabIndex = 7;
-			this->button1->Text = L"Cancel·lar";
+			this->button1->Text = L"Tornar";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &CrearNouGrupEstudi::button1_Click);
 			// 
@@ -201,6 +206,10 @@ namespace StudyHub {
 	private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void CrearNouGrupEstudi_Load(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = true;
+	menu->ButtonMenuGrups->Visible = true;
+	menu->buttonMenuSessions->Visible = true;
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	Sistema^ sist = Sistema::getInstance();
@@ -208,6 +217,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		if (this->textBox1->Text != "" && this->textBox2->Text != "") {
 			TxCrearNouGrupEstudi CrearGrup(this->textBox1->Text, this->textBox2->Text, sist->obteEstudiant()->obteUsername());
 			CrearGrup.executa();
+			MessageBox::Show("Grup Creat Correctament.");
 			this->Close();
 		}
 		else {

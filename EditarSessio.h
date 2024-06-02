@@ -24,6 +24,11 @@ namespace StudyHub {
 			//TODO: agregar código de constructor aquí
 			//
 		}
+		String^ _grup="";
+		String^ _data = "";
+		String^ _adreca = "";
+		String^ _hora_inici = "";
+		String^ _hora_fi = "";
 
 	protected:
 		/// <summary>
@@ -36,17 +41,18 @@ namespace StudyHub {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
+
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ buttonEditar;
 	private: System::Windows::Forms::Button^ buttonTornar;
 
-	private: String^ grup;
-	private: String^ data;
-	private: String^ hora_inici;
-	private: String^ hora_fi = "";
+	
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label3;
 
 	protected:
 
@@ -62,83 +68,38 @@ namespace StudyHub {
 		/// el contenido de este método con el editor de código.
 		/// </summary>
 		void omplir() {
-			Sistema^ sist = Sistema::getInstance();
-			String^ username = sist->obteEstudiant()->obteUsername();
-
-			MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
-
-			DataTable^ dt = gcnew DataTable();
-			String^ sql = "SELECT * FROM sessio ";
-			sql += "WHERE grup IN(SELECT grup FROM pertany WHERE estudiant = '" + username + "') ";
-			sql += " and ((data > CURDATE()) or (data = CURDATE() and hora_inici > CURTIME()));";
-
-			MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);
-			da->Fill(dt);
-			this->dataGridView1->DataSource = dt;
+		
 		}
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->buttonEditar = (gcnew System::Windows::Forms::Button());
 			this->buttonTornar = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 20, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::Color::White;
-			this->label1->Location = System::Drawing::Point(142, 9);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(303, 36);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Editar Sessio d\'Estudi";
-			this->label1->Click += gcnew System::EventHandler(this, &EditarSessio::label1_Click);
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->AllowUserToAddRows = false;
-			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ActiveCaption;
-			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->GridColor = System::Drawing::SystemColors::ControlLightLight;
-			this->dataGridView1->Location = System::Drawing::Point(42, 72);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersVisible = false;
-			this->dataGridView1->RowHeadersWidth = 62;
-			this->dataGridView1->RowTemplate->Height = 28;
-			this->dataGridView1->Size = System::Drawing::Size(521, 184);
-			this->dataGridView1->TabIndex = 6;
-			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &EditarSessio::dataGridView1_CellClick);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::White;
-			this->label2->Location = System::Drawing::Point(37, 270);
-			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label2->Location = System::Drawing::Point(39, 406);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(258, 26);
+			this->label2->Size = System::Drawing::Size(175, 31);
 			this->label2->TabIndex = 7;
-			this->label2->Text = L"Nova hora de fi de sessió:";
+			this->label2->Text = L"nova hora fi :";
 			this->label2->Click += gcnew System::EventHandler(this, &EditarSessio::label2_Click);
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(42, 298);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2);
+			this->textBox1->Location = System::Drawing::Point(246, 411);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(247, 20);
+			this->textBox1->Size = System::Drawing::Size(317, 26);
 			this->textBox1->TabIndex = 8;
 			// 
 			// buttonEditar
@@ -146,12 +107,15 @@ namespace StudyHub {
 			this->buttonEditar->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->buttonEditar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->buttonEditar->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->buttonEditar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->buttonEditar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->buttonEditar->Location = System::Drawing::Point(301, 298);
+			this->buttonEditar->Location = System::Drawing::Point(584, 400);
+			this->buttonEditar->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonEditar->Name = L"buttonEditar";
-			this->buttonEditar->Size = System::Drawing::Size(144, 36);
+			this->buttonEditar->Size = System::Drawing::Size(131, 44);
 			this->buttonEditar->TabIndex = 7;
-			this->buttonEditar->Text = L"Editar";
+			this->buttonEditar->Text = L"Canviar";
 			this->buttonEditar->UseVisualStyleBackColor = false;
 			this->buttonEditar->Click += gcnew System::EventHandler(this, &EditarSessio::buttonEditar_Click);
 			// 
@@ -160,69 +124,91 @@ namespace StudyHub {
 			this->buttonTornar->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->buttonTornar->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->buttonTornar->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->buttonTornar->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->buttonTornar->ForeColor = System::Drawing::Color::DarkCyan;
-			this->buttonTornar->Location = System::Drawing::Point(451, 298);
+			this->buttonTornar->Location = System::Drawing::Point(735, 400);
+			this->buttonTornar->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->buttonTornar->Name = L"buttonTornar";
-			this->buttonTornar->Size = System::Drawing::Size(144, 36);
+			this->buttonTornar->Size = System::Drawing::Size(124, 44);
 			this->buttonTornar->TabIndex = 7;
 			this->buttonTornar->Text = L"Tornar";
 			this->buttonTornar->UseVisualStyleBackColor = false;
 			this->buttonTornar->Click += gcnew System::EventHandler(this, &EditarSessio::buttonTornar_Click);
 			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Single;
+			this->tableLayoutPanel1->ColumnCount = 1;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
+			this->tableLayoutPanel1->Controls->Add(this->label3, 0, 0);
+			this->tableLayoutPanel1->ForeColor = System::Drawing::Color::White;
+			this->tableLayoutPanel1->Location = System::Drawing::Point(45, 71);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 2;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 46)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 111)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(814, 302);
+			this->tableLayoutPanel1->TabIndex = 8;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei UI", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::Color::White;
+			this->label3->Location = System::Drawing::Point(4, 1);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(806, 46);
+			this->label3->TabIndex = 0;
+			this->label3->Text = L"Les meves sessions";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::White;
+			this->label1->Location = System::Drawing::Point(96, 9);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(719, 47);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Gestionar Les Meves Sessions d\'Estudi";
+			// 
 			// EditarSessio
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(607, 370);
+			this->ClientSize = System::Drawing::Size(886, 509);
+			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->buttonTornar);
 			this->Controls->Add(this->buttonEditar);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
 			this->ForeColor = System::Drawing::Color::Black;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"EditarSessio";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"StudyHub";
 			this->Load += gcnew System::EventHandler(this, &EditarSessio::EditarSessio_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->tableLayoutPanel1->ResumeLayout(false);
+			this->tableLayoutPanel1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void buttonTornar_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonEditar_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (textBox1->Text == "" || hora_fi == "") {
-			MessageBox::Show("Selecciona una sessio per editar.");
-		}
-		else {
-			TxEditarSessio^ tx = gcnew TxEditarSessio(grup, data, hora_inici, hora_fi);
+	private: System::Void buttonEditar_Click(System::Object^ sender, System::EventArgs^ e);
+	
+private: System::Void EditarSessio_Load(System::Object^ sender, System::EventArgs^ e);
 
-			if (hora_fi == textBox1->Text) MessageBox::Show("Posa una nova hora de fi.");
-			else {
-				tx->posaNovaHoraFi(textBox1->Text);
-
-				try {
-					tx->executar();
-					MessageBox::Show("Hora de fi de sessio modificada correctament.");
-					this->omplir();
-				}
-				catch (Exception^ ex) {
-					MessageBox::Show(ex->Message);
-				}
-			}
-		}
-	}
-private: System::Void EditarSessio_Load(System::Object^ sender, System::EventArgs^ e) {
-	this->omplir();
-}
-
-private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+/*private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	int index = e->RowIndex;
 	dataGridView1->Rows[index]->Selected = true;
 
@@ -235,10 +221,16 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	hora_fi = Convert::ToString(dataGridView1->Rows[index]->Cells[3]->Value);
 
 	textBox1->Text = hora_fi;
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+}*/
+
+
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+	   private: System::Void labelenfila_Click(Object^ sender, EventArgs^ e);
+	private: System::Void fila_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void selecciona(TableLayoutPanel^ table);
+
 };
 }

@@ -1,31 +1,25 @@
 #include "pch.h"
 #include "TxParticipacioSessio.h"
+#include "CercadoraSessio.h"
 
-TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h) {
+TxParticipacioSessio::TxParticipacioSessio(String^ n, String^ g, String^ d, String^ h, String^ a, String^ id) {
 	_estudiant = n;
 	_grup = g;
 	_data = d;
 	_horaInici = h;
+	_adreca = a;
+	_id = id;
 }
 
 void TxParticipacioSessio::executar() {
-	List<PassarellaParticipa^>^participa = CercadoraParticipa::cercaParticipaEstudiant(_estudiant);
-	String^ res = "";
-
-	//buscar si l'estudiant esta dins el grup/sessio
-	for each (PassarellaParticipa ^ participes in participa) {
-		if (participes->obteGrup() == _grup) res = _grup;
-		
-	}
-
-	//si no està l'afegim a participa
-	if (res == "") {
-		PassarellaParticipa^ NouParticipa = gcnew PassarellaParticipa(_estudiant,_grup, _data,_horaInici);
+	
+		// PassarellaParticipa^ NouParticipa = gcnew PassarellaParticipa(_estudiant,_grup, _data,_horaInici);
+		PassarellaParticipa^ NouParticipa = gcnew PassarellaParticipa(_estudiant, _id);
 		NouParticipa->insereix();
 
-	}
-	else {
-		throw gcnew Exception("Ja estàs en aquesta sessió.");
-		
-	}
+		PassarellaSessio^ modify = CercadoraSessio::cercaHora( _data, _grup,_adreca);
+		int llocs = modify->obteLlocsLliures() - 1;
+		modify->posaLlocs(llocs);
+		modify->modificaLlocs();
+	
 }

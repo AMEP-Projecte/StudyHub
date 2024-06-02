@@ -2,7 +2,6 @@
 #include "ConsultarEspaiUI.h"
 #include "TxConsultaEspai.h"
 
-
 using namespace StudyHub;
 using namespace System::Windows::Forms;
 
@@ -11,7 +10,7 @@ System::Void ConsultarEspaiUI::botonetconsultar_Click(System::Object^ sender, Sy
 	String^ adreca = this->textBox1->Text;
 	try {
 		if (adreca == "") {
-			MessageBox::Show("Has de posar una adreça correcta, si us plau.");
+			MessageBox::Show("Has de posar una adre\u00e7a correcta, si us plau.");
 		} 
 		else {
 			TxConsultaEspai^ txCE = gcnew TxConsultaEspai(adreca);
@@ -27,5 +26,7 @@ System::Void ConsultarEspaiUI::botonetconsultar_Click(System::Object^ sender, Sy
 }
 
 	System::Void ConsultarEspaiUI::tornar_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+		MenuGestioEspais^ espai = gcnew MenuGestioEspais();
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->AbrirFormularioEnPanel(espai);
 	}

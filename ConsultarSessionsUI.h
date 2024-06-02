@@ -44,6 +44,7 @@ namespace StudyHub {
 	private: String^ grupSessio = "";
 	private: String^ dataSessio = "";
 	private: String^ horaIniciSessio = "";
+	private: String^ adrecaSessio = "";
 
 	protected:
 
@@ -62,7 +63,7 @@ namespace StudyHub {
 			Sistema^ sist = Sistema::getInstance();
 			String^ username = sist->obteEstudiant()->obteUsername();
 
-			MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
+			MySqlConnection^ cn = gcnew MySqlConnection(Sistema::getInstance()->obteCadenaDeConnexio());
 
 			DataTable^ dt = gcnew DataTable();
 			String^ sql = "SELECT * FROM sessio ";
@@ -93,7 +94,7 @@ namespace StudyHub {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(382, 36);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Proximes Sessions d\'Estudi";
+			this->label1->Text = L"Pr\u00F2ximes Sessions d\'Estudi";
 			// 
 			// dataGridView1
 			// 
@@ -181,6 +182,8 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	dataSessio = d->ToString("yyyy-MM-dd");
 
 	horaIniciSessio = Convert::ToString(dataGridView1->Rows[index]->Cells[2]->Value);
+	adrecaSessio = Convert::ToString(dataGridView1->Rows[index]->Cells[3]->Value);
+	
 }
 private: System::Void participa_Click(System::Object^ sender, System::EventArgs^ e);
 };

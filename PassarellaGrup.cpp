@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "PassarellaGrup.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System;
 using namespace System::Windows::Forms;
@@ -50,8 +50,7 @@ void PassarellaGrup::posaCreador(String^ c) {
 }
 
 void PassarellaGrup::insereix() {
-	bool totcorrecte = true;
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = String::Format("INSERT INTO grup VALUES ('{0}', '{1}', '{2}');", _nomGrup, _tematica, _creador);
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -64,19 +63,15 @@ void PassarellaGrup::insereix() {
 	}
 	catch (MySqlException^ ex) {
 		MessageBox::Show(ex->Message);
-		totcorrecte = false;
 	}
 	finally {
 		// si tot va be es tanca la connexio
-		if (totcorrecte) {
-			MessageBox::Show("Grup Creat Correctament.");
-		}
 		conn->Close();
 	}
 }
 
 void PassarellaGrup::modifica() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 
@@ -106,7 +101,7 @@ void PassarellaGrup::modifica() {
 
 void PassarellaGrup::esborra() {
 	bool totcorrecte = true;
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 	String^ sql = String::Format("DELETE FROM grup WHERE nom = '{0}';", _nomGrup);
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);

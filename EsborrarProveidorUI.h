@@ -71,7 +71,7 @@ namespace StudyHub {
 		// Post: Hem creat una Data Table amb l'inforamació dels grups creats per l'usuari actual 
 		void omplir() {
 			Sistema^ sist = Sistema::getInstance();
-			MySqlConnection^ cn = gcnew MySqlConnection("Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;");
+			MySqlConnection^ cn = gcnew MySqlConnection(Sistema::getInstance()->obteCadenaDeConnexio());
 			DataTable^ dt = gcnew DataTable();
 			String^ sql = String::Format("SELECT * FROM proveidor;");
 			MySqlDataAdapter^ da = gcnew MySqlDataAdapter(sql, cn);
@@ -173,7 +173,7 @@ namespace StudyHub {
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(214, 45);
 			this->label2->TabIndex = 4;
-			this->label2->Text = L"Proveidors:";
+			this->label2->Text = L"Prove\u00efdors:";
 			this->label2->Click += gcnew System::EventHandler(this, &EsborrarProveidorUI::label2_Click);
 			// 
 			// ButtonTornar
@@ -238,7 +238,7 @@ namespace StudyHub {
 				this->Close();
 			}
 			else {
-				MessageBox::Show("Escriu el nom del proveidor a eliminar.");
+				MessageBox::Show("Escriu el nom del prove\u00efdor a eliminar.");
 			}
 		}
 		catch (Exception^ ex) {

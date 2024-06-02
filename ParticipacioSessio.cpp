@@ -4,26 +4,31 @@
 #include "ConsultarSessionsUI.h"
 #include "TxParticipacioSessio.h"
 #include "Sistema.h"
+#include "CercadoraSessio.h"
+#include "MenuSessionsUI.h"
 
 System::Void StudyHub::ParticipaSessio::cencel_Click(System::Object^ sender, System::EventArgs^ e) {
-	ConsultarSessionsUI^ consulta = gcnew ConsultarSessionsUI();
+	MenuSessionsUI^ sessions = gcnew MenuSessionsUI();
 	MenuPrincipal^ menu = MenuPrincipal::getInstance();
-	menu->AbrirFormularioEnPanel(consulta);
+	menu->AbrirFormularioEnPanel(sessions);
 }
 
 System::Void StudyHub::ParticipaSessio::confirmar_Click(System::Object^ sender, System::EventArgs^ e) {
+	;
 	Sistema^ sistema = Sistema::getInstance();
 	String^ usernameEstudiant = sistema->obteUsername();
 
-	TxParticipacioSessio^ tx = gcnew TxParticipacioSessio(usernameEstudiant, grup, data, horaInici);
+	PassarellaSessio^ sessio = CercadoraSessio::cercaAdreca(data, grup, horaInici);
+	TxParticipacioSessio^ tx = gcnew TxParticipacioSessio(usernameEstudiant, grup, data, horaInici,adreca, sessio->obteId());
 
 	try {
+		
 		tx->executar();
-		MessageBox::Show("Has confirmat la teva participacio al grup correctament.");
-
-		ConsultarSessionsUI^ consulta = gcnew ConsultarSessionsUI();
+		MessageBox::Show("Has confirmat la teva participaci\u00F3!");
+		
+		MenuSessionsUI^ sessions = gcnew MenuSessionsUI();
 		MenuPrincipal^ menu = MenuPrincipal::getInstance();
-		menu->AbrirFormularioEnPanel(consulta);
+		menu->AbrirFormularioEnPanel(sessions);
 	}
 	catch (Exception^ e) {
 		MessageBox::Show(e->Message);

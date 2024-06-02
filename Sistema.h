@@ -21,7 +21,7 @@ private:
 	String^ _contrasenya;
 
 	static Sistema^ instance = nullptr;
-
+	
 	Sistema() {
 		_sessioIniciada = false;
 	}
@@ -45,7 +45,7 @@ public:
 	String^ obteContrasenya();
 
 	String^ obteTipusUsuari();
-
+	String^ obteCadenaDeConnexio();
 	PassarellaEstudiant^ obteEstudiant();
 	PassarellaProveidor^ obteProveidor();
 	PassarellaAdmin^ obteAdministrador();

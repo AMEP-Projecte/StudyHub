@@ -1,6 +1,8 @@
-#pragma once
+ #pragma once
 #include "TxCrearProveidor.h"
 #include "Sistema.h"
+#include "MenuPrincipal.h"
+#include "MenuGestioProveidorAdmin.h"
 
 namespace StudyHub {
 
@@ -99,11 +101,11 @@ namespace StudyHub {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(200, 34);
+			this->label4->Location = System::Drawing::Point(114, 34);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(204, 42);
+			this->label4->Size = System::Drawing::Size(352, 42);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Crear Grup:";
+			this->label4->Text = L"Crear Nou Prove\u00efdor";
 			this->label4->Click += gcnew System::EventHandler(this, &CrearProveidorUI::label4_Click);
 			// 
 			// label2
@@ -134,7 +136,7 @@ namespace StudyHub {
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->label3->Location = System::Drawing::Point(85, 170);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(84, 22);
+			this->label3->Size = System::Drawing::Size(112, 22);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"Contrasenya";
 			// 
@@ -155,7 +157,7 @@ namespace StudyHub {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(144, 39);
 			this->button3->TabIndex = 6;
-			this->button3->Text = L"CREAR PROVEIDOR";
+			this->button3->Text = L"CREAR PROVE\u00cfDOR";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &CrearProveidorUI::button3_Click);
 			// 
@@ -191,9 +193,12 @@ namespace StudyHub {
 		Sistema^ sist = Sistema::getInstance();
 		try {
 			if (this->textBox1->Text != "" && this->textBox2->Text != "") {
-				TxCrearProveidor CrearGrup(this->textBox1->Text, this->textBox2->Text);
-				CrearGrup.executar();
-				this->Close();
+				TxCrearProveidor CrearProveidor(this->textBox1->Text, this->textBox2->Text);
+				CrearProveidor.executar();
+				
+				MenuGestioProveidorAdmin^ gestioProveidorAdmin = gcnew MenuGestioProveidorAdmin();
+				MenuPrincipal^ menu = MenuPrincipal::getInstance();
+				menu->AbrirFormularioEnPanel(gestioProveidorAdmin);
 			}
 			else {
 				MessageBox::Show("No pot haver-hi un camp buit.");

@@ -1,5 +1,7 @@
 #pragma once
 #include"TxConsultarEstudiant.h"
+#include "MenuPrincipal.h"
+
 namespace StudyHub {
 
 	using namespace System;
@@ -50,7 +52,6 @@ namespace StudyHub {
 	private: System::Windows::Forms::Label^ localitatLabel;
 	private: System::Windows::Forms::Label^ valoracionsLabel;
 	private: System::Windows::Forms::Button^ TancarButton;
-
 
 
 	protected:
@@ -140,7 +141,7 @@ namespace StudyHub {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(170, 18);
 			this->label4->TabIndex = 4;
-			this->label4->Text = L"Correu Electronic:";
+			this->label4->Text = L"Correu Electr\u00F2nic:";
 			// 
 			// label5
 			// 
@@ -173,7 +174,7 @@ namespace StudyHub {
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(215, 18);
 			this->label7->TabIndex = 7;
-			this->label7->Text = L"Numero de Valoracions: ";
+			this->label7->Text = L"N\u00Famero de Valoracions: ";
 			// 
 			// nomLabel
 			// 
@@ -300,23 +301,25 @@ namespace StudyHub {
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void ConsultarEstudiantUI_Load(System::Object^ sender, System::EventArgs^ e) {
-		TxConsultarEstudiant tx("");
-		//try
-		//{
-			tx.executar();
-			nomLabel->Text = tx.nom;
-			cognomLabel->Text = tx.cognom;
-			nomUsuariLabel->Text = tx.nomUsuari;
-			correuLabel->Text = tx.correu;
-			idiomaLabel->Text = tx.idioma;
-			localitatLabel->Text = tx.localitat;
-			valoracionsLabel->Text = tx.numValoracions.ToString();
-		/* }
-		catch (Exception^ e)
-		{
-			
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		menu->ButtonMenuEstudiant->Visible = true;
+		menu->ButtonMenuGrups->Visible = true;
+		menu->buttonMenuSessions->Visible = true;
 
-		}*/
+		TxConsultarEstudiant^ txCE = gcnew TxConsultarEstudiant();
+		try {
+			txCE->executar();
+			nomLabel->Text = txCE->obteResultat()._nom;
+			cognomLabel->Text = txCE->obteResultat()._cognom;
+			nomUsuariLabel->Text = txCE->obteResultat()._nomUsuari;
+			correuLabel->Text = txCE->obteResultat()._correu;
+			idiomaLabel->Text = txCE->obteResultat()._idioma;
+			localitatLabel->Text = txCE->obteResultat()._localitat;
+			valoracionsLabel->Text = txCE->obteResultat()._numValoracions.ToString();
+		}
+		catch (Exception^ ex) {
+			MessageBox::Show(ex->Message);
+		}
 		
 	}
 private: System::Void cognomLabel_Click(System::Object^ sender, System::EventArgs^ e) {

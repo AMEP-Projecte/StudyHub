@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "IniciSessio.h"
-#include "MenuEstudiant.h"
+// #include "MenuEstudiant.h"
+#include "MenuGestioEstudiant.h"
 #include "MenuPrincipal.h"
 #include "Sistema.h"
 #include "MenuAdministrador.h"
@@ -20,30 +21,32 @@ System::Void StudyHub::IniciSessio::button1_Click(System::Object^ sender, System
 		tx = gcnew TxIniciarSessio(username, contrasenya);
 		bool err = tx->executar();
 		if (err) {
-			MessageBox::Show("Error amb l'inici de sessio");
+			MessageBox::Show("Error amb l'inici de sessi\u00F3");
 		}
 		else {
 			Sistema^ sist = sist->getInstance();
 			String^ tipus = sist->obteTipusUsuari();
+
+			StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
+			Menu->canviaVisibilitat_ButtonMenu(false);
+		
 			if (tipus=="estudiant") {
-				StudyHub::MenuEstudiant^ menuEstudiant = gcnew StudyHub::MenuEstudiant();
-				StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
+				StudyHub::MenuGestioEstudiant^ menuEstudiant = gcnew StudyHub::MenuGestioEstudiant();
+				MenuPrincipal^ menu = MenuPrincipal::getInstance();
+				menu->ButtonMenuEstudiant->Visible = false;
 				Menu->AbrirSubFormularioEnPanel(menuEstudiant);
-				Menu->HacerVisible();
+				// Menu->HacerVisible();
 			}
 			else if (tipus=="administrador") {
 				StudyHub::MenuAdministrador^ menuAdmin = gcnew StudyHub::MenuAdministrador();
-				StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
 				Menu->HacerVisibleAdmin();
 				Menu->AbrirFormularioEnPanel(menuAdmin);
 			}
 			else if (tipus == "proveidor") {
 				StudyHub::MenuProvedor^ menuProv = gcnew StudyHub::MenuProvedor();
-				StudyHub::MenuPrincipal^ Menu = Menu->getInstance();
 				Menu->HacerVisibleProvedor();
 				Menu->AbrirSubFormularioEnPanel(menuProv);
 			}
-
 		}
 	}
 }

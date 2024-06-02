@@ -10,6 +10,6 @@ TxCrearProveidor::TxCrearProveidor(String^ username, String^ contra) {
 }
 
 void TxCrearProveidor::executar() {
-	PassarellaProveidor^ pp = gcnew PassarellaProveidor(_username, _contra, "proveidor");
+	PassarellaProveidor^ pp = gcnew PassarellaProveidor(_username, _contra);
 	pp->insereix();
 }

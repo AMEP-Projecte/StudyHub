@@ -18,4 +18,5 @@ void TxCreaEspai::executa() {
 		PassarellaEspai^ nouEspai = gcnew PassarellaEspai(_adrecaEspai, _nomEspai, _capacitat, _uproveidor);
 		nouEspai->insereix();
 	}
+	else throw gcnew Exception("Ja existeix un espai amb aquest nom.");
 }

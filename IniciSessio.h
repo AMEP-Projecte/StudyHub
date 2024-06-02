@@ -110,7 +110,7 @@ namespace StudyHub {
 			this->ButtonIniciarSessio->Name = L"ButtonIniciarSessio";
 			this->ButtonIniciarSessio->Size = System::Drawing::Size(166, 44);
 			this->ButtonIniciarSessio->TabIndex = 4;
-			this->ButtonIniciarSessio->Text = L"Iniciar Sessió";
+			this->ButtonIniciarSessio->Text = L"Iniciar Sessi\u00F3";
 			this->ButtonIniciarSessio->UseVisualStyleBackColor = true;
 			this->ButtonIniciarSessio->Click += gcnew System::EventHandler(this, &IniciSessio::button1_Click);
 			// 

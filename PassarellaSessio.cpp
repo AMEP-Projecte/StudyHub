@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "PassarellaSessio.h"
-#include "PassarellaParticipa.h"
-#include "CercadoraParticipa.h"
+#include "Sistema.h"
 
 using namespace MySql::Data::MySqlClient;
 using namespace System;
@@ -10,7 +9,8 @@ using namespace System::Collections::Generic;
 using namespace std;
 
 PassarellaSessio::PassarellaSessio(){}
-PassarellaSessio::PassarellaSessio(String^ grup, String^ data, String^ horaInici, String^ horaFi, String^ adreca, int llocs) {
+PassarellaSessio::PassarellaSessio(String^ id, String^ grup, String^ data, String^ horaInici, String^ horaFi, String^ adreca, int llocs) {
+	_id = id;
 	_grup = grup;
 	_data = data;
 	_horaInici = horaInici;
@@ -38,6 +38,7 @@ void PassarellaSessio::posaLlocs(int llocs) {
 	_llocsLliures = llocs;
 }
 
+
 String^ PassarellaSessio::obteGrup() {
 	return _grup;
 }
@@ -54,16 +55,19 @@ String^ PassarellaSessio::obteAdreca() {
 	return _adreca;
 }
 int PassarellaSessio::obteLlocsLliures() {
-	return _llocsLliures;
+    return _llocsLliures;
+}
+String^ PassarellaSessio::obteId() {
+	return _id;
 }
 
 void PassarellaSessio::insereix()
     {
-        String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+        String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
         MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
         bool totcorrecte = true;
 
-        String^ sql = "INSERT INTO sessio (grup, data, hora_inici, hora_fi, adreca, llocs_lliures) VALUES (@grup, @data, @horaInici, @horaFi, @adreca, @llocsLliures)";
+        String^ sql = "INSERT INTO sessio (id, grup, data, hora_inici, hora_fi, adreca, llocs_lliures) VALUES (NULL, @grup, @data, @horaInici, @horaFi, @adreca, @llocsLliures)";
         MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
        
         // Agregar parámetros
@@ -82,11 +86,12 @@ void PassarellaSessio::insereix()
 
             conn->Open();
             cmd->ExecuteNonQuery();
-            MessageBox::Show("Sesión creada correctamente.");
+            MessageBox::Show("Sessi\u00F3 creada correctament.");
         }
         catch (MySqlException^ ex) {
             if (ex->Number == 1062) {
-                MessageBox::Show("Ya hay una sesion creada para este grupo en esta fecha.");
+				throw gcnew Exception("Ja hi ha una sessi\u00F3 creada per aquest grup en aquesta data.");
+                // MessageBox::Show("Ja hi ha una sessi\u00F3 creada per aquest grup en aquesta data.");
             }
             else {
                 MessageBox::Show(ex->Message);
@@ -95,7 +100,8 @@ void PassarellaSessio::insereix()
         }
         catch (Exception^ ex) {
             if (ex->Message->Contains("check") ){
-                MessageBox::Show("Error de check: La hora de inicio debe ser menor que la hora de fin.");
+				throw gcnew Exception("Error de check: L'hora d'inici ha de ser menor que l'hora de fi.");
+                // MessageBox::Show("Error de check: L'hora d'inici ha de ser menor que l'hora de fi.");
             }
             else {
                 MessageBox::Show(ex->Message);
@@ -108,7 +114,7 @@ void PassarellaSessio::insereix()
     }
 
 void PassarellaSessio::modifica() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "UPDATE sessio SET ";
@@ -116,6 +122,7 @@ void PassarellaSessio::modifica() {
 	sql += "WHERE (grup = '" + _grup + "') ";
 	sql += "and (data = '" + _data + "') ";
 	sql += "and (hora_inici = '" + _horaInici + "');";
+
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	MySqlDataReader^ dataReader;
@@ -131,19 +138,45 @@ void PassarellaSessio::modifica() {
 		conn->Close();
 	}
 }
-void PassarellaSessio::esborra() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+
+void PassarellaSessio::modificaLlocs() {
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-	String^ sql = "DELETE FROM sessio WHERE grup=@g and data=@d and hora_inici=@hi and hora_fi=@hf and adreca=@a";
+	String^ sql = "UPDATE sessio SET ";
+	sql += "llocs_lliures = '" + _llocsLliures + "' ";
+	sql += "WHERE (grup = '" + _grup + "') ";
+	sql += "and (data = '" + _data + "') ";
+	sql += "and (hora_inici = '" + _horaInici + "');";
+
+
+	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+	MySqlDataReader^ dataReader;
+
+	try {
+		conn->Open();
+		dataReader = cmd->ExecuteReader();
+	}
+	catch (Exception^ ex) {
+		// Errors
+	}
+	finally {
+		conn->Close();
+	}
+}
+
+void PassarellaSessio::esborra() {
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
+	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+	String^ sql = "DELETE FROM sessio WHERE grup=@g and data=@d and hora_inici=@hi ";
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 
 	cmd->Parameters->AddWithValue("@g", _grup);
 	cmd->Parameters->AddWithValue("@d", _data);
 	cmd->Parameters->AddWithValue("@hi", _horaInici);
-	cmd->Parameters->AddWithValue("@hf", _horaFi);
-	cmd->Parameters->AddWithValue("@a", _adreca);
+	
 
 	try {
 		conn->Open();
@@ -151,5 +184,8 @@ void PassarellaSessio::esborra() {
 	}
 	catch (Exception^ ex) {
 		//Errors
-  }
+	}
+	finally {
+		conn->Close();
+	}
 }

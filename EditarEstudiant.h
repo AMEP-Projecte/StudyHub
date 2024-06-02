@@ -1,5 +1,6 @@
 #pragma once
 #include "TxEditarEstudiant.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -48,12 +49,15 @@ namespace StudyHub {
 	private: System::Windows::Forms::TextBox^ textSurnames;
 	private: System::Windows::Forms::TextBox^ textLanguage;
 	private: System::Windows::Forms::TextBox^ textLocation;
-	private: System::Windows::Forms::TextBox^ textPassword;
+	private: System::Windows::Forms::TextBox^ contrasenyaAntiga;
+
 	private: String^ nom;
 	private: String^ cognoms;
 	private: String^ idioma;
 	private: String^ localitat;
 	private: String^ contrasenya;
+	private: System::Windows::Forms::TextBox^ contrasenyaNova;
+	private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -86,7 +90,9 @@ namespace StudyHub {
 			this->textSurnames = (gcnew System::Windows::Forms::TextBox());
 			this->textLanguage = (gcnew System::Windows::Forms::TextBox());
 			this->textLocation = (gcnew System::Windows::Forms::TextBox());
-			this->textPassword = (gcnew System::Windows::Forms::TextBox());
+			this->contrasenyaAntiga = (gcnew System::Windows::Forms::TextBox());
+			this->contrasenyaNova = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// cancel
@@ -94,10 +100,10 @@ namespace StudyHub {
 			this->cancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cancel->ForeColor = System::Drawing::Color::DarkCyan;
-			this->cancel->Location = System::Drawing::Point(72, 266);
-			this->cancel->Margin = System::Windows::Forms::Padding(2);
+			this->cancel->Location = System::Drawing::Point(96, 327);
+			this->cancel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->cancel->Name = L"cancel";
-			this->cancel->Size = System::Drawing::Size(109, 37);
+			this->cancel->Size = System::Drawing::Size(146, 46);
 			this->cancel->TabIndex = 1;
 			this->cancel->Text = L"Tornar";
 			this->cancel->UseVisualStyleBackColor = true;
@@ -108,10 +114,10 @@ namespace StudyHub {
 			this->edit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->edit->ForeColor = System::Drawing::Color::DarkCyan;
-			this->edit->Location = System::Drawing::Point(386, 266);
-			this->edit->Margin = System::Windows::Forms::Padding(2);
+			this->edit->Location = System::Drawing::Point(515, 327);
+			this->edit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->edit->Name = L"edit";
-			this->edit->Size = System::Drawing::Size(109, 37);
+			this->edit->Size = System::Drawing::Size(146, 46);
 			this->edit->TabIndex = 2;
 			this->edit->Text = L"Editar";
 			this->edit->UseVisualStyleBackColor = true;
@@ -122,10 +128,9 @@ namespace StudyHub {
 			this->editStudent->AutoSize = true;
 			this->editStudent->Font = (gcnew System::Drawing::Font(L"Microsoft YaHei", 24, System::Drawing::FontStyle::Bold));
 			this->editStudent->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->editStudent->Location = System::Drawing::Point(155, 18);
-			this->editStudent->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->editStudent->Location = System::Drawing::Point(206, 22);
 			this->editStudent->Name = L"editStudent";
-			this->editStudent->Size = System::Drawing::Size(280, 42);
+			this->editStudent->Size = System::Drawing::Size(423, 64);
 			this->editStudent->TabIndex = 3;
 			this->editStudent->Text = L"Editar Estudiant:";
 			// 
@@ -134,10 +139,9 @@ namespace StudyHub {
 			this->name->AutoSize = true;
 			this->name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->name->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->name->Location = System::Drawing::Point(67, 82);
-			this->name->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->name->Location = System::Drawing::Point(89, 101);
 			this->name->Name = L"name";
-			this->name->Size = System::Drawing::Size(47, 22);
+			this->name->Size = System::Drawing::Size(68, 30);
 			this->name->TabIndex = 4;
 			this->name->Text = L"Nom";
 			this->name->Click += gcnew System::EventHandler(this, &EditarEstudiant::label1_Click_1);
@@ -147,10 +151,9 @@ namespace StudyHub {
 			this->surnames->AutoSize = true;
 			this->surnames->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->surnames->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->surnames->Location = System::Drawing::Point(68, 111);
-			this->surnames->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->surnames->Location = System::Drawing::Point(91, 137);
 			this->surnames->Name = L"surnames";
-			this->surnames->Size = System::Drawing::Size(86, 22);
+			this->surnames->Size = System::Drawing::Size(123, 30);
 			this->surnames->TabIndex = 5;
 			this->surnames->Text = L"Cognoms";
 			// 
@@ -159,10 +162,9 @@ namespace StudyHub {
 			this->language->AutoSize = true;
 			this->language->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->language->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->language->Location = System::Drawing::Point(68, 143);
-			this->language->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->language->Location = System::Drawing::Point(91, 176);
 			this->language->Name = L"language";
-			this->language->Size = System::Drawing::Size(62, 22);
+			this->language->Size = System::Drawing::Size(89, 30);
 			this->language->TabIndex = 6;
 			this->language->Text = L"Idioma";
 			// 
@@ -171,10 +173,9 @@ namespace StudyHub {
 			this->location->AutoSize = true;
 			this->location->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->location->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->location->Location = System::Drawing::Point(68, 173);
-			this->location->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->location->Location = System::Drawing::Point(91, 213);
 			this->location->Name = L"location";
-			this->location->Size = System::Drawing::Size(77, 22);
+			this->location->Size = System::Drawing::Size(108, 30);
 			this->location->TabIndex = 7;
 			this->location->Text = L"Localitat";
 			// 
@@ -183,60 +184,82 @@ namespace StudyHub {
 			this->password->AutoSize = true;
 			this->password->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
 			this->password->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->password->Location = System::Drawing::Point(68, 203);
-			this->password->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->password->Location = System::Drawing::Point(91, 250);
 			this->password->Name = L"password";
-			this->password->Size = System::Drawing::Size(112, 22);
+			this->password->Size = System::Drawing::Size(237, 30);
 			this->password->TabIndex = 8;
-			this->password->Text = L"Contrasenya";
+			this->password->Text = L"Contrasenya Antiga";
 			// 
 			// textName
 			// 
-			this->textName->Location = System::Drawing::Point(202, 84);
-			this->textName->Margin = System::Windows::Forms::Padding(2);
+			this->textName->Location = System::Drawing::Point(327, 101);
+			this->textName->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textName->Name = L"textName";
-			this->textName->Size = System::Drawing::Size(293, 20);
+			this->textName->Size = System::Drawing::Size(390, 22);
 			this->textName->TabIndex = 9;
 			// 
 			// textSurnames
 			// 
-			this->textSurnames->Location = System::Drawing::Point(202, 113);
-			this->textSurnames->Margin = System::Windows::Forms::Padding(2);
+			this->textSurnames->Location = System::Drawing::Point(327, 142);
+			this->textSurnames->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textSurnames->Name = L"textSurnames";
-			this->textSurnames->Size = System::Drawing::Size(293, 20);
+			this->textSurnames->Size = System::Drawing::Size(390, 22);
 			this->textSurnames->TabIndex = 10;
 			// 
 			// textLanguage
 			// 
-			this->textLanguage->Location = System::Drawing::Point(202, 143);
-			this->textLanguage->Margin = System::Windows::Forms::Padding(2);
+			this->textLanguage->Location = System::Drawing::Point(327, 181);
+			this->textLanguage->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textLanguage->Name = L"textLanguage";
-			this->textLanguage->Size = System::Drawing::Size(293, 20);
+			this->textLanguage->Size = System::Drawing::Size(390, 22);
 			this->textLanguage->TabIndex = 11;
 			// 
 			// textLocation
 			// 
-			this->textLocation->Location = System::Drawing::Point(202, 173);
-			this->textLocation->Margin = System::Windows::Forms::Padding(2);
+			this->textLocation->Location = System::Drawing::Point(327, 218);
+			this->textLocation->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textLocation->Name = L"textLocation";
-			this->textLocation->Size = System::Drawing::Size(293, 20);
+			this->textLocation->Size = System::Drawing::Size(390, 22);
 			this->textLocation->TabIndex = 12;
 			// 
-			// textPassword
+			// contrasenyaAntiga
 			// 
-			this->textPassword->Location = System::Drawing::Point(202, 205);
-			this->textPassword->Margin = System::Windows::Forms::Padding(2);
-			this->textPassword->Name = L"textPassword";
-			this->textPassword->Size = System::Drawing::Size(293, 20);
-			this->textPassword->TabIndex = 13;
+			this->contrasenyaAntiga->Location = System::Drawing::Point(327, 253);
+			this->contrasenyaAntiga->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->contrasenyaAntiga->Name = L"contrasenyaAntiga";
+			this->contrasenyaAntiga->PasswordChar = '*';
+			this->contrasenyaAntiga->Size = System::Drawing::Size(390, 22);
+			this->contrasenyaAntiga->TabIndex = 13;
+			// 
+			// contrasenyaNova
+			// 
+			this->contrasenyaNova->Location = System::Drawing::Point(325, 291);
+			this->contrasenyaNova->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->contrasenyaNova->Name = L"contrasenyaNova";
+			this->contrasenyaNova->PasswordChar = '*';
+			this->contrasenyaNova->Size = System::Drawing::Size(390, 22);
+			this->contrasenyaNova->TabIndex = 15;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13));
+			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label1->Location = System::Drawing::Point(89, 288);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(225, 30);
+			this->label1->TabIndex = 14;
+			this->label1->Text = L"Contrasenya Nova";
 			// 
 			// EditarEstudiant
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(591, 331);
-			this->Controls->Add(this->textPassword);
+			this->ClientSize = System::Drawing::Size(788, 407);
+			this->Controls->Add(this->contrasenyaNova);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->contrasenyaAntiga);
 			this->Controls->Add(this->textLocation);
 			this->Controls->Add(this->textLanguage);
 			this->Controls->Add(this->textSurnames);
@@ -250,7 +273,7 @@ namespace StudyHub {
 			this->Controls->Add(this->edit);
 			this->Controls->Add(this->cancel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"EditarEstudiant";
 			this->Text = L"EditarEstudiant";
 			this->Load += gcnew System::EventHandler(this, &EditarEstudiant::EditarEstudiant_Load);
@@ -268,40 +291,59 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 	String^ cg = textSurnames->Text;    
 	String^ i = textLanguage->Text;     
 	String^ l = textLocation->Text;     
-	String^ c = textPassword->Text;    
+	String^ ca = contrasenyaAntiga->Text;    
+	String^ cn = contrasenyaNova->Text;
 
-	try {
-		if (n == nom && cg == cognoms && i == idioma && l == localitat && c == contrasenya) {
-			MessageBox::Show("Modifica un camp al menys, si us plau.");
+
+	
+		if (ca == "") {
+			MessageBox::Show("Introdueix la contrasenya actual per poder editar el teu usuari.");
 		}
 		else {
-			TxEditarEstudiant^ tx = gcnew TxEditarEstudiant(n, cg, i, l, c);
-			tx->executar();
-			MessageBox::Show("Dades modificades correctament.");
-			this->Close();
+			if (n == nom && cg == cognoms && i == idioma && l == localitat && cn == "") {
+				MessageBox::Show("Modifica un camp al menys, si us plau.");
+			}
+			else {
+
+				TxEditarEstudiant^ tx = gcnew TxEditarEstudiant(n, cg, i, l, cn, ca);
+				try {
+
+					tx->executar();
+				}
+				catch (Exception^ e) {
+
+					MessageBox::Show(e->Message);
+				}
+
+				this->Close();
+			}
 		}
-	}
-	catch (Exception^ ex) {
-		MessageBox::Show(ex->Message);
-	}
+		
+	
+	
 }
 private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
 private: System::Void EditarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = true;
+	menu->ButtonMenuGrups->Visible = true;
+	menu->buttonMenuSessions->Visible = true;
+
 	Sistema^ sistema = Sistema::getInstance();
 
 	nom = sistema->obteEstudiant()->obteNom();
 	cognoms = sistema->obteEstudiant()->obteCognoms();
 	idioma = sistema->obteEstudiant()->obteIdioma();
 	localitat = sistema->obteEstudiant()->obteLocalitat();
-	contrasenya = sistema->obteContrasenya();
+	
 
 	textName->Text = nom;
 	textSurnames->Text = cognoms;
 	textLanguage->Text = idioma;
 	textLocation->Text = localitat;
-	textPassword->Text = contrasenya;
+	
 }
 };
 }

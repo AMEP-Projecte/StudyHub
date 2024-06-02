@@ -1,5 +1,6 @@
 #pragma once
-
+#include "MenuPrincipal.h"
+#include "MenuGestioEspais.h"
 namespace StudyHub {
 
 	using namespace System;
@@ -8,6 +9,7 @@ namespace StudyHub {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 
 	/// <summary>
 	/// Resumen de ConsultarEspaiUI
@@ -106,7 +108,7 @@ namespace StudyHub {
 			this->label2adr->Name = L"label2adr";
 			this->label2adr->Size = System::Drawing::Size(81, 26);
 			this->label2adr->TabIndex = 5;
-			this->label2adr->Text = L"Adreça";
+			this->label2adr->Text = L"Adre\u00e7a";
 			// 
 			// textBox1
 			// 
@@ -178,7 +180,7 @@ namespace StudyHub {
 			this->label5prov->Name = L"label5prov";
 			this->label5prov->Size = System::Drawing::Size(105, 26);
 			this->label5prov->TabIndex = 15;
-			this->label5prov->Text = L"Proveidor";
+			this->label5prov->Text = L"Prove\u00efdor";
 			// 
 			// labelProveidor
 			// 

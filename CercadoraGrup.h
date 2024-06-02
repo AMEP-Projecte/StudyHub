@@ -11,5 +11,8 @@ class CercadoraGrup {
 public:
 	static PassarellaGrup^ cercaPerNomGrup(String^ NomGrup);
 	List<PassarellaGrup^>^ cercaPerCreador(String^ NomCreador);
+
+	static List<PassarellaGrup^>^ totsGrups();
+	static List<PassarellaGrup^>^ cercaGrupsPerEstudiant(String^ estudiant);
 };
 

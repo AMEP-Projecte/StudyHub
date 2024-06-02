@@ -1,7 +1,17 @@
 #include "pch.h"
 #include "PassarellaUsuari.h"
-
+#include "Encriptacio.h"
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
+
+void PassarellaUsuari::GenerarContrasenya(String^ contrasenya)
+{
+	Encriptacio e;
+	_contrasenya = e.EncriptarContrasenya(contrasenya);
+	_salt = e.GenerarSalt(4);
+	_contrasenya = e.ComputarHash(_contrasenya, _salt);
+
+}
 
 PassarellaUsuari::PassarellaUsuari()
 {
@@ -12,8 +22,16 @@ PassarellaUsuari::PassarellaUsuari()
 PassarellaUsuari::PassarellaUsuari(String^ username, String^ contrasenya, String^ tipus)
 {
 	_username = username;
+	GenerarContrasenya(contrasenya); 
+	_tipus = tipus;
+}
+
+PassarellaUsuari::PassarellaUsuari(String^ username, String^ contrasenya, String^ tipus, String^ salt)
+{
+	_username = username;
 	_contrasenya = contrasenya;
 	_tipus = tipus;
+	_salt = salt;
 }
 
 void PassarellaUsuari::posaNomUsuari(String^ username)
@@ -45,12 +63,22 @@ String^ PassarellaUsuari::obteTipus()
 {
 	return _tipus;
 }
+void PassarellaUsuari::posaSalt(String^ salt)
+{
+	_salt = salt;
+}
+
+String^ PassarellaUsuari::obteSalt()
+{
+	return _salt;
+}
 
 void PassarellaUsuari::insereix() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-	String^ sql = "INSERT INTO usuari (username, contrasenya, tipus) VALUES ('" + _username + "', '" + _contrasenya + "', '" + _tipus + "')";
+	String^ sql = "INSERT INTO usuari (username, contrasenya, tipus, salt) VALUES ('" + _username + "', '" + _contrasenya + "', '" + _tipus + "', '" + _salt + "')";
+
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 
@@ -66,17 +94,19 @@ void PassarellaUsuari::insereix() {
 		
 	}
 	finally {
+		//MessageBox::Show("S'ha creat un usuari correctament");
 		//Tanquem conexio
 		conn->Close();
 	}
 }
 
 void PassarellaUsuari::modifica() {
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
 	String^ sql = "UPDATE usuari SET ";
-	sql += "contrasenya = '" + _contrasenya + "' ";
+	sql += "contrasenya = '" + _contrasenya + "', ";
+	sql += "salt = '" + _salt + "' ";
 	sql += "WHERE username = '" + _username + "'";
 
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -90,7 +120,7 @@ void PassarellaUsuari::modifica() {
 	catch (Exception^ ex) {
 		//Errors
 	}
-	finally {
+	finally { 
 		conn->Close();
 	}
 }
@@ -98,7 +128,7 @@ void PassarellaUsuari::modifica() {
 void PassarellaUsuari::esborra()
 {
 	// Cadena de conexión a la base de datos
-	String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+	String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
 
 	// Crear una conexión a la base de datos
 	MySqlConnection^ conn = gcnew MySqlConnection(connectionString);

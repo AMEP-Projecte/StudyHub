@@ -77,7 +77,7 @@ namespace StudyHub {
 			this->titolConsultaProveidor->Name = L"titolConsultaProveidor";
 			this->titolConsultaProveidor->Size = System::Drawing::Size(605, 52);
 			this->titolConsultaProveidor->TabIndex = 0;
-			this->titolConsultaProveidor->Text = L"Consultar Perfil de Proveïdor";
+			this->titolConsultaProveidor->Text = L"Consultar Perfil de Prove\u00efdor";
 			// 
 			// TancarButton
 			// 

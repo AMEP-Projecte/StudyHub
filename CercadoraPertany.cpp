@@ -1,23 +1,23 @@
 #include "pch.h"
 #include "CercadoraPertany.h"
-
+#include "Sistema.h"
 using namespace MySql::Data::MySqlClient;
 using namespace System::Data;
 using namespace System::Windows::Forms;
 List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
     List<PassarellaPertany^>^ result = gcnew List<PassarellaPertany^>();
 
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
-    String^ sql = "SELECT estudiant FROM pertany WHERE grup = @nomGrup";
+    String^ sql = "SELECT estudiant FROM pertany WHERE grup = @nomGrup AND estat = 'Acceptat';";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     cmd->Parameters->AddWithValue("@nomGrup", nomGrup);
 
     MySqlDataReader^ reader = nullptr;
 
     try {
-        // Abrimos la conexi髇
+        // Abrimos la conexi贸n
         conn->Open();
 
         // Ejecutamos la consulta
@@ -28,7 +28,7 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
             String^ estudiant = reader->GetString("estudiant");
 
             // Creamos un nuevo objeto PassarellaPertany y lo agregamos al resultado
-            PassarellaPertany^ passarella = gcnew PassarellaPertany(estudiant, nomGrup);
+            PassarellaPertany^ passarella = gcnew PassarellaPertany(estudiant, nomGrup, "Acceptat");
             result->Add(passarella);
         }
     }
@@ -43,9 +43,75 @@ List<PassarellaPertany^>^ CercadoraPertany::cercaParticipants(String^ nomGrup) {
             reader->Close();
         }
 
-        // Cerramos la conexi髇
+        // Cerramos la conexi贸n
         conn->Close();
     }
 
     return result;
+}
+
+DataTable^ CercadoraPertany::obtePeticionsPendents(String^ usernameCreador) {
+    // List<PassarellaPertany^>^ result = gcnew List<PassarellaPertany^>();
+
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+
+    String^ sql = "SELECT estudiant, grup FROM pertany WHERE estat = 'Pendent' AND grup IN (SELECT nom FROM grup WHERE creador = @usernameCreador);";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@usernameCreador", usernameCreador);
+
+    MySqlDataReader^ reader = nullptr;
+    DataTable^ tabla = gcnew DataTable();
+
+    try {
+        // Abrimos la conexi贸n
+        conn->Open();
+
+        // Ejecutamos la consulta
+        MySqlDataAdapter^ data = gcnew MySqlDataAdapter(cmd);
+        data->Fill(tabla);
+        
+    }
+    catch (Exception^ ex) {
+        // Manejo de errores
+        // Por ejemplo, puedes mostrar un mensaje de error
+        Console::WriteLine("Error: " + ex->Message);
+    }
+    finally {
+        // Cerramos la conexi贸n
+        conn->Close();
+    }
+
+    return tabla;
+
+}
+
+PassarellaPertany^ CercadoraPertany::cercaEstudiantEnGrup(String^ usernameEstudiant, String^ nomGrup) {
+    PassarellaPertany^ result = nullptr;
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
+    MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
+    String^ sql = "SELECT * FROM pertany WHERE estudiant = '" + usernameEstudiant + "' AND grup = '" + nomGrup + "'";
+    MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    MySqlDataReader^ dataReader;
+    try {
+        // Abrimos la conexi贸n
+        conn->Open();
+        // Ejecutamos la consulta
+        dataReader = cmd->ExecuteReader();
+        if (dataReader->Read()) {
+            // Creem una inst脿ncia de PassarellaPertany y li assignem els valors recuperats de la base de dades
+            String^ estudiant = dataReader->GetString(0);
+            String^ grup = dataReader->GetString(1);
+            String^ estat = dataReader->GetString(2);
+            result = gcnew PassarellaPertany(estudiant, grup, estat);
+        }
+    }
+    catch (Exception^ ex) {
+        // Manejamos el error
+    }
+    finally {
+        // Cerramos la conexi贸n
+        conn->Close();
+    }
+    return result; // Retornem l'objecte PassarellaUsuari
 }

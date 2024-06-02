@@ -1,5 +1,6 @@
 #pragma once
 #include "pch.h"
+#include "MenuPrincipal.h"
 
 namespace StudyHub {
 
@@ -107,7 +108,7 @@ namespace StudyHub {
 			this->infoeliminarcompte2->Name = L"infoeliminarcompte2";
 			this->infoeliminarcompte2->Size = System::Drawing::Size(513, 17);
 			this->infoeliminarcompte2->TabIndex = 2;
-			this->infoeliminarcompte2->Text = L"Això tancarà la teva sessió immediatament i no podràs tornar a iniciar-la de nou."
+			this->infoeliminarcompte2->Text = L"Aix\u00F2 tancar\u00e0 la teva sessi\u00F3 immediatament i no podr\u00e0s tornar a iniciar-la de nou."
 				L"";
 			// 
 			// etiquetacontrasenya
@@ -193,6 +194,10 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	this->Close();
 }
 private: System::Void EliminarPerfilEstudiantUI_Load(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = true;
+	menu->ButtonMenuGrups->Visible = true;
+	menu->buttonMenuSessions->Visible = true;
 }
 };
 }

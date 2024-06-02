@@ -1,11 +1,13 @@
 #include "pch.h"
 #include "CercadoraUsuari.h"
+#include "Sistema.h"
+using namespace System::Windows::Forms;
 
 
 using namespace MySql::Data::MySqlClient;
 PassarellaUsuari^ CercadoraUsuari::cercaUsuari(String^ username) {
     PassarellaUsuari^ pu = nullptr; // Inicializamos el puntero a nullptr
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;"; // TODO-> posar variable connectionString global
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
     String^ sql = "SELECT * FROM usuari WHERE username = '" + username + "'";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
@@ -20,10 +22,20 @@ PassarellaUsuari^ CercadoraUsuari::cercaUsuari(String^ username) {
             String^ username = dataReader->GetString(0);
             String^ pass = dataReader->GetString(1);
             String^ tipus = dataReader->GetString(2);
-            pu = gcnew PassarellaUsuari(username, pass, tipus);
+
+            String^ salt;
+            if (dataReader->IsDBNull(3)) {
+                salt = "";
+            }
+            else {
+                salt = dataReader->GetString(3);
+            }
+          
+            pu = gcnew PassarellaUsuari(username, pass, tipus, salt);
         }
     }
     catch (Exception^ ex) {
+        MessageBox::Show(ex->Message);
         // Manejamos el error
     }
     finally {

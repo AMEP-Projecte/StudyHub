@@ -1,11 +1,26 @@
 #include"pch.h"
 #include "PassarellaEstudiant.h"
+#include "Sistema.h"
 
 using namespace MySql::Data::MySqlClient;
 PassarellaEstudiant::PassarellaEstudiant(String^ username,String^ contrasenya, String^ correuElectronic, String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions)
 {
     _username = username;
+    GenerarContrasenya(contrasenya);
+    _tipus = "estudiant";
+    _correuElectronic = correuElectronic;
+    _nom = nom;
+    _cognoms = cognoms;
+    _idioma = idioma;
+    _localitat = localitat;
+    _numValoracions = numValoracions;
+}
+
+PassarellaEstudiant::PassarellaEstudiant(String^ username, String^ contrasenya, String^ salt, String^ correuElectronic, String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions)
+{
+    _username = username;
     _contrasenya = contrasenya;
+    _salt = salt;
     _tipus = "estudiant";
     _correuElectronic = correuElectronic;
     _nom = nom;
@@ -90,13 +105,14 @@ void PassarellaEstudiant::insereix()
 {
     
     PassarellaUsuari::insereix();
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "INSERT INTO estudiant(username, correu_electronic, nom, cognoms, idioma, localitat, numValoracions) VALUES('"
-        + _username + "', '" + _correuElectronic + "', ' " + _nom + "', ' " + _cognoms + "', '" + _idioma + "', '" + _localitat + "', " + 0+")";
+        + _username + "', '" + _correuElectronic + "', ' " + _nom + "', ' " + _cognoms + "', '" + _idioma + "', '" + _localitat + "', " + "@numValoracions" +")";
 
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@numValoracions", 0);
 
     try {
         // Obrim connexio
@@ -106,7 +122,7 @@ void PassarellaEstudiant::insereix()
     }
     catch (Exception^ ex) {
         //Errors
-
+        throw gcnew Exception("Error al inserir Estudiant");
 
     }
     finally {
@@ -118,7 +134,8 @@ void PassarellaEstudiant::insereix()
 
 void PassarellaEstudiant::modifica()
 {
-    String^ connectionString = "Server=ubiwan.epsevg.upc.edu; Port=3306; Database=amep04; Uid=amep04; Pwd=aefohC3Johch-;";
+    PassarellaUsuari::modifica();
+    String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "UPDATE estudiant SET correu_electronic = @correuElectronic, nom = @nom, cognoms = @cognoms, idioma = @idioma, localitat = @localitat, numValoracions = @numValoracions WHERE username = @username";
