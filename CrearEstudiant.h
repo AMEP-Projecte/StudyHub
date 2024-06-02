@@ -1,7 +1,9 @@
 ﻿#pragma once
 #include "TxCreaEstudiant.h"
 #include "MenuPrincipal.h"
+#include "MenuGestioEstudiant.h"
 #include "IniciarSessio.h"
+#include "TxIniciarSessio.h"
 
 namespace StudyHub {
 
@@ -326,11 +328,13 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	else {
 		MessageBox::Show("Les contrasenyes no s\u00F3n les mateixes.");
 	}
-	IniciarSessio^ iniciar = gcnew IniciarSessio();
+	MenuGestioEstudiant^ menuEstudiant = gcnew MenuGestioEstudiant();
 
-	MenuPrincipal^ menu = gcnew MenuPrincipal();
+	TxIniciarSessio^ txIS = gcnew TxIniciarSessio(nomusuariBox->Text, contrasenyaBox->Text);
+	txIS->executar();
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
 	menu->canviaVisibilitat_ButtonMenu(false);
-	menu->AbrirFormularioEnPanel(iniciar);
+	menu->AbrirFormularioEnPanel(menuEstudiant);
 }
 private: System::Void NomLabel_Click(System::Object^ sender, System::EventArgs^ e) {
 }
