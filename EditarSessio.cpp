@@ -48,7 +48,7 @@ System::Void StudyHub::EditarSessio::EditarSessio_Load(System::Object^ sender, S
 
     Sistema^ sistema = Sistema::getInstance();
 
-    TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "confirmades");
+    TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "no confirmades");
     tx->executar();
     ConsultaSessio^ sessions = tx->obteResultat();
 
