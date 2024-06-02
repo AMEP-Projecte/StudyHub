@@ -1,6 +1,8 @@
  #pragma once
 #include "TxCrearProveidor.h"
 #include "Sistema.h"
+#include "MenuPrincipal.h"
+#include "MenuGestioProveidorAdmin.h"
 
 namespace StudyHub {
 
@@ -193,7 +195,10 @@ namespace StudyHub {
 			if (this->textBox1->Text != "" && this->textBox2->Text != "") {
 				TxCrearProveidor CrearProveidor(this->textBox1->Text, this->textBox2->Text);
 				CrearProveidor.executar();
-				this->Close();
+				
+				MenuGestioProveidorAdmin^ gestioProveidorAdmin = gcnew MenuGestioProveidorAdmin();
+				MenuPrincipal^ menu = MenuPrincipal::getInstance();
+				menu->AbrirFormularioEnPanel(gestioProveidorAdmin);
 			}
 			else {
 				MessageBox::Show("No pot haver-hi un camp buit.");
