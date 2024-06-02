@@ -9,6 +9,6 @@ ref class TxCreaEstudiant
     public:
         TxCreaEstudiant(String^ username, String^ contrasenya, String^ correuElectronic,
             String^ nom, String^ cognoms, String^ idioma, String^ localitat, int numValoracions);
-        void executa();
+        bool executa();
 };
 

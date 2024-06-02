@@ -323,15 +323,19 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	else if (contrasenyaBox->Text == repeteixContrasenyaBox->Text) {
 		TxCreaEstudiant tx(nomusuariBox->Text, contrasenyaBox->Text, correuBox->Text, nomBox->Text,
 			CognomsBox->Text, idiomaPreferitBox->Text, LocalitatBox->Text, 0);
-		tx.executa();
+		bool error = tx.executa();
+		if (!error) {
+			MenuGestioEstudiant^ menuEstudiant = gcnew MenuGestioEstudiant();
 
-		MenuGestioEstudiant^ menuEstudiant = gcnew MenuGestioEstudiant();
-
-		TxIniciarSessio^ txIS = gcnew TxIniciarSessio(nomusuariBox->Text, contrasenyaBox->Text);
-		txIS->executar();
-		MenuPrincipal^ menu = MenuPrincipal::getInstance();
-		menu->canviaVisibilitat_ButtonMenu(false);
-		menu->AbrirFormularioEnPanel(menuEstudiant);
+			TxIniciarSessio^ txIS = gcnew TxIniciarSessio(nomusuariBox->Text, contrasenyaBox->Text);
+			txIS->executar();
+			MenuPrincipal^ menu = MenuPrincipal::getInstance();
+			menu->canviaVisibilitat_ButtonMenu(false);
+			menu->AbrirFormularioEnPanel(menuEstudiant);
+		}
+		else {
+			MessageBox::Show("Hi ha hagut un error, torna a provar");
+		}
 	}
 	else {
 		MessageBox::Show("Les contrasenyes no s\u00F3n les mateixes.");

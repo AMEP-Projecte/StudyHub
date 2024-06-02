@@ -7,15 +7,18 @@ TxCreaEstudiant::TxCreaEstudiant(String^ username, String^ contrasenya, String^ 
     pe = gcnew PassarellaEstudiant(username, contrasenya, correuElectronic, nom, cognoms, idioma, localitat, numValoracions);
 }
 
-void TxCreaEstudiant::executa()
+bool TxCreaEstudiant::executa()
 {
+    bool error = false;
     try {
        
         pe->insereix();
     }
     catch (Exception^ ex) {
+        error = true;
         // Manejar la excepción aquí
         // Por ejemplo, mostrar un mensaje de error o realizar algún registro de errores
         Console::WriteLine("Error al executar TxCreaEstudiant: " + ex->Message);
     }
+    return error;
 }

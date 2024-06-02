@@ -94,7 +94,7 @@ void PassarellaUsuari::insereix() {
 		
 	}
 	finally {
-		MessageBox::Show("S'ha creat un usuari correctament");
+		//MessageBox::Show("S'ha creat un usuari correctament");
 		//Tanquem conexio
 		conn->Close();
 	}

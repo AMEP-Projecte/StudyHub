@@ -122,7 +122,7 @@ void PassarellaEstudiant::insereix()
     }
     catch (Exception^ ex) {
         //Errors
-
+        throw gcnew Exception("Error al inserir Estudiant");
 
     }
     finally {
