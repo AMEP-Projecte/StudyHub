@@ -111,4 +111,7 @@ void PassarellaParticipa::esborra() {
 	catch (Exception^ ex) {
 		//Errors
 	}
+	finally {
+		conn->Close();
+	}
 }

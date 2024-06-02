@@ -182,5 +182,8 @@ void PassarellaSessio::esborra() {
 	}
 	catch (Exception^ ex) {
 		//Errors
-  }
+	}
+	finally {
+		conn->Close();
+	}
 }
