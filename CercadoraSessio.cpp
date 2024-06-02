@@ -266,7 +266,7 @@ List<PassarellaSessio^>^ CercadoraSessio::cercaSessionsProximesConfirmadesDelEst
     conn->Open();
 
     String^ sql = "SELECT * FROM sessio " +
-        "WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND (grup, data) IN (SELECT grup, data FROM participa WHERE estudiant = @username);";
+        "WHERE grup IN (SELECT grup FROM pertany WHERE estudiant = @username) AND id IN (SELECT id_sessio FROM participa WHERE estudiant = @username);";
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
     cmd->Parameters->AddWithValue("@username", estudiant);
 
