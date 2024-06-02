@@ -109,9 +109,10 @@ void PassarellaEstudiant::insereix()
     MySqlConnection^ conn = gcnew MySqlConnection(connectionString);
 
     String^ sql = "INSERT INTO estudiant(username, correu_electronic, nom, cognoms, idioma, localitat, numValoracions) VALUES('"
-        + _username + "', '" + _correuElectronic + "', ' " + _nom + "', ' " + _cognoms + "', '" + _idioma + "', '" + _localitat + "', " + '0' +")";
+        + _username + "', '" + _correuElectronic + "', ' " + _nom + "', ' " + _cognoms + "', '" + _idioma + "', '" + _localitat + "', " + "@numValoracions" +")";
 
     MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
+    cmd->Parameters->AddWithValue("@numValoracions", 0);
 
     try {
         // Obrim connexio

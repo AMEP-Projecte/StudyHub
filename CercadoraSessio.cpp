@@ -142,6 +142,7 @@ PassarellaSessio^ CercadoraSessio::cercaHora(String^ data, String^ grup, String^
     return pp;
 }
 
+
 PassarellaSessio^ CercadoraSessio::cercaAdreca(String^ data, String^ grup, String^ hora) {
 
     String^ connectionString = Sistema::getInstance()->obteCadenaDeConnexio();
