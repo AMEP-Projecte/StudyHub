@@ -68,8 +68,8 @@ void PassarellaParticipa::insereix() {
 	MySqlCommand^ cmd = gcnew MySqlCommand(sql, conn);
 	cmd->Parameters->AddWithValue("@estudiant", _estudiant);
 
-	String^ msg = "El id es:" + _id + "...";
-	MessageBox::Show(msg);
+	// String^ msg = "El id es:" + _id + "...";
+	// MessageBox::Show(msg);
 	__int32 i = System::Int32::Parse(_id);
 	cmd->Parameters->AddWithValue("@id", i);
 
