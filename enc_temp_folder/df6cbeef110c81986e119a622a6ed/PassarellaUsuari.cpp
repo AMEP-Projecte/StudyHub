@@ -122,6 +122,7 @@ void PassarellaUsuari::modifica() {
 	}
 	finally { 
 		conn->Close();
+		MessageBox::Show("S'ha editat l'usuari correctament.");
 	}
 }
 
