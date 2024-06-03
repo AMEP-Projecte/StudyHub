@@ -1,6 +1,7 @@
 #pragma once
 #include "TxEditarGrup.h"
 #include "MenuPrincipal.h"
+#include "MenuGestioGrups.h"
 
 namespace StudyHub {
 
@@ -203,7 +204,10 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 			TxEditarGrup^ tx = gcnew TxEditarGrup(n, t);
 			tx->executar();
 			MessageBox::Show("Grup modificat correctament.");
-			this->Close();
+
+			MenuPrincipal^ menu = MenuPrincipal::getInstance();
+			MenuGestioGrups^ gestioGrups = gcnew MenuGestioGrups();
+			menu->AbrirFormularioEnPanel(gestioGrups);
 		}
 	}
 	catch (Exception^ ex) {
@@ -211,6 +215,8 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 }
 private: System::Void cancel_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuGrups->Visible = false;
 	this->Close();
 }
 };

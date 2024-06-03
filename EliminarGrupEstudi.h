@@ -3,6 +3,7 @@
 #include "Sistema.h"
 #include "StarRatingView.h"
 #include "MenuPrincipal.h"
+#include "MenuGestioGrups.h"
 
 namespace StudyHub {
 
@@ -223,7 +224,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			TxEliminarGrup EliminarGrup(grup, sist->obteEstudiant()->obteUsername()); 
 			EliminarGrup.executar();
 			omplir();
-			this->Close();
+
+			MenuPrincipal^ menu = MenuPrincipal::getInstance();
+			MenuGestioGrups^ gestioGrups = gcnew MenuGestioGrups();
+			menu->AbrirFormularioEnPanel(gestioGrups);
 		}
 		else {
 			MessageBox::Show("Escriu el nom del grup a eliminar.");
@@ -396,6 +400,21 @@ private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void On_Click(System::Object^ sender, System::EventArgs^ e) {
 	Panel^ panel = dynamic_cast<Panel^>(tableLayoutPanel1->Controls[1]);
 	TableLayoutPanel^ table = dynamic_cast<TableLayoutPanel^>(panel->Controls[seleccionat]);
+	
+	// Posar la resta de files com "no seleccionades"
+	Control^ parent = panel->Parent;
+	if (parent != nullptr)
+	{
+		for each (Control ^ control in parent->Controls)
+		{
+			TableLayoutPanel^ siblingTable = dynamic_cast<TableLayoutPanel^>(control);
+			if (siblingTable != nullptr && siblingTable != panel)
+			{
+				siblingTable->BackColor = System::Drawing::Color::Transparent;
+			}
+		}
+	}
+
 	table->BackColor = System::Drawing::SystemColors::ActiveCaption;
 
 	TableLayoutPanel^ clickedPanel = dynamic_cast<TableLayoutPanel^>(sender);

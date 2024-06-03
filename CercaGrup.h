@@ -4,6 +4,7 @@
 #include "StarRatingView.h"
 #include "MenuPrincipal.h"
 #include "UnirseGrupUI.h"
+#include "MenuGestioGrups.h"
 
 namespace StudyHub {
 
@@ -161,7 +162,9 @@ namespace StudyHub {
 		}
 #pragma endregion
 	private: System::Void tornar_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+		MenuPrincipal^ menu = MenuPrincipal::getInstance();
+		MenuGestioGrups^ gestioGrups = gcnew MenuGestioGrups();
+		menu->AbrirFormularioEnPanel(gestioGrups);
 	}
 	private: System::Void carregarTaula() {
 		this->tableLayoutPanel1->Controls->Clear();
