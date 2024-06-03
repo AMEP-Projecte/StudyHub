@@ -191,6 +191,8 @@ private: System::Void txt_contra_TextChanged(System::Object^ sender, System::Eve
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = false;
 	this->Close();
 }
 private: System::Void EliminarPerfilEstudiantUI_Load(System::Object^ sender, System::EventArgs^ e) {

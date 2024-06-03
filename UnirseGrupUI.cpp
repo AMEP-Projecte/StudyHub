@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "UnirseGrupUI.h"
 #include "TxEnviarPeticioGrup.h"
+#include "MenuPrincipal.h"
 
 using namespace StudyHub;
 using namespace System::Windows::Forms;
@@ -15,5 +16,8 @@ System::Void UnirseGrupUI::ButtonUnirse_Click(System::Object^ sender, System::Ev
 	catch (Exception^ ex) {
 		MessageBox::Show(ex->Message);
 	}
+
+	// MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	// menu->ButtonMenuGrups->Visible = false;
 	this->Close();
 }

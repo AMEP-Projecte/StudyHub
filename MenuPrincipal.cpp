@@ -109,7 +109,7 @@ System::Void MenuPrincipal::HacerVisible() {
 }
 
 System::Void MenuPrincipal::HacerVisibleProvedor() {
-	this->ButtonMaximized->Visible = true;
+	this->ButtonMaximized->Visible = false;
 
 	this->ButtonMenuEstudiant->Visible = false;
 	this->ButtonMenuGrups->Visible = false;

@@ -21,7 +21,7 @@ System::Void EsborraSessioUI::button3_Click(System::Object^ sender, System::Even
     if (_grup != "") {
        
         // PassarellaSessio^ esborraSessio = gcnew PassarellaSessio(_grup, _data, _hora_inici, _hora_fi, _adreca, _llocs);
-        PassarellaSessio^ esborraSessio = CercadoraSessio::cercaAdreca(_grup, _data, _hora_inici);
+        PassarellaSessio^ esborraSessio = CercadoraSessio::cercaAdreca(_data, _grup, _hora_inici);
         TxEsborrarSessio^ esborra = gcnew TxEsborrarSessio(esborraSessio);
         esborra->executar();
                    
@@ -45,7 +45,7 @@ System::Void EsborraSessioUI::EsborraSessio_Load(System::Object^ sender, System:
 
     Sistema^ sistema = Sistema::getInstance();
 
-    TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "no confirmades");
+    TxGestionaSessions^ tx = gcnew TxGestionaSessions(sistema->obteUsername(), "confirmades");
     tx->executar();
     ConsultaSessio^ sessions = tx->obteResultat();
 
@@ -299,6 +299,21 @@ System::Void  StudyHub::EsborraSessioUI::fila_Click(System::Object^ sender, Syst
 System::Void  StudyHub::EsborraSessioUI::selecciona(TableLayoutPanel^ table) {
 
     int labelCount = 0;
+
+    // Posar la resta de files com "no seleccionades"
+    Control^ parent = table->Parent;
+    if (parent != nullptr)
+    {
+        for each (Control ^ control in parent->Controls)
+        {
+            TableLayoutPanel^ siblingTable = dynamic_cast<TableLayoutPanel^>(control);
+            if (siblingTable != nullptr && siblingTable != table)
+            {
+                siblingTable->BackColor = System::Drawing::Color::Transparent;
+            }
+        }
+    }
+
     table->BackColor = System::Drawing::Color::Black;
 
 

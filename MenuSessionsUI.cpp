@@ -269,6 +269,20 @@ System::Void MenuSessionsUI::fila_Click(System::Object^ sender, System::EventArg
 System::Void MenuSessionsUI::selecciona(TableLayoutPanel^ table) {
    
     int labelCount = 0;
+    // Posar la resta de files com "no seleccionades"
+    Control^ parent = table->Parent;
+    if (parent != nullptr)
+    {
+        for each (Control ^ control in parent->Controls)
+        {
+            TableLayoutPanel^ siblingTable = dynamic_cast<TableLayoutPanel^>(control);
+            if (siblingTable != nullptr && siblingTable != table)
+            {
+                siblingTable->BackColor = System::Drawing::Color::Transparent;
+            }
+        }
+    }
+
     table->BackColor = System::Drawing::Color::Black;
     
 

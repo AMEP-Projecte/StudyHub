@@ -10,7 +10,7 @@ using namespace System::Collections::Generic;
 ref class CercadoraProveidor
 {
 public:
-	PassarellaProveidor^ cercaProveidor(String^ username);
+	static PassarellaProveidor^ cercaProveidor(String^ username);
 
 	static List<PassarellaProveidor^>^ totsProveidors();
 };

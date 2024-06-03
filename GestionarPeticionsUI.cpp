@@ -4,6 +4,7 @@
 #include "TxObtenirPeticionsPendents.h"
 #include "TxGestionarPeticionsGrup.h"
 #include "MenuPrincipal.h"
+#include "MenuGestioGrups.h"
 
 using namespace StudyHub;
 
@@ -94,6 +95,21 @@ System::Void GestionarPeticionsUI::actualitzarTaula() {
 
 System::Void GestionarPeticionsUI::On_Click(System::Object^ sender, System::EventArgs^ e) {
 	TableLayoutPanel^ panel = dynamic_cast<TableLayoutPanel^>(tableLayoutPanel1->Controls[seleccionat]);
+	
+	// Posar la resta de files com "no seleccionades"
+	Control^ parent = panel->Parent;
+	if (parent != nullptr)
+	{
+		for each (Control ^ control in parent->Controls)
+		{
+			TableLayoutPanel^ siblingTable = dynamic_cast<TableLayoutPanel^>(control);
+			if (siblingTable != nullptr && siblingTable != panel)
+			{
+				siblingTable->BackColor = System::Drawing::Color::Transparent;
+			}
+		}
+	}
+
 	panel->BackColor = System::Drawing::SystemColors::ActiveCaption;
 
 	TableLayoutPanel^ clickedPanel = dynamic_cast<TableLayoutPanel^>(sender);
@@ -114,6 +130,7 @@ System::Void GestionarPeticionsUI::On_Click(System::Object^ sender, System::Even
 System::Void GestionarPeticionsUI::GestionarPeticionsUI_Load(System::Object^ sender, System::EventArgs^ e) {
 	MenuPrincipal^ menu = MenuPrincipal::getInstance();
 	menu->ButtonMenuEstudiant->Visible = true;
+	menu->ButtonMenuGrups->Visible = true;
 
 	actualitzarTaula();
 }
@@ -161,5 +178,8 @@ System::Void GestionarPeticionsUI::buttonRebutjar_Click(System::Object^ sender, 
 }
 
 System::Void GestionarPeticionsUI::buttonTornar_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	MenuGestioGrups^ gestioGrups = gcnew MenuGestioGrups();
+	menu->AbrirFormularioEnPanel(gestioGrups);
+	// this->Close();
 }

@@ -1,6 +1,7 @@
 #pragma once
 #include "TxEditarEstudiant.h"
 #include "MenuPrincipal.h"
+#include "MenuGestioEstudiant.h"
 
 namespace StudyHub {
 
@@ -315,7 +316,9 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 					MessageBox::Show(e->Message);
 				}
 
-				this->Close();
+				MenuGestioEstudiant^ gestioEstudiant = gcnew MenuGestioEstudiant();
+				MenuPrincipal^ menu = MenuPrincipal::getInstance();
+				menu->AbrirFormularioEnPanel(gestioEstudiant);
 			}
 		}
 		
@@ -323,6 +326,8 @@ private: System::Void edit_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 }
 private: System::Void cancel_Click(System::Object^ sender, System::EventArgs^ e) {
+	MenuPrincipal^ menu = MenuPrincipal::getInstance();
+	menu->ButtonMenuEstudiant->Visible = false;
 	this->Close();
 }
 private: System::Void EditarEstudiant_Load(System::Object^ sender, System::EventArgs^ e) {

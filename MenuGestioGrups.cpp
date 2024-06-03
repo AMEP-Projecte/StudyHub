@@ -81,21 +81,22 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		this->layoutPanel->RowCount = 3;
 
 		TableLayoutPanel^ layoutTitols = gcnew TableLayoutPanel();
-		layoutTitols->AutoSize = true;
+		layoutTitols->AutoSize = false;
 		layoutTitols->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
 		layoutTitols->ColumnCount = 3;
 		// layoutTitols->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle()));
-		layoutTitols->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute, 115)));
-		layoutTitols->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute, 115)));
-		layoutTitols->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute, 165)));
+		layoutTitols->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 20.0F)));
+		layoutTitols->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 30.0F)));
+		layoutTitols->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50.0F)));
 		layoutTitols->ForeColor = System::Drawing::Color::White;
 		layoutTitols->Location = System::Drawing::Point(294, 127);
+		layoutTitols->Dock = System::Windows::Forms::DockStyle::Top;
 		layoutTitols->Name = L"layoutTitols";
 		layoutTitols->RowCount = 1;
-		layoutTitols->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 45)));
+		layoutTitols->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 35)));
 		// layoutTitols->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
 		layoutTitols->TabIndex = 8;
-		layoutTitols->Dock = System::Windows::Forms::DockStyle::Fill;
+		// layoutTitols->Dock = System::Windows::Forms::DockStyle::Fill;
 
 		Label^ columnaNom = gcnew Label();
 		columnaNom->AutoSize = true;
@@ -129,22 +130,28 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 		// DADES
 		Panel^ scrollPanel = gcnew Panel();
 		scrollPanel->AutoScroll = true;
-		scrollPanel->AutoSize = true;
+		// scrollPanel->AutoSize = true;
 		scrollPanel->Margin = System::Windows::Forms::Padding(0);
 		scrollPanel->Padding = System::Windows::Forms::Padding(0);
+		scrollPanel->Dock = System::Windows::Forms::DockStyle::Fill;
+		// scrollPanel->Size = System::Drawing::Size(140, 480);
 
 		TableLayoutPanel^ layoutDades = gcnew TableLayoutPanel();
 		layoutDades->AutoSize = true;
 		layoutDades->CellBorderStyle = System::Windows::Forms::TableLayoutPanelCellBorderStyle::Inset;
-		layoutDades->ColumnCount = 1;
-		layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 100)));
+		layoutDades->ColumnCount = 3;
+		layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 20)));
+		layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 30)));
+		layoutDades->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
 		layoutDades->ForeColor = System::Drawing::Color::White;
+		layoutDades->Dock = System::Windows::Forms::DockStyle::Top;
 		// layoutDades->Location = System::Drawing::Point(294, 127);
 		layoutDades->Name = L"layoutDades";
 		layoutDades->RowCount = files;
 		// layoutDades->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 55)));
 		layoutDades->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
 		layoutDades->TabIndex = 8;
+		layoutDades->Size = System::Drawing::Size(140, 480);
 
 		for (int i = 0; i < files; ++i) {
 			TableLayoutPanel^ layoutFila = gcnew TableLayoutPanel();
@@ -159,7 +166,7 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 			layoutFila->Name = L"layoutFila";
 			// layoutFila->Click += gcnew System::EventHandler(this, &MenuGestioGrups::fila_Click); // SELECCIONAR FILA
 			layoutFila->RowCount = 1;
-			layoutFila->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 35)));
+			layoutFila->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
 			// layoutFila->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
 			layoutFila->TabIndex = 8;
 
@@ -181,27 +188,32 @@ System::Void MenuGestioGrups::MenuGestioGrups_Load(System::Object^ sender, Syste
 			labelTematica->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// labelTematica->Click += gcnew System::EventHandler(this, &MenuGestioGrups::labelenfila_Click); // SELECCIONAR FILA
 
-			layoutFila->Controls->Add(labelNom, 0, 0);
-			layoutFila->Controls->Add(labelTematica, 1, 0);
+			//layoutFila->Controls->Add(labelNom, 0, 0);
+			//layoutFila->Controls->Add(labelTematica, 1, 0);
+			layoutDades->Controls->Add(labelNom, 0, i);
+			layoutDades->Controls->Add(labelTematica, 1, i);
 
 			// valoracio
 			TxCercaValoracio^ Cerca = gcnew TxCercaValoracio(sistema->obteUsername(), grupsEstudiant->grup[i]);
 			PassarellaValoracio^ p = Cerca->executar();
 			if (p==nullptr) {
 				StarRatingControl^ starRatingControl = gcnew StarRatingControl(grupsEstudiant->grup[i]);
-				layoutFila->Controls->Add(starRatingControl, 2, 0);
+				//layoutFila->Controls->Add(starRatingControl, 2, 0);
+				layoutDades->Controls->Add(starRatingControl, 2, i);
 			}
 			else {
 				Int64^ prueba = p->obteValoracio();
 				float floatValue = static_cast<float>(*prueba);
 				StarRatingView^ starRatingControl = gcnew StarRatingView(floatValue);
 				// starRatingControl->Click += gcnew System::EventHandler(this, &MenuGestioGrups::labelenfila_Click); // SELECCIONAR FILA
-				layoutFila->Controls->Add(starRatingControl, 2, 0);
+				//layoutFila->Controls->Add(starRatingControl, 2, 0);
+				layoutDades->Controls->Add(starRatingControl, 2, i);
 			}
 
-			layoutDades->Controls->Add(layoutFila, 0, i);
+			// layoutDades->Controls->Add(layoutFila, 0, i);
 		}
 
+		// this->layoutPanel->Controls->Add(layoutDades, 0, 3);
 		scrollPanel->Controls->Add(layoutDades);
 		this->layoutPanel->Controls->Add(scrollPanel, 0, 3);
 	}

@@ -2,6 +2,7 @@
 #include "TxCrearNouGrupEstudi.h"
 #include "Sistema.h"
 #include "MenuPrincipal.h"
+#include "MenuGestioGrups.h"
 
 namespace StudyHub {
 
@@ -218,7 +219,10 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			TxCrearNouGrupEstudi CrearGrup(this->textBox1->Text, this->textBox2->Text, sist->obteEstudiant()->obteUsername());
 			CrearGrup.executa();
 			MessageBox::Show("Grup Creat Correctament.");
-			this->Close();
+
+			MenuPrincipal^ menu = MenuPrincipal::getInstance();
+			MenuGestioGrups^ gestioGrups = gcnew MenuGestioGrups();
+			menu->AbrirFormularioEnPanel(gestioGrups);
 		}
 		else {
 			MessageBox::Show("No pot haver-hi un camp buit.");

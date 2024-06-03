@@ -4,5 +4,7 @@
 using namespace StudyHub;
 
 System::Void ConsultarEstudiantUI::TancarButton_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+    MenuPrincipal^ menu = MenuPrincipal::getInstance();
+    menu->ButtonMenuEstudiant->Visible = false;
+    this->Close();
 }
